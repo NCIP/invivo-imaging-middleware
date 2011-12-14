@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="urn:jboss:bean-deployer:2.0">
+
+   <!-- ejb3 test application-policy definition -->
+   <application-policy xmlns="urn:jboss:security-beans:1.0" name="ldap-cci-domain-new">
+      <authentication>
+        <login-module code="edu.emory.cci.sts.loginmodule.LDAPLoginModule" flag="required">
+            <module-option name="ldapServer">ldap://storage01.cci.emory.edu/dc=cci,dc=emory,dc=edu</module-option>
+            <module-option name="dnPrefix">uid=</module-option>
+            <module-option name="dnSuffix">,ou=People,dc=cci,dc=emory,dc=edu</module-option>
+        </login-module>
+      </authentication>
+   </application-policy>
+
+</deployment>

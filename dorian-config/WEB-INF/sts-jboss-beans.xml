@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="urn:jboss:bean-deployer:2.0">
+
+   <!-- ejb3 test application-policy definition -->
+   <application-policy xmlns="urn:jboss:security-beans:1.0" name="dorian-cci-dev-domain">
+      <authentication>
+        <login-module code="edu.emory.cci.sts.loginmodule.DorianLoginModule" flag="required">
+            <module-option name="identityProviderUrl">https://cagrid-dev.cci.emory.edu:8443/wsrf/services/cagrid/Dorian</module-option>
+         </login-module>
+      </authentication>
+   </application-policy>
+
+</deployment>
