@@ -20,7 +20,7 @@ public class TestDorianSTSSOAP {
 
 		// Specify username and password for the training account
 		String username = "nadir";
-		String password = "DorianAdmin$1";
+		String password = "<yourpassword>";
 
 		try {
 			// create a WSTrustClient instance.
@@ -59,10 +59,10 @@ public class TestDorianSTSSOAP {
 @Test
 public void testIssueValidate() throws Exception {
 		String username = "nadir";
-		String password = "DorianAdmin$1";
+		String password = "<yourpassword>";
 		
 		String serviceUsername = "nadir";
-		String servicePassword = "DorianAdmin$1";
+		String servicePassword = "<yourpassword>";
 
 		// create a WSTrustClient instance for the client
 		WSTrustClient client = new WSTrustClient(

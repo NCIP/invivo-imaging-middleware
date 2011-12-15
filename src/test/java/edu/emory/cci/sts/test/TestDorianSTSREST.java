@@ -29,7 +29,7 @@ public class TestDorianSTSREST {
 	public static String issueToken = baseUrl + "/issueToken";
 	public static String validateToken = baseUrl + "/validateToken";
 	public static String username = "nadir"; // username pulled from configured ldap
-	public static String password = "DorianAdmin$1";
+	public static String password = "<yourpassword>";
 	private DefaultHttpClient httpclient = null;
 	
 	public TestDorianSTSREST()
