@@ -15,31 +15,36 @@ import org.w3c.dom.Element;
 public class TestSOAPClient  {
 
 	// Testcase to check the issue token request
+	
+	public String stsUrl = "http://localhost:8080/SecurityTokenServicePF/PicketlinkSTS";
+	public String requesterUsername = "UserA";
+	public String requesterPassword = "PassA";
+	public String validatorUsername = "UserB";
+	public String validatorPassword = "PassB";
 
 	@Test
 	public void testIssue() {
 
 		// Specify username and password for the training account
-		String username = "testldap01";
-		String password = "tldapz55";
+		
 
 		try {
 			// create a WSTrustClient instance.
 			WSTrustClient client = new WSTrustClient(
 					"PicketLinkSTS",
 					"PicketLinkSTSPort",
-					"http://localhost:8080/SecurityTokenServiceLDAP/PicketlinkSTS",
-					new SecurityInfo(username, password));
+					stsUrl,
+					new SecurityInfo(requesterUsername, requesterPassword));
 
 			// issue a SAML assertion using the client API.
 			Element assertion = null;
 			System.out
 					.println("\nInvoking token service to get SAML assertion for "
-							+ username);
+							+ requesterUsername);
 
 			// specify the type of token you want to use. In this case its SAML2
 			assertion = client.issueTokenForEndpoint("http://services.testcorp.org/provider1");
-			System.out.println("SAML assertion for " + username
+			System.out.println("SAML assertion for " + requesterUsername
 					+ " successfully obtained!");
 			SamlCredential credential = new SamlCredential(assertion);
 			System.out.println("Token Issued : " + credential);
@@ -59,35 +64,31 @@ public class TestSOAPClient  {
 	}
 @Test
 public void testIssueValidate() throws Exception {
-		String username = "testldap01";
-		String password = "tldapz55";
 		
-		String serviceUsername = "testldap02";
-		String servicePassword = "tldapz55";
 
 		// create a WSTrustClient instance for the client
 		WSTrustClient client = new WSTrustClient(
 				"PicketLinkSTS",
 				"PicketLinkSTSPort",
-				"http://localhost:8080/SecurityTokenServiceLDAP/PicketlinkSTS",
-				new SecurityInfo(username, password));
+				stsUrl,
+				new SecurityInfo(requesterUsername, requesterPassword));
 
 		// create a WSTrustClient instance for the service that wants to
 		// validate the token
 		WSTrustClient service = new WSTrustClient(
 				"PicketLinkSTS",
 				"PicketLinkSTSPort",
-				"http://localhost:8080/SecurityTokenServiceLDAP/PicketlinkSTS",
-				new SecurityInfo(serviceUsername, servicePassword));
+				stsUrl,
+				new SecurityInfo(validatorUsername,validatorPassword));
 
 		// issue a SAML assertion using the client API.
 		Element assertion = null;
 		try {
 			System.out
 					.println("\nInvoking token service to get SAML assertion for "
-							+ username);
-			assertion = client.issueToken(SAMLUtil.SAML2_TOKEN_TYPE);
-			System.out.println("SAML assertion for " + username
+							+ requesterUsername);
+			assertion = client.issueTokenForEndpoint("http://services.testcorp.org/provider1");
+			System.out.println("SAML assertion for " + requesterUsername
 					+ " successfully obtained!");
 		} catch (WSTrustException wse) {
 			System.out

@@ -26,13 +26,17 @@ import org.junit.Test;
 
 public class TestRESTfulAPI {
 
-	public static String baseUrl = "http://localhost:8080/SecurityTokenServiceLDAP/rest/STS";
+	public static String baseUrl = "http://localhost:8080/SecurityTokenServicePF/rest/STS";
 	public static String issueToken = baseUrl + "/issueToken";
 	public static String validateToken = baseUrl + "/validateToken";
-	public static String username = "testldap01"; // username pulled from configured ldap
-	public static String password = "tldapz55";
+	public static String username = "UserA"; // username pulled from configured ldap
+	public static String password = "PassA";
 	private DefaultHttpClient httpclient = null;
 	
+	
+	
+	// Here for simplicity we have assumed the credentials of the requester and validator are same. Thus we initialize the HTTPClient object using same pair of username/password.
+	// In reality , the requester will authenticate himself using his credentials while validator ( service ) will use its own
 	public TestRESTfulAPI()
 	{
 		httpclient = new DefaultHttpClient();
