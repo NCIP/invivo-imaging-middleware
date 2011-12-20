@@ -29,7 +29,7 @@ public class TestRESTfulAPI {
 	public static String baseUrl = "http://localhost:8080/SecurityTokenServicePF/rest/STS";
 	public static String issueToken = baseUrl + "/issueToken";
 	public static String validateToken = baseUrl + "/validateToken";
-	public static String username = "UserA"; // username pulled from configured ldap
+	public static String username = "UserA"; // 
 	public static String password = "PassA";
 	private DefaultHttpClient httpclient = null;
 	
