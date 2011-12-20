@@ -383,6 +383,89 @@
 			</repositories>
 		</profile>
 
+
+<profile>
+			<id>profile-propertyFile</id>
+			<activation>
+				<property>
+					<name>backend</name>
+					<value>propertyFile</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.4.2</version>
+						<configuration>
+							<skipTests>true</skipTests>
+						</configuration>
+					</plugin>
+
+
+					
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.0.2</version>
+						<configuration>
+							<warName>SecurityTokenServicePF</warName>
+
+							<webResources>
+								<resource>
+									<directory>propertyFile-config</directory>
+								</resource>
+							</webResources>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+				<dependency>
+					<groupId>org.picketlink</groupId>
+					<artifactId>picketlink-fed</artifactId>
+					<version>2.0.1.final</version>
+				</dependency>
+
+
+				<dependency>
+					<groupId>org.jboss.security</groupId>
+					<artifactId>jbosssx</artifactId>
+					<version>3.0.0.Beta4</version>
+					<scope>provided</scope>
+
+				</dependency>
+				<dependency>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+					<version>1.2.16</version>
+				</dependency>
+				<dependency>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+					<version>4.8.1</version>
+					<scope>test</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>org.apache.servicemix.bundles</groupId>
+					<artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
+					<version>1.4.3_3</version>
+				</dependency>
+
+
+				<dependency>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+					<version>1.1.1</version>
+				</dependency>
+
+			</dependencies>
+
+			
+		</profile>
 	</profiles>
 
 
