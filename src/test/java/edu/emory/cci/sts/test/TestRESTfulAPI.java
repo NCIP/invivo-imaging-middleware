@@ -26,7 +26,7 @@ import org.junit.Test;
 
 public class TestRESTfulAPI {
 
-	public static String baseUrl = "http://localhost:8080/SecurityTokenServicePF/rest/STS";
+	public static String baseUrl = "https://secure01.cci.emory.edu:8443/SecurityTokenServicePF/rest/STS";
 	public static String issueToken = baseUrl + "/issueToken";
 	public static String validateToken = baseUrl + "/validateToken";
 	public static String username = "UserA"; // 
@@ -45,7 +45,7 @@ public class TestRESTfulAPI {
 		authpref.add(AuthPolicy.BASIC);
 		authpref.add(AuthPolicy.DIGEST);
 		httpclient.getParams().setParameter(AuthPNames.PROXY_AUTH_PREF, authpref);
-		HttpHost targetHost = new HttpHost("localhost", 8080, "http"); 
+		HttpHost targetHost = new HttpHost("secure01.cci.emory.edu", 8443, "https"); 
 		
 		httpclient.getCredentialsProvider().setCredentials(new AuthScope(targetHost.getHostName(), targetHost.getPort()), creds);
 		
