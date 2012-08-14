@@ -69,6 +69,9 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 	private Log log = LogFactory.getLog(getClass());
 	private String idP;
 	private Group defaultRoleGroup;
+	private String authenticationService;
+
+	
 
 	public void initRoles() throws Exception {
 		log.info("Initializing Default Role");
@@ -103,6 +106,8 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 
 		try {
 			idP = (String) options.get("identityProviderUrl");
+			
+			authenticationService = (String) options.get("authenticationService") ;
 			
 			initRoles();
 			log.info("DorianLoginModuleInitialized");
@@ -167,42 +172,45 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 		credential.setBasicAuthenticationCredential(cred);
 		
 
-		log.info("Creating authentication client: URL=" + idP + "; userId="
-				+ userId );
-
-		AuthenticationClient client;
-		try {
-			client = new AuthenticationClient(idP, credential);
-		} catch (Throwable e) {
-			log.error("Cannot initialize the Dorian client", e);
-			throw new Exception("Cannot initialize the Dorian client");
-		}
-
-		log.info("Authenticating the credentials .....");
-		try {
-			SAMLAssertion saml = client.authenticate();
-			log.info("Dorian credential obtained");
-			return saml;
-		} catch (InvalidCredentialFault e) {
-			log.error(e);
-			throw e;
-		} catch (InsufficientAttributeFault e) {
-			log.error("Error authenticating", e);
-			throw e;
-		} catch (AuthenticationProviderFault e) {
-			log.error("Error authenticating", e);
-			throw e;
-		} catch (RemoteException e) {
-			log.error("Error authenticating", e);
-			throw e;
-		} catch (Error e) {
-			log.error("Unknown Error", e);
-			throw e;
-		}
-
 		
 
-	}
+		AuthenticationClient client;
+		SAMLAssertion saml = null;
+		boolean authSuccessUsingAuthenticationService = false;
+		if(authenticationService!=null)
+		{
+			try {
+				log.info("Creating authentication client: URL=" + authenticationService + "; userId="
+						+ userId );
+				client = new AuthenticationClient(authenticationService, credential);
+				log.info("Authenticating the credentials .....");
+				saml = client.authenticate();
+				authSuccessUsingAuthenticationService = true;
+			} catch (Throwable e) {
+				log.warn("Authentication using [" + authenticationService + "] failed. Trying with [" + idP + "]");
+				authSuccessUsingAuthenticationService = false;
+			
+			}
+		}
+		
+		if(authSuccessUsingAuthenticationService == false)
+		{
+			try {
+				log.info("Creating authentication client: URL=" + idP + "; userId="
+						+ userId );
+				client = new AuthenticationClient(idP, credential);
+				log.info("Authenticating the credentials .....");
+				saml = client.authenticate();
+				} catch (Throwable e) {
+				log.error("Cannot initialize the Dorian client", e);
+				throw new Exception("Cannot initialize the Dorian client");
+			}
+		}
+		
+
+		log.info("Dorian credential obtained");
+		return saml;
+		}
 	
 	private GlobusCredential getCredential(gov.nih.nci.cagrid.opensaml.SAMLAssertion saml) throws MalformedURIException, RemoteException {
 		int certificateLifeTime = 12;

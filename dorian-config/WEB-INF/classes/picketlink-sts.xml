@@ -13,8 +13,8 @@
 	        TokenElement="Assertion"
 	        TokenElementNS="urn:oasis:names:tc:SAML:2.0:assertion">
 	        <Property Key="AttributeProvider" Value="edu.emory.cci.sts.attributeprovider.GridGrouperSAMLAttributeProvider"/>
-	        <Property Key="gridGrouperUrl" Value="https://cagrid-dev.cci.emory.edu:7443/wsrf/services/cagrid/GridGrouper"/>
-	        <Property Key="ifsUrl" Value="https://cagrid-dev.cci.emory.edu:8443/wsrf/services/cagrid/Dorian"/>
+	        <Property Key="gridGrouperUrl" Value="https://grouper.training.cagrid.org:8443/wsrf/services/cagrid/GridGrouper"/>
+	        <Property Key="ifsUrl" Value="https://dorian.training.cagrid.org:8443/wsrf/services/cagrid/Dorian"/>
 	        </TokenProvider>
 	</TokenProviders>
 	<ServiceProviders>

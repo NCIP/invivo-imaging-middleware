@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <jboss-web>
-  <security-domain>java:/jaas/dorian-cci-dev-domain</security-domain>
+  <security-domain>java:/jaas/dorian-training-grid-domain</security-domain>
 </jboss-web>
