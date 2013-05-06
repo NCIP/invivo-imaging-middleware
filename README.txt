@@ -1,1 +1,0 @@
-# Instructions on configuring/build of SecureTokenService
