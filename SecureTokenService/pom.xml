@@ -1316,7 +1316,7 @@
 
 		<repository>
 			<id>maven-cci</id>
-			<url>http://maven.cci.emory.edu:8081/nexus/content/groups/public/</url>
+			<url>http://maven.cci.emory.edu/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
 
