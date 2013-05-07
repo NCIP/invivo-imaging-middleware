@@ -1,16 +1,19 @@
 Build Instructions
 ========================================
 
-Prerequisites
+### Prerequisites
 * JDk 1.6
 * Maven 
 
-Build with LDAP backend
-mvn install -P profile-ldap
+### Build with LDAP backend
 
-Build with NBIA backend
-mvn install -P profile-nbia
+```mvn install -P profile-ldap```
 
-Build with Dorian backend
-mvn install -P profile-dorian
+### Build with NBIA backend
+
+```mvn install -P profile-nbia```
+
+### Build with Dorian backend
+
+```mvn install -P profile-dorian```
 
