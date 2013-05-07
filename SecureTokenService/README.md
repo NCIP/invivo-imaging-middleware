@@ -2,7 +2,7 @@ Build Instructions
 ========================================
 
 ### Prerequisites
-* JDk 1.6
+* JDK 1.6
 * Maven 
 
 ### Build with LDAP backend
