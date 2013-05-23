@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.attributeprovider;
 
 
@@ -35,13 +43,13 @@ public class GridGrouperSAMLAttributeProvider implements SAML20TokenAttributePro
 	private GridGrouper grouper;
 	private static String GRID_GROUPER_PROPERTY_NAME="gridGrouperUrl";
 	private static String GROUP_MEMBERSHIP_PROPERTY_NAME="groupMembership";
-	
 
-	
+
+
 	private AttributeType getGlobusCredentialSAMLAttribute(GlobusCredential credential) throws IOException
 	{
 		AttributeType credentialAttr = new AttributeType("GlobusCredential");
-	
+
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		credential.save(os);
 		os.close();
@@ -50,8 +58,8 @@ public class GridGrouperSAMLAttributeProvider implements SAML20TokenAttributePro
 		credentialAttr.addAttributeValue(base64encoded);
 		return credentialAttr;
 	}
-	
-	
+
+
 
 
 	public AttributeStatementType createErrorAttributeStatement(String message)
@@ -71,7 +79,7 @@ public class GridGrouperSAMLAttributeProvider implements SAML20TokenAttributePro
 		{
 			list.add(group.getName().replaceAll(":", "/"));
 		}
-		
+
 		return list;
 	}
 
@@ -90,42 +98,42 @@ public class GridGrouperSAMLAttributeProvider implements SAML20TokenAttributePro
 	      else
 	      {
 	          AttributeStatementType attributeStatement = new AttributeStatementType();
-	          
+
 	          AttributeType targetGrid = new AttributeType("targetGrid");
-	          
-	          
-	          
+
+
+
 	          AttributeType gridGrp = new AttributeType("gridGrouper");
-	 
+
 	          gridGrp.addAttributeValue(grouper == null ? "not set" : grouper.getName());
-	          
-	          
-	          
-	          
+
+
+
+
 	          AttributeType groupMembershipAttribute = new AttributeType(GROUP_MEMBERSHIP_PROPERTY_NAME);
-	          
-	         
+
+
 	          attributeStatement.addAttribute(new ASTChoiceType(groupMembershipAttribute));
 	          attributeStatement.addAttribute(new ASTChoiceType(targetGrid));
 	          attributeStatement.addAttribute(new ASTChoiceType(gridGrp));
-	          
-	         
-	          
+
+
+
 	          try {
-	        	  
+
 	        	  Principal identity = subject.getPrincipals().iterator().next();
-	        		        	
+
 	        	  targetGrid.addAttributeValue(((PrincipalWithAttributes) identity).getAttribute("targetGrid"));
 	        	  GlobusCredential credential =  ((PrincipalWithAttributes) identity).getAttribute("globusCredential");
 		          List<String> groupMembers = getGroupMembershipInfo(credential) ;
-				
+
 				for(String groupMember : groupMembers)
 				{
 					groupMembershipAttribute.addAttributeValue(groupMember);
 				}
-				
+
 				attributeStatement.addAttribute( new ASTChoiceType(this.getGlobusCredentialSAMLAttribute(credential)));
-				
+
 			} catch (GrouperRuntimeException e) {
 				log.error(e);
 				return createErrorAttributeStatement("Error retrieving group information");
@@ -144,9 +152,9 @@ public class GridGrouperSAMLAttributeProvider implements SAML20TokenAttributePro
 				e.printStackTrace();
 				return createErrorAttributeStatement("Error retrieving group information");
 			}finally{
-				
+
 			}
-	     
+
 	          return attributeStatement;
 	      }
 	}
@@ -160,8 +168,8 @@ public class GridGrouperSAMLAttributeProvider implements SAML20TokenAttributePro
 		{
 			grouper = new GridGrouper(gridGrouperUrl);
 		}
-		
-				
+
+
 	}
 
 }

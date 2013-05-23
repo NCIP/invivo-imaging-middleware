@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--L
+  Copyright The Ohio State University
+  Copyright Emory University
+ 
+  Distributed under the OSI-approved BSD 3-Clause License.
+  See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+L-->
+
 <Project xmlns="http://schemas.microsoft.com/project">
     <Name>IVIM_Phase5_PMP_Jan25</Name>
     <Title>IVIM_Phase5_PMP_Jan25</Title>

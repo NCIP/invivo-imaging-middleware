@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.rest;
 
 import java.io.File;
@@ -62,7 +70,7 @@ public class STSRest {
 			         return System.getProperty("file.separator");
 			      }
 			   });
-	
+
 	private static final String STS_CONFIG_FILE = "picketlink-sts.xml";
 
 	private static final String STS_CONFIG_DIR = "picketlink-store" + SEPARATOR + "sts" + SEPARATOR;
@@ -284,8 +292,8 @@ public class STSRest {
 	               e);
 	      }
 	   }
-	 
-	 
+
+
 	 private static class SecurityActions
 	 {
 		   static Class<?> loadClass(final Class<?> theClass, final String fqn)

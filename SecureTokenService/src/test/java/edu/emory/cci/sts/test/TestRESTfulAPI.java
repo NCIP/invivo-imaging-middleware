@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.test;
 
 import static org.junit.Assert.assertEquals;
@@ -29,12 +37,12 @@ public class TestRESTfulAPI {
 	public static String baseUrl = "https://secure01.cci.emory.edu:8443/SecurityTokenServicePF/rest/STS";
 	public static String issueToken = baseUrl + "/issueToken";
 	public static String validateToken = baseUrl + "/validateToken";
-	public static String username = "UserA"; // 
+	public static String username = "UserA"; //
 	public static String password = "PassA";
 	private DefaultHttpClient httpclient = null;
-	
-	
-	
+
+
+
 	// Here for simplicity we have assumed the credentials of the requester and validator are same. Thus we initialize the HTTPClient object using same pair of username/password.
 	// In reality , the requester will authenticate himself using his credentials while validator ( service ) will use its own
 	public TestRESTfulAPI()
@@ -45,12 +53,12 @@ public class TestRESTfulAPI {
 		authpref.add(AuthPolicy.BASIC);
 		authpref.add(AuthPolicy.DIGEST);
 		httpclient.getParams().setParameter(AuthPNames.PROXY_AUTH_PREF, authpref);
-		HttpHost targetHost = new HttpHost("secure01.cci.emory.edu", 8443, "https"); 
-		
+		HttpHost targetHost = new HttpHost("secure01.cci.emory.edu", 8443, "https");
+
 		httpclient.getCredentialsProvider().setCredentials(new AuthScope(targetHost.getHostName(), targetHost.getPort()), creds);
-		
+
 	}
-	
+
 	@Test
 	public void issueToken() {
 		try {
@@ -58,14 +66,14 @@ public class TestRESTfulAPI {
 			qparams.add(new BasicNameValuePair("targetService", "http://services.testcorp.org/provider1"));
 			String queryString = URLEncodedUtils.format(qparams, "UTF-8");
 			String httpGetRequestUrl = issueToken + "?" + queryString;
-			
+
 			System.out.println("Executing HttpGet on [" + httpGetRequestUrl + "]");
 			HttpResponse response =  httpclient.execute(new HttpGet(httpGetRequestUrl));
 			HttpEntity entity = response.getEntity();
 			if (entity != null) {
-			 
+
 			        System.out.println(EntityUtils.toString(entity));
-			    
+
 			}
 			else{
 				fail();
@@ -75,7 +83,7 @@ public class TestRESTfulAPI {
 		}
 
 	}
-	
+
 	@Test
 	public void validateToken () {
 		try {
@@ -83,7 +91,7 @@ public class TestRESTfulAPI {
 			qparams.add(new BasicNameValuePair("targetService", "http://services.testcorp.org/provider1"));
 			String queryString = URLEncodedUtils.format(qparams, "UTF-8");
 			String httpGetRequestUrl = issueToken + "?" + queryString;
-			
+
 			System.out.println("Executing HttpGet on [" + httpGetRequestUrl + "]");
 			HttpResponse response =  httpclient.execute(new HttpGet(httpGetRequestUrl));
 			HttpEntity entity = response.getEntity();
@@ -91,19 +99,19 @@ public class TestRESTfulAPI {
 			if (entity != null) {
 					content = EntityUtils.toString(entity);
 			        System.out.println(content);
-			    
+
 			}else
 			{
 				fail();
 			}
-			
+
 			HttpPost validateRequest = new HttpPost(validateToken);
-			
+
 			List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 			formparams.add(new BasicNameValuePair("token", content));
-		
+
 			UrlEncodedFormEntity formentity = new UrlEncodedFormEntity(formparams, "UTF-8");
-			
+
 			validateRequest.setEntity(formentity);
 			HttpResponse serverresponse =  httpclient.execute(validateRequest);
 			entity = serverresponse.getEntity();
@@ -112,14 +120,14 @@ public class TestRESTfulAPI {
 					assertNotNull(content);
 			        System.out.println(content);
 			        assertEquals(content, "http://docs.oasis-open.org/ws-sx/ws-trust/200512/status/valid");
-			    
+
 			}
 			else
 			{
 				fail();
 			}
-			
-			
+
+
 		} catch (Exception e) {
 			fail(e.toString());
 		}

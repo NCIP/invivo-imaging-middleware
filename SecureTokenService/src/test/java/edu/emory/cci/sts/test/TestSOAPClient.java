@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.test;
 
 import static org.junit.Assert.assertNotNull;
@@ -15,7 +23,7 @@ import org.w3c.dom.Element;
 public class TestSOAPClient  {
 
 	// Testcase to check the issue token request
-	
+
 	public String stsUrl = "http://localhost:8080/SecurityTokenServicePF/PicketlinkSTS";
 	public String requesterUsername = "UserA";
 	public String requesterPassword = "PassA";
@@ -26,7 +34,7 @@ public class TestSOAPClient  {
 	public void testIssue() {
 
 		// Specify username and password for the training account
-		
+
 
 		try {
 			// create a WSTrustClient instance.
@@ -49,10 +57,10 @@ public class TestSOAPClient  {
 			SamlCredential credential = new SamlCredential(assertion);
 			System.out.println("Token Issued : " + credential);
 			assertNotNull(credential);
-			
-		
-			
-		
+
+
+
+
 		} catch (WSTrustException wse) {
 			System.out
 					.println("Unable to issue assertion: " + wse.getMessage());
@@ -64,7 +72,7 @@ public class TestSOAPClient  {
 	}
 @Test
 public void testIssueValidate() throws Exception {
-		
+
 
 		// create a WSTrustClient instance for the client
 		WSTrustClient client = new WSTrustClient(
@@ -104,7 +112,7 @@ public void testIssueValidate() throws Exception {
 		assertTrue(status);
 		System.out.println("Server Validates "
 				+ status);
-		
+
 
 	}
 

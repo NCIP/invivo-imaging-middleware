@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.loginmodule;
 
 import java.io.IOException;
@@ -53,7 +61,7 @@ public class LDAPLoginModule extends AbstractServerLoginModule {
 	@Override
 	protected Group[] getRoleSets() throws LoginException {
 		log.info("Request for getting Groups [" + username + "]");
-		return new Group[] { defaultRoleGroup }; 
+		return new Group[] { defaultRoleGroup };
 
 	}
 
@@ -68,24 +76,24 @@ public class LDAPLoginModule extends AbstractServerLoginModule {
 			ldapServer = (String) options.get("ldapServer");
 			else
 				throw new Exception("The property [ldapServer] not set");
-			
+
 			if(options.get("dnPrefix")!=null)
 				dnPrefix = (String) options.get("dnPrefix");
 				else
 					log.debug("The property [dnPrefix] not set. Defaulting to empty string");
-			
+
 			if(options.get("dnSuffix")!=null)
 				dnSuffix = (String) options.get("dnSuffix");
 				else
 					log.debug("The property [dnSuffix] not set. Defaulting to empty string");
-			
+
 			if(options.get("defaultRole")!=null)
 			defaultRole = (String) options.get("defaultRole");
 				else
 					log.debug("The property [defaultRole] not set. Defaulting to " + defaultRole);
-			
-			
-						
+
+
+
 			initRoles();
 			log.info("LDAPLoginModule initialized");
 

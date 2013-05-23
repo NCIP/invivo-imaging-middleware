@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.loginmodule;
 
 import java.security.Principal;
@@ -8,13 +16,13 @@ public class PrincipalWithAttributes implements Principal{
 
 	private Principal principal;
 	private Map<String,Object> attributes;
-	
+
 	public PrincipalWithAttributes(final String name)
 	{
 		principal =  new Principal() {
-			
+
 			public String getName() {
-			
+
 				return name;
 			}
 		};
@@ -45,20 +53,20 @@ public class PrincipalWithAttributes implements Principal{
 		this.principal = principal;
 		attributes = new HashMap<String, Object>();
 	}
-	
+
 	public void setAttribute(String name,Object value)
 	{
 		attributes.put(name, value);
 	}
-	
+
 	public <T> T getAttribute(String name)
 	{
 		return (T) attributes.get(name);
 	}
-	
-	
+
+
 	public String getName() {
-		
+
 		return principal.getName();
 	}
 

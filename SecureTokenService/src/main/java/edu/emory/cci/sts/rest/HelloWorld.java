@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.rest;
 
 import javax.ws.rs.GET;
@@ -12,5 +20,5 @@ public class HelloWorld  {
 	{
 		return "HelloWorld";
 	}
-	
+
 }

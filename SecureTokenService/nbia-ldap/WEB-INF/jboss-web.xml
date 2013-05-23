@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--L
+  Copyright The Ohio State University
+  Copyright Emory University
+ 
+  Distributed under the OSI-approved BSD 3-Clause License.
+  See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+L-->
 
 <jboss-web>
   <security-domain>java:/jaas/ldap-nbia</security-domain>

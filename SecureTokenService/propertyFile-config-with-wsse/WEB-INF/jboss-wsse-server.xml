@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--L
+  Copyright The Ohio State University
+  Copyright Emory University
+ 
+  Distributed under the OSI-approved BSD 3-Clause License.
+  See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+L-->
 
 <jboss-ws-security xmlns="http://www.jboss.com/ws-security/config"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

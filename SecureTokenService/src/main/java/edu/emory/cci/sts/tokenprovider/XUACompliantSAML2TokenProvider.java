@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.tokenprovider;
 
 import java.security.Principal;
@@ -80,7 +88,7 @@ public class XUACompliantSAML2TokenProvider extends SAML20TokenProvider{
 	         }
 	      }
 	   }
-	
+
 	 public void issueToken(ProtocolContext protoContext) throws ProcessingException
 	   {
 	      if (!(protoContext instanceof WSTrustRequestContext))
@@ -132,19 +140,19 @@ public class XUACompliantSAML2TokenProvider extends SAML20TokenProvider{
 	      Map<String, Object> claimedAttributes = context.getClaimedAttributes();
 	      if (claimedAttributes != null)
 	      {
-	         
+
 	         statements.add(StatementUtil.createAttributeStatement(claimedAttributes));
 	      }
-	      
+
 	      // Add AuthnStatement
-	      
+
 	      try {
 	    	  GregorianCalendar gc = new GregorianCalendar();
 	    	  DatatypeFactory dtf = DatatypeFactory.newInstance();
 	    	  XMLGregorianCalendar xgc = dtf.newXMLGregorianCalendar(gc);
 			AuthnStatementType authnStatement = StatementUtil.createAuthnStatement(xgc , JBossSAMLURIConstants.AC_PASSWORD.get());
 			statements.add(authnStatement);
-			
+
 		} catch (DatatypeConfigurationException e1) {
 			logger.warn("Could not add AuthnStatment to the SAML assertion");
 		}

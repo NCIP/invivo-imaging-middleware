@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.loginmodule;
 
 import gov.nih.nci.cagrid.authentication.bean.BasicAuthenticationCredential;
@@ -51,7 +59,7 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 		this.roles = roles;
 	}
 
-	
+
 
 	public String getUsername() {
 		return username;
@@ -71,19 +79,19 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 	private Group defaultRoleGroup;
 	private String authenticationService;
 
-	
+
 
 	public void initRoles() throws Exception {
 		log.info("Initializing Default Role");
 		Principal roleIdentity = createIdentity(defaultRole);
 		defaultRoleGroup = new SimpleGroup("Roles");
 		defaultRoleGroup.addMember(roleIdentity);
-		
+
 	}
 
-	
-	
-	
+
+
+
 
 	@Override
 	protected Principal getIdentity() {
@@ -106,9 +114,9 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 
 		try {
 			idP = (String) options.get("identityProviderUrl");
-			
+
 			authenticationService = (String) options.get("authenticationService") ;
-			
+
 			initRoles();
 			log.info("DorianLoginModuleInitialized");
 
@@ -137,11 +145,11 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 				log.info("Login successful with user identity [" + identity
 						+ "]");
 				loginOk = true;
-				
+
 				((PrincipalWithAttributes)identity).setAttribute("globusCredential", credential);
 				((PrincipalWithAttributes)identity).setAttribute("targetGrid", idP);
-				
-							
+
+
 				return true;
 			}
 			else
@@ -149,7 +157,7 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 				return false;
 			}
 
-			
+
 		} catch (IOException e) {
 			log.error(e);
 			throw new LoginException(e.getMessage());
@@ -170,9 +178,9 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 		cred.setUserId(userId);
 		cred.setPassword(passwd);
 		credential.setBasicAuthenticationCredential(cred);
-		
 
-		
+
+
 
 		AuthenticationClient client;
 		SAMLAssertion saml = null;
@@ -189,10 +197,10 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 			} catch (Throwable e) {
 				log.warn("Authentication using [" + authenticationService + "] failed. Trying with [" + idP + "]");
 				authSuccessUsingAuthenticationService = false;
-			
+
 			}
 		}
-		
+
 		if(authSuccessUsingAuthenticationService == false)
 		{
 			try {
@@ -206,12 +214,12 @@ public class DorianLoginModule extends AbstractServerLoginModule {
 				throw new Exception("Cannot initialize the Dorian client");
 			}
 		}
-		
+
 
 		log.info("Dorian credential obtained");
 		return saml;
 		}
-	
+
 	private GlobusCredential getCredential(gov.nih.nci.cagrid.opensaml.SAMLAssertion saml) throws MalformedURIException, RemoteException {
 		int certificateLifeTime = 12;
 		gov.nih.nci.cagrid.dorian.ifs.bean.ProxyLifetime lifetime = new gov.nih.nci.cagrid.dorian.ifs.bean.ProxyLifetime();
@@ -220,12 +228,12 @@ public class DorianLoginModule extends AbstractServerLoginModule {
         log.info("Connecting to Dorian to get proxy certificate with lifetime set to [" + certificateLifeTime + "] hrs");
         IFSUserClient dorian = new IFSUserClient(idP);
         log.info("Creating proxy certificate");
-        GlobusCredential proxy = dorian.createProxy(saml, lifetime, delegationLifetime); 
+        GlobusCredential proxy = dorian.createProxy(saml, lifetime, delegationLifetime);
         log.info("Acquired proxy certificate");
         return proxy;
-		
+
 	}
-	
+
 
 	public String[] getUsernameAndPassword() throws IOException,
 			UnsupportedCallbackException {

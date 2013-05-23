@@ -1,3 +1,11 @@
+/*L
+* Copyright The Ohio State University
+* Copyright Emory University
+*
+* Distributed under the OSI-approved BSD 3-Clause License.
+* See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+*/
+
 package edu.emory.cci.sts.test;
 
 import static org.junit.Assert.assertNotNull;
@@ -43,10 +51,10 @@ public class TestDorianSTSSOAP {
 			SamlCredential credential = new SamlCredential(assertion);
 			System.out.println("Token Issued : " + credential);
 			assertNotNull(credential);
-			
-		
-			
-		
+
+
+
+
 		} catch (WSTrustException wse) {
 			System.out
 					.println("Unable to issue assertion: " + wse.getMessage());
@@ -60,7 +68,7 @@ public class TestDorianSTSSOAP {
 public void testIssueValidate() throws Exception {
 		String username = "nadir";
 		String password = "<yourpassword>";
-		
+
 		String serviceUsername = "nadir";
 		String servicePassword = "<yourpassword>";
 
@@ -102,7 +110,7 @@ public void testIssueValidate() throws Exception {
 		assertTrue(status);
 		System.out.println("Server Validates "
 				+ status);
-		
+
 
 	}
 

@@ -1,3 +1,11 @@
+<!--L
+  Copyright The Ohio State University
+  Copyright Emory University
+ 
+  Distributed under the OSI-approved BSD 3-Clause License.
+  See http://ncip.github.io/invivo-imaging-middleware/LICENSE.txt for details.
+L-->
+
 <saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
 	xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" ID="ID_87a76781-2159-4939-91f4-dbfb43a1eb97"
 	IssueInstant="2011-12-08T18:47:43.357Z" Version="2.0">
