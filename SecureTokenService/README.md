@@ -7,13 +7,13 @@ Build Instructions
 
 ### Build with LDAP backend
 
-```mvn install -P profile-ldap```
+```mvn clean package -P profile-ldap```
 
 ### Build with NBIA backend
 
-```mvn install -P profile-nbia```
+```mvn clean package -P profile-nbia```
 
 ### Build with Dorian backend
 
-```mvn install -P profile-dorian```
+```mvn clean package -P profile-dorian```
 
