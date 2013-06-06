@@ -11,10 +11,13 @@ IVIM includes:
   *	Security Extensions, a role-based data access control mechanism to control the query and retrieval of objects exposed by the DICOM Data Service. It leverages the hierarchy in the DICOM information model. The security enhancements to IVIM build on GAARDS.  
   *	Federated Query Processing, a processor and client that extend the caGrid Federated Query Processor to query and make joins across multiple domain models, for example, "Find all DICOM images where the RECIST length criterion is greater than a certain value". By using the FQP client, a user can formulate queries that encompass both DICOM and AIM attributes and execute these queries to retrieve all DICOM and AIM objects that satisfy the query. The query is executed on a federation of multiple grid services and add service-level and data-level authentication and authorization to secure access to services and data exposed by grid services.
 
-In Vivo Imaging Middleware (IVIM) is distributed under the BSD 3-Clause License.
-Please see the NOTICE and LICENSE files for details.
+It is written in Java using other technologies
+
+In Vivo Imaging Middleware (IVIM) is distributed under the BSD 3-Clause License. Please see the NOTICE and LICENSE files for details.
 
 You will find more details about In Vivo Imaging Middleware (IVIM) in the following links:
   * [Community Wiki] (https://wiki.nci.nih.gov/display/IVIM/In+Vivo+Imaging+Middleware+-+IVIM+and+Virtual+PACS)
   * [Issue Tracker ] (https://tracker.nci.nih.gov/browse/IVIM)
   * [Code Repository] (https://github.com/NCIP/invivo-imaging-middleware)
+
+Please join us in further developing and improving In Vivo Imaging Middleware (IVIM).
