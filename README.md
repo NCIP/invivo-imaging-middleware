@@ -12,7 +12,7 @@ IVIM includes:
   *	Federated Query Processing, a processor and client that extend the caGrid Federated Query Processor to query and make joins across multiple domain models, for example, "Find all DICOM images where the RECIST length criterion is greater than a certain value". By using the FQP client, a user can formulate queries that encompass both DICOM and AIM attributes and execute these queries to retrieve all DICOM and AIM objects that satisfy the query. The query is executed on a federation of multiple grid services and add service-level and data-level authentication and authorization to secure access to services and data exposed by grid services.
 
 
-It is written in Java leveraging caGrid's core services, toolkits, and wizards technologies.
+It is written in Java using caGrid's core services, toolkits, and wizards technologies.
 
 The main goal of IVIM is to provide interoperability between DICOM and the Grid. It is designed to provide Gridbased
 federated access to existing DICOM-based data repositories and analytical resources and to facilitate
