@@ -13,12 +13,12 @@ IVIM includes:
 
 
 It is written in Java using caGrid's core services, toolkits, and wizards technologies.
-
-The main goal of IVIM is to provide interoperability between DICOM and the Grid. It is designed to provide Gridbased
+The goal of IVIM is to provide interoperability between DICOM and the Grid. It is designed to provide Gridbased
 federated access to existing DICOM-based data repositories and analytical resources and to facilitate
 development of Grid-enabled in vivo imaging applications in caBIG.
 
-In Vivo Imaging Middleware (IVIM) is distributed under the BSD 3-Clause License. Please see the NOTICE and LICENSE files for details.
+In Vivo Imaging Middleware (IVIM) is distributed under the BSD 3-Clause License. 
+Please see the NOTICE and LICENSE files for details.
 
 You will find more details about In Vivo Imaging Middleware (IVIM) in the following links:
   * [Community Wiki] (https://wiki.nci.nih.gov/display/IVIM/In+Vivo+Imaging+Middleware+-+IVIM+and+Virtual+PACS)
