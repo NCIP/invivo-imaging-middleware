@@ -12,7 +12,7 @@ In Vivo Imaging Middleware (IVIM) is distributed under the BSD 3-Clause License.
 Please see the NOTICE and LICENSE files for details.
 
 You will find more details about In Vivo Imaging Middleware (IVIM) in the following links:
-  * [Community Wiki] (https://wiki.nci.nih.gov/display/IVIM/In+Vivo+Imaging+Middleware+-+IVIM+and+Virtual+PACS)
+  * [Community Wiki] (https://wiki.nci.nih.gov/x/9IX3Ag)
   * [Issue Tracker ] (https://tracker.nci.nih.gov/browse/IVIM)
   * [Code Repository] (https://github.com/NCIP/invivo-imaging-middleware)
 
