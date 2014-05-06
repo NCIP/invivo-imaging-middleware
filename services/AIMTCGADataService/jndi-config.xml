@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndiConfig xmlns="http://wsrf.globus.org/jndi/config">
+  <service name="SERVICE-INSTANCE-PREFIX/CaGridEnumeration">
+    <resource name="configuration" type="gov.nih.nci.cagrid.enumeration.service.globus.resource.CaGridEnumerationResourceConfiguration">
+      <resourceParams>
+        <parameter>
+          <name>factory</name>
+          <value>org.globus.wsrf.jndi.BeanFactory</value>
+        </parameter>
+        <parameter>
+          <name>performRegistration</name>
+          <!-- Set this to false to skip ServiceGroup registration -->
+          <value>PERFORM_REGISTRATION</value>
+        </parameter>
+        <parameter>
+          <name>registrationTemplateFile</name>
+          <!-- Set this to the relative path (from the container root, e.g GLOBUS_LOCATION for globus container) of the registration parameters template file (ignored if performRegistration is false) -->
+          <value>ETC-PATH/CaGridEnumeration_registration.xml</value>
+        </parameter>
+      </resourceParams>
+    </resource>
+    <!-- THIS SERVICE HAS BEEN SET TO HAVE A CUSTOM RESOURCE
+		     PLEASE BE SURE TO ADD IN THE RESOURCE FOR THE SERVICE
+		     HOME  -->
+    <resourceLink name="serviceconfiguration" target="java:comp/env/services/SERVICE-INSTANCE-PREFIX/AIMTCGADataService/serviceconfiguration" />
+    <resourceLink name="aIMTCGADataServiceHome" target="java:comp/env/services/SERVICE-INSTANCE-PREFIX/AIMTCGADataService/home" />
+  </service>
+  <service name="SERVICE-INSTANCE-PREFIX/AIMTCGADataService">
+    <resource name="configuration" type="edu.emory.cci.aim.service.globus.resource.AIMTCGADataServiceResourceConfiguration">
+      <resourceParams>
+        <parameter>
+          <name>factory</name>
+          <value>org.globus.wsrf.jndi.BeanFactory</value>
+        </parameter>
+        <parameter>
+          <name>performRegistration</name>
+          <!-- Set this to false to skip ServiceGroup registration -->
+          <value>PERFORM_REGISTRATION</value>
+        </parameter>
+        <parameter>
+          <name>registrationTemplateFile</name>
+          <!-- Set this to the relative path (from the container root, e.g GLOBUS_LOCATION for globus container) of the registration parameters template file (ignored if performRegistration is false) -->
+          <value>ETC-PATH/AIMTCGADataService_registration.xml</value>
+        </parameter>
+        <parameter>
+          <name>domainModelFile</name>
+          <!-- Set this to the relative path (from the container root, e.g GLOBUS_LOCATION for globus container) of the domainModel extract -->
+          <value>ETC-PATH/AIMTCGADataService-domainmodel.xml</value>
+        </parameter>
+        <parameter>
+          <name>serviceMetadataFile</name>
+          <!-- Set this to the relative path (from the container root, e.g GLOBUS_LOCATION for globus container) of the serviceMetadata extract -->
+          <value>ETC-PATH/serviceMetadata.xml</value>
+        </parameter>
+      </resourceParams>
+    </resource>
+    <resource name="serviceconfiguration" type="edu.emory.cci.aim.service.AIMTCGADataServiceConfiguration">
+      <resourceParams>
+        <parameter>
+          <name>factory</name>
+          <value>org.globus.wsrf.jndi.BeanFactory</value>
+        </parameter>
+        <parameter>
+          <name>etcDirectoryPath</name>
+          <value>ETC-PATH</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_xmlDomainModel</name>
+          <value>ETC-PATH/@cqlQueryProcessorConfig_xmlDomainModel@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_classToQname</name>
+          <value>ETC-PATH/@cqlQueryProcessorConfig_classToQname@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_xmlNamespaceResolverClass</name>
+          <value>@cqlQueryProcessorConfig_xmlNamespaceResolverClass@</value>
+        </parameter>
+        <parameter>
+          <name>queryProcessorClass</name>
+          <value>@queryProcessorClass@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_xmlCollectionName</name>
+          <value>@cqlQueryProcessorConfig_xmlCollectionName@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_xmldbURI</name>
+          <value>@cqlQueryProcessorConfig_xmldbURI@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_xmldbPath</name>
+          <value>@cqlQueryProcessorConfig_xmldbPath@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_xmldbAttachmentPath</name>
+          <value>@cqlQueryProcessorConfig_xmldbAttachmentPath@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_xmldbConnectorClass</name>
+          <value>@cqlQueryProcessorConfig_xmldbConnectorClass@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_xmldbConfigFile</name>
+          <value>ETC-PATH/@cqlQueryProcessorConfig_xmldbConfigFile@</value>
+        </parameter>
+        <parameter>
+          <name>serverConfigLocation</name>
+          <value>ETC-PATH/@serverConfigLocation@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_cqlValidatorClass</name>
+          <value>@dataService_cqlValidatorClass@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_domainModelValidatorClass</name>
+          <value>@dataService_domainModelValidatorClass@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_validateCqlFlag</name>
+          <value>@dataService_validateCqlFlag@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_validateDomainModelFlag</name>
+          <value>@dataService_validateDomainModelFlag@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_classMappingsFilename</name>
+          <value>ETC-PATH/@dataService_classMappingsFilename@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_enumIteratorType</name>
+          <value>@dataService_enumIteratorType@</value>
+        </parameter>
+      </resourceParams>
+    </resource>
+    <resource name="home" type="edu.emory.cci.aim.service.globus.resource.AIMTCGADataServiceResourceHome">
+      <resourceParams>
+        <parameter>
+          <name>factory</name>
+          <value>org.globus.wsrf.jndi.BeanFactory</value>
+        </parameter>
+      </resourceParams>
+    </resource>
+    <resourceLink name="caGridEnumerationHome" target="java:comp/env/services/SERVICE-INSTANCE-PREFIX/CaGridEnumeration/home" />
+  </service>
+</jndiConfig>
+

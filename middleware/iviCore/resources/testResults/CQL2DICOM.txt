@@ -1,0 +1,203 @@
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralEquipment.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.ClinicalTrial.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialSite.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.generalSeriesPkId. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.filePath. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.submissionDate. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.annotationType. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.fileSize. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Study.visibility. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Study.id. ignored.
+WARNING: private tag: (0x0013,0x0010). ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialDataProvenance.project. ignored.
+WARNING: private tag: (0x0013,0x0012). ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteName. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialDataProvenance.id. ignored.
+WARNING: private tag: (0x0013,0x0013). ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteId. ignored.
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.revolutionTime RevolutionTime (0x0018,0x9305)
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.singleCollimationWidth SingleCollimationWidth (0x0018,0x9306)
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.tableSpeed TableSpeed (0x0018,0x9309)
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.tableFeedPerRotation TableFeedPerRotation (0x0018,0x9310)
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.CTPitchFactor SpiralPitchFactor (0x0018,0x9311)
+WARNING: no tag associated: gov.nih.nci.ncia.domain.CTImage.id. ignored.
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.totalCollimationWidth TotalCollimationWidth (0x0018,0x9307)
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Patient.visibility. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Patient.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralSeries.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralSeries.annotationsFlag. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralSeries.visibility. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralSeries.securityGroup. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.curationTimestamp. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.filename. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.uri. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.project. ignored.
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.GeneralImage.storageMediaFileSetUID StorageMediaFileSetUID (0x0088,0x0140)
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.annotation. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.submissionDate. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.visibility. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.seriesPKId. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.patientPkId. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.dicomSize. ignored.
+ model attr name gov.nih.nci.ncia.domain.GeneralImage.SOPInstanceUID
+ model attr name gov.nih.nci.ncia.domain.GeneralSeries.seriesInstanceUID
+ model attr name gov.nih.nci.ncia.domain.Study.studyInstanceUID
+ model attr name gov.nih.nci.ncia.domain.Patient.patientId
+cqlquery =
+<?xml version="1.0" encoding="UTF-8"?>
+<CQLQuery xmlns="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery ..\..\schema\Data\1_gov.nih.nci.cagrid.CQLQuery.xsd">
+  <Target name="gov.nih.nci.ncia.domain.Patient">
+    <Association roleName="studyCollection" name="gov.nih.nci.ncia.domain.Study">
+      <Group logicRelation="AND">
+        <Attribute name="studyInstanceUID" predicate="EQUAL_TO" value="1.3.6.1.4.1.9328.50.1.1832" />
+        <Association roleName="generalSeriesCollection" name="gov.nih.nci.ncia.domain.GeneralSeries">
+          <Attribute name="seriesInstanceUID" predicate="EQUAL_TO" value="1.3.6.1.4.1.9328.50.1.1918" />
+        </Association>
+      </Group>
+    </Association>
+  </Target>
+</CQLQuery>
+
+
+xpath =
+(0x0010,0x0010) PatientName VR=<PN> VL=<0x0> <>
+(0x0010,0x0020) PatientID VR=<LO> VL=<0x0> <>
+(0x0010,0x0030) PatientBirthDate VR=<DA> VL=<0x0> <>
+(0x0010,0x0040) PatientSex VR=<CS> VL=<0x0> <>
+(0x0010,0x2160) EthnicGroup VR=<SH> VL=<0x0> <>
+(0x0012,0x0040) ClinicalTrialSubjectID VR=<LO> VL=<0x0> <>
+(0x0012,0x0042) ClinicalTrialSubjectReadingID VR=<LO> VL=<0x0> <>
+(0x0020,0x000d) StudyInstanceUID VR=<UI> VL=<0x1a> <1.3.6.1.4.1.9328.50.1.1832>
+(0x0020,0x000e) SeriesInstanceUID VR=<UI> VL=<0x1a> <1.3.6.1.4.1.9328.50.1.1918>
+
+cqlquery =
+<?xml version="1.0" encoding="UTF-8"?>
+<CQLQuery xmlns="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery ..\..\schema\Data\1_gov.nih.nci.cagrid.CQLQuery.xsd">
+  <Target name="gov.nih.nci.ncia.domain.Study">
+    <Group logicRelation="AND">
+      <Attribute name="studyInstanceUID" predicate="EQUAL_TO" value="1.3.6.1.4.1.9328.50.1.1832" />
+      <Association roleName="generalSeriesCollection" name="gov.nih.nci.ncia.domain.GeneralSeries">
+        <Attribute name="seriesInstanceUID" predicate="EQUAL_TO" value="1.3.6.1.4.1.9328.50.1.1918" />
+      </Association>
+    </Group>
+  </Target>
+</CQLQuery>
+
+
+current ie = Patient target = Series
+xpath =
+(0x0008,0x0020) StudyDate VR=<DA> VL=<0x0> <>
+(0x0008,0x0030) StudyTime VR=<TM> VL=<0x0> <>
+(0x0008,0x1030) StudyDescription VR=<LO> VL=<0x0> <>
+(0x0008,0x1080) AdmittingDiagnosesDescription VR=<LO> VL=<0x0> <>
+(0x0008,0x1084) AdmittingDiagnosesCodeSequence VR=<UN> VL=<0x0> [B@6fa9fc 
+(0x0010,0x0020) PatientID VR=<LO> VL=<0x0> <>
+(0x0010,0x1010) PatientAge VR=<AS> VL=<0x0> <>
+(0x0010,0x1020) PatientSize VR=<DS> VL=<0x0> <>
+(0x0010,0x1030) PatientWeight VR=<DS> VL=<0x0> <>
+(0x0010,0x2180) Occupation VR=<SH> VL=<0x0> <>
+(0x0010,0x21b0) AdditionalPatientHistory VR=<LT> VL=<0x0> <>
+(0x0012,0x0050) ClinicalTrialTimePointID VR=<LO> VL=<0x0> <>
+(0x0012,0x0051) ClinicalTrialTimePointDescription VR=<ST> VL=<0x0> <>
+(0x0020,0x000d) StudyInstanceUID VR=<UI> VL=<0x1a> <1.3.6.1.4.1.9328.50.1.1832>
+(0x0020,0x000e) SeriesInstanceUID VR=<UI> VL=<0x1a> <1.3.6.1.4.1.9328.50.1.1918>
+(0x0020,0x0010) StudyID VR=<SH> VL=<0x0> <>
+
+cqlquery =
+<?xml version="1.0" encoding="UTF-8"?>
+<CQLQuery xmlns="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery ..\..\schema\Data\1_gov.nih.nci.cagrid.CQLQuery.xsd">
+  <Target name="gov.nih.nci.ncia.domain.GeneralSeries">
+    <Group logicRelation="AND">
+      <Attribute name="seriesInstanceUID" predicate="EQUAL_TO" value="1.3.6.1.4.1.9328.50.1.1918" />
+      <Association roleName="study" name="gov.nih.nci.ncia.domain.Study">
+        <Attribute name="studyInstanceUID" predicate="EQUAL_TO" value="1.3.6.1.4.1.9328.50.1.1832" />
+      </Association>
+    </Group>
+  </Target>
+</CQLQuery>
+
+
+current ie = Patient target = Series
+xpath =
+(0x0008,0x0021) SeriesDate VR=<DA> VL=<0x0> <>
+(0x0008,0x0060) Modality VR=<CS> VL=<0x0> <>
+(0x0008,0x103e) SeriesDescription VR=<LO> VL=<0x0> <>
+(0x0008,0x1080) AdmittingDiagnosesDescription VR=<LO> VL=<0x0> <>
+(0x0010,0x0020) PatientID VR=<LO> VL=<0x0> <>
+(0x0010,0x1030) PatientWeight VR=<DS> VL=<0x0> <>
+(0x0018,0x0015) BodyPartExamined VR=<CS> VL=<0x0> <>
+(0x0018,0x1030) ProtocolName VR=<LO> VL=<0x0> <>
+(0x0020,0x000d) StudyInstanceUID VR=<UI> VL=<0x1a> <1.3.6.1.4.1.9328.50.1.1832>
+(0x0020,0x000e) SeriesInstanceUID VR=<UI> VL=<0x1a> <1.3.6.1.4.1.9328.50.1.1918>
+(0x0020,0x0011) SeriesNumber VR=<IS> VL=<0x0> <>
+(0x0020,0x0052) FrameOfReferenceUID VR=<UI> VL=<0x0> <>
+(0x0020,0x0060) Laterality VR=<CS> VL=<0x0> <>
+(0x0020,0x0200) SynchronizationFrameOfReferenceUID VR=<UI> VL=<0x0> <>
+
+cqlquery =
+<?xml version="1.0" encoding="UTF-8"?>
+<CQLQuery xmlns="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery ..\..\schema\Data\1_gov.nih.nci.cagrid.CQLQuery.xsd">
+  <Target name="gov.nih.nci.ncia.domain.GeneralSeries">
+    <Association roleName="study" name="gov.nih.nci.ncia.domain.Study">
+      <Association roleName="patient" name="gov.nih.nci.ncia.domain.Patient">
+        <Attribute name="patientId" predicate="EQUAL_TO" value="Tony Pan" />
+      </Association>
+    </Association>
+  </Target>
+</CQLQuery>
+
+
+current ie = ProcedureStep target = Series
+xpath =
+(0x0008,0x0021) SeriesDate VR=<DA> VL=<0x0> <>
+(0x0008,0x0060) Modality VR=<CS> VL=<0x0> <>
+(0x0008,0x103e) SeriesDescription VR=<LO> VL=<0x0> <>
+(0x0008,0x1080) AdmittingDiagnosesDescription VR=<LO> VL=<0x0> <>
+(0x0010,0x0020) PatientID VR=<LO> VL=<0x8> <Tony Pan>
+(0x0010,0x1030) PatientWeight VR=<DS> VL=<0x0> <>
+(0x0018,0x0015) BodyPartExamined VR=<CS> VL=<0x0> <>
+(0x0018,0x1030) ProtocolName VR=<LO> VL=<0x0> <>
+(0x0020,0x000d) StudyInstanceUID VR=<UI> VL=<0x0> <>
+(0x0020,0x000e) SeriesInstanceUID VR=<UI> VL=<0x0> <>
+(0x0020,0x0011) SeriesNumber VR=<IS> VL=<0x0> <>
+(0x0020,0x0052) FrameOfReferenceUID VR=<UI> VL=<0x0> <>
+(0x0020,0x0060) Laterality VR=<CS> VL=<0x0> <>
+(0x0020,0x0200) SynchronizationFrameOfReferenceUID VR=<UI> VL=<0x0> <>
+
+cqlquery =
+<?xml version="1.0" encoding="UTF-8"?>
+<CQLQuery xmlns="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery ..\..\schema\Data\1_gov.nih.nci.cagrid.CQLQuery.xsd">
+  <Target name="gov.nih.nci.ncia.domain.Study">
+    <Group logicRelation="AND">
+      <Association roleName="generalSeriesCollection" name="gov.nih.nci.ncia.domain.GeneralSeries">
+        <Attribute name="seriesInstanceUID" predicate="EQUAL_TO" value="1.3..." />
+      </Association>
+      <Association roleName="patient" name="gov.nih.nci.ncia.domain.Patient">
+        <Attribute name="patientId" predicate="EQUAL_TO" value="Tony Pan" />
+      </Association>
+      <Attribute name="studyInstanceUID" predicate="EQUAL_TO" value="1.3.4.." />
+    </Group>
+  </Target>
+</CQLQuery>
+
+
+xpath =
+(0x0008,0x0020) StudyDate VR=<DA> VL=<0x0> <>
+(0x0008,0x0030) StudyTime VR=<TM> VL=<0x0> <>
+(0x0008,0x1030) StudyDescription VR=<LO> VL=<0x0> <>
+(0x0008,0x1080) AdmittingDiagnosesDescription VR=<LO> VL=<0x0> <>
+(0x0008,0x1084) AdmittingDiagnosesCodeSequence VR=<UN> VL=<0x0> [B@6fa9fc 
+(0x0010,0x0020) PatientID VR=<LO> VL=<0x8> <Tony Pan>
+(0x0010,0x1010) PatientAge VR=<AS> VL=<0x0> <>
+(0x0010,0x1020) PatientSize VR=<DS> VL=<0x0> <>
+(0x0010,0x1030) PatientWeight VR=<DS> VL=<0x0> <>
+(0x0010,0x2180) Occupation VR=<SH> VL=<0x0> <>
+(0x0010,0x21b0) AdditionalPatientHistory VR=<LT> VL=<0x0> <>
+(0x0012,0x0050) ClinicalTrialTimePointID VR=<LO> VL=<0x0> <>
+(0x0012,0x0051) ClinicalTrialTimePointDescription VR=<ST> VL=<0x0> <>
+(0x0020,0x000d) StudyInstanceUID VR=<UI> VL=<0x7> <1.3.4..>
+(0x0020,0x000e) SeriesInstanceUID VR=<UI> VL=<0x6> <1.3...>
+(0x0020,0x0010) StudyID VR=<SH> VL=<0x0> <>
+

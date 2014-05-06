@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">
+    <info 
+        organisation="gov.nih.nci.ivi"
+        module="ivi-core"/>
+  <configurations>
+      <!-- TODO: change these -->
+      <conf name="core"/>
+      <conf name="fs" extends="core"/>
+      <conf name="dsd" extends="core"/>
+      <conf name="dicom" extends="core"/>
+      <conf name="pathology" extends="core"/>
+    <conf name="auth" extends="dicom"/>
+	<conf name="impl" extends="fs,dsd,dicom,pathology" visibility="private"/>
+	<conf name="test" extends="impl" visibility="private"/>
+
+  </configurations>
+  <publications>
+      <artifact name="iviCore" type="jar" conf="core" />
+      <artifact name="iviAuthorization" type="jar" conf="auth" />
+      <artifact name="iviPathology" type="jar" conf="pathology" />
+      <artifact name="FSCQL" type="jar" conf="fs" />
+      <artifact name="DSDRepositoryCQL" type="jar" conf="dsd" />
+      <artifact name="DICOMCQL" type="jar" conf="dicom" />
+  </publications>
+  <dependencies>
+      <!-- dependency org="org.projectmobius" name="mobius-clients" rev="1.0" conf="*->default" / -->
+      <!-- dependency org="org.projectmobius" name="mako-server" rev="1.0" conf="mako->default" / -->
+	<dependency org="gov.nih.nci.ivi" name="ivi-test" rev="latest.integration" conf="test->default" />
+	<dependency org="gov.nih.nci.ivi" name="ivi-model-ncia" rev="latest.integration" conf="dicom->stubs" />
+	<dependency org="gov.nih.nci.ivi" name="ivi-model-genericimage" rev="latest.integration" conf="fs->stubs" />
+	<dependency org="gov.nih.nci.ivi" name="ivi-model-pathology" rev="latest.integration" conf="pathology->stubs" />
+	<dependency org="gov.nih.nci.ivi" name="ivi-model-dsd" rev="latest.integration" conf="dsd->stubs" />
+
+      <dependency org="org.pixelmed" name="pixelmed" rev="2008" conf="dicom->default" />
+      <!-- dependency org="concurrent" name="concurrent" rev="1.3.4" conf="*->default" / -->
+	
+	
+	<dependency org="caGrid" name="discovery" rev="${cagrid.version}" conf="dsd->default"/>
+	<dependency org="caGrid" name="gaards-ui" rev="${cagrid.version}" conf="auth,dsd->base"/>
+	
+	<dependency org="caGrid" name="data" rev="${cagrid.version}" conf="dicom,fs,dsd->service"/>
+	<dependency org="edu.osu.bmi" name="utils.io" rev="latest.integration" conf="core->default"/>
+	<dependency org="edu.osu.bmi" name="security.authorization" rev="latest.integration" conf="dicom->default"/>
+<!--  Uncomment this to support auth security.
+	<dependency org="edu.emory.cci" name="security.auth" rev="latest.integration" conf="auth->default" />
+ 	<dependency org="qos.ch" name="slf4j" rev="1.5.6" conf="auth->log4j" />
+ -->
+  </dependencies>
+</ivy-module>

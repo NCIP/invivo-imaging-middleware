@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">
+    <info 
+        organisation="gov.nih.nci.ivi"
+        module="VirtualPACS"/>
+    <configurations>
+	    <conf name="target_grid" visibility="private"/>
+
+      <conf name="default"/>
+	<conf name="impl" extends="default" visibility="private"/>
+	<conf name="test" extends="impl" visibility="private"/>
+    <conf name="endorsed" visibility="public"/>
+    </configurations>
+    <publications>
+      <artifact name="virtualpacs" type="jar" conf="default" />
+    </publications>
+    <dependencies>
+
+	<!-- dependency for globus -->
+    <dependency rev="${target.grid}" org="caGrid" name="target_grid" conf="target_grid->ui"/>
+
+	<!-- standard jars included from a introduce generated service skeleton -->
+	
+	<dependency org="caGrid" name="data" rev="${cagrid.version}" conf="default->tools" />
+	<dependency org="caGrid" name="core" rev="${cagrid.version}" conf="default->ui" />
+	<dependency org="caGrid" name="gaards-ui" rev="${cagrid.version}" conf="default->dorian,gridgrouper,gts,endorsed;endorsed->endorsed" />
+	<dependency org="caGrid" name="discovery" rev="${cagrid.version}" conf="default->default" />
+	<dependency org="caGrid" name="wsEnum" rev="${cagrid.version}" conf="default->default" />
+	<dependency org="globus" name="wsrf-core-enum" rev="latest.integration" conf="default->default" />
+	
+
+	<!-- ivi dependencies -->
+    <dependency org="gov.nih.nci.ivi" name="DICOMDataService" rev="latest.integration" conf="default->client" />
+    <dependency org="gov.nih.nci" name="NCIACoreService" rev="latest.integration" conf="default->client" />
+<!--	<dependency org="gov.nih.nci.ivi" name="ivi-test" rev="latest.integration" conf="test->default" />
+-->
+
+    </dependencies>
+</ivy-module>

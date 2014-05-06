@@ -1,0 +1,149 @@
+<cruisecontrol>
+    <project name="caGrid-1.0-continuous" buildafterfailed="false">
+        <dateformat format="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+        <listeners>
+            <currentbuildstatuslistener file="logs/caGrid-1.0-continuous/buildstatus.txt"/>
+        </listeners>
+        <!-- Bootstrappers are run every time the build runs, 
+            *before* the modification checks -->
+        <bootstrappers> </bootstrappers>
+        <!-- Defines where cruise looks for changes, to decide
+            whether to run the build -->
+        <modificationset quietperiod="30">
+            <cvs localworkingcopy="checkout/caGrid-1.0-continuous"/>
+        </modificationset>
+        <!-- Configures the actual build loop, how often and which
+            build file/target -->
+        <schedule interval="60">
+            <ant buildfile="build-caGrid-1.0-continuous.xml" target="test" uselogger="true"
+                usedebug="false" timeout="2000">
+                <jvmarg arg="-Xmx512m"/>
+            </ant>
+        </schedule>
+        <!-- directory to write build logs to -->
+        <log dir="logs/caGrid-1.0-continuous">
+            <merge dir="checkout/caGrid-1.0-continuous/caGrid/test/logs/junit"/>
+            <merge file="checkout/caGrid-1.0-continuous/caGrid/test/logs/BuildNameContinuous.xml"/>
+        </log>
+        <!-- Publishers are run *after* a build completes -->
+        <publishers>
+            <htmlemail mailhost="columbus.bmi.ohio-state.edu" returnaddress="oster@bmi.osu.edu"
+                buildresultsurl="http://vandelay.bmi.ohio-state.edu:8080/cruisecontrol/buildresults/caGrid-1.0-continuous"
+                skipusers="true" spamwhilebroken="true"
+                css="/usr/local/bin/cruisecontrol/reporting/jsp/webcontent/css/cruisecontrol.css"
+                xsldir="/usr/local/bin/cruisecontrol/reporting/jsp/webcontent/xsl" logdir="logs/caGrid-1.0-continuous">
+                <failure address="developers" reportWhenFixed="true"/>
+                <map alias="developers"
+                    address="oster@bmi.osu.edu, hastings@bmi.osu.edu, langella@bmi.osu.edu, ervin@bmi.osu.edu, patrick.mcconnell@Duke.edu, madduri@mcs.anl.gov, joshua.phillips@semanticbits.com, parmarv@mail.nih.gov"
+                />
+            </htmlemail>
+            <!--<artifactspublisher dir="checkout/caGrid-1.0-continuous/build/jars" dest="artifacts/caGrid-1.0-continuous"/>-->
+            <antpublisher buildfile="checkout/caGrid-1.0-continuous/caGrid/build.xml" target="ccpublish"/>
+        </publishers>
+    </project>
+    <!-- Nightly build at 4am local time, see the schedule/ant tag, time attribute -->
+    <!-- Should update code from the last nightly build -->
+    <project name="caGrid-1.0-nightly" buildafterfailed="false">
+        <dateformat format="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+        <listeners>
+            <currentbuildstatuslistener file="logs/caGrid-1.0-nightly/buildstatus.txt"/>
+        </listeners>
+        <!-- Bootstrappers are run every time the build runs, 
+            *before* the modification checks -->
+        <bootstrappers> </bootstrappers>
+        <!-- Defines where cruise looks for changes, to decide
+            whether to run the build -->
+        <modificationset quietperiod="30">
+            <cvs localworkingcopy="checkout/caGrid-1.0-nightly"/>
+            <alwaysbuild/>
+        </modificationset>
+        <!-- Configures the actual build loop, how often and which
+            build file/target -->
+        <schedule interval="300">
+            <ant buildfile="build-caGrid-1.0-nightly.xml" target="test" uselogger="true"
+                usedebug="false" time="0400" timeout="2000">
+                <jvmarg arg="-Xmx512m"/>
+            </ant>
+        </schedule>
+        <!-- directory to write build logs to -->
+        <log dir="logs/caGrid-1.0-nightly">
+            <merge dir="checkout/caGrid-1.0-nightly/caGrid/test/logs/junit"/>
+            <merge file="checkout/caGrid-1.0-nightly/caGrid/test/logs/BuildNameNightly.xml"/>
+        </log>
+        <!-- Publishers are run *after* a build completes -->
+        <publishers>
+            <htmlemail mailhost="columbus.bmi.ohio-state.edu" returnaddress="oster@bmi.osu.edu"
+                buildresultsurl="http://vandelay.bmi.ohio-state.edu:8080/cruisecontrol/buildresults/caGrid-1.0-nightly"
+                skipusers="true" spamwhilebroken="true"
+                css="/usr/local/bin/cruisecontrol/reporting/jsp/webcontent/css/cruisecontrol.css"
+                xsldir="/usr/local/bin/cruisecontrol/reporting/jsp/webcontent/xsl" logdir="logs/caGrid-1.0-nightly">
+                <failure address="developers" reportWhenFixed="true"/>
+                <map alias="developers"
+                    address="oster@bmi.osu.edu, hastings@bmi.osu.edu, langella@bmi.osu.edu, ervin@bmi.osu.edu, patrick.mcconnell@Duke.edu, madduri@mcs.anl.gov, joshua.phillips@semanticbits.com, parmarv@mail.nih.gov"
+                />
+            </htmlemail>
+            <!--<artifactspublisher dir="checkout/caGrid-1.0-nightly/build/jars" dest="artifacts/caGrid-1.0-nightly"/>-->
+            <antpublisher buildfile="checkout/caGrid-1.0-nightly/caGrid/build.xml" target="ccpublish"/>
+        </publishers>
+    </project>
+    
+    
+    
+
+  <!-- ================================================================ -->
+  <!-- CAGRID TESTS SYSTEM                                              -->
+  <!-- ================================================================ -->
+
+  <project name="caGrid-1.0-system" buildafterfailed="true">
+    <dateformat format="yyyy-MM-dd'T'HH:mm:ss.SZ"/>
+    <listeners>
+      <currentbuildstatuslistener
+          file="logs/caGrid-1.0-system/status.txt"/>
+    </listeners>
+
+    <!-- Bootstrappers are run every time the build runs,
+        *before* the modification checks -->
+    <bootstrappers>
+    </bootstrappers>
+
+    <!-- Defines where cruise looks for changes, to decide
+         whether to run the build -->
+    <modificationset requiremodification="true" quietperiod="30">
+      <cvs localworkingcopy="checkout/caGrid-1.0-system/cagrid-1-0/caGrid"/>
+      <cvs localworkingcopy="checkout/caGrid-1.0-system/cagrid-1-0/tests"/>
+    </modificationset>
+
+    <!-- Configures the actual build loop, how often and which
+         build file/target -->
+    <schedule interval="7200">
+      <ant anthome="/usr/local/home/oster/bin/ant"
+           buildfile="build-caGrid-1.0-system.xml"
+           target="test"
+           uselogger="true"
+           usedebug="false"
+           timeout="5000"
+      />
+    </schedule>
+
+    <!-- directory to write build logs to -->
+    <log logdir="logs/caGrid-1.0-system">
+		<merge dir="checkout/caGrid-1.0-system/cagrid-1-0/caGrid/test/logs/"/>
+		<merge file="checkout/caGrid-1.0-system/cagrid-1-0/caGrid/test/logs/BuildNameSystem.xml"/>
+    </log>
+
+    <!-- Publishers are run *after* a build completes -->
+    <publishers>
+            <htmlemail mailhost="columbus.bmi.ohio-state.edu" returnaddress="oster@bmi.osu.edu"
+                buildresultsurl="http://lima.bmi.ohio-state.edu:8080/cruisecontrol/buildresults/caGrid-1.0-system"
+                skipusers="true" spamwhilebroken="true"
+                css="/usr/local/home/oster/bin/cruisecontrol/reporting/jsp/webcontent/css/cruisecontrol.css"
+                xsldir="/usr/local/home/oster/bin/cruisecontrol/reporting/jsp/webcontent/xsl" logdir="logs/caGrid-1.0-system">
+                <failure address="developers" reportWhenFixed="true"/>
+                <map alias="developers"
+                    address="oster@bmi.osu.edu, hastings@bmi.osu.edu, langella@bmi.osu.edu, ervin@bmi.osu.edu, patrick.mcconnell@Duke.edu, madduri@mcs.anl.gov, joshua.phillips@semanticbits.com, parmarv@mail.nih.gov"
+                />
+            </htmlemail>
+        <antpublisher buildfile="checkout/caGrid-1.0-system/cagrid-1-0/tests/build.xml" target="ccpublish"/>
+    </publishers>
+  </project>
+</cruisecontrol>

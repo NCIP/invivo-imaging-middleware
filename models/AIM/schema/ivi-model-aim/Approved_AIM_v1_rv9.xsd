@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" targetNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" elementFormDefault="qualified">
+	<xs:simpleType name="AnnotationOfAnnotationIdentifier">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RECIST_Baseline_Sum_of_Longest_Diameter"/>
+			<xs:enumeration value="RECIST_Follow-up_Sum_of_Longest_Diameter"/>
+			<xs:enumeration value="Interval_Change"/>
+			<xs:enumeration value="Summary_Statistic"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AnnotationCalculationIdentifier">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Absolute_Value"/>
+			<xs:enumeration value="Angle"/>
+			<xs:enumeration value="Surface_of_Revolution"/>
+			<xs:enumeration value="Mean"/>
+			<xs:enumeration value="Mode"/>
+			<xs:enumeration value="Standard_Deviation"/>
+			<xs:enumeration value="Standard_Error"/>
+			<xs:enumeration value="Maximum"/>
+			<xs:enumeration value="Minimum"/>
+			<xs:enumeration value="Center_of_Area"/>
+			<xs:enumeration value="2D_Center_of_Mass"/>
+			<xs:enumeration value="3D_Center_of_Mass"/>
+			<xs:enumeration value="Sum"/>
+			<xs:enumeration value="Difference"/>
+			<xs:enumeration value="Product"/>
+			<xs:enumeration value="Quotient"/>
+			<xs:enumeration value="SUV"/>
+			<xs:enumeration value="Perfusion"/>
+			<xs:enumeration value="Permeability"/>
+			<xs:enumeration value="Blood_Volume"/>
+			<xs:enumeration value="Percent_Stenosis"/>
+			<xs:enumeration value="Length"/>
+			<xs:enumeration value="Path_Length"/>
+			<xs:enumeration value="Distance"/>
+			<xs:enumeration value="Width"/>
+			<xs:enumeration value="Depth"/>
+			<xs:enumeration value="Diameter"/>
+			<xs:enumeration value="Long_Axis"/>
+			<xs:enumeration value="Short_Axis"/>
+			<xs:enumeration value="Major_Axis"/>
+			<xs:enumeration value="Minor_Axis"/>
+			<xs:enumeration value="Perpendicular_Axis"/>
+			<xs:enumeration value="Radius"/>
+			<xs:enumeration value="Perimeter"/>
+			<xs:enumeration value="Circumference"/>
+			<xs:enumeration value="Diameter_of_Circumscribed_Circle"/>
+			<xs:enumeration value="Height"/>
+			<xs:enumeration value="Area"/>
+			<xs:enumeration value="Area_of_Defined_Region"/>
+			<xs:enumeration value="Volume"/>
+			<xs:enumeration value="Volume_Estimated_from_Single_2D_Region"/>
+			<xs:enumeration value="Volume_Estimated_from_Two_Non-Coplanar_2D_Regions"/>
+			<xs:enumeration value="Volume_Estimated_from_Three_or_More_Non-Coplanar_2D_Regions"/>
+			<xs:enumeration value="Volume_of_Sphere"/>
+			<xs:enumeration value="Volume_of_Ellipsoid"/>
+			<xs:enumeration value="Volume_of_Circumscribed_Sphere"/>
+			<xs:enumeration value="Volume_of_Bounding_Three_Dimensional_Region"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CalculationResultIdentifier">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Scalar"/>
+			<xs:enumeration value="Vector"/>
+			<xs:enumeration value="Histogram"/>
+			<xs:enumeration value="Matrix"/>
+			<xs:enumeration value="Array"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImageAnnotationIdentifier">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RECIST_Baseline_Target_Lesion"/>
+			<xs:enumeration value="RECIST_Baseline_Non-target_Lesion"/>
+			<xs:enumeration value="RECIST_Fellow-up_Target_Lesion"/>
+			<xs:enumeration value="RECIST_Fellow-up_Non-target_Lesion"/>
+			<xs:enumeration value="LIDC_Chest_CT_Nodule"/>
+			<xs:enumeration value="Teaching"/>
+			<xs:enumeration value="Quality_Control"/>
+			<xs:enumeration value="Clinical_Finding"/>
+			<xs:enumeration value="Other"/>
+			<xs:enumeration value="Brain_Tumor_Baseline_Target_Lesion"/>
+			<xs:enumeration value="Brain_Tumor_Baseline_Non-Target_Lesion"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="MultiPoint" type="MultiPoint"/>
+	<xs:complexType name="MultiPoint">
+		<xs:complexContent>
+			<xs:extension base="GeometricShape">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ReferencedCalculation" type="ReferencedCalculation"/>
+	<xs:complexType name="ReferencedCalculation">
+		<xs:sequence/>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="referencedCalculationUID" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="SpatialCoordinate" type="SpatialCoordinate"/>
+	<xs:complexType name="SpatialCoordinate" abstract="true">
+		<xs:sequence/>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="coordinateIndex" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="ReferencedAnnotation" type="ReferencedAnnotation"/>
+	<xs:complexType name="ReferencedAnnotation">
+		<xs:sequence/>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="referencedAnnotationUID" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Annotation" type="Annotation"/>
+	<xs:complexType name="Annotation" abstract="true">
+		<xs:sequence>
+			<xs:element name="user" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="User" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="imagingObservationCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImagingObservation" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="calculationCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Calculation" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="equipment" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Equipment" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="anatomicEntityCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="AnatomicEntity" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="aimVersion" type="xs:string"/>
+		<xs:attribute name="comment" type="xs:string"/>
+		<xs:attribute name="dateTime" type="xs:dateTime"/>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="uid" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Data" type="Data"/>
+	<xs:complexType name="Data">
+		<xs:sequence>
+			<xs:element name="coordinateCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Coordinate" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="value" type="xs:double"/>
+	</xs:complexType>
+	<xs:element name="AnatomicEntity" type="AnatomicEntity"/>
+	<xs:complexType name="AnatomicEntity">
+		<xs:sequence>
+			<xs:element name="annotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Annotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="relatedAnatomicEntity" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="AnatomicEntity" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="codeMeaning" type="xs:string"/>
+		<xs:attribute name="codingSchemeDesignator" type="xs:string"/>
+		<xs:attribute name="codeValue" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="ImageView" type="ImageView"/>
+	<xs:complexType name="ImageView">
+		<xs:sequence>
+			<xs:element name="image" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Image" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="imageViewModifierCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageViewModifier" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="codeSequence" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="CodeSequence" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="Coordinate" type="Coordinate"/>
+	<xs:complexType name="Coordinate">
+		<xs:sequence/>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="dimensionIndex" type="xs:integer"/>
+		<xs:attribute name="position" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="ImageReference" type="ImageReference"/>
+	<xs:complexType name="ImageReference" abstract="true">
+		<xs:sequence>
+			<xs:element name="imageAnnotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageAnnotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="CodeSequence" type="CodeSequence"/>
+	<xs:complexType name="CodeSequence">
+		<xs:sequence>
+			<xs:element name="imageView" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageView" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="imageViewModifier" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageViewModifier" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="codeMeaning" type="xs:string"/>
+		<xs:attribute name="codeValue" type="xs:string"/>
+		<xs:attribute name="codingSchemeDesignator" type="xs:string"/>
+		<xs:attribute name="codingSchemeVersion" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="DICOMImageReference" type="DICOMImageReference"/>
+	<xs:complexType name="DICOMImageReference">
+		<xs:complexContent>
+			<xs:extension base="ImageReference">
+				<xs:sequence>
+					<xs:element name="study" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Study" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="WebImageReference" type="WebImageReference"/>
+	<xs:complexType name="WebImageReference">
+		<xs:complexContent>
+			<xs:extension base="ImageReference">
+				<xs:sequence/>
+				<xs:attribute name="uri" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Dimension" type="Dimension"/>
+	<xs:complexType name="Dimension">
+		<xs:sequence/>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="index" type="xs:integer"/>
+		<xs:attribute name="size" type="xs:integer"/>
+		<xs:attribute name="label" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Image" type="Image"/>
+	<xs:complexType name="Image">
+		<xs:sequence>
+			<xs:element name="imageView" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageView" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="series" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Series" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="SOPClassUID" type="xs:string"/>
+		<xs:attribute name="SOPInstanceUID" type="xs:string"/>
+		<xs:attribute name="imageLaterality" type="xs:string"/>
+		<xs:attribute name="patientOrientationRow" type="xs:string"/>
+		<xs:attribute name="patientOrientationColumn" type="xs:string"/>
+		<xs:attribute name="pixelSpacingHorizontal" type="xs:double"/>
+		<xs:attribute name="pixelSpacingVertical" type="xs:double"/>
+		<xs:attribute name="acquisitionDatetime" type="xs:dateTime"/>
+	</xs:complexType>
+	<xs:element name="ImageViewModifier" type="ImageViewModifier"/>
+	<xs:complexType name="ImageViewModifier">
+		<xs:sequence>
+			<xs:element name="imageView" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageView" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="codeSequence" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="CodeSequence" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="AnnotationOfAnnotation" type="AnnotationOfAnnotation"/>
+	<xs:complexType name="AnnotationOfAnnotation">
+		<xs:complexContent>
+			<xs:extension base="Annotation">
+				<xs:sequence>
+					<xs:element name="referencedAnnotationCollection" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="ReferencedAnnotation" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="annotationOfAnnotationType" type="AnnotationOfAnnotationIdentifier"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Point" type="Point"/>
+	<xs:complexType name="Point">
+		<xs:complexContent>
+			<xs:extension base="GeometricShape">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ThreeDSpatialCoordinate" type="ThreeDSpatialCoordinate"/>
+	<xs:complexType name="ThreeDSpatialCoordinate">
+		<xs:complexContent>
+			<xs:extension base="SpatialCoordinate">
+				<xs:sequence/>
+				<xs:attribute name="x" type="xs:double"/>
+				<xs:attribute name="y" type="xs:double"/>
+				<xs:attribute name="z" type="xs:double"/>
+				<xs:attribute name="frameOfReferenceUID" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TextAnnotation" type="TextAnnotation"/>
+	<xs:complexType name="TextAnnotation">
+		<xs:sequence>
+			<xs:element name="multiPoint" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="MultiPoint" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="imageAnnotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageAnnotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="font" type="xs:string"/>
+		<xs:attribute name="fontColor" type="xs:string"/>
+		<xs:attribute name="fontEffect" type="xs:string"/>
+		<xs:attribute name="fontSize" type="xs:string"/>
+		<xs:attribute name="fontStyle" type="xs:string"/>
+		<xs:attribute name="text" type="xs:string"/>
+		<xs:attribute name="textJustify" type="xs:string"/>
+		<xs:attribute name="fontOpacity" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="GeometricShape" type="GeometricShape"/>
+	<xs:complexType name="GeometricShape" abstract="true">
+		<xs:sequence>
+			<xs:element name="spatialCoordinateCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="SpatialCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="imageAnnotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageAnnotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="lineColor" type="xs:string"/>
+		<xs:attribute name="lineOpacity" type="xs:string"/>
+		<xs:attribute name="lineStyle" type="xs:string"/>
+		<xs:attribute name="lineThickness" type="xs:string"/>
+		<xs:attribute name="includeFlag" type="xs:boolean"/>
+		<xs:attribute name="shapeId" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="ProbabilityMap" type="ProbabilityMap"/>
+	<xs:complexType name="ProbabilityMap">
+		<xs:sequence>
+			<xs:element name="imagingObservation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImagingObservation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="imageAnnotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageAnnotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="instatnceUID" type="xs:string"/>
+		<xs:attribute name="referencedInstanceUID" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Polyline" type="Polyline"/>
+	<xs:complexType name="Polyline">
+		<xs:complexContent>
+			<xs:extension base="GeometricShape">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Calculation" type="Calculation"/>
+	<xs:complexType name="Calculation">
+		<xs:sequence>
+			<xs:element name="annotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Annotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="referencedCalculationCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ReferencedCalculation" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="calculationResultCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="CalculationResult" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="uid" type="xs:string"/>
+		<xs:attribute name="description" type="xs:string"/>
+		<xs:attribute name="mathML" type="xs:string"/>
+		<xs:attribute name="type" type="AnnotationCalculationIdentifier"/>
+	</xs:complexType>
+	<xs:element name="ImagingObservation" type="ImagingObservation"/>
+	<xs:complexType name="ImagingObservation">
+		<xs:sequence>
+			<xs:element name="imagingObservationCharacteristicCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImagingObservationCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="annotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Annotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="relatedImagingObservation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImagingObservation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="probabilityMap" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ProbabilityMap" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="codeMeaning" type="xs:string"/>
+		<xs:attribute name="codingSchemeDesignator" type="xs:string"/>
+		<xs:attribute name="codeValue" type="xs:string"/>
+		<xs:attribute name="comment" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="User" type="User"/>
+	<xs:complexType name="User">
+		<xs:sequence>
+			<xs:element name="annotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Annotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="authorName" type="xs:string"/>
+		<xs:attribute name="loginName" type="xs:string"/>
+		<xs:attribute name="roleInTrial" type="xs:string"/>
+		<xs:attribute name="numberWithinRoleOfClinicalTrial" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="Series" type="Series"/>
+	<xs:complexType name="Series">
+		<xs:sequence>
+			<xs:element name="study" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Study" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="imageCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Image" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="seriesInstanceUID" type="xs:string"/>
+		<xs:attribute name="protocolName" type="xs:string"/>
+		<xs:attribute name="modality" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="ImagingObservationCharacteristic" type="ImagingObservationCharacteristic"/>
+	<xs:complexType name="ImagingObservationCharacteristic">
+		<xs:sequence>
+			<xs:element name="relatedImagingObservationCharacteristic" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImagingObservationCharacteristic" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="imagingObservation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImagingObservation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="codeMeaning" type="xs:string"/>
+		<xs:attribute name="codingSchemeDesignator" type="xs:string"/>
+		<xs:attribute name="codeValue" type="xs:string"/>
+		<xs:attribute name="comment" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Equipment" type="Equipment"/>
+	<xs:complexType name="Equipment">
+		<xs:sequence>
+			<xs:element name="annotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Annotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="manufacturer" type="xs:string"/>
+		<xs:attribute name="manufacturerModelName" type="xs:string"/>
+		<xs:attribute name="softwareVersions" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Circle" type="Circle"/>
+	<xs:complexType name="Circle">
+		<xs:complexContent>
+			<xs:extension base="GeometricShape">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CalculationResult" type="CalculationResult"/>
+	<xs:complexType name="CalculationResult">
+		<xs:sequence>
+			<xs:element name="dimensionCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Dimension" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="dataCollection" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Data" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="type" type="CalculationResultIdentifier"/>
+		<xs:attribute name="numberOfDimensions" type="xs:integer"/>
+		<xs:attribute name="unitOfMeasure" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Ellipse" type="Ellipse"/>
+	<xs:complexType name="Ellipse">
+		<xs:complexContent>
+			<xs:extension base="GeometricShape">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Patient" type="Patient"/>
+	<xs:complexType name="Patient">
+		<xs:sequence>
+			<xs:element name="imageAnnotation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ImageAnnotation" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="patientID" type="xs:string"/>
+		<xs:attribute name="birthDate" type="xs:dateTime"/>
+		<xs:attribute name="sex" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Study" type="Study"/>
+	<xs:complexType name="Study">
+		<xs:sequence>
+			<xs:element name="dicomImageReference" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="DICOMImageReference" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="series" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Series" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="studyInstanceUID" type="xs:string"/>
+		<xs:attribute name="date" type="xs:dateTime"/>
+	</xs:complexType>
+	<xs:element name="ImageAnnotation" type="ImageAnnotation"/>
+	<xs:complexType name="ImageAnnotation">
+		<xs:complexContent>
+			<xs:extension base="Annotation">
+				<xs:sequence>
+					<xs:element name="imageReferenceCollection" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="ImageReference" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="probabilityMapCollection" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="ProbabilityMap" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="geometricShapeCollection" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="GeometricShape" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="patient" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Patient" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="textAnnotationCollection" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="TextAnnotation" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="imageAnnotationType" type="ImageAnnotationIdentifier"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TwoDSpatialCoordinate" type="TwoDSpatialCoordinate"/>
+	<xs:complexType name="TwoDSpatialCoordinate">
+		<xs:complexContent>
+			<xs:extension base="SpatialCoordinate">
+				<xs:sequence/>
+				<xs:attribute name="imageReferenceUID" type="xs:string"/>
+				<xs:attribute name="referencedFrameNumber" type="xs:integer"/>
+				<xs:attribute name="x" type="xs:double"/>
+				<xs:attribute name="y" type="xs:double"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

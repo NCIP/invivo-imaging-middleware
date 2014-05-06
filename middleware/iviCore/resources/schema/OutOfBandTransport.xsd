@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Tony C. Pan (OSU BMI) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:obt="gme://IVI.caBIG/1/gov.nih.nci.cabig.ivi.outofbandtransport" xmlns:mobius="IVI.caBIG/1/gov.nih.nci.cabig.ivi.outofbandtransport" targetNamespace="gme://IVI.caBIG/1/gov.nih.nci.cabig.ivi.outofbandtransport" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="OutOfBandTransport" type="obt:OutOfBandTransportType">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="DataLocationType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="DataItem" type="obt:DataItemType" maxOccurs="unbounded"/>
+				<xs:element name="BundledDataItem" type="obt:BundledDataItemType" maxOccurs="unbounded"/>
+				<xs:element name="GridFTPDataItem" type="obt:GridFTPDataItemType" maxOccurs="unbounded"/>
+				<xs:element name="Base64DataItem" type="obt:Base64DataItemType" maxOccurs="unbounded"/>
+				<xs:element name="FileSystemDataItem" type="obt:FileSystemDataItemType" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:sequence>
+				<xs:element ref="obt:Metadata" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="LocationURL" type="xs:string" use="required"/>
+		<xs:attribute name="LocationPort" type="xs:string" use="optional"/>
+		<xs:attribute name="TransportMechanismType" type="xs:string" use="required"/>
+		<xs:attribute name="CompressionType" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="DataItemType" abstract="true">
+		<xs:sequence>
+			<xs:element ref="obt:Metadata" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OutOfBandTransportType">
+		<xs:sequence>
+			<xs:element name="DataLocation" type="obt:DataLocationType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MetadataType">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="value" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Base64DataItemType">
+		<xs:complexContent>
+			<xs:extension base="obt:DataItemType">
+				<xs:attribute name="BinaryData" type="xs:base64Binary" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GridFTPDataItemType">
+		<xs:complexContent>
+			<xs:extension base="obt:BundledDataItemType">
+				<xs:attribute name="DataIdentifier" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FileSystemDataItemType">
+		<xs:complexContent>
+			<xs:extension base="obt:BundledDataItemType">
+				<xs:attribute name="DataIdentifier" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BundledDataItemType">
+		<xs:complexContent>
+			<xs:extension base="obt:DataItemType">
+				<xs:attribute name="TargetChunkSize" type="xs:int" use="optional"/>
+				<xs:attribute name="TargetBundleFileCount" type="xs:int" use="optional"/>
+				<xs:attribute name="BundleMechanism" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GridFTPDataItem" type="obt:GridFTPDataItemType"/>
+	<xs:element name="Base64DataItem" type="obt:Base64DataItemType"/>
+	<xs:element name="FileSystemDataItem" type="obt:FileSystemDataItemType"/>
+	<xs:element name="DataLocation" type="obt:DataLocationType"/>
+	<xs:element name="Metadata" type="obt:MetadataType"/>
+</xs:schema>

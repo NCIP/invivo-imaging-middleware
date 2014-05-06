@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncia="gme://NCIA.CIP/2.0/gov.nih.nci.ncia" targetNamespace="gme://NCIA.CIP/2.0/gov.nih.nci.ncia" elementFormDefault="qualified">
+	<xs:element name="ClinicalTrial" type="ncia:ClinicalTrial"/>
+	<xs:complexType name="ClinicalTrial">
+		<xs:sequence/>
+		<xs:attribute name="coordinatingCenter" type="xs:string" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="protocolId" type="xs:string" use="required"/>
+		<xs:attribute name="protocolName" type="xs:string" use="required"/>
+		<xs:attribute name="sponsorName" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="Study" type="ncia:Study"/>
+	<xs:complexType name="Study">
+		<xs:sequence>
+			<xs:element name="generalSeriesCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:GeneralSeries" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="additionalPatientHistory" type="xs:string" use="required"/>
+		<xs:attribute name="admittingDiagnosesCodeSeq" type="xs:string" use="required"/>
+		<xs:attribute name="admittingDiagnosesDesc" type="xs:string" use="required"/>
+		<xs:attribute name="ageGroup" type="xs:string" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="occupation" type="xs:string" use="required"/>
+		<xs:attribute name="patientAge" type="xs:string" use="required"/>
+		<xs:attribute name="patientSize" type="xs:double" use="required"/>
+		<xs:attribute name="patientWeight" type="xs:double" use="required"/>
+		<xs:attribute name="studyDate" type="xs:date" use="required"/>
+		<xs:attribute name="studyDesc" type="xs:string" use="required"/>
+		<xs:attribute name="studyId" type="xs:string" use="required"/>
+		<xs:attribute name="studyInstanceUID" type="xs:string" use="required"/>
+		<xs:attribute name="studyTime" type="xs:string" use="required"/>
+		<xs:attribute name="timePointDesc" type="xs:string" use="required"/>
+		<xs:attribute name="timePointId" type="xs:string" use="required"/>
+		<xs:attribute name="visibility" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="GeneralSeries" type="ncia:GeneralSeries"/>
+	<xs:complexType name="GeneralSeries">
+		<xs:sequence>
+			<xs:element name="generalImageCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:GeneralImage" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="admittingDiagnosesDesc" type="xs:string" use="required"/>
+		<xs:attribute name="annotationsFlag" type="xs:boolean" use="required"/>
+		<xs:attribute name="bodyPartExamined" type="xs:string" use="required"/>
+		<xs:attribute name="frameOfReferenceUID" type="xs:string" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="laterality" type="xs:string" use="required"/>
+		<xs:attribute name="modality" type="xs:string" use="required"/>
+		<xs:attribute name="patientWeight" type="xs:integer" use="required"/>
+		<xs:attribute name="protocolName" type="xs:string" use="required"/>
+		<xs:attribute name="securityGroup" type="xs:string" use="required"/>
+		<xs:attribute name="seriesDate" type="xs:date" use="required"/>
+		<xs:attribute name="seriesDesc" type="xs:string" use="required"/>
+		<xs:attribute name="seriesInstanceUID" type="xs:string" use="required"/>
+		<xs:attribute name="seriesNumber" type="xs:integer" use="required"/>
+		<xs:attribute name="syncFrameOfRefUID" type="xs:string" use="required"/>
+		<xs:attribute name="visibility" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="GeneralImage" type="ncia:GeneralImage"/>
+	<xs:complexType name="GeneralImage">
+		<xs:sequence>
+			<xs:element name="study">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:Study"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="patient">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:Patient"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="dataProvenance">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:TrialDataProvenance"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="acquisitionDate" type="xs:date" use="required"/>
+		<xs:attribute name="acquisitionDatetime" type="xs:string" use="required"/>
+		<xs:attribute name="acquisitionNumber" type="xs:integer" use="required"/>
+		<xs:attribute name="acquisitionTime" type="xs:string" use="required"/>
+		<xs:attribute name="annotation" type="xs:string" use="required"/>
+		<xs:attribute name="columns" type="xs:integer" use="required"/>
+		<xs:attribute name="contentDate" type="xs:date" use="required"/>
+		<xs:attribute name="contentTime" type="xs:string" use="required"/>
+		<xs:attribute name="contrastBolusAgent" type="xs:string" use="required"/>
+		<xs:attribute name="contrastBolusRoute" type="xs:string" use="required"/>
+		<xs:attribute name="curationTimestamp" type="xs:dateTime" use="required"/>
+		<xs:attribute name="dicomSize" type="xs:long" use="required"/>
+		<xs:attribute name="filename" type="xs:string" use="required"/>
+		<xs:attribute name="focalSpotSize" type="xs:double" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="imageComments" type="xs:string" use="required"/>
+		<xs:attribute name="imageLaterality" type="xs:string" use="required"/>
+		<xs:attribute name="imageOrientationPatient" type="xs:string" use="required"/>
+		<xs:attribute name="imagePositionPatient" type="xs:string" use="required"/>
+		<xs:attribute name="imageType" type="xs:string" use="required"/>
+		<xs:attribute name="instanceNumber" type="xs:integer" use="required"/>
+		<xs:attribute name="lossyImageCompression" type="xs:string" use="required"/>
+		<xs:attribute name="patientId" type="xs:string" use="required"/>
+		<xs:attribute name="patientPkId" type="xs:integer" use="required"/>
+		<xs:attribute name="patientPosition" type="xs:string" use="required"/>
+		<xs:attribute name="pixelSpacing" type="xs:double" use="required"/>
+		<xs:attribute name="project" type="xs:string" use="required"/>
+		<xs:attribute name="rows" type="xs:integer" use="required"/>
+		<xs:attribute name="seriesInstanceUID" type="xs:string" use="required"/>
+		<xs:attribute name="seriesPKId" type="xs:integer" use="required"/>
+		<xs:attribute name="sliceLocation" type="xs:double" use="required"/>
+		<xs:attribute name="sliceThickness" type="xs:double" use="required"/>
+		<xs:attribute name="SOPClassUID" type="xs:string" use="required"/>
+		<xs:attribute name="SOPInstanceUID" type="xs:string" use="required"/>
+		<xs:attribute name="sourceSubjectDistance" type="xs:double" use="required"/>
+		<xs:attribute name="sourceToDetectorDistance" type="xs:double" use="required"/>
+		<xs:attribute name="storageMediaFileSetUID" type="xs:string" use="required"/>
+		<xs:attribute name="studyInstanceUID" type="xs:string" use="required"/>
+		<xs:attribute name="submissionDate" type="xs:date" use="required"/>
+		<xs:attribute name="uri" type="xs:string" use="required"/>
+		<xs:attribute name="visibility" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="Patient" type="ncia:Patient"/>
+	<xs:complexType name="Patient">
+		<xs:sequence>
+			<xs:element name="studyCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:Study" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="trialSite">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:TrialSite"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="ethnicGroup" type="xs:string" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="patientBirthDate" type="xs:date" use="required"/>
+		<xs:attribute name="patientId" type="xs:string" use="required"/>
+		<xs:attribute name="patientName" type="xs:string" use="required"/>
+		<xs:attribute name="patientSex" type="xs:string" use="required"/>
+		<xs:attribute name="trialSubjectId" type="xs:string" use="required"/>
+		<xs:attribute name="trialSubjectReadingId" type="xs:string" use="required"/>
+		<xs:attribute name="visibility" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="CTImage" type="ncia:CTImage"/>
+	<xs:complexType name="CTImage">
+		<xs:sequence>
+			<xs:element name="generalImage">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:GeneralImage"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="anatomicRegionSeq" type="xs:string" use="required"/>
+		<xs:attribute name="convolutionKernel" type="xs:string" use="required"/>
+		<xs:attribute name="CTPitchFactor" type="xs:integer" use="required"/>
+		<xs:attribute name="dataCollectionDiameter" type="xs:double" use="required"/>
+		<xs:attribute name="exposure" type="xs:integer" use="required"/>
+		<xs:attribute name="exposureInMicroAs" type="xs:integer" use="required"/>
+		<xs:attribute name="exposureTime" type="xs:integer" use="required"/>
+		<xs:attribute name="gantryDetectorTilt" type="xs:double" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="KVP" type="xs:double" use="required"/>
+		<xs:attribute name="reconstructionDiameter" type="xs:double" use="required"/>
+		<xs:attribute name="revolutionTime" type="xs:integer" use="required"/>
+		<xs:attribute name="scanOptions" type="xs:string" use="required"/>
+		<xs:attribute name="singleCollimationWidth" type="xs:integer" use="required"/>
+		<xs:attribute name="tableFeedPerRotation" type="xs:integer" use="required"/>
+		<xs:attribute name="tableSpeed" type="xs:integer" use="required"/>
+		<xs:attribute name="totalCollimationWidth" type="xs:integer" use="required"/>
+		<xs:attribute name="XRayTubeCurrent" type="xs:integer" use="required"/>
+	</xs:complexType>
+	<xs:element name="GeneralEquipment" type="ncia:GeneralEquipment"/>
+	<xs:complexType name="GeneralEquipment">
+		<xs:sequence>
+			<xs:element name="generalSeriesCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:GeneralSeries" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="institutionName" type="xs:string" use="required"/>
+		<xs:attribute name="manufacturer" type="xs:string" use="required"/>
+		<xs:attribute name="manufacturerModelName" type="xs:string" use="required"/>
+		<xs:attribute name="softwareVersions" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="TrialDataProvenance" type="ncia:TrialDataProvenance"/>
+	<xs:complexType name="TrialDataProvenance">
+		<xs:sequence>
+			<xs:element name="patientCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:Patient" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="dpSiteId" type="xs:string" use="required"/>
+		<xs:attribute name="dpSiteName" type="xs:string" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="project" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="TrialSite" type="ncia:TrialSite"/>
+	<xs:complexType name="TrialSite">
+		<xs:sequence>
+			<xs:element name="trial">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:ClinicalTrial"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="trialSiteId" type="xs:string" use="required"/>
+		<xs:attribute name="trialSiteName" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="Annotation" type="ncia:Annotation"/>
+	<xs:complexType name="Annotation">
+		<xs:sequence>
+			<xs:element name="generalSeries">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:GeneralSeries"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="annotationType" type="xs:string" use="required"/>
+		<xs:attribute name="filePath" type="xs:string" use="required"/>
+		<xs:attribute name="fileSize" type="xs:integer" use="required"/>
+		<xs:attribute name="generalSeriesPkId" type="xs:integer" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="seriesInstanceUID" type="xs:string" use="required"/>
+		<xs:attribute name="submissionDate" type="xs:date" use="required"/>
+	</xs:complexType>
+	<xs:element name="CurationData" type="ncia:CurationData"/>
+	<xs:complexType name="CurationData">
+		<xs:sequence>
+			<xs:element name="generalImage">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:GeneralImage"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="annotationFile">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:Annotation"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="generalSeries">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:GeneralSeries"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="patient">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:Patient"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="study">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ncia:Study"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="cdeId" type="xs:string" use="required"/>
+		<xs:attribute name="cdeName" type="xs:string" use="required"/>
+		<xs:attribute name="cdeValue" type="xs:string" use="required"/>
+		<xs:attribute name="cdeVersion" type="xs:string" use="required"/>
+		<xs:attribute name="curationTimestamp" type="xs:dateTime" use="required"/>
+		<xs:attribute name="id" type="xs:integer" use="required"/>
+		<xs:attribute name="trialName" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

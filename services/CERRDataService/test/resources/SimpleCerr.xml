@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CERRObject xmlns="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr file:/data/xmldatabase/CERRObject.xsd" 
+    archive="MyCERRArchive" 
+    sponsorID="RTOG" 
+    protocolID="MyProtocolID" 
+    subjectID="SomeSubjectID" 
+    submissionID="aSubmissionID" 
+    timeSaved="2006-10-26T04:51:00+03:00"
+    localFileLocation="/data/CERR_Test_Object.zip">
+    <metadataCollection></metadataCollection>
+</CERRObject>

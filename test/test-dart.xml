@@ -1,0 +1,71 @@
+<!-- ======================================================================= -->
+<!-- caGrid test dart build file                                             -->
+<!-- ======================================================================= -->
+<project name="caGrid_tests_dart" basedir=".">
+	<!-- Get the HOSTNAME in an os independant way -->
+	<property name="env.HOST" value="${env.COMPUTERNAME}" />
+
+	<!-- For your dart client -->
+	<property name="dart.buildname" value="${os.name}-${os.arch}-${os.version}-JDK-${java.version}" />
+	<property name="dart.site" value="${env.HOST}" />
+	<!-- For the dart server-->
+	<property name="dart.port" value="80" />
+	<property name="dart.project" value="ivi" />
+	<property name="dart.server" value="quality.bmi.ohio-state.edu" />
+	<property name="dart.client.jar" value="${test.lib.dir}/DartClient-1.0.7.jar" />
+	<property name="build.name.template" location="${test.dir}/BuildNameTemplate.xml"/>
+
+	<!-- =============================================================== -->
+	<!-- Configure dart                                                  -->
+	<!-- =============================================================== -->
+	<target name="createDartTestFiles">
+		<!-- Create the BuildName info, if necessary -->
+		<filter token="Dart.BuildName" value="${dart.buildname}" />
+		<filter token="Dart.Site" value="${dart.site}" />
+		<filter token="Dart.Track" value="Continuous" />
+		
+		<copy file="${build.name.template}" tofile="${test.logs.dir}/BuildNameContinuous.xml" filtering="true" overwrite="true" />
+		<filter token="Dart.Track" value="Nightly" />
+		<copy file="${build.name.template}" tofile="${test.logs.dir}/BuildNameNightly.xml" filtering="true" overwrite="true" />
+		<filter token="Dart.Track" value="Experimental" />
+		<copy file="${build.name.template}" tofile="${test.logs.dir}/BuildNameExperimental.xml" filtering="true" overwrite="true" />
+		<filter token="Dart.Track" value="System" />
+		<copy file="${build.name.template}" tofile="${test.logs.dir}/BuildNameSystem.xml" filtering="true" overwrite="true" />
+	</target>
+
+	<!-- =============================================================== -->
+	<!-- Set the proxy, and publish the results to dart                  -->
+	<!-- =============================================================== -->
+	<target name="setproxy1" if="env.HTTP_PROXY_PORT">
+		<property name="proxyhost" value="${env.HTTP_PROXY}" />
+		<property name="proxyport" value="${env.HTTP_PROXY_PORT}" />
+		<echo>Set proxy1: proxyhost=${proxyhost} proxyport=${proxyport}</echo>
+		<setproxy proxyhost="${proxyhost}" proxyport="${proxyport}" />
+	</target>
+	<target name="setproxy2" if="proxyport">
+		<echo>Set proxy2: proxyhost=${proxyhost} proxyport=${proxyport}</echo>
+		<setproxy proxyhost="${proxyhost}" proxyport="${proxyport}" />
+	</target>
+	<target name="publish" depends="setproxy1, setproxy2">
+		<fail unless="dart.logfile" message="Before you attempt to publish to dart, you must set the
+			property [dart.logfile] to the location of the log to be sent to dart." />
+		<java jar="${dart.client.jar}" failonerror="true" fork="true">
+			<arg value="--server" />
+			<arg value="${dart.server}" />
+			<arg value="--port" />
+			<arg value="${dart.port}" />
+			<arg value="${dart.project}" />
+			<arg value="${dart.logfile}" />
+		</java>
+	</target>
+
+	<!-- ONLY to be called from cruise control's antpublisher (it passes some properties) -->
+	<target name="ccpublish">
+		<property name="cc.logfile" location="${logdir}/${logfile}" />
+		<property name="cc2dart.xls.file" location="${test.dir}/CC2DART.xsl"/>
+		<echo message="${cc.logfile}" />
+		<xslt in="${cc.logfile}" out="${test.logs.dir}/DartSubmission.xml" style="${cc2dart.xls.file}" />
+		<property name="dart.logfile" value="${test.logs.dir}/DartSubmission.xml" />
+		<ant target="publish" />
+	</target>
+</project>

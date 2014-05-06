@@ -1,0 +1,17 @@
+<ivy-module version="1.1">
+	<info
+		organisation="apache"
+		module="commons-httpclient"
+		revision="3.0"
+		status="release" />
+	<configurations>
+		<!-- TODO: change these -->
+		<conf name="default"/>
+	</configurations>
+	<publications>
+		<artifact name="commons-httpclient-3.0" type="jar" conf="default" />
+	</publications>
+	<dependencies>
+		<!-- TODO: change these -->
+	</dependencies>
+</ivy-module>

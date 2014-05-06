@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="gme://Imaging.caBIG/1.0/gov.nih.nci.ivi.metadata" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:metadata="gme://Imaging.caBIG/1.0/gov.nih.nci.ivi.metadata" elementFormDefault="qualified">
+	<xs:element name="Metadata" type="metadata:Metadata"/>
+	<xs:complexType name="Metadata">
+		<xs:sequence/>
+		<xs:attribute name="id" use="required" type="xs:int"/>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="value" use="required" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

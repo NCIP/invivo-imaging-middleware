@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">
+    <info 
+        organisation="gov.nih.nci.ivi"
+        module="iviHelper"/>
+    <configurations>
+	    <conf name="target_grid" visibility="private"/>
+      <conf name="common" visibility="private" />
+      <conf name="aimv1" extends="common"/>
+      <conf name="aimtcga"  extends="common"/>
+      <conf name="dicom" extends="common"/>
+      <conf name="ncia" extends="common"/>
+      <conf name="genericimage" extends="common"/>
+      <conf name="default" extends="aimv1,aimtcga,dicom,ncia,genericimage"/>
+	<conf name="impl" extends="default" visibility="private"/>
+	<conf name="test" extends="impl" visibility="private"/>
+
+    </configurations>
+    <publications>
+      <artifact name="iviAIMv1Helper" type="jar" conf="aimv1" />
+      <artifact name="iviAIMTCGAHelper" type="jar" conf="aimtcga" />
+      <artifact name="iviDICOMHelper" type="jar" conf="dicom" />
+      <artifact name="iviNCIAHelper" type="jar" conf="ncia" />
+      <artifact name="iviGenericImageHelper" type="jar" conf="genericimage" />
+      <artifact name="iviHelper-tests" type="jar" conf="test" />
+    </publications>
+    <dependencies>
+
+	<!-- dependency for globus -->
+
+
+	<!-- standard jars included from a introduce generated service skeleton -->
+	    <dependency rev="${target.grid}" org="caGrid" name="target_grid" conf="target_grid->ui"/>
+
+	<dependency org="caGrid" name="data" rev="${cagrid.version}" conf="common->validation" />
+
+	<!-- ivi dependencies -->
+	<dependency org="gov.nih.nci.ivi" name="DICOMDataService" rev="latest.integration" conf="dicom->client" />
+	<dependency org="gov.nih.nci.ivi" name="ImageDataService" rev="latest.integration" conf="genericimage->client" />
+	<dependency org="edu.emory.cci" name="AIMv1DataService" rev="latest.integration" conf="aimv1->client" />
+	<dependency org="edu.emory.cci" name="AIMTCGADataService" rev="latest.integration" conf="aimtcga->client" />
+    <dependency org="gov.nih.nci" name="NCIACoreService" rev="latest.integration" conf="ncia->client" />
+
+    </dependencies>
+</ivy-module>

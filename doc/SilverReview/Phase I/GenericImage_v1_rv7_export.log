@@ -1,0 +1,52 @@
+Exporting package to 'D:\src\ivi\SilverReview\Phase I\GenericImage_v1_rv7.xmi'
+Retrieving data for export: packages
+Retrieving data for export: diagram elements
+Retrieving data for export: links
+Retrieving data for export: constraints
+Retrieving data for export: attribute tagged values
+Retrieving data for export: operation tagged values
+Retrieving data for export: operation parameter tagged values
+Retrieving data for export: connector tagged values
+Completed data retrieval
+Pre-processing export tree...
+Completed pre-processing
+***** Processing package: Logical View *****
+Element:0: Data Model
+Element:1: Logical Model
+***** Processing package: Data Model *****
+Diagram: Data Model
+Diagram: Mapping Model
+***** Processing package: Logical Model *****
+Element:2: java
+Element:3: gov
+Diagram: Logical Model
+***** Processing package: gov *****
+Element:4: nih
+***** Processing package: nih *****
+Element:5: nci
+***** Processing package: nci *****
+Element:6: ivi
+***** Processing package: ivi *****
+Element:7: genericimage
+***** Processing package: genericimage *****
+Element:8: Image
+Element:9: Channel
+Element:10: Volume
+Element:11: PixelCharacteristic
+Element:12: TimeSeries
+Element:13: DataIdentifier
+Element:14: ImageRegion
+Element:15: Resolution
+***** Processing package: java *****
+Element:16: util
+Element:17: lang
+***** Processing package: lang *****
+Element:18: Long
+Element:19: Float
+Element:20: Integer
+Element:21: String
+Element:22: Boolean
+***** Processing package: util *****
+Element:23: Date
+Formatting output XML...please wait
+XMI Document Export Complete!

@@ -1,0 +1,47 @@
+Exporting package to 'D:\src\ivi\SilverReview\Phase I\DSD_v1_rv7.xmi'
+Retrieving data for export: packages
+Retrieving data for export: diagram elements
+Retrieving data for export: links
+Retrieving data for export: constraints
+Retrieving data for export: attribute tagged values
+Retrieving data for export: operation tagged values
+Retrieving data for export: operation parameter tagged values
+Retrieving data for export: connector tagged values
+Completed data retrieval
+Pre-processing export tree...
+Completed pre-processing
+***** Processing package: Logical View *****
+Element:0: Data Model
+Element:1: Logical Model
+***** Processing package: Data Model *****
+Diagram: Data Model
+Diagram: Mapping Model
+***** Processing package: Logical Model *****
+Element:2: gov
+Element:3: java
+Diagram: Logical Model
+***** Processing package: gov *****
+Element:4: nih
+***** Processing package: nih *****
+Element:5: nci
+***** Processing package: nci *****
+Element:6: ivi
+***** Processing package: ivi *****
+Element:7: dsd
+***** Processing package: dsd *****
+Element:8: GridServiceIdentifier
+Element:9: HostSpecification
+Element:10: GridServiceLocation
+***** Processing package: java *****
+Element:11: lang
+Element:12: util
+***** Processing package: lang *****
+Element:13: Integer
+Element:14: String
+Element:15: Long
+Element:16: Boolean
+Element:17: Float
+***** Processing package: util *****
+Element:18: Date
+Formatting output XML...please wait
+XMI Document Export Complete!

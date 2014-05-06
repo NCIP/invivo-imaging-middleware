@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GeneralConfiguration xmlns="http://www.cagrid.org/1/grape-general-configuration"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <name>Group Management</name>
+    <description>UI Configuration for managing Grid Grouper.</description>
+    <properties>
+        <property>
+            <name>data-services</name>
+            <description>The URL(s) of available DICOMDataServices Service(s)</description>
+            <values>
+		   <value>http://node05.cci.emory.edu:8081/wsrf/services/cagrid/DICOMDataService</value>
+		   <value>http://imaging.nci.nih.gov/wsrf/services/cagrid/NCIACoreService</value>
+            </values>
+        </property>
+        <property>
+            <name>AppName</name>
+            <description>Name of application</description>
+            <values>
+                <value>VirtualPACS</value>
+            </values>
+        </property>
+        <property>
+            <name>VPACSProperties</name>
+            <description>properties file for virtual PACS</description>
+            <values>
+                <value>resources/virtualPACS.properties</value>
+            </values>
+        </property>
+    </properties>
+</GeneralConfiguration>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DomainModel xmlns="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" xmlns:ns2="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common" projectVersion="1.0" projectShortName="cerr" projectLongName="edu.osu.bmi.ivi.cerr" projectDescription="">
+    <exposedUMLAssociationCollection>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="Metadata" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="97"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="96"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="metadataCollection" minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="96"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="0" maxCardinality="0">
+                    <UMLClassReference refid="95"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+    </exposedUMLAssociationCollection>
+    <exposedUMLClassCollection>
+        <UMLClass allowableAsTarget="true" projectVersion="1.0" projectName="edu.osu.bmi.ivi.cerr" packageName="edu.osu.bmi.ivi.cerr" id="95" description="" className="CERRObject">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="localFileLocation" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="writer" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="intercomparisonStandard" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="institution" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="subjectID" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="protocolID" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="submissionID" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="sponsorID" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="dateCreated" description="" dataTypeName="dateTime"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="timeSaved" description="" dataTypeName="dateTime"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="tapeStandardNumber" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="archive" description="" dataTypeName="string"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="1.0" projectName="edu.osu.bmi.ivi.cerr" packageName="edu.osu.bmi.ivi.cerr" id="97" description="" className="Metadata">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="value" description="" dataTypeName="string"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="string"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="false" projectVersion="1.0" projectName="edu.osu.bmi.ivi.cerr" packageName="edu.osu.bmi.ivi.cerr" id="96" description="" className="metadataCollectionType96"/>
+    </exposedUMLClassCollection>
+    <umlGeneralizationCollection/>
+</DomainModel>

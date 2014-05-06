@@ -1,0 +1,58 @@
+<!-- ======================================================================= -->
+<!-- caGrid Target Grids build file                                          -->
+<!-- ======================================================================= -->
+<project name="caGrid_target_grid" basedir="." default="" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<property name="current.grid.property.file" value=".currentgrid.properties" />
+
+	<!-- The default target grid -->
+	<property file="${env.CAGRID_LOCATION}/${current.grid.property.file}" />
+
+	<target name="configure-clean">
+		<delete file="${current.grid.property.file}" />
+	</target>
+
+
+	<!-- ====================================================================== -->
+	<!-- Configure each configurable project (only needed to target a new grid) -->
+	<!-- ====================================================================== -->
+	<target name="configure" depends="configure-clean,prepare" description="(Re-)Configures the projects to target a different grid.">
+		<!-- need to get the trust fabric so need to configure caGrid's trusted grid.  -->
+		<echo message="Using caGrid install at ${env.CAGRID_LOCATION} with target grid ${target.grid}"/>
+		
+		<!-- Give each configurable project the new configuration information, and tell them to configure -->
+		<subant target="resolve-configure-dependencies" buildpathref="ivy.projects.list">
+			<property name="target.grid" value="${target.grid}" />
+		</subant>
+
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Prints details and instructions on using the configure target          -->
+	<!-- ====================================================================== -->
+	<target name="configureHelp" depends="prepare" description="Displays help information on configuring the environment to target a specific grid.">
+		<property file="${current.grid.property.file}" />
+
+		<ivy:listmodules organisation="caGrid" module="target_grid" revision="*" property="target.grid.names.[revision]" value="found"/>
+		<propertyselector property="target.grid.list" delimiter="," match="target\.grid\.names\.ivy\-(.*)\.xml" select="\1" />
+		<sortlist property="sorted.target.grid.list" value="${target.grid.list}" delimiter="," />
+
+		<echo message="=====================================================================================" />
+		<echo message="|    CONFIGURED TO USE GRID: ${target.grid} AT: ${target.grid.configure.time}" />
+		<echo message="|" />
+		<echo message="|    THE VALID TARGET GRIDS ARE:" />
+		<for list="${sorted.target.grid.list}" param="grid.name">
+			<sequential>
+				<echo message="|      - @{grid.name}" />
+			</sequential>
+		</for>
+		<echo message="|" />
+		<echo message="-------------------------------------------------------------------------------------" />
+		<echo message="|    NOTE: To use a different target grid, set property 'target.grid'" />
+		<echo message="|    to the grid's name, and run the 'configure' target." />
+		<echo message="|" />
+		<echo message="|    For example, type:" />
+		<echo message="|        ant -Dtarget.grid=${target.grid} configure" />
+		<echo message="=====================================================================================" />
+	</target>
+</project>

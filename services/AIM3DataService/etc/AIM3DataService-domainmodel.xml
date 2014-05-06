@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DomainModel xmlns="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" xmlns:ns2="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common" projectVersion="3.0" projectShortName="AIM" projectLongName="Annotation and Image Markup" projectDescription="Annotation and Image Markup">
+    <exposedUMLAssociationCollection>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imagingObservation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="76"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="segmentation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="80"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="characteristicQuantificationCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="71"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="anatomicEntityCharacteristic" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="68"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="user" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="59"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="annotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="54"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="textAnnotationCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="113"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageAnnotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="50"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="calculationResultCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="93"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="0" maxCardinality="0">
+                    <UMLClassReference refid="52"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="annotationRole" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="118"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="1" maxCardinality="-1">
+                    <UMLClassReference refid="116"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="referencedGeometricShapeCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="84"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="52"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="person" minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="110"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageAnnotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="50"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="presentationStateCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="131"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="dicomImageReference" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="120"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="anatomicEntityCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="65"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="annotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="54"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="multiPoint" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="48"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="113"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageSeries" minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="124"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageStudy" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="122"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="calculationCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="52"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="annotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="54"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="calculationDataCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="95"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="93"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imagingObservationCharacteristic" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="73"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="characteristicQuantificationCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="71"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="geometricShapeCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="106"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageAnnotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="50"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="spatialCoordinateCollection" minCardinality="1" maxCardinality="-1">
+                    <UMLClassReference refid="108"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="106"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="coordinateCollection" minCardinality="1" maxCardinality="-1">
+                    <UMLClassReference refid="97"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="95"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageAnnotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="50"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="segmentationCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="80"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="annotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="54"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="equipment" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="62"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="referencedGeometricShape" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="84"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="76"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="referencedCalculationCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="91"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="0" maxCardinality="0">
+                    <UMLClassReference refid="52"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageCollection" minCardinality="1" maxCardinality="-1">
+                    <UMLClassReference refid="127"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageSeries" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="124"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="annotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="54"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="aimStatus" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="88"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="dimensionCollection" minCardinality="1" maxCardinality="-1">
+                    <UMLClassReference refid="99"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="93"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="anatomicEntityCharacteristicCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="68"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="anatomicEntity" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="65"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageStudy" minCardinality="1" maxCardinality="1">
+                    <UMLClassReference refid="122"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="dicomImageReference" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="120"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imagingObservation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="76"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imagingObservationCharacteristicCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="73"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="false">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="referencedAnnotationCollection" minCardinality="1" maxCardinality="-1">
+                    <UMLClassReference refid="116"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge minCardinality="0" maxCardinality="0">
+                    <UMLClassReference refid="134"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageAnnotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="50"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imageReferenceCollection" minCardinality="1" maxCardinality="-1">
+                    <UMLClassReference refid="103"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="annotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="54"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="imagingObservationCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="76"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+        <UMLAssociation bidirectional="true">
+            <targetUMLAssociationEdge>
+                <UMLAssociationEdge roleName="annotation" minCardinality="0" maxCardinality="1">
+                    <UMLClassReference refid="54"/>
+                </UMLAssociationEdge>
+            </targetUMLAssociationEdge>
+            <sourceUMLAssociationEdge>
+                <UMLAssociationEdge roleName="inferenceCollection" minCardinality="0" maxCardinality="-1">
+                    <UMLClassReference refid="56"/>
+                </UMLAssociationEdge>
+            </sourceUMLAssociationEdge>
+        </UMLAssociation>
+    </exposedUMLAssociationCollection>
+    <exposedUMLClassCollection>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="139" description="" className="Quantile">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="bin" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="54" description="" className="Annotation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="dateTime" description="" dataTypeName="java.util.Date"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="comment" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="uniqueIdentifier" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="precedentReferencedAnnotationUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="aimVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="95" description="" className="CalculationData">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="value" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="97" description="" className="Coordinate">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="position" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="dimensionIndex" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="59" description="" className="User">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="numberWithinRoleOfClinicalTrial" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="loginName" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="roleInTrial" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="48" description="" className="MultiPoint">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="shapeIdentifier" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineThickness" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="includeFlag" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineStyle" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineOpacity" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineColor" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="134" description="" className="AnnotationOfAnnotation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="dateTime" description="" dataTypeName="java.util.Date"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="comment" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="uniqueIdentifier" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="precedentReferencedAnnotationUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="aimVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="131" description="" className="PresentationState">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="sopInstanceUID" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="140" description="" className="Interval">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="minOperator" description="" dataTypeName="edu.northwestern.radiology.aim.ComparisonOperators">
+                    <ns2:ValueDomain unitOfMeasure="" longName="edu.northwestern.radiology.aim.ComparisonOperators">
+                        <ns2:enumerationCollection>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="Equal"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="NotEqual"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="LessThan"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="LessThanEqual"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="GreaterThan"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="GreaterThanEqual"/>
+                        </ns2:enumerationCollection>
+                    </ns2:ValueDomain>
+                </ns2:UMLAttribute>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="ucumString" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="maxValue" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="minValue" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="maxOperator" description="" dataTypeName="edu.northwestern.radiology.aim.ComparisonOperators">
+                    <ns2:ValueDomain unitOfMeasure="" longName="edu.northwestern.radiology.aim.ComparisonOperators">
+                        <ns2:enumerationCollection>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="Equal"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="NotEqual"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="LessThan"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="LessThanEqual"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="GreaterThan"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="GreaterThanEqual"/>
+                        </ns2:enumerationCollection>
+                    </ns2:ValueDomain>
+                </ns2:UMLAttribute>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="113" description="" className="TextAnnotation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="text" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="fontSize" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="fontStyle" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="font" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="fontColor" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="fontEffect" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="textJustify" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="fontOpacity" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="62" description="" className="Equipment">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="manufacturerModelName" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="manufacturerName" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="softwareVersion" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="136" description="" className="Point">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="shapeIdentifier" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineThickness" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="includeFlag" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineStyle" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineOpacity" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineColor" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="76" description="" className="ImagingObservation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="isPresent" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="label" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="comment" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="116" description="" className="ReferencedAnnotation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="referencedAnnotationUID" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="137" description="" className="Scale">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="comment" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="description" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="value" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="65" description="" className="AnatomicEntity">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="label" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="isPresent" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="93" description="" className="CalculationResult">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="unitOfMeasure" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="type" description="" dataTypeName="edu.northwestern.radiology.aim.CalculationResultIdentifier">
+                    <ns2:ValueDomain unitOfMeasure="" longName="edu.northwestern.radiology.aim.CalculationResultIdentifier">
+                        <ns2:enumerationCollection>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="Scalar"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="Vector"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="Histogram"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="Matrix"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="Array"/>
+                        </ns2:enumerationCollection>
+                    </ns2:ValueDomain>
+                </ns2:UMLAttribute>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="numberOfDimensions" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="91" description="" className="ReferencedCalculation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="uniqueIdentifier" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="133" description="" className="WebImageReference">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="uri" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="73" description="" className="ImagingObservationCharacteristic">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="comment" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="label" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="80" description="" className="Segmentation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="sopInstanceUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="segmentNumber" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="referencedSopInstanceUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="sopClassUID" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="127" description="" className="Image">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="sopInstanceUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="sopClassUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="141" description="" className="Circle">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="shapeIdentifier" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineThickness" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="includeFlag" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineStyle" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineOpacity" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineColor" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="88" description="" className="AimStatus">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotationVersion" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="authorizedBy" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="122" description="" className="ImageStudy">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="startTime" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="startDate" description="" dataTypeName="java.util.Date"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="instanceUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="99" description="" className="Dimension">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="index" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="size" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="label" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="84" description="" className="ReferencedGeometricShape">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="referencedShapeIdentifier" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="71" description="" className="CharacteristicQuantification">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="144" description="" className="Ellipse">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="shapeIdentifier" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineThickness" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="includeFlag" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineStyle" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineOpacity" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineColor" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="108" description="" className="SpatialCoordinate">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="coordinateIndex" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="118" description="" className="AnnotationRole">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="roleSequenceNumber" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="110" description="" className="Person">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="sex" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="id" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="ethnicGroup" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="birthDate" description="" dataTypeName="java.util.Date"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="120" description="" className="DICOMImageReference">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="145" description="" className="TwoDimensionSpatialCoordinate">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="referencedFrameNumber" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="x" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="y" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="imageReferenceUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="coordinateIndex" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="119" description="" className="Numerical">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="value" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="ucumString" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="operator" description="" dataTypeName="edu.northwestern.radiology.aim.ComparisonOperators">
+                    <ns2:ValueDomain unitOfMeasure="" longName="edu.northwestern.radiology.aim.ComparisonOperators">
+                        <ns2:enumerationCollection>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="Equal"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="NotEqual"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="LessThan"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="LessThanEqual"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="GreaterThan"/>
+                            <ns2:Enumeration valueMeaning="" permissibleValue="GreaterThanEqual"/>
+                        </ns2:enumerationCollection>
+                    </ns2:ValueDomain>
+                </ns2:UMLAttribute>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="52" description="" className="Calculation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="algorithmName" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="algorithmVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="description" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="uid" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="mathML" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="56" description="" className="Inference">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="imageEvidence" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="138" description="" className="Polyline">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="shapeIdentifier" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineThickness" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="includeFlag" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineStyle" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineOpacity" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineColor" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="68" description="" className="AnatomicEntityCharacteristic">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="label" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="103" description="" className="ImageReference">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="142" description="" className="ThreeDimensionSpatialCoordinate">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="frameOfReferenceUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="x" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="z" description="" dataTypeName="java.lang.Double"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="coordinateIndex" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="y" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="143" description="" className="NonQuantifiable">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="annotatorConfidence" description="" dataTypeName="java.lang.Double"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="106" description="" className="GeometricShape">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="shapeIdentifier" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineThickness" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="includeFlag" description="" dataTypeName="java.lang.Boolean"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineStyle" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineOpacity" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="lineColor" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="50" description="" className="ImageAnnotation">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeDesignator" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeValue" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="dateTime" description="" dataTypeName="java.util.Date"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="comment" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="uniqueIdentifier" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codeMeaning" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="name" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="precedentReferencedAnnotationUID" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="aimVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="codingSchemeVersion" description="" dataTypeName="java.lang.String"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+        <UMLClass allowableAsTarget="true" projectVersion="3.0" projectName="Annotation and Image Markup" packageName="edu.northwestern.radiology.aim" id="124" description="" className="ImageSeries">
+            <ns2:umlAttributeCollection>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="cagridId" description="" dataTypeName="java.lang.Integer"/>
+                <ns2:UMLAttribute version="0.0" publicID="0" name="instanceUID" description="" dataTypeName="java.lang.String"/>
+            </ns2:umlAttributeCollection>
+        </UMLClass>
+    </exposedUMLClassCollection>
+    <umlGeneralizationCollection>
+        <UMLGeneralization>
+            <subClassReference refid="139"/>
+            <superClassReference refid="71"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="48"/>
+            <superClassReference refid="106"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="134"/>
+            <superClassReference refid="54"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="140"/>
+            <superClassReference refid="71"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="136"/>
+            <superClassReference refid="106"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="137"/>
+            <superClassReference refid="71"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="133"/>
+            <superClassReference refid="103"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="141"/>
+            <superClassReference refid="106"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="144"/>
+            <superClassReference refid="106"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="120"/>
+            <superClassReference refid="103"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="145"/>
+            <superClassReference refid="108"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="119"/>
+            <superClassReference refid="71"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="138"/>
+            <superClassReference refid="106"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="142"/>
+            <superClassReference refid="108"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="143"/>
+            <superClassReference refid="71"/>
+        </UMLGeneralization>
+        <UMLGeneralization>
+            <subClassReference refid="50"/>
+            <superClassReference refid="54"/>
+        </UMLGeneralization>
+    </umlGeneralizationCollection>
+</DomainModel>

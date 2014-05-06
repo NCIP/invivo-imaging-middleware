@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.dsd" xmlns:dsd="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.dsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="Package" type="dsd:Package"/>
+	<xs:complexType name="Package">
+		<xs:sequence>
+			<xs:element name="deployedURL">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dsd:URL" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="containerURL">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dsd:URL" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="repositoryURL">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dsd:URL" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="containerRequisiteInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dsd:ContainerInfo"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="identifier" use="required" type="xs:string"/>
+		<xs:attribute name="majorVersion" use="required" type="xs:string"/>
+		<xs:attribute name="minorVersion" use="required" type="xs:string"/>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="ContainerInfo" type="dsd:ContainerInfo"/>
+	<xs:complexType name="ContainerInfo">
+		<xs:sequence/>
+		<xs:attribute name="cpuBits" use="required" type="xs:int"/>
+		<xs:attribute name="cpuCacheSizeInKB" use="required" type="xs:long"/>
+		<xs:attribute name="cpuClockRateInMHz" use="required" type="xs:long"/>
+		<xs:attribute name="cpuCoreCount" use="required" type="xs:int"/>
+		<xs:attribute name="cpuCount" use="required" type="xs:int"/>
+		<xs:attribute name="cpuManufacturer" use="required" type="xs:string"/>
+		<xs:attribute name="cpuMaxSSELevel" use="required" type="xs:string"/>
+		<xs:attribute name="cpuModel" use="required" type="xs:string"/>
+		<xs:attribute name="diskFreeSpaceInMB" use="required" type="xs:long"/>
+		<xs:attribute name="gpuClockRateInMHz" use="required" type="xs:long"/>
+		<xs:attribute name="gpuCount" use="required" type="xs:int"/>
+		<xs:attribute name="gpuInterconnectType" use="required" type="xs:string"/>
+		<xs:attribute name="gpuManufacturer" use="required" type="xs:string"/>
+		<xs:attribute name="gpuMemorySizeInMB" use="required" type="xs:long"/>
+		<xs:attribute name="gpuModel" use="required" type="xs:string"/>
+		<xs:attribute name="id" use="required" type="xs:int"/>
+		<xs:attribute name="kernelVersion" use="required" type="xs:string"/>
+		<xs:attribute name="memorySizeInMB" use="required" type="xs:long"/>
+		<xs:attribute name="osBit" use="required" type="xs:int"/>
+		<xs:attribute name="osFamily" use="required" type="xs:string"/>
+		<xs:attribute name="osManufacturer" use="required" type="xs:string"/>
+		<xs:attribute name="osVersion" use="required" type="xs:string"/>
+		<xs:attribute name="secureFlag" use="required" type="xs:boolean"/>
+		<xs:attribute name="type" use="required" type="xs:string"/>
+		<xs:attribute name="version" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="URL" type="dsd:URL"/>
+	<xs:complexType name="URL">
+		<xs:sequence/>
+		<xs:attribute name="id" use="required" type="xs:int"/>
+		<xs:attribute name="value" use="required" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

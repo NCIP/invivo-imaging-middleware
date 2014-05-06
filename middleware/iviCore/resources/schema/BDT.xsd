@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="gme://Imaging.caBIG/1.0/gov.nih.nci.ivi.bdt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bdt="gme://Imaging.caBIG/1.0/gov.nih.nci.ivi.bdt" xmlns:metadata="gme://Imaging.caBIG/1.0/gov.nih.nci.ivi.metadata" elementFormDefault="qualified">
+	<xs:element name="DataLocation" type="bdt:DataLocation"/>
+	<xs:complexType name="DataLocation">
+		<xs:sequence>
+			<xs:element name="dataItemCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="bdt:DataItem" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="metadataCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="metadata:Metadata" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="compressionType" use="required" type="xs:string"/>
+		<xs:attribute name="id" use="required" type="xs:int"/>
+		<xs:attribute name="locationPort" use="required" type="xs:int"/>
+		<xs:attribute name="locationURL" use="required" type="xs:string"/>
+		<xs:attribute name="transportMechanismType" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="DataItem" type="bdt:DataItem"/>
+	<xs:complexType name="DataItem">
+		<xs:sequence>
+			<xs:element name="metadataCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="metadata:Metadata" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" use="required" type="xs:int"/>
+		<xs:attribute name="identifier" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="BundledDataItem" type="bdt:BundledDataItem"/>
+	<xs:complexType name="BundledDataItem">
+		<xs:complexContent>
+			<xs:extension base="bdt:DataItem">
+				<xs:sequence/>
+				<xs:attribute name="bundleItemCount" use="required" type="xs:int"/>
+				<xs:attribute name="bundleMechanismType" use="required" type="xs:string"/>
+				<xs:attribute name="targetBundleSize" use="required" type="xs:int"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GridFTPDataItem" type="bdt:GridFTPDataItem"/>
+	<xs:complexType name="GridFTPDataItem">
+		<xs:complexContent>
+			<xs:extension base="bdt:BundledDataItem">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Base64DataItem" type="bdt:Base64DataItem"/>
+	<xs:complexType name="Base64DataItem">
+		<xs:complexContent>
+			<xs:extension base="bdt:BundledDataItem">
+				<xs:sequence/>
+				<xs:attribute name="binaryData" use="optional" type="xs:byte"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="FileSystemDataItem" type="bdt:FileSystemDataItem"/>
+	<xs:complexType name="FileSystemDataItem">
+		<xs:complexContent>
+			<xs:extension base="bdt:BundledDataItem">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

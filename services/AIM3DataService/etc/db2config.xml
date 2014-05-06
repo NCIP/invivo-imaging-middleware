@@ -1,0 +1,13 @@
+<db2>
+	<xmldburi>jdbc:db2://127.0.0.1:50000</xmldburi>
+	<database>XMLDB</database>
+	<username>db2inst1</username>
+	<password>aim03@cci200</password>
+	<collection>
+		<schema>XMLDS</schema>
+		<xmltable>XMLTABLE</xmltable>
+		<docidcolumn>DOCID</docidcolumn>
+		<xmlcolumn>XMLCOLUMN</xmlcolumn>
+		<metadatacolumn>METADATA</metadatacolumn>
+	</collection>
+</db2>

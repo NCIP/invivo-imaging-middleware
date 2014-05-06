@@ -1,0 +1,11 @@
+#Introduce Properties
+#Fri Jul 18 15:16:00 EDT 2008
+introduce.skeleton.services.list=DICOMDataService,CaGridEnumeration
+introduce.skeleton.extensions=caGrid_Transfer,data,cagrid_metadata,cagrid_wsEnum
+introduce.skeleton.timestamp=1209325587763
+introduce.skeleton.service.name=DICOMDataService
+introduce.skeleton.resource.options=main,singleton,identifiable,resourcePropertyManagement
+introduce.skeleton.destination.dir=/Users/ashish/Documents/Code/IVIM_v1.2/trunk/services/DICOMDataService
+introduce.skeleton.namespace.domain=http\://dicomdataservice.ivi.nci.nih.gov/DICOMDataService
+introduce.ns.excludes=\ -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service -x http\://schemas.xmlsoap.org/ws/2004/08/addressing -x http\://transfer.cagrid.org/Transfer -x http\://transfer.cagrid.org/TransferService/Context/types -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata -x http\://gov.nih.nci.cagrid.data/DataServiceExceptions -x http\://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer -x http\://schemas.xmlsoap.org/ws/2004/09/enumeration -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common
+introduce.soap.binding.excludes=\ 

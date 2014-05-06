@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndiConfig xmlns="http://wsrf.globus.org/jndi/config">
+  <service name="SERVICE-INSTANCE-PREFIX/CaGridEnumeration">
+    <resource name="configuration" type="gov.nih.nci.cagrid.enumeration.service.globus.resource.CaGridEnumerationResourceConfiguration">
+      <resourceParams>
+        <parameter>
+          <name>factory</name>
+          <value>org.globus.wsrf.jndi.BeanFactory</value>
+        </parameter>
+        <parameter>
+          <name>performRegistration</name>
+          <!-- Set this to false to skip ServiceGroup registration -->
+          <value>PERFORM_REGISTRATION</value>
+        </parameter>
+        <parameter>
+          <name>registrationTemplateFile</name>
+          <!-- Set this to the relative path (from the container root, e.g GLOBUS_LOCATION for globus container) of the registration parameters template file (ignored if performRegistration is false) -->
+          <value>ETC-PATH/CaGridEnumeration_registration.xml</value>
+        </parameter>
+      </resourceParams>
+    </resource>
+    <!-- THIS SERVICE HAS BEEN SET TO HAVE A CUSTOM RESOURCE
+		     PLEASE BE SURE TO ADD IN THE RESOURCE FOR THE SERVICE
+		     HOME  -->
+    <resourceLink name="serviceconfiguration" target="java:comp/env/services/SERVICE-INSTANCE-PREFIX/DICOMDataService/serviceconfiguration" />
+    <resourceLink name="dICOMDataServiceHome" target="java:comp/env/services/SERVICE-INSTANCE-PREFIX/DICOMDataService/home" />
+  </service>
+  <service name="SERVICE-INSTANCE-PREFIX/DICOMDataService">
+    <resource name="configuration" type="gov.nih.nci.ivi.dicomdataservice.service.globus.resource.DICOMDataServiceResourceConfiguration">
+      <resourceParams>
+        <parameter>
+          <name>factory</name>
+          <value>org.globus.wsrf.jndi.BeanFactory</value>
+        </parameter>
+        <parameter>
+          <name>performRegistration</name>
+          <!-- Set this to false to skip ServiceGroup registration -->
+          <value>PERFORM_REGISTRATION</value>
+        </parameter>
+        <parameter>
+          <name>registrationTemplateFile</name>
+          <!-- Set this to the relative path (from the container root, e.g GLOBUS_LOCATION for globus container) of the registration parameters template file (ignored if performRegistration is false) -->
+          <value>ETC-PATH/DICOMDataService_registration.xml</value>
+        </parameter>
+        <parameter>
+          <name>serviceMetadataFile</name>
+          <!-- Set this to the relative path (from the container root, e.g GLOBUS_LOCATION for globus container) of the serviceMetadata extract -->
+          <value>ETC-PATH/serviceMetadata.xml</value>
+        </parameter>
+        <parameter>
+          <name>domainModelFile</name>
+          <!-- Set this to the relative path (from the container root, e.g GLOBUS_LOCATION for globus container) of the domainModel extract -->
+          <value>ETC-PATH/domainModel.xml</value>
+        </parameter>
+      </resourceParams>
+    </resource>
+    <resource name="serviceconfiguration" type="gov.nih.nci.ivi.dicomdataservice.service.DICOMDataServiceConfiguration">
+      <resourceParams>
+        <parameter>
+          <name>factory</name>
+          <value>org.globus.wsrf.jndi.BeanFactory</value>
+        </parameter>
+        <parameter>
+          <name>etcDirectoryPath</name>
+          <value>ETC-PATH</value>
+        </parameter>
+        <parameter>
+          <name>queryProcessorClass</name>
+          <value>@queryProcessorClass@</value>
+        </parameter>
+        <parameter>
+          <name>serverConfigLocation</name>
+          <value>ETC-PATH/@serverConfigLocation@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_cqlValidatorClass</name>
+          <value>@dataService_cqlValidatorClass@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_domainModelValidatorClass</name>
+          <value>@dataService_domainModelValidatorClass@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_validateCqlFlag</name>
+          <value>@dataService_validateCqlFlag@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_validateDomainModelFlag</name>
+          <value>@dataService_validateDomainModelFlag@</value>
+        </parameter>
+        <parameter>
+          <name>dataService_classMappingsFilename</name>
+          <value>ETC-PATH/@dataService_classMappingsFilename@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_modelMapProperties</name>
+          <value>@cqlQueryProcessorConfig_modelMapProperties@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_organization</name>
+          <value>@cqlQueryProcessorConfig_organization@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_clientAE</name>
+          <value>@cqlQueryProcessorConfig_clientAE@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_embeddedPacsPort</name>
+          <value>@cqlQueryProcessorConfig_embeddedPacsPort@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_embeddedPacsAE</name>
+          <value>@cqlQueryProcessorConfig_embeddedPacsAE@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_tempdir</name>
+          <value>@cqlQueryProcessorConfig_tempdir@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_gridGrouperUrl</name>
+          <value>@cqlQueryProcessorConfig_gridGrouperUrl@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_useCMOVE</name>
+          <value>@cqlQueryProcessorConfig_useCMOVE@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_dataLevelAuth</name>
+          <value>@cqlQueryProcessorConfig_dataLevelAuth@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_serverAE</name>
+          <value>@cqlQueryProcessorConfig_serverAE@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_gridFTPAuth</name>
+          <value>@cqlQueryProcessorConfig_gridFTPAuth@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_serverport</name>
+          <value>@cqlQueryProcessorConfig_serverport@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_serverip</name>
+          <value>@cqlQueryProcessorConfig_serverip@</value>
+        </parameter>
+        <parameter>
+          <name>cqlQueryProcessorConfig_sopClassForQRServerAE</name>
+          <value>@cqlQueryProcessorConfig_sopClassForQRServerAE@</value>
+        </parameter>
+      </resourceParams>
+    </resource>
+    <resource name="home" type="gov.nih.nci.ivi.dicomdataservice.service.globus.resource.DICOMDataServiceResourceHome">
+      <resourceParams>
+        <parameter>
+          <name>factory</name>
+          <value>org.globus.wsrf.jndi.BeanFactory</value>
+        </parameter>
+      </resourceParams>
+    </resource>
+    <resourceLink name="caGridEnumerationHome" target="java:comp/env/services/SERVICE-INSTANCE-PREFIX/CaGridEnumeration/home" />
+  </service>
+</jndiConfig>
+

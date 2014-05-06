@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <!-- MS Word on Windows doesn't realise the encoding is UTF-8 unless this meta tag is present -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <base href="https://web.cci.emory.edu/confluence" />
+        <title>AIME Installation Guide</title>
+        <style>
+            body, p, td, table, tr, .bodytext, .stepfield {
+	            font-family: Verdana, arial, sans-serif;
+            }
+            .panel {
+                margin: 10px;
+                padding: 10px;
+                border: 1px solid #999;
+                background-color: #f0f0f0;
+            }
+            .noteMacro { border-style: solid; border-width: 1px; border-color: #F0C000; background-color: #FFFFCE; text-align:left;}
+            .warningMacro { border-style: solid; border-width: 1px; border-color: #c00; background-color: #fcc; text-align:left;}
+            .infoMacro { border-style: solid; border-width: 1px; border-color: #3c78b5; background-color: #D8E4F1; text-align:left;}
+            .tipMacro { border-style: solid; border-width: 1px; border-color: #090; background-color: #dfd; text-align:left;}
+            .informationMacroPadding { padding: 5px 0 0 5px; }
+
+            table.infoMacro td, table.warningMacro td, table.tipMacro td, table.noteMacro td, table.sectionMacro td {
+                border: none;
+            }
+
+            .grid {
+                margin: 2px 0px 5px 0px;
+                border-collapse: collapse;
+            }
+            .grid th  {
+                border: 1px solid #ccc;
+                padding: 2px 4px 2px 4px;
+                background: #f0f0f0;
+                text-align: center;
+            }
+            .grid td  {
+                border: 1px solid #ccc;
+                padding: 3px 4px 3px 4px;
+            }            
+        </style>
+    </head>
+
+    <body style="background-color: white; padding: 10px;">
+        <h1>AIME Installation Guide</h1>
+        <h3><a name="AIMEInstallationGuide-AIMEServiceInstallation"></a>AIME Service Installation</h3>
+<p>The same installation procedure is used for both the AIME TCGA and AIME v3 services described in <a href="https://web.cci.emory.edu/confluence/display/IVI/AIME+Architecture+Guide" title="AIME Architecture Guide">AIME Architecture Guide</a>.  RESTful Service installation procedure will be added to this page when the current Developmental version is released.</p>
+
+<p>Currently, the supported installation procedure is for the Source Distribution.</p>
+
+<h4><a name="AIMEInstallationGuide-SourceDistribution"></a>Source Distribution</h4>
+
+<h5><a name="AIMEInstallationGuide-Prerequisites"></a>Prerequisites</h5>
+<p>Please follow the instructions outlined in the <a href="https://web.cci.emory.edu/confluence/display/IVI/Compiling+from+Source" title="Compiling from Source">Compiling from Source</a> guide.  At the end of the installation procedure, you should have the following installed or compiled:</p>
+<ul>
+	<li>Java 1.5</li>
+	<li>Ant 1.6.5 or 1.7</li>
+	<li>caGrid 1.2 or 1.3</li>
+	<li>Globus ws-core 4.0.3 patched</li>
+	<li>Apache Tomcat 5.0.28 or 5.5</li>
+	<li>deployed caGrid Transfer Service to Tomcat. (If caGrid 1.2, also patched caGrid Transfer Service)</li>
+	<li>xService 1.3.5</li>
+	<li>IVI middleware</li>
+</ul>
+
+
+<p>After obtaining IVI middleware, run "ant clean all" from the root of the IVI Middleware directory.</p>
+
+<h5><a name="AIMEInstallationGuide-DatabaseInstallation"></a>Database Installation</h5>
+<p>An XML database must be installed and configured to be used by AIME service.  The databases supported include IBM DB2 pureXML, Berkeley DB XML, and eXist.  The installation and configuration instructions for the database can be found in the <a href="https://web.cci.emory.edu/confluence/display/xmlds/Installation+Guide" title="Installation Guide">xService Installation Guide</a>.  Please note:</p>
+<ul>
+	<li>The first step in the xService Installation Guide, "Install caGrid", is repeated in the <a href="https://web.cci.emory.edu/confluence/display/IVI/Compiling+from+Source" title="Compiling from Source">Compiling from Source</a> guide, and can be safely skipped.</li>
+	<li>The last step in the xService Installation Guide, "Configure access information for XML database", states that Introduce needs to be used to modify the service's property so it reads the db2config.xml or existconfig.xml from the ETC path.  For AIME service, the source code already contain the appropriate property so Introduce is not needed.</li>
+</ul>
+
+
+<h5><a name="AIMEInstallationGuide-ServiceDeployment"></a>Service Deployment</h5>
+<p>After completing the prerequisite and database installation, the service can be configured and deployed.</p>
+
+<ol>
+	<li>go to the service directory in IVI middleware source tree:
+	<ul>
+		<li>for Stable Release, IVI_LOCATION/services/AIMTCGADataService</li>
+		<li>for Developmental version, IVI_LOCATION/services/AIM3DataService</li>
+	</ul>
+	</li>
+	<li>modify the etc/db2config.xml, etc/existconfig.xml, or the ./service.properties (when using Berkeley DB XML) to contain the appropriate values.</li>
+	<li>run "ant deployTomcat"</li>
+	<li>configure and start the Tomcat Container.</li>
+</ol>
+
+
+
+
+<h3><a name="AIMEInstallationGuide-AIMEClientLibrary"></a>AIME Client Library</h3>
+
+<p>The client library is in the form of Java Jar files.  They provide APIs for invoking remote SOAP grid services.  Please see <a href="https://web.cci.emory.edu/confluence/display/IVI/AIME+Client+Developer%27s+Guide" title="AIME Client Developer's Guide">AIME Client Developer's Guide</a> for more information and example code.</p>
+
+<h4><a name="AIMEInstallationGuide-SourceDistribution"></a>Source Distribution</h4>
+<p>The source for the AIME client library is included in the IVI source distribution.  Please follow instruction above for "AIME Service Installation".  "Database Installation" and "Service Deployment" steps can be skipped.</p>
+
+<p>Once the IVI middleware source code has been compiled, the AIME client jars can be obtained from "services/AIMTCGADataService/build/lib" directory, and the dependent jars can be obtained from "services/AIMTCGADataService/lib" directory. For service invocation, the AIMTCGADataService-client, -common, and -stubs jars are needed.</p>
+
+<p>For Developmental version, look in the corresponding directories in "services/AIM3DataService" directory.</p>
+
+<p>The jars should be placed on java classpath of the program that will be utilizing these jars. </p>
+
+<h4><a name="AIMEInstallationGuide-BinaryDistribution"></a>Binary Distribution</h4>
+
+<p>For the stable release, the client jars and their dependent jars can be obtained directly.  The release packages contain extra jars that are useful for the service deployment.  If so inclined, you can run a dependency checker to get the minimum set of jars.  The jars should be placed on java classpath of the program that will be utilizing these jars.  </p>
+
+
+<p>The dependency jars are in <a href="https://web.cci.emory.edu/confluence/download/attachments/4850194/AIMTCGADataServiceDeps.zip?version=1">zip file </a>, which contains the lib directory content of AIMTCGADataService.<br/>
+You will also need the Globus ws-core lib directory.  <a href="p://gforge.nci.nih.gov/frs/download.php/1334/ws-core-enum-4.0.3.zip">ws-core </a></p>
+
+<p>The client jars are in <a href="https://web.cci.emory.edu/confluence/download/attachments/4850194/AIMTCGADataServiceJars.zip?version=1">zip file </a>, which contains both the service and the client jars.  For client invocation, you only need -client, -common, and -stubs jars.</p>
+
+<p>The jars should be placed on java classpath of the program that will be utilizing these jars. </p>
+
+    </body>
+</html>

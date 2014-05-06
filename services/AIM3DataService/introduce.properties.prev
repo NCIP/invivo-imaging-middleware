@@ -1,0 +1,12 @@
+#Introduce Properties
+#Thu Jan 20 14:24:28 EST 2011
+introduce.skeleton.services.list=AIM3DataService,CaGridEnumeration
+introduce.skeleton.extensions=cagrid_metadata,data,cagrid_wsEnum,caGrid_Transfer
+introduce.skeleton.timestamp=1295551319349
+introduce.skeleton.service.name=AIM3DataService
+introduce.skeleton.resource.options=main,singleton,identifiable,resourcePropertyManagement
+introduce.skeleton.destination.dir=C\:\\Users\\danjy\\AIM3DataService
+introduce.skeleton.namespace.domain=http\://aim.cci.emory.edu/AIM3DataService
+xmldataservice.binding.Tool=JAXB_2.0
+introduce.ns.excludes=\ -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service -x http\://transfer.cagrid.org/Transfer -x http\://transfer.cagrid.org/TransferService/Context/types -x http\://schemas.xmlsoap.org/ws/2004/08/addressing -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata -x http\://gov.nih.nci.cagrid.data/DataServiceExceptions -x gme\://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM -x http\://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer -x http\://schemas.xmlsoap.org/ws/2004/09/enumeration -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common
+introduce.soap.binding.excludes=\ gme\://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="gov.nih.nci.ivi" module="annotation" revision="0.1" status="release"/>
+
+    <configurations>
+      <conf name="default"/>
+    </configurations>
+
+    <publications>
+      <artifact name="AnnotationDataService-client-0.1" type="jar" conf="default"/>
+      <artifact name="AnnotationDataService-stubs-0.1" type="jar" conf="default"/>
+      <artifact name="AnnotationDataService-common-0.1" type="jar" conf="default"/>
+    </publications>
+
+    <dependencies>
+    </dependencies>
+
+</ivy-module>

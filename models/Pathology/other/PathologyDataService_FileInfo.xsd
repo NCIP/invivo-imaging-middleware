@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.fileinfo"
+	xmlns:fileinfo="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.fileinfo"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+
+	<xs:element name="FileInfo" type="fileinfo:FileInfo"></xs:element>
+	<xs:complexType name="FileInfo">
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+	</xs:complexType>
+</xs:schema>

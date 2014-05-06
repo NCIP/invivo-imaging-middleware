@@ -1,0 +1,12 @@
+#Introduce Properties
+#Thu Aug 13 15:57:25 EDT 2009
+introduce.skeleton.services.list=AIMTCGADataService,CaGridEnumeration
+introduce.skeleton.extensions=cagrid_metadata,data,cagrid_wsEnum,caGrid_Transfer
+introduce.skeleton.timestamp=1249927976718
+introduce.skeleton.service.name=AIMTCGADataService
+introduce.skeleton.resource.options=main,singleton,identifiable,resourcePropertyManagement
+introduce.skeleton.destination.dir=/apps/ivi/services/AIMTCGADataService
+introduce.skeleton.namespace.domain=http\://aim.cci.emory.edu/AIMTCGADataService
+xmldataservice.binding.Tool=Apache_Axis_1.x
+introduce.ns.excludes=\ -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service -x http\://transfer.cagrid.org/Transfer -x http\://transfer.cagrid.org/TransferService/Context/types -x http\://schemas.xmlsoap.org/ws/2004/08/addressing -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata -x http\://gov.nih.nci.cagrid.data/DataServiceExceptions -x http\://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer -x http\://schemas.xmlsoap.org/ws/2004/09/enumeration -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common
+introduce.soap.binding.excludes=\ 

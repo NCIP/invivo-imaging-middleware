@@ -1,0 +1,331 @@
+{edu.osu.bmi.dicom.ImageType.USER_COMMT_IMAGE_TXT=(0x0020,0x4000)
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_ID=(0x0012,0x0030)
+ edu.osu.bmi.dicom.PatientType.TRL_SUBJ_READ_ID=(0x0012,0x0042)
+ edu.osu.bmi.dicom.CTImagePhysicsType.RVLTN_TM_SEC_NUM=(0x0018,0x9305)
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_MICROAMPSEC_NUM=(0x0018,0x1153)
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_TM_MILLSEC_NUM=(0x0018,0x1150)
+ edu.osu.bmi.dicom.StudyType.BDY_WT_KG=(0x0010,0x1030)
+ edu.osu.bmi.dicom.StudyType.IMAG_STDY_TM=(0x0008,0x0030)
+ edu.osu.bmi.dicom.PatientType.PROT_NUM=(0x0012,0x0020)
+ edu.osu.bmi.dicom.SeriesType.SER_DESC_TXT=(0x0008,0x103E)
+ edu.osu.bmi.dicom.StudyType.CTMS_PT_AGE=(0x0010,0x1010)
+ edu.osu.bmi.dicom.StudyType.numberOfStudyRelatedSeries=(0x0020,0x1206)
+ edu.osu.bmi.dicom.ImageType.INSTNC_NUM_ID=(0x0020,0x0013)
+ edu.osu.bmi.dicom.SeriesInstanceUIDType._value=(0x0020,0x000E)
+ edu.osu.bmi.dicom.StudyInstanceUIDType._value=(0x0020,0x000D)
+ edu.osu.bmi.dicom.CTImagePhysicsType.XR_CURR_MILLAMP_NUM=(0x0018,0x1151)
+ edu.osu.bmi.dicom.StudyType.PRSN_OCCUP_NM=(0x0010,0x2180)
+ edu.osu.bmi.dicom.ImageType.IMAG_COLUMN_NUM=(0x0028,0x0011)
+ edu.osu.bmi.dicom.StudyType.ADM_DX_CD_SEQ=(0x0008,0x1084)
+ edu.osu.bmi.dicom.ImageType.IMAG_ACQSTN_NUM=(0x0020,0x0012)
+ edu.osu.bmi.dicom.CTImagePhysicsType.GANTRY_TILT_DEG_NUM=(0x0018,0x1120)
+ edu.osu.bmi.dicom.ImageType.MED_IMAG_ROW_NUM=(0x0028,0x0010)
+ edu.osu.bmi.dicom.SOPInstanceUIDType._value=(0x0008,0x0018)
+ edu.osu.bmi.dicom.SeriesType.PRSN_LAT_NM=(0x0020,0x0060)
+ edu.osu.bmi.dicom.CTImagePhysicsType.KVP_VAL_NUM=(0x0018,0x0060)
+ edu.osu.bmi.dicom.StudyType.ADM_DX_DESC_TXT=(0x0008,0x1080)
+ edu.osu.bmi.dicom.SeriesType.ANAT_SITE_ASSESS_TXT=(0x0018,0x0015)
+ edu.osu.bmi.dicom.ImageType.CONT_AGT_RTE_NM_TXT=(0x0018,0x1040)
+ edu.osu.bmi.dicom.SeriesType.FRAME_REF_UID=(0x0020,0x0052)
+ edu.osu.bmi.dicom.PatientType.PT_BIRTH_DT=(0x0010,0x0030)
+ edu.osu.bmi.dicom.StudyType.PT_HT_M_NUM=(0x0010,0x1020)
+ edu.osu.bmi.dicom.ContentType.transferMechanism=-3
+ edu.osu.bmi.dicom.ImageType.CONT_AGT_BOLUS_TXT=(0x0018,0x0010)
+ edu.osu.bmi.dicom.ImageType.SLICE_LOC_MM_NUM=(0x0020,0x1041)
+ edu.osu.bmi.dicom.CTImagePhysicsType.TTL_COLLM_MM_NUM=(0x0018,0x9307)
+ edu.osu.bmi.dicom.PatientType.PT_ETHNGRP_CAT=(0x0010,0x2160)
+ edu.osu.bmi.dicom.SeriesType.IMAGE_MODAL_TP_TXT=(0x0008,0x0060)
+ edu.osu.bmi.dicom.CTImagePhysicsType.RCNSTCT_DIAM_MM_NUM=(0x0018,0x1100)
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_TXT_NM=(0x0012,0x0031)
+ edu.osu.bmi.dicom.StudyType.CLIN_TRL_TMPT_ID=(0x0012,0x0050)
+ edu.osu.bmi.dicom.PatientType.PT_NAME=(0x0010,0x0010)
+ edu.osu.bmi.dicom.SeriesType.PT_POS_TXT_CD=(0x0018,0x5100)
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SPNR_NM_TXT=(0x0012,0x0010)
+ edu.osu.bmi.dicom.StudyType.PT_MED_HX_SHORT_TXT=(0x0010,0x21B0)
+ edu.osu.bmi.dicom.PatientType.PROT_LONG_TLE_TXT=(0x0012,0x0021)
+ edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_Y=(0x0028,0x0030).1
+ edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_X=(0x0028,0x0030).0
+ edu.osu.bmi.dicom.ImageType.SLICE_THKN_MM_NUM=(0x0018,0x0050)
+ edu.osu.bmi.dicom.StudyType.IMAG_STDY_DT=(0x0008,0x0020)
+ edu.osu.bmi.dicom.PatientType.RSCH_CASE_ID=(0x0012,0x0040)
+ edu.osu.bmi.dicom.ImageType.LOSSY_IMAG_COMPR_CD=(0x0028,0x2110)
+ edu.osu.bmi.dicom.CTImagePhysicsType.SNGL_COLLM_MM_NUM=(0x0018,0x9306)
+ edu.osu.bmi.dicom.SeriesType.MANUF_MODL_NM_TXT=(0x0008,0x1090)
+ edu.osu.bmi.dicom.ImageType.PT_IMAG_ORIENT_NUM=(0x0020,0x0037)
+ edu.osu.bmi.dicom.SeriesType.EQUIP_INST_NM_TXT=(0x0008,0x0080)
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_CURR_MILLAMPSEC=(0x0018,0x1152)
+ edu.osu.bmi.dicom.SOPClassUIDType._value=(0x0008,0x0016)
+ edu.osu.bmi.dicom.ContentType.file=-2
+ edu.osu.bmi.dicom.ImageType.IMAGE_TP_NM_TXT=(0x0008,0x0008)
+ edu.osu.bmi.dicom.StudyType.CLIN_TRL_TMPT_TXT=(0x0012,0x0051)
+ edu.osu.bmi.dicom.SeriesType.COORD_CTR_NM_TXT=(0x0012,0x0060)
+ edu.osu.bmi.dicom.SeriesType.IMAG_PROT_NM=(0x0018,0x1030)
+ edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_FD_ROTN_MM_NUM=(0x0018,0x9310)
+ edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_SPEED_MM_SEC=(0x0018,0x9309)
+ edu.osu.bmi.dicom.CTImagePhysicsType.DATA_COLL_DIAM_MM=(0x0018,0x0090)
+ edu.osu.bmi.dicom.PatientType.PT_SEX_TXT_CD=(0x0010,0x0040)
+ edu.osu.bmi.dicom.SeriesType.numberOfSeriesRelatedInstance=(0x0020,0x1209)
+ edu.osu.bmi.dicom.CTImagePhysicsType.CT_PITCH_FACT_NUM=(0x0018,0x9311)
+ edu.osu.bmi.dicom.StudyType.STUDY_DESC_TXT=(0x0008,0x1030)
+ edu.osu.bmi.dicom.ImageType.PT_IMAG_POS_MM_NUM=(0x0020,0x0032)
+ edu.osu.bmi.dicom.SeriesType.MANUF_NM_TXT=(0x0008,0x0070)
+ edu.osu.bmi.dicom.PatientType.PT_ID=(0x0010,0x0020)
+ edu.osu.bmi.dicom.ContentType.URL=-1
+ edu.osu.bmi.dicom.SeriesType.SFTWR_VER_NUM=(0x0018,0x1020)
+ edu.osu.bmi.dicom.ImageType.ANAT_REG_SEQ_TXT=(0x0008,0x2218)}
+WARNING: no information entity associated: edu.osu.bmi.dicom.CTImagePhysicsType.SNGL_COLLM_MM_NUM SingleCollimationWidth (0x0018,0x9306)
+WARNING: no information entity associated: edu.osu.bmi.dicom.CTImagePhysicsType.TTL_COLLM_MM_NUM TotalCollimationWidth (0x0018,0x9307)
+WARNING: no information entity associated: edu.osu.bmi.dicom.CTImagePhysicsType.CT_PITCH_FACT_NUM SpiralPitchFactor (0x0018,0x9311)
+WARNING: no information entity associated: edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_FD_ROTN_MM_NUM TableFeedPerRotation (0x0018,0x9310)
+WARNING: no information entity associated: edu.osu.bmi.dicom.CTImagePhysicsType.RVLTN_TM_SEC_NUM RevolutionTime (0x0018,0x9305)
+WARNING: no information entity associated: edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_SPEED_MM_SEC TableSpeed (0x0018,0x9309)
+WARNING: no tag associated: edu.osu.bmi.dicom.ContentType.transferMechanism. ignored.
+WARNING: no tag associated: edu.osu.bmi.dicom.ContentType.URL. ignored.
+WARNING: no tag associated: edu.osu.bmi.dicom.ContentType.file. ignored.
+ model attr name edu.osu.bmi.dicom.SOPInstanceUIDType._value
+ model attr name edu.osu.bmi.dicom.SeriesInstanceUIDType._value
+ model attr name edu.osu.bmi.dicom.StudyInstanceUIDType._value
+ model attr name edu.osu.bmi.dicom.PatientType.PT_ID
+ model map retrieval mapping {Frame=IMAGE, Instance=IMAGE, Series=SERIES, ProcedureStep=STUDY, Concatenation=SERIES, Study=STUDY, Patient=PATIENT}
+ model map retrieval tag mapping {IMAGE=(0x0008,0x0018), SERIES=(0x0020,0x000e), STUDY=(0x0020,0x000d), PATIENT=(0x0010,0x0020)}
+ model map retrieval mapping patient PATIENT
+ model map retrieval mapping study STUDY
+ model map retrieval mapping series SERIES
+ model map retrieval mapping instance IMAGE
+ model map retrieval mapping procedure step STUDY
+ model map retrieval mapping concatenation SERIES
+ model map retrieval mapping frame IMAGE
+ model map retrieval tag mapping patient (0x0010,0x0020)
+ model map retrieval tag mapping study (0x0020,0x000d)
+ model map retrieval tag mapping series (0x0020,0x000e)
+ model map retrieval tag mapping image (0x0008,0x0018)
+ model map retrieval mapping iterator 
+,Frame,Instance,Series,ProcedureStep,Concatenation,Study,Patient
+ model map retrieval class mapping patient class edu.osu.bmi.dicom.PatientType
+ model map retrieval class mapping study class edu.osu.bmi.dicom.StudyType
+ model map retrieval class mapping series class edu.osu.bmi.dicom.SeriesType
+ model map retrieval class mapping image class edu.osu.bmi.dicom.ImageType
+ model dictionary = {edu.osu.bmi.dicom.ImageType=class edu.osu.bmi.dicom.ImageType
+ edu.osu.bmi.dicom.StudyInstanceUIDType=class edu.osu.bmi.dicom.StudyInstanceUIDType
+ edu.osu.bmi.dicom.CTImagePhysicsType=class edu.osu.bmi.dicom.CTImagePhysicsType
+ edu.osu.bmi.dicom.ContentType=class edu.osu.bmi.dicom.ContentType
+ edu.osu.bmi.dicom.SOPClassUIDType=class edu.osu.bmi.dicom.SOPClassUIDType
+ edu.osu.bmi.dicom.SOPInstanceUIDType=class edu.osu.bmi.dicom.SOPInstanceUIDType
+ edu.osu.bmi.dicom.StudyType=class edu.osu.bmi.dicom.StudyType
+ edu.osu.bmi.dicom.PatientType=class edu.osu.bmi.dicom.PatientType
+ edu.osu.bmi.dicom.SeriesType=class edu.osu.bmi.dicom.SeriesType
+ edu.osu.bmi.dicom.SeriesInstanceUIDType=class edu.osu.bmi.dicom.SeriesInstanceUIDType}
+
+{class edu.osu.bmi.dicom.StudyType=class edu.osu.bmi.dicom.PatientType
+ class edu.osu.bmi.dicom.SOPClassUIDType=class edu.osu.bmi.dicom.ImageType
+ class edu.osu.bmi.dicom.CTImagePhysicsType=class edu.osu.bmi.dicom.ImageType
+ class edu.osu.bmi.dicom.SeriesType=class edu.osu.bmi.dicom.StudyType
+ class edu.osu.bmi.dicom.ImageType=class edu.osu.bmi.dicom.SeriesType
+ class edu.osu.bmi.dicom.StudyInstanceUIDType=class edu.osu.bmi.dicom.StudyType
+ class edu.osu.bmi.dicom.ContentType=class edu.osu.bmi.dicom.ImageType
+ class edu.osu.bmi.dicom.SeriesInstanceUIDType=class edu.osu.bmi.dicom.SeriesType
+ class edu.osu.bmi.dicom.PatientType=null
+ class edu.osu.bmi.dicom.SOPInstanceUIDType=class edu.osu.bmi.dicom.ImageType}
+
+{class edu.osu.bmi.dicom.StudyType=[private edu.osu.bmi.dicom.StudyInstanceUIDType edu.osu.bmi.dicom.StudyType.STDY_INSTNC_UID
+ private edu.osu.bmi.dicom.SeriesType[] edu.osu.bmi.dicom.StudyType.series
+ private edu.osu.bmi.dicom.PatientType edu.osu.bmi.dicom.StudyType.patient]
+ class edu.osu.bmi.dicom.SOPClassUIDType=[]
+ class edu.osu.bmi.dicom.CTImagePhysicsType=[]
+ class edu.osu.bmi.dicom.SeriesType=[private edu.osu.bmi.dicom.SeriesInstanceUIDType edu.osu.bmi.dicom.SeriesType.SER_INST_UID
+ private edu.osu.bmi.dicom.StudyType edu.osu.bmi.dicom.SeriesType.study
+ private edu.osu.bmi.dicom.ImageType[] edu.osu.bmi.dicom.SeriesType.image]
+ class edu.osu.bmi.dicom.StudyInstanceUIDType=[]
+ class edu.osu.bmi.dicom.ImageType=[private edu.osu.bmi.dicom.SOPInstanceUIDType edu.osu.bmi.dicom.ImageType.SOP_INSTC_UID
+ private edu.osu.bmi.dicom.SeriesType edu.osu.bmi.dicom.ImageType.series
+ private edu.osu.bmi.dicom.CTImagePhysicsType edu.osu.bmi.dicom.ImageType.physics
+ private edu.osu.bmi.dicom.SOPClassUIDType edu.osu.bmi.dicom.ImageType.SOP_CLASS_UID
+ private edu.osu.bmi.dicom.ContentType edu.osu.bmi.dicom.ImageType.content]
+ class edu.osu.bmi.dicom.ContentType=[private edu.osu.bmi.dicom.ImageType edu.osu.bmi.dicom.ContentType.image]
+ class edu.osu.bmi.dicom.SeriesInstanceUIDType=[]
+ class edu.osu.bmi.dicom.PatientType=[private edu.osu.bmi.dicom.StudyType[] edu.osu.bmi.dicom.PatientType.study]
+ class edu.osu.bmi.dicom.SOPInstanceUIDType=[]}
+
+{edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_TXT_NM=private java.lang.String edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_TXT_NM
+ edu.osu.bmi.dicom.StudyInstanceUIDType._value=private java.lang.String edu.osu.bmi.dicom.StudyInstanceUIDType._value
+ edu.osu.bmi.dicom.CTImagePhysicsType.XR_CURR_MILLAMP_NUM=private java.lang.Integer edu.osu.bmi.dicom.CTImagePhysicsType.XR_CURR_MILLAMP_NUM
+ edu.osu.bmi.dicom.SeriesType.SER_DESC_TXT=private java.lang.String edu.osu.bmi.dicom.SeriesType.SER_DESC_TXT
+ edu.osu.bmi.dicom.PatientType.PT_NAME=private java.lang.String edu.osu.bmi.dicom.PatientType.PT_NAME
+ edu.osu.bmi.dicom.PatientType.PT_ETHNGRP_CAT=private java.lang.String edu.osu.bmi.dicom.PatientType.PT_ETHNGRP_CAT
+ edu.osu.bmi.dicom.SeriesType.ANAT_SITE_ASSESS_TXT=private java.lang.String edu.osu.bmi.dicom.SeriesType.ANAT_SITE_ASSESS_TXT
+ edu.osu.bmi.dicom.StudyType.PT_MED_HX_SHORT_TXT=private java.lang.String edu.osu.bmi.dicom.StudyType.PT_MED_HX_SHORT_TXT
+ edu.osu.bmi.dicom.SeriesInstanceUIDType._value=private java.lang.String edu.osu.bmi.dicom.SeriesInstanceUIDType._value
+ edu.osu.bmi.dicom.StudyType.ADM_DX_CD_SEQ=private java.lang.String edu.osu.bmi.dicom.StudyType.ADM_DX_CD_SEQ
+ edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_FD_ROTN_MM_NUM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_FD_ROTN_MM_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_TM_MILLSEC_NUM=private java.lang.Integer edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_TM_MILLSEC_NUM
+ edu.osu.bmi.dicom.StudyType.ADM_DX_DESC_TXT=private java.lang.String edu.osu.bmi.dicom.StudyType.ADM_DX_DESC_TXT
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_MICROAMPSEC_NUM=private java.lang.Integer edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_MICROAMPSEC_NUM
+ edu.osu.bmi.dicom.SeriesType.PRSN_LAT_NM=private java.lang.String edu.osu.bmi.dicom.SeriesType.PRSN_LAT_NM
+ edu.osu.bmi.dicom.SeriesType.SFTWR_VER_NUM=private java.lang.String edu.osu.bmi.dicom.SeriesType.SFTWR_VER_NUM
+ edu.osu.bmi.dicom.StudyType.BDY_WT_KG=private java.lang.Double edu.osu.bmi.dicom.StudyType.BDY_WT_KG
+ edu.osu.bmi.dicom.ContentType.URL=private java.lang.String edu.osu.bmi.dicom.ContentType.URL
+ edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_SPEED_MM_SEC=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_SPEED_MM_SEC
+ edu.osu.bmi.dicom.ImageType.USER_COMMT_IMAGE_TXT=private java.lang.String edu.osu.bmi.dicom.ImageType.USER_COMMT_IMAGE_TXT
+ edu.osu.bmi.dicom.PatientType.TRL_SUBJ_READ_ID=private java.lang.String edu.osu.bmi.dicom.PatientType.TRL_SUBJ_READ_ID
+ edu.osu.bmi.dicom.StudyType.PRSN_OCCUP_NM=private java.lang.String edu.osu.bmi.dicom.StudyType.PRSN_OCCUP_NM
+ edu.osu.bmi.dicom.CTImagePhysicsType.SNGL_COLLM_MM_NUM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.SNGL_COLLM_MM_NUM
+ edu.osu.bmi.dicom.PatientType.PT_SEX_TXT_CD=private java.lang.String edu.osu.bmi.dicom.PatientType.PT_SEX_TXT_CD
+ edu.osu.bmi.dicom.ImageType.MED_IMAG_ROW_NUM=private java.lang.Integer edu.osu.bmi.dicom.ImageType.MED_IMAG_ROW_NUM
+ edu.osu.bmi.dicom.SeriesType.MANUF_NM_TXT=private java.lang.String edu.osu.bmi.dicom.SeriesType.MANUF_NM_TXT
+ edu.osu.bmi.dicom.PatientType.PROT_NUM=private java.lang.String edu.osu.bmi.dicom.PatientType.PROT_NUM
+ edu.osu.bmi.dicom.StudyType.PT_HT_M_NUM=private java.lang.Double edu.osu.bmi.dicom.StudyType.PT_HT_M_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.CT_PITCH_FACT_NUM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.CT_PITCH_FACT_NUM
+ edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_X=private java.lang.Double edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_X
+ edu.osu.bmi.dicom.SeriesType.COORD_CTR_NM_TXT=private java.lang.String edu.osu.bmi.dicom.SeriesType.COORD_CTR_NM_TXT
+ edu.osu.bmi.dicom.StudyType.IMAG_STDY_TM=private org.apache.axis.types.Time edu.osu.bmi.dicom.StudyType.IMAG_STDY_TM
+ edu.osu.bmi.dicom.SeriesType.FRAME_REF_UID=private java.lang.String edu.osu.bmi.dicom.SeriesType.FRAME_REF_UID
+ edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_Y=private java.lang.Double edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_Y
+ edu.osu.bmi.dicom.ImageType.IMAGE_TP_NM_TXT=private java.lang.String edu.osu.bmi.dicom.ImageType.IMAGE_TP_NM_TXT
+ edu.osu.bmi.dicom.SeriesType.numberOfSeriesRelatedInstance=private java.lang.Integer edu.osu.bmi.dicom.SeriesType.numberOfSeriesRelatedInstance
+ edu.osu.bmi.dicom.StudyType.CTMS_PT_AGE=private java.lang.String edu.osu.bmi.dicom.StudyType.CTMS_PT_AGE
+ edu.osu.bmi.dicom.ImageType.SLICE_LOC_MM_NUM=private java.lang.Double edu.osu.bmi.dicom.ImageType.SLICE_LOC_MM_NUM
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_ID=private java.lang.String edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_ID
+ edu.osu.bmi.dicom.CTImagePhysicsType.DATA_COLL_DIAM_MM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.DATA_COLL_DIAM_MM
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_CURR_MILLAMPSEC=private java.lang.Integer edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_CURR_MILLAMPSEC
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SPNR_NM_TXT=private java.lang.String edu.osu.bmi.dicom.PatientType.CLIN_TRL_SPNR_NM_TXT
+ edu.osu.bmi.dicom.ContentType.file=private byte[] edu.osu.bmi.dicom.ContentType.file
+ edu.osu.bmi.dicom.ImageType.IMAG_ACQSTN_NUM=private java.lang.Integer edu.osu.bmi.dicom.ImageType.IMAG_ACQSTN_NUM
+ edu.osu.bmi.dicom.ImageType.PT_IMAG_ORIENT_NUM=private java.lang.String edu.osu.bmi.dicom.ImageType.PT_IMAG_ORIENT_NUM
+ edu.osu.bmi.dicom.PatientType.RSCH_CASE_ID=private java.lang.String edu.osu.bmi.dicom.PatientType.RSCH_CASE_ID
+ edu.osu.bmi.dicom.SeriesType.IMAGE_MODAL_TP_TXT=private java.lang.String edu.osu.bmi.dicom.SeriesType.IMAGE_MODAL_TP_TXT
+ edu.osu.bmi.dicom.CTImagePhysicsType.GANTRY_TILT_DEG_NUM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.GANTRY_TILT_DEG_NUM
+ edu.osu.bmi.dicom.SeriesType.PT_POS_TXT_CD=private java.lang.String edu.osu.bmi.dicom.SeriesType.PT_POS_TXT_CD
+ edu.osu.bmi.dicom.CTImagePhysicsType.RVLTN_TM_SEC_NUM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.RVLTN_TM_SEC_NUM
+ edu.osu.bmi.dicom.PatientType.PT_BIRTH_DT=private java.util.Date edu.osu.bmi.dicom.PatientType.PT_BIRTH_DT
+ edu.osu.bmi.dicom.StudyType.IMAG_STDY_DT=private java.util.Date edu.osu.bmi.dicom.StudyType.IMAG_STDY_DT
+ edu.osu.bmi.dicom.SeriesType.EQUIP_INST_NM_TXT=private java.lang.String edu.osu.bmi.dicom.SeriesType.EQUIP_INST_NM_TXT
+ edu.osu.bmi.dicom.ImageType.CONT_AGT_BOLUS_TXT=private java.lang.String edu.osu.bmi.dicom.ImageType.CONT_AGT_BOLUS_TXT
+ edu.osu.bmi.dicom.SeriesType.IMAG_PROT_NM=private java.lang.String edu.osu.bmi.dicom.SeriesType.IMAG_PROT_NM
+ edu.osu.bmi.dicom.StudyType.STUDY_DESC_TXT=private java.lang.String edu.osu.bmi.dicom.StudyType.STUDY_DESC_TXT
+ edu.osu.bmi.dicom.ImageType.INSTNC_NUM_ID=private java.lang.Integer edu.osu.bmi.dicom.ImageType.INSTNC_NUM_ID
+ edu.osu.bmi.dicom.ImageType.CONT_AGT_RTE_NM_TXT=private java.lang.String edu.osu.bmi.dicom.ImageType.CONT_AGT_RTE_NM_TXT
+ edu.osu.bmi.dicom.ImageType.LOSSY_IMAG_COMPR_CD=private java.lang.String edu.osu.bmi.dicom.ImageType.LOSSY_IMAG_COMPR_CD
+ edu.osu.bmi.dicom.ImageType.ANAT_REG_SEQ_TXT=private java.lang.String edu.osu.bmi.dicom.ImageType.ANAT_REG_SEQ_TXT
+ edu.osu.bmi.dicom.SOPClassUIDType._value=private java.lang.String edu.osu.bmi.dicom.SOPClassUIDType._value
+ edu.osu.bmi.dicom.SeriesType.MANUF_MODL_NM_TXT=private java.lang.String edu.osu.bmi.dicom.SeriesType.MANUF_MODL_NM_TXT
+ edu.osu.bmi.dicom.StudyType.numberOfStudyRelatedSeries=private java.lang.Integer edu.osu.bmi.dicom.StudyType.numberOfStudyRelatedSeries
+ edu.osu.bmi.dicom.CTImagePhysicsType.TTL_COLLM_MM_NUM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.TTL_COLLM_MM_NUM
+ edu.osu.bmi.dicom.ContentType.transferMechanism=private java.lang.String edu.osu.bmi.dicom.ContentType.transferMechanism
+ edu.osu.bmi.dicom.ImageType.PT_IMAG_POS_MM_NUM=private java.lang.String edu.osu.bmi.dicom.ImageType.PT_IMAG_POS_MM_NUM
+ edu.osu.bmi.dicom.StudyType.CLIN_TRL_TMPT_ID=private java.lang.String edu.osu.bmi.dicom.StudyType.CLIN_TRL_TMPT_ID
+ edu.osu.bmi.dicom.StudyType.CLIN_TRL_TMPT_TXT=private java.lang.String edu.osu.bmi.dicom.StudyType.CLIN_TRL_TMPT_TXT
+ edu.osu.bmi.dicom.ImageType.SLICE_THKN_MM_NUM=private java.lang.Double edu.osu.bmi.dicom.ImageType.SLICE_THKN_MM_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.KVP_VAL_NUM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.KVP_VAL_NUM
+ edu.osu.bmi.dicom.SOPInstanceUIDType._value=private java.lang.String edu.osu.bmi.dicom.SOPInstanceUIDType._value
+ edu.osu.bmi.dicom.PatientType.PROT_LONG_TLE_TXT=private java.lang.String edu.osu.bmi.dicom.PatientType.PROT_LONG_TLE_TXT
+ edu.osu.bmi.dicom.ImageType.IMAG_COLUMN_NUM=private java.lang.Integer edu.osu.bmi.dicom.ImageType.IMAG_COLUMN_NUM
+ edu.osu.bmi.dicom.PatientType.PT_ID=private java.lang.String edu.osu.bmi.dicom.PatientType.PT_ID
+ edu.osu.bmi.dicom.CTImagePhysicsType.RCNSTCT_DIAM_MM_NUM=private java.lang.Double edu.osu.bmi.dicom.CTImagePhysicsType.RCNSTCT_DIAM_MM_NUM}
+
+{edu.osu.bmi.dicom.ImageType=[edu.osu.bmi.dicom.ImageType.SLICE_LOC_MM_NUM
+ edu.osu.bmi.dicom.ImageType.ANAT_REG_SEQ_TXT
+ edu.osu.bmi.dicom.ImageType.LOSSY_IMAG_COMPR_CD
+ edu.osu.bmi.dicom.ImageType.MED_IMAG_ROW_NUM
+ edu.osu.bmi.dicom.ImageType.PT_IMAG_POS_MM_NUM
+ edu.osu.bmi.dicom.ImageType.IMAG_ACQSTN_NUM
+ edu.osu.bmi.dicom.ImageType.PT_IMAG_ORIENT_NUM
+ edu.osu.bmi.dicom.ImageType.SLICE_THKN_MM_NUM
+ edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_X
+ edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_Y
+ edu.osu.bmi.dicom.ImageType.IMAGE_TP_NM_TXT
+ edu.osu.bmi.dicom.ImageType.CONT_AGT_BOLUS_TXT
+ edu.osu.bmi.dicom.ImageType.IMAG_COLUMN_NUM
+ edu.osu.bmi.dicom.ImageType.USER_COMMT_IMAGE_TXT
+ edu.osu.bmi.dicom.ImageType.CONT_AGT_RTE_NM_TXT
+ edu.osu.bmi.dicom.ImageType.INSTNC_NUM_ID]
+ edu.osu.bmi.dicom.StudyInstanceUIDType=[edu.osu.bmi.dicom.StudyInstanceUIDType._value]
+ edu.osu.bmi.dicom.CTImagePhysicsType=[edu.osu.bmi.dicom.CTImagePhysicsType.DATA_COLL_DIAM_MM
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_CURR_MILLAMPSEC
+ edu.osu.bmi.dicom.CTImagePhysicsType.SNGL_COLLM_MM_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.XR_CURR_MILLAMP_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.TTL_COLLM_MM_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.CT_PITCH_FACT_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_FD_ROTN_MM_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.GANTRY_TILT_DEG_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_TM_MILLSEC_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.KVP_VAL_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.EXPO_MICROAMPSEC_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.RVLTN_TM_SEC_NUM
+ edu.osu.bmi.dicom.CTImagePhysicsType.TABLE_SPEED_MM_SEC
+ edu.osu.bmi.dicom.CTImagePhysicsType.RCNSTCT_DIAM_MM_NUM]
+ edu.osu.bmi.dicom.ContentType=[edu.osu.bmi.dicom.ContentType.transferMechanism
+ edu.osu.bmi.dicom.ContentType.URL
+ edu.osu.bmi.dicom.ContentType.file]
+ edu.osu.bmi.dicom.SOPClassUIDType=[edu.osu.bmi.dicom.SOPClassUIDType._value]
+ edu.osu.bmi.dicom.PatientType=[edu.osu.bmi.dicom.PatientType.TRL_SUBJ_READ_ID
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_TXT_NM
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_ID
+ edu.osu.bmi.dicom.PatientType.PT_SEX_TXT_CD
+ edu.osu.bmi.dicom.PatientType.PROT_LONG_TLE_TXT
+ edu.osu.bmi.dicom.PatientType.PT_BIRTH_DT
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SPNR_NM_TXT
+ edu.osu.bmi.dicom.PatientType.PROT_NUM
+ edu.osu.bmi.dicom.PatientType.PT_NAME
+ edu.osu.bmi.dicom.PatientType.PT_ETHNGRP_CAT
+ edu.osu.bmi.dicom.PatientType.PT_ID
+ edu.osu.bmi.dicom.PatientType.RSCH_CASE_ID]
+ edu.osu.bmi.dicom.StudyType=[edu.osu.bmi.dicom.StudyType.PRSN_OCCUP_NM
+ edu.osu.bmi.dicom.StudyType.numberOfStudyRelatedSeries
+ edu.osu.bmi.dicom.StudyType.CLIN_TRL_TMPT_ID
+ edu.osu.bmi.dicom.StudyType.CLIN_TRL_TMPT_TXT
+ edu.osu.bmi.dicom.StudyType.PT_HT_M_NUM
+ edu.osu.bmi.dicom.StudyType.PT_MED_HX_SHORT_TXT
+ edu.osu.bmi.dicom.StudyType.ADM_DX_CD_SEQ
+ edu.osu.bmi.dicom.StudyType.IMAG_STDY_TM
+ edu.osu.bmi.dicom.StudyType.ADM_DX_DESC_TXT
+ edu.osu.bmi.dicom.StudyType.IMAG_STDY_DT
+ edu.osu.bmi.dicom.StudyType.BDY_WT_KG
+ edu.osu.bmi.dicom.StudyType.STUDY_DESC_TXT
+ edu.osu.bmi.dicom.StudyType.CTMS_PT_AGE]
+ edu.osu.bmi.dicom.SOPInstanceUIDType=[edu.osu.bmi.dicom.SOPInstanceUIDType._value]
+ edu.osu.bmi.dicom.SeriesType=[edu.osu.bmi.dicom.SeriesType.MANUF_MODL_NM_TXT
+ edu.osu.bmi.dicom.SeriesType.MANUF_NM_TXT
+ edu.osu.bmi.dicom.SeriesType.SER_DESC_TXT
+ edu.osu.bmi.dicom.SeriesType.ANAT_SITE_ASSESS_TXT
+ edu.osu.bmi.dicom.SeriesType.IMAGE_MODAL_TP_TXT
+ edu.osu.bmi.dicom.SeriesType.COORD_CTR_NM_TXT
+ edu.osu.bmi.dicom.SeriesType.PRSN_LAT_NM
+ edu.osu.bmi.dicom.SeriesType.SFTWR_VER_NUM
+ edu.osu.bmi.dicom.SeriesType.PT_POS_TXT_CD
+ edu.osu.bmi.dicom.SeriesType.FRAME_REF_UID
+ edu.osu.bmi.dicom.SeriesType.EQUIP_INST_NM_TXT
+ edu.osu.bmi.dicom.SeriesType.IMAG_PROT_NM
+ edu.osu.bmi.dicom.SeriesType.numberOfSeriesRelatedInstance]
+ edu.osu.bmi.dicom.SeriesInstanceUIDType=[edu.osu.bmi.dicom.SeriesInstanceUIDType._value]}
+
+
+ study uid tag = (0x0020,0x000d)
+ from attribute tag study uid: {edu.osu.bmi.dicom.StudyInstanceUIDType._value=-1}
+ attributes containing "Patient" [edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_ID
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_TXT_NM
+ edu.osu.bmi.dicom.PatientType.CLIN_TRL_SPNR_NM_TXT
+ edu.osu.bmi.dicom.PatientType.PROT_LONG_TLE_TXT
+ edu.osu.bmi.dicom.PatientType.PROT_NUM
+ edu.osu.bmi.dicom.PatientType.PT_BIRTH_DT
+ edu.osu.bmi.dicom.PatientType.PT_ETHNGRP_CAT
+ edu.osu.bmi.dicom.PatientType.PT_ID
+ edu.osu.bmi.dicom.PatientType.PT_NAME
+ edu.osu.bmi.dicom.PatientType.PT_SEX_TXT_CD
+ edu.osu.bmi.dicom.PatientType.RSCH_CASE_ID
+ edu.osu.bmi.dicom.PatientType.TRL_SUBJ_READ_ID]
+ name = edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_ID dicom value (0x0012,0x0030) attribute tag name ClinicalTrialSiteID
+ name = edu.osu.bmi.dicom.PatientType.CLIN_TRL_SITE_TXT_NM dicom value (0x0012,0x0031) attribute tag name ClinicalTrialSiteName
+ name = edu.osu.bmi.dicom.PatientType.CLIN_TRL_SPNR_NM_TXT dicom value (0x0012,0x0010) attribute tag name ClinicalTrialSponsorName
+ name = edu.osu.bmi.dicom.PatientType.PROT_LONG_TLE_TXT dicom value (0x0012,0x0021) attribute tag name ClinicalTrialProtocolName
+ name = edu.osu.bmi.dicom.PatientType.PROT_NUM dicom value (0x0012,0x0020) attribute tag name ClinicalTrialProtocolID
+ name = edu.osu.bmi.dicom.PatientType.PT_BIRTH_DT dicom value (0x0010,0x0030) attribute tag name PatientBirthDate
+ name = edu.osu.bmi.dicom.PatientType.PT_ETHNGRP_CAT dicom value (0x0010,0x2160) attribute tag name EthnicGroup
+ name = edu.osu.bmi.dicom.PatientType.PT_ID dicom value (0x0010,0x0020) attribute tag name PatientID
+ name = edu.osu.bmi.dicom.PatientType.PT_NAME dicom value (0x0010,0x0010) attribute tag name PatientName
+ name = edu.osu.bmi.dicom.PatientType.PT_SEX_TXT_CD dicom value (0x0010,0x0040) attribute tag name PatientSex
+ name = edu.osu.bmi.dicom.PatientType.RSCH_CASE_ID dicom value (0x0012,0x0040) attribute tag name ClinicalTrialSubjectID
+ name = edu.osu.bmi.dicom.PatientType.TRL_SUBJ_READ_ID dicom value (0x0012,0x0042) attribute tag name ClinicalTrialSubjectReadingID
+ pixel spacing tag = (0x0028,0x0030)
+ from attribute tag pixel spacing: {edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_X=0, edu.osu.bmi.dicom.ImageType.PIXEL_SPAC_MM_NUM_Y=1}
+ patient age tag = (0x0010,0x1010)
+ from attribute tag patient age: {edu.osu.bmi.dicom.StudyType.CTMS_PT_AGE=-1}

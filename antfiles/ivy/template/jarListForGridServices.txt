@@ -1,0 +1,75 @@
+use the following dependency instead.  Replaces the list of jars below.
+      <dependency org="org.cagrid" name="bulkDataTransfer" rev="1.1" conf="common,client,service->default" />
+      <dependency org="org.cagrid" name="introduce" rev="1.1" conf="common,client,service->default" />
+	<dependency org="org.cagrid" name="servicesecurity" rev="1.1" conf="common,client,service->default" />
+	<dependency org="org.cagrid" name="advertisement" rev="1.1" conf="common,client,service->default" />
+	<dependency org="org.cagrid" name="caDSR" rev="1.1" conf="common,client,service->default" />
+	<dependency org="org.cagrid" name="cabigextensions" rev="1.1" conf="common,client,service->default" />
+      <dependency org="org.cagrid" name="core" rev="1.1" conf="*->default" />
+	<dependency org="org.cagrid" name="data" rev="1.1" conf="*->default" />
+	<dependency org="org.cagrid" name="dataExtensions" rev="1.1" conf="*->default" />
+	<dependency org="org.cagrid" name="metadata" rev="1.1" conf="common,client,service->default" />
+	<dependency org="org.cagrid" name="ws-enum" rev="1.1" conf="common,client,service->default" />
+	<dependency org="castor" name="castor" rev="0.9.9" conf="*->default" />
+      <dependency org="mds" name="mds" rev="1.0" conf="common,client,service->default" />
+      <dependency org="jdom" name="jdom" rev="1.0" conf="*->default" />
+      <dependency org="org.projectmobius" name="mobius-clients" rev="1.0" conf="*->default" />
+
+
+
+
+
+List of jars from skeleton grid service.
+
+caGrid-1.1-advertisement.jar
+caGrid-1.1-BulkDataHandler-client.jar
+caGrid-1.1-BulkDataHandler-common.jar
+caGrid-1.1-BulkDataHandler-extension.jar
+caGrid-1.1-BulkDataHandler-service.jar
+caGrid-1.1-BulkDataHandler-stubs.jar
+caGrid-1.1-BulkDataHandler-tests.jar
+caGrid-1.1-cabigextensions-stubs.jar
+caGrid-1.1-caDSR-client.jar
+caGrid-1.1-caDSR-common.jar
+caGrid-1.1-caDSR-portal.jar
+caGrid-1.1-caDSR-service.jar
+caGrid-1.1-caDSR-stubs.jar
+caGrid-1.1-caDSR-tests.jar
+caGrid-1.1-core.jar
+caGrid-1.1-data-common.jar
+caGrid-1.1-data-cql.jar
+caGrid-1.1-dataExtensions-core.jar
+caGrid-1.1-dataExtensions-sdkstyle.jar
+caGrid-1.1-dataExtensions-tests.jar
+caGrid-1.1-dataExtensions-ui.jar
+caGrid-1.1-dataExtensions-upgrades.jar
+caGrid-1.1-data-service.jar
+caGrid-1.1-data-stubs.jar
+caGrid-1.1-data-tests.jar
+caGrid-1.1-data-tools.jar
+caGrid-1.1-data-utils.jar
+caGrid-1.1-data-validation.jar
+caGrid-1.1-Introduce-1.1-serviceTools.jar
+caGrid-1.1-metadata-common.jar
+caGrid-1.1-metadata-data.jar
+caGrid-1.1-metadata-security.jar
+caGrid-1.1-metadataUtils.jar
+caGrid-1.1-ServiceSecurityProvider-client.jar
+caGrid-1.1-ServiceSecurityProvider-common.jar
+caGrid-1.1-ServiceSecurityProvider-service.jar
+caGrid-1.1-ServiceSecurityProvider-stubs.jar
+caGrid-1.1-wsEnum-stubs.jar
+caGrid-1.1-wsEnum.jar
+castor-0.9.9.jar
+globus_wsrf_mds_aggregator.jar
+globus_wsrf_mds_aggregator_stubs.jar
+globus_wsrf_servicegroup.jar
+globus_wsrf_servicegroup_stubs.jar
+jdom-1.0.jar
+mobius_common_client-1.1.jar
+mobius_factories-1.1.jar
+mobius_gme_client-1.1.jar
+mobius_mako_client-1.1.jar
+mobius_tools-1.1.jar
+wsrf_core_enum.jar
+wsrf_core_stubs_enum.jar

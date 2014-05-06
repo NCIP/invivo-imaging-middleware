@@ -1,0 +1,16 @@
+http\://dsdcontainerservice.ivi.nci.nih.gov/DSDContainerService=gov.nih.nci.ivi.dsdcontainerservice.stubs
+http\://dsdcontainerservice.ivi.nci.nih.gov/DSDContainerService/bindings=gov.nih.nci.ivi.dsdcontainerservice.stubs.bindings
+http\://dsdcontainerservice.ivi.nci.nih.gov/DSDContainerService/service=gov.nih.nci.ivi.dsdcontainerservice.stubs.service
+http\://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl=org.oasis.wsrf.properties
+http\://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl=org.oasis.wsrf.properties
+http\://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl=org.oasis.wsrf.properties
+http\://security.introduce.cagrid.nci.nih.gov/ServiceSecurity=gov.nih.nci.cagrid.introduce.security.stubs
+
+http\://transfer.cagrid.org/Transfer=org.cagrid.transfer.descriptor
+http\://transfer.cagrid.org/TransferService/Context/types=org.cagrid.transfer.context.stubs.types
+gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata=gov.nih.nci.cagrid.metadata
+gme\://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.dsd=gov.nih.nci.ivi.dsd
+gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security=gov.nih.nci.cagrid.metadata.security
+http\://dsdcontainerservice.ivi.nci.nih.gov/DSDContainerService/types=gov.nih.nci.ivi.dsdcontainerservice.stubs.types
+gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service=gov.nih.nci.cagrid.metadata.service
+gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common=gov.nih.nci.cagrid.metadata.common

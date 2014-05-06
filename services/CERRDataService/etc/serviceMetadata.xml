@@ -1,0 +1,144 @@
+<ns1:ServiceMetadata xmlns:ns1="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata">
+ <ns1:serviceDescription>
+  <ns2:Service description="" name="CERRDataService" version="1.2" xmlns:ns2="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service">
+   <ns2:pointOfContactCollection>
+    <ns3:PointOfContact affiliation="" email="" firstName="" lastName="" phoneNumber="" role="" xmlns:ns3="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common"/>
+   </ns2:pointOfContactCollection>
+   <ns2:serviceContextCollection>
+    <ns2:ServiceContext description="" name="CERRDataService">
+     <ns2:operationCollection>
+      <ns2:Operation description="" name="GetMultipleResourceProperties">
+       <ns2:inputParameterCollection/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="GetResourceProperty">
+       <ns2:inputParameterCollection/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="QueryResourceProperties">
+       <ns2:inputParameterCollection/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="getServiceSecurityMetadata">
+       <ns2:inputParameterCollection/>
+       <ns2:Output qName="ns4:ServiceSecurityMetadata" dimensionality="1" isArray="false" xmlns:ns4="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security"/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="query">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns5:CQLQuery" dimensionality="1" index="0" isArray="false" isRequired="false" name="cqlQuery" xmlns:ns5="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery"/>
+       </ns2:inputParameterCollection>
+       <ns2:Output qName="ns6:CQLQueryResultCollection" dimensionality="1" isArray="false" xmlns:ns6="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet"/>
+       <ns2:faultCollection>
+        <ns2:Fault description="Thrown when an error occurs in processing a CQL query" name="QueryProcessingException"/>
+        <ns2:Fault description="Thrown when a query is found to be improperly formed" name="MalformedQueryException"/>
+       </ns2:faultCollection>
+      </ns2:Operation>
+      <ns2:Operation description="" name="enumerationQuery">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns7:CQLQuery" dimensionality="1" index="0" isArray="false" isRequired="false" name="cqlQuery" xmlns:ns7="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery"/>
+       </ns2:inputParameterCollection>
+       <ns2:Output qName="ns8:EnumerationResponseContainer" dimensionality="1" isArray="false" xmlns:ns8="http://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer"/>
+       <ns2:faultCollection>
+        <ns2:Fault description="Thrown when an error occurs in processing a CQL query" name="QueryProcessingException"/>
+        <ns2:Fault description="Thrown when a query is found to be improperly formed" name="MalformedQueryException"/>
+       </ns2:faultCollection>
+      </ns2:Operation>
+      <ns2:Operation description="" name="submit">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="xsd:string" dimensionality="1" index="0" isArray="true" isRequired="false" name="xmls" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+       </ns2:inputParameterCollection>
+       <ns2:faultCollection>
+        <ns2:Fault description="Thrown when an error occurs in processing a CQL query" name="QueryProcessingException"/>
+        <ns2:Fault description="Thrown when a query is found to be improperly formed" name="MalformedQueryException"/>
+       </ns2:faultCollection>
+      </ns2:Operation>
+      <ns2:Operation description="" name="queryByTransfer">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns9:CQLQuery" dimensionality="1" index="0" isArray="false" isRequired="false" name="cqlQuery" xmlns:ns9="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery"/>
+       </ns2:inputParameterCollection>
+       <ns2:Output qName="ns10:TransferServiceContextReference" dimensionality="1" isArray="false" xmlns:ns10="http://transfer.cagrid.org/TransferService/Context/types"/>
+       <ns2:faultCollection>
+        <ns2:Fault description="Thrown when an error occurs in processing a CQL query" name="QueryProcessingException"/>
+        <ns2:Fault description="Thrown when a query is found to be improperly formed" name="MalformedQueryException"/>
+       </ns2:faultCollection>
+      </ns2:Operation>
+      <ns2:Operation description="" name="submitByTransfer">
+       <ns2:inputParameterCollection/>
+       <ns2:Output qName="ns11:TransferServiceContextReference" dimensionality="1" isArray="false" xmlns:ns11="http://transfer.cagrid.org/TransferService/Context/types"/>
+       <ns2:faultCollection>
+        <ns2:Fault description="Thrown when an error occurs in processing a CQL query" name="QueryProcessingException"/>
+        <ns2:Fault description="Thrown when a query is found to be improperly formed" name="MalformedQueryException"/>
+       </ns2:faultCollection>
+      </ns2:Operation>
+      <ns2:Operation description="" name="retrieveCERRObjects">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns12:CQLQuery" dimensionality="1" index="0" isArray="false" isRequired="false" name="cQLQuery" xmlns:ns12="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery"/>
+       </ns2:inputParameterCollection>
+       <ns2:Output qName="ns13:TransferServiceContextReference" dimensionality="1" isArray="false" xmlns:ns13="http://transfer.cagrid.org/TransferService/Context/types"/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="submitCERRObject">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns14:CERRObject" dimensionality="1" index="0" isArray="false" isRequired="false" name="cERRObject" xmlns:ns14="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr"/>
+       </ns2:inputParameterCollection>
+       <ns2:Output qName="ns15:TransferServiceContextReference" dimensionality="1" isArray="false" xmlns:ns15="http://transfer.cagrid.org/TransferService/Context/types"/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+     </ns2:operationCollection>
+     <ns2:contextPropertyCollection>
+      <ns2:ContextProperty description="Autogenerated domainmodel.xml from XSD" name="{gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice}DomainModel"/>
+      <ns2:ContextProperty description="" name="{gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata}ServiceMetadata"/>
+     </ns2:contextPropertyCollection>
+    </ns2:ServiceContext>
+    <ns2:ServiceContext description="" name="CaGridEnumeration">
+     <ns2:operationCollection>
+      <ns2:Operation description="" name="PullOp">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns16:Pull" dimensionality="1" index="0" isArray="false" isRequired="false" name="pull" xmlns:ns16="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+       </ns2:inputParameterCollection>
+       <ns2:Output qName="ns17:PullResponse" dimensionality="1" isArray="false" xmlns:ns17="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="RenewOp">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns18:Renew" dimensionality="1" index="0" isArray="false" isRequired="false" name="renew" xmlns:ns18="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+       </ns2:inputParameterCollection>
+       <ns2:Output qName="ns19:RenewResponse" dimensionality="1" isArray="false" xmlns:ns19="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="GetStatusOp">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns20:GetStatus" dimensionality="1" index="0" isArray="false" isRequired="false" name="status" xmlns:ns20="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+       </ns2:inputParameterCollection>
+       <ns2:Output qName="ns21:GetStatusResponse" dimensionality="1" isArray="false" xmlns:ns21="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="ReleaseOp">
+       <ns2:inputParameterCollection>
+        <ns2:InputParameter qName="ns22:Release" dimensionality="1" index="0" isArray="false" isRequired="false" name="release" xmlns:ns22="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+       </ns2:inputParameterCollection>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+      <ns2:Operation description="" name="getServiceSecurityMetadata">
+       <ns2:inputParameterCollection/>
+       <ns2:Output qName="ns23:ServiceSecurityMetadata" dimensionality="1" isArray="false" xmlns:ns23="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security"/>
+       <ns2:faultCollection/>
+      </ns2:Operation>
+     </ns2:operationCollection>
+     <ns2:contextPropertyCollection/>
+    </ns2:ServiceContext>
+   </ns2:serviceContextCollection>
+   <ns24:SemanticMetadata conceptCode="C63541" conceptDefinition="A service available on a system that coordinates resources that are not subject to central control, using open, general purpose protocols and interfaces to deliver nontrivial qualities of services." conceptName="Grid Service" order="0" xmlns:ns24="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common"/>
+   <ns25:SemanticMetadata conceptCode="C63544" conceptDefinition="A web service which accepts as input a query targeted at a data resource addressable by the system and returns information to the client in the form of one or more data objects." conceptName="Data Grid Service" order="1" xmlns:ns25="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common"/>
+  </ns2:Service>
+ </ns1:serviceDescription>
+ <ns1:hostingResearchCenter>
+  <ns26:ResearchCenter displayName="" shortName="" xmlns:ns26="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns26:Address country="" locality="" postalCode="" stateProvince="" street1="" street2=""/>
+   <ns26:pointOfContactCollection>
+    <ns26:PointOfContact affiliation="" email="" firstName="" lastName="" phoneNumber="" role=""/>
+   </ns26:pointOfContactCollection>
+  </ns26:ResearchCenter>
+ </ns1:hostingResearchCenter>
+</ns1:ServiceMetadata>

@@ -1,0 +1,55 @@
+<mobius>
+	<resource name="mobiusConfig" class="org.projectmobius.services.common.MobiusConfiguration">
+		<mobius-configuration>
+			<MobiusNetworkServiceDescriptor serviceType="MAKO" hostname="127.0.0.1">
+				<serviceIdentifier serviceId="MAKO://127.0.0.1"/>
+			</MobiusNetworkServiceDescriptor>
+			<handlers/>
+			<authenticationController class="org.projectmobius.security.DefaultAuthenticationController"/>
+			<authorizationController class="org.projectmobius.security.DefaultAuthorizationController"/>
+
+			<gridServiceFactories>
+				<gridServiceFactory name="default" isDefault="true" class="org.projectmobius.common.servicefactory.NetworkServiceFactory"/>
+				<gridServiceFactory name="globus-gme" isDefault="false" class="org.projectmobius.gme.client.GlobusGMEXMLDataModelServiceFactory"/>
+			</gridServiceFactories>
+			<associations>
+			    <factoryAssociations> 
+					<factoryAssociation associationName="gme" factory="globus-gme"/>
+					<!-- factoryAssociation associationName="gme" factory="default"/ -->
+				</factoryAssociations>	
+				<serviceAssociations>
+					<serviceAssociation serviceId="http://cagrid01.bmi.ohio-state.edu:8080/wsrf/services/cagrid/GlobalModelExchange" associationName="gme"/>
+				</serviceAssociations>
+			</associations>
+
+			<serviceRegistry serviceId="localhost" registryClass="org.projectmobius.common.DefaultRegistry"/>
+		</mobius-configuration>
+	</resource>
+	
+	<resource name="makoConfig" class="org.projectmobius.services.mako.MakoConfiguration">
+		<mako-configuration>
+		<gme-client-configuration>
+				<gme serviceId="http://cagrid01.bmi.ohio-state.edu:8080/wsrf/services/cagrid/GlobalModelExchange"/>
+			</gme-client-configuration>
+		</mako-configuration>
+	</resource>
+	
+	<resource name="makoDBConfig" class="org.projectmobius.makodb.MakoDBConfiguration">
+		<makoDB-configuration>
+			<idManager maxId="2147483647" elementIdBatchSize="100" mapIdBatchSize="100"/>
+			<insertionManager bufferSize="1000000"/>
+			<attachments directory="attachments" directorySize="500"/>
+			<upgrade auto="true"/>
+			<root-database id="gridCADMako">
+				<name/>
+				<driver>com.mysql.jdbc.Driver</driver>
+				<urlPrefix>jdbc:mysql:</urlPrefix>
+				<host>localhost</host>
+				<port>3306</port>
+				<username>root</username>
+				<password></password>
+				<pool>1</pool>
+			</root-database>
+		</makoDB-configuration>
+	</resource>
+</mobius>

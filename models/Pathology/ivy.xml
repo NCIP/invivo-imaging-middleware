@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">
+    <info 
+        organisation="gov.nih.nci.ivi"
+        module="ivi-model-pathology"/>
+    <configurations>
+      <conf name="stubs"/>
+	<conf name="impl" extends="stubs" visibility="private"/>
+	<conf name="test" extends="impl" visibility="private"/>
+
+    </configurations>
+    <publications>
+      <artifact name="ivi-model-pathology-stubs" type="jar" conf="stubs" />
+    </publications>
+    <dependencies>
+
+	<!-- dependency for globus -->
+
+
+	<!-- standard jars included from a introduce generated service skeleton -->
+	<dependency org="gov.nih.nci.ivi" name="ivi-test" rev="latest.integration" conf="test->default" />
+
+    </dependencies>
+</ivy-module>

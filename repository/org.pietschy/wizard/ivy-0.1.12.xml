@@ -1,0 +1,25 @@
+<ivy-module version="1.1">
+
+    <info organisation="org.pietschy" module="wizard" revision="0.1.12" status="release"/>
+
+    <configurations>
+
+      <conf name="default"/>
+
+    </configurations>
+
+    <publications>
+
+      <artifact name="wizard" type="jar" conf="default"/>
+
+      <artifact name="wizard-0.1.12" type="jar" conf="default"/>
+
+      <artifact name="wizard-0.1.12-src" type="jar" conf="default"/>
+
+    </publications>
+
+    <dependencies>
+
+    </dependencies>
+
+</ivy-module>

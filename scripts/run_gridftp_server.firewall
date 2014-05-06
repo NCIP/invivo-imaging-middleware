@@ -1,0 +1,8 @@
+#!/bin/sh
+# set -x
+export GLOBUS_LOCATION=/opt/gridFTP
+export GLOBUS_TCP_PORT_RANGE=2812,2814
+#export GLOBUS_HOSTNAME=140.221.236.246
+. $GLOBUS_LOCATION/etc/globus-user-env.sh
+globus-gridftp-server -data-interface 140.221.236.246 -auth-level 0 -d ALL -aa -p 2811 -chdir -chdir-to /tmp -no-use-home-dirs
+

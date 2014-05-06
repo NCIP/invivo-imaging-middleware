@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Tony C. Pan (OSU BMI) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="gme://caCORE.caBIG/3.0/gov.nih.nci.ncia.domain" targetNamespace="gme://caCORE.caBIG/3.0/gov.nih.nci.ncia.domain" elementFormDefault="qualified">
+	<xs:element name="ClinicalTrial" type="ClinicalTrial"/>
+	<xs:complexType name="ClinicalTrial">
+		<xs:sequence>
+			<xs:element name="siteCollection" type="TrialSite" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="sponsorName" type="xs:string"/>
+		<xs:attribute name="protocolId" type="xs:string"/>
+		<xs:attribute name="protocolName" type="xs:string"/>
+		<xs:attribute name="coordinatingCenter" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Patient" type="Patient"/>
+	<xs:complexType name="Patient">
+		<xs:sequence>
+			<xs:element name="studyCollection" type="Study" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="generalImageCollection" type="GeneralImage" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="dataProvenance" type="TrialDataProvenance" minOccurs="0"/>
+			<xs:element name="trialSite" type="TrialSite" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="patientId" type="xs:string"/>
+		<xs:attribute name="patientName" type="xs:string"/>
+		<xs:attribute name="patientBirthDate" type="xs:dateTime"/>
+		<xs:attribute name="patientSex" type="xs:string"/>
+		<xs:attribute name="ethnicGroup" type="xs:string"/>
+		<xs:attribute name="trialSubjectId" type="xs:string"/>
+		<xs:attribute name="trialSubjectReadingId" type="xs:string"/>
+		<xs:attribute name="visibility" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Study" type="Study"/>
+	<xs:complexType name="Study">
+		<xs:sequence>
+			<xs:element name="generalSeriesCollection" type="GeneralSeries" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="generalImageCollection" type="GeneralImage" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="patient" type="Patient" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="studyInstanceUID" type="xs:string"/>
+		<xs:attribute name="studyDate" type="xs:dateTime"/>
+		<xs:attribute name="studyTime" type="xs:string"/>
+		<xs:attribute name="studyDesc" type="xs:string"/>
+		<xs:attribute name="admittingDiagnosesDesc" type="xs:string"/>
+		<xs:attribute name="admittingDiagnosesCodeSeq" type="xs:string"/>
+		<xs:attribute name="studyId" type="xs:string"/>
+		<xs:attribute name="timePointId" type="xs:string"/>
+		<xs:attribute name="patientAge" type="xs:string"/>
+		<xs:attribute name="timePointDesc" type="xs:string"/>
+		<xs:attribute name="ageGroup" type="xs:string"/>
+		<xs:attribute name="patientSize" type="xs:double"/>
+		<xs:attribute name="occupation" type="xs:string"/>
+		<xs:attribute name="patientWeight" type="xs:double"/>
+		<xs:attribute name="additionalPatientHistory" type="xs:string"/>
+		<xs:attribute name="visibility" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="GeneralSeries" type="GeneralSeries"/>
+	<xs:complexType name="GeneralSeries">
+		<xs:sequence>
+			<xs:element name="generalEquipment" type="GeneralEquipment" minOccurs="0"/>
+			<xs:element name="annotationCollection" type="Annotation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="generalImageCollection" type="GeneralImage" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="study" type="Study" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="modality" type="xs:string"/>
+		<xs:attribute name="seriesInstanceUID" type="xs:string"/>
+		<xs:attribute name="laterality" type="xs:string"/>
+		<xs:attribute name="seriesDate" type="xs:dateTime"/>
+		<xs:attribute name="protocolName" type="xs:string"/>
+		<xs:attribute name="seriesDesc" type="xs:string"/>
+		<xs:attribute name="bodyPartExamined" type="xs:string"/>
+		<xs:attribute name="admittingDiagnosesDesc" type="xs:string"/>
+		<xs:attribute name="patientWeight" type="xs:integer"/>
+		<xs:attribute name="seriesNumber" type="xs:integer"/>
+		<xs:attribute name="frameOfReferenceUID" type="xs:string"/>
+		<xs:attribute name="syncFrameOfRefUID" type="xs:string"/>
+		<xs:attribute name="visibility" type="xs:string"/>
+		<xs:attribute name="annotationsFlag" type="xs:boolean"/>
+		<xs:attribute name="securityGroup" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="GeneralImage" type="GeneralImage"/>
+	<xs:complexType name="GeneralImage">
+		<xs:sequence>
+			<xs:element name="study" type="Study" minOccurs="0"/>
+			<xs:element name="ctimage" type="CTImage" minOccurs="0"/>
+			<xs:element name="generalSeries" type="GeneralSeries" minOccurs="0"/>
+			<xs:element name="dataProvenance" type="TrialDataProvenance" minOccurs="0"/>
+			<xs:element name="patient" type="Patient" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="instanceNumber" type="xs:integer"/>
+		<xs:attribute name="contentDate" type="xs:dateTime"/>
+		<xs:attribute name="contentTime" type="xs:string"/>
+		<xs:attribute name="imageType" type="xs:string"/>
+		<xs:attribute name="acquisitionDate" type="xs:dateTime"/>
+		<xs:attribute name="acquisitionTime" type="xs:string"/>
+		<xs:attribute name="acquisitionDatetime" type="xs:string"/>
+		<xs:attribute name="acquisitionNumber" type="xs:integer"/>
+		<xs:attribute name="imageComments" type="xs:string"/>
+		<xs:attribute name="lossyImageCompression" type="xs:string"/>
+		<xs:attribute name="pixelSpacing" type="xs:double"/>
+		<xs:attribute name="imageOrientationPatient" type="xs:string"/>
+		<xs:attribute name="imagePositionPatient" type="xs:string"/>
+		<xs:attribute name="sliceThickness" type="xs:double"/>
+		<xs:attribute name="sliceLocation" type="xs:double"/>
+		<xs:attribute name="rows" type="xs:integer"/>
+		<xs:attribute name="columns" type="xs:integer"/>
+		<xs:attribute name="contrastBolusAgent" type="xs:string"/>
+		<xs:attribute name="contrastBolusRoute" type="xs:string"/>
+		<xs:attribute name="SOPClassUID" type="xs:string"/>
+		<xs:attribute name="SOPInstanceUID" type="xs:string"/>
+		<xs:attribute name="patientPosition" type="xs:string"/>
+		<xs:attribute name="sourceToDetectorDistance" type="xs:double"/>
+		<xs:attribute name="sourceSubjectDistance" type="xs:double"/>
+		<xs:attribute name="focalSpotSize" type="xs:double"/>
+		<xs:attribute name="storageMediaFileSetUID" type="xs:string"/>
+		<xs:attribute name="uri" type="xs:string"/>
+		<xs:attribute name="filename" type="xs:string"/>
+		<xs:attribute name="submissionDate" type="xs:dateTime"/>
+		<xs:attribute name="dicomSize" type="xs:long"/>
+		<xs:attribute name="imageLaterality" type="xs:string"/>
+		<xs:attribute name="patientId" type="xs:string"/>
+		<xs:attribute name="seriesInstanceUID" type="xs:string"/>
+		<xs:attribute name="studyInstanceUID" type="xs:string"/>
+		<xs:attribute name="annotation" type="xs:string"/>
+		<xs:attribute name="project" type="xs:string"/>
+		<xs:attribute name="visibility" type="xs:string"/>
+		<xs:attribute name="seriesPKId" type="xs:integer"/>
+		<xs:attribute name="curationTimestamp" type="xs:dateTime"/>
+		<xs:attribute name="patientPkId" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="GeneralEquipment" type="GeneralEquipment"/>
+	<xs:complexType name="GeneralEquipment">
+		<xs:sequence>
+			<xs:element name="generalSeriesCollection" type="GeneralSeries" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="manufacturer" type="xs:string"/>
+		<xs:attribute name="institutionName" type="xs:string"/>
+		<xs:attribute name="manufacturerModelName" type="xs:string"/>
+		<xs:attribute name="softwareVersions" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="CTImage" type="CTImage"/>
+	<xs:complexType name="CTImage">
+		<xs:sequence>
+			<xs:element name="generalImage" type="GeneralImage" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="KVP" type="xs:double"/>
+		<xs:attribute name="scanOptions" type="xs:string"/>
+		<xs:attribute name="dataCollectionDiameter" type="xs:double"/>
+		<xs:attribute name="reconstructionDiameter" type="xs:double"/>
+		<xs:attribute name="gantryDetectorTilt" type="xs:double"/>
+		<xs:attribute name="XRayTubeCurrent" type="xs:integer"/>
+		<xs:attribute name="exposure" type="xs:integer"/>
+		<xs:attribute name="exposureInMicroAs" type="xs:integer"/>
+		<xs:attribute name="convolutionKernel" type="xs:string"/>
+		<xs:attribute name="revolutionTime" type="xs:integer"/>
+		<xs:attribute name="singleCollimationWidth" type="xs:integer"/>
+		<xs:attribute name="totalCollimationWidth" type="xs:integer"/>
+		<xs:attribute name="tableSpeed" type="xs:integer"/>
+		<xs:attribute name="tableFeedPerRotation" type="xs:integer"/>
+		<xs:attribute name="CTPitchFactor" type="xs:integer"/>
+		<xs:attribute name="anatomicRegionSeq" type="xs:string"/>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="exposureTime" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="TrialDataProvenance" type="TrialDataProvenance"/>
+	<xs:complexType name="TrialDataProvenance">
+		<xs:sequence>
+			<xs:element name="generalImageCollection" type="GeneralImage" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="patientCollection" type="Patient" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="project" type="xs:string"/>
+		<xs:attribute name="dpSiteId" type="xs:string"/>
+		<xs:attribute name="dpSiteName" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="TrialSite" type="TrialSite"/>
+	<xs:complexType name="TrialSite">
+		<xs:sequence>
+			<xs:element name="trial" type="ClinicalTrial" minOccurs="0"/>
+			<xs:element name="patientCollection" type="Patient" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="trialSiteId" type="xs:string"/>
+		<xs:attribute name="trialSiteName" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Annotation" type="Annotation"/>
+	<xs:complexType name="Annotation">
+		<xs:sequence>
+			<xs:element name="generalSeries" type="GeneralSeries" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="filePath" type="xs:string"/>
+		<xs:attribute name="fileSize" type="xs:integer"/>
+		<xs:attribute name="annotationType" type="xs:string"/>
+		<xs:attribute name="seriesInstanceUID" type="xs:string"/>
+		<xs:attribute name="generalSeriesPkId" type="xs:integer"/>
+		<xs:attribute name="submissionDate" type="xs:dateTime"/>
+	</xs:complexType>
+	<xs:element name="CurationData" type="CurationData"/>
+	<xs:complexType name="CurationData">
+		<xs:sequence>
+			<xs:element name="generalImage" type="GeneralImage" minOccurs="0"/>
+			<xs:element name="annotationFile" type="Annotation" minOccurs="0"/>
+			<xs:element name="study" type="Study" minOccurs="0"/>
+			<xs:element name="generalSeries" type="GeneralSeries" minOccurs="0"/>
+			<xs:element name="patient" type="Patient" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"/>
+		<xs:attribute name="trialName" type="xs:string"/>
+		<xs:attribute name="cdeValue" type="xs:string"/>
+		<xs:attribute name="cdeName" type="xs:string"/>
+		<xs:attribute name="cdeId" type="xs:string"/>
+		<xs:attribute name="curationTimestamp" type="xs:dateTime"/>
+		<xs:attribute name="cdeVersion" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

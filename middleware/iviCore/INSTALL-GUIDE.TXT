@@ -1,0 +1,77 @@
+Assuming you've already installed globus 4.0.2 and caGrid beta, and
+have set variables GLOBUS_LOCATION and CAGRID_LOCATION, here is what
+you need to do to setup the latest ivi middleware and gridIMAGE:
+
+1) unpack tarballs or get cvs checkouts of the some versions of ivi,
+   gridIMAGE, etc.
+
+   1a)
+   (cvs checkout of current ivi:
+   
+       cvs -d :ext:USERNAME@cbiocvs2.nci.nih.gov:/share/content/gforge/middleware co middleware
+
+    svn checkout of current gridIMAGE:
+
+       svn co svn://marion.bmi.ohio-state.edu/gridIMAGE
+   )
+
+   1b)
+   (cvs export of ivi PRE_MAPPING tag:
+   
+       cvs -d :ext:USERNAME@cbiocvs2.nci.nih.gov:/share/content/gforge/middleware export -r PRE_MAPPING middleware
+
+    svn export of gridIMAGE PRE_MAPPING tag:
+
+       svn export svn://marion.bmi.ohio-state.edu/tags/gridIMAGE-PRE_MAPPING
+   )
+
+2) set IVI_LOCATION to the ivi project subdirectory called
+   'middleware/middleware' (the one which contains build.xml)
+
+3) set GRIDIMAGE_LOCATION to the gridIMAGE root directory (should have
+   subdirectories like DICOMDataService etc.)
+
+4) run commands:
+
+$ cd $GRIDIMAGE_LOCATION; ant stubs; ant setupPixelMed
+$ cd $IVI_LOCATION; ant
+$ cd $GRIDIMAGE_LOCATION; ant
+$ vi DICOMDataService/server-config.wsdd
+(set lines like
+    <parameter name="GridFTPServerListenPort" value="2811" />
+    <parameter name="GridFTPServerListenHost" value="your.public.ip.or.hostname" /> )
+$ ant deployGlobus
+
+5) to startup pixelmed:
+
+When you have the dicom images unpacked somewhere, e.g. a dir called
+IMAGES, you can run the script
+
+$GRIDIMAGE_LOCATION/extern/scripts/pixelmed-exposedir.py IMAGES
+
+which will ingest the data into pixelmed on the fly into a temporary
+db and should do what is necessary to setup and run the PACS server.
+Ctrl-C would stop the server.
+
+6) to startup globus:
+
+$GLOBUS_LOCATION/bin/globus-start-container -nosec
+
+7) to startup gridftp:
+
+$GLOBUS_LOCATION/sbin/globus-gridftp-server -d ALL -aa -p 2811
+
+(or whatever port other than 2811 you wish to use)
+
+8) to test with the GUI do:
+
+$ cd $GRIDIMAGE_LOCATION/gridCADWorkbench
+$ vi conf/gridCADWorkbench.xml
+(set the line(s) like
+
+    <data-service>https://140.254.80.34:8080/wsrf/services/cagrid/DICOMDataService</data-service>
+
+    to where your services are running)
+
+$ ant portal
+
