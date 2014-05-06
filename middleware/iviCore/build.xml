@@ -1,0 +1,261 @@
+<project name="ivi-core" default="all" basedir=".">
+	<description>
+    simple example build file
+  </description>
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+	<property name="build.lib" location="${build}/lib" />
+	<property name="build.classes" location="${build}/classes" />
+	<property name="resources" location="resources" />
+	<property name="lib" location="lib" />
+	<property name="ext" location="ext" />
+	<property environment="env" />
+
+	<!-- Important test directories and files -->
+	<property name="test.dir" value="test" />
+	<property name="test.src.dir" value="${test.dir}/src" />
+	<property name="test.lib.dir" value="${test.dir}/lib" />
+	<property name="test.classes.dir" value="${build}/test/classes" />
+	<property name="test.log.dir" value="test/logs" />
+	<property name="test.jar" value="${build.lib}/iviCore-test.jar" />
+	<property name="junit.results.dir" value="${test.log.dir}/junit" />
+
+	<import file="${test.dir}/test.xml" />
+
+	<!-- refactored previously property name="portal.config" value="resources/vPACSPortal.xml" / -->
+
+	<property name="project.name" value="${ant.project.name}" />
+	<property name="project.jar.prefix" value="${project.name}-" />
+	<property name="project.jar.suffix" value="-${project.version}.jar" />
+
+
+	<target name="init">
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.lib}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${test.classes.dir}" />
+	</target>
+
+	<path id="sourcepath">
+		<!--     <dirset dir="${src}"> -->
+		<!--       <include name="*"/> -->
+		<!--       <exclude name="CVS"/> -->
+		<!--       <exclude name="filesystem"/> -->
+		<!--       <exclude name="matlab"/> -->
+		<!--     </dirset> -->
+		<pathelement location="${src}" />
+	</path>
+	<path id="cagridsourcepath">
+		<dirset dir="${env.CAGRID_LOCATION}/projects/data/src/java">
+			<include name="*" />
+			<exclude name="CVS" />
+		</dirset>
+		<pathelement location="${env.CAGRID_LOCATION}/projects/data/build/stubs/src" />
+	</path>
+
+	<path id="classpath">
+		<!-- order matters.  need data jars first -->
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${ext}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/addressing-1.0.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/axis-url.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/axis.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/bootstrap.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/cog-axis.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/cog-jglobus.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/cog-tomcat.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/cog-url.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/commonj.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/commons-beanutils.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/commons-cli-2.0.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/commons-codec-1.3.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/commons-collections-3.0.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/commons-digester.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/commons-discovery.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/commons-logging.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/concurrent.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/cryptix-asn1.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/cryptix.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/cryptix32.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/globus_usage_core.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/globus_usage_packets_common.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/globus_wsrf_tools_test.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/jaxrpc.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/jce-jdk13-125.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/jgss.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/junit.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/log4j-1.2.8.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/naming-common.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/naming-factory.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/naming-java.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/naming-resources.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/opensaml.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/puretls.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/resolver.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/saaj.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/servlet.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsdl4j.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_common.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_registry.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_registry_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_samples_authzService.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_samples_authzService_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_samples_counter.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_samples_counter_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_samples_mgmt.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_samples_mgmt_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_provider_jce.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_test.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_test_interop.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_test_interop_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_test_unit.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_test_unit_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_tools.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wss4j.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/xalan.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/xercesImpl.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/xml-apis.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/xmlsec.jar" />
+	</path>
+	<path id="run.classpath">
+		<path refid="classpath" />
+		<pathelement location="resources/images" />
+		<pathelement location="resources/portal/common" />
+		<pathelement location="resources/portal/dorian" />
+		<pathelement location="resources/portal/gridca" />
+		<fileset dir="${build.lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- =============================================================== -->
+	<!-- The Test Classpath                                                   -->
+	<!-- =============================================================== -->
+	<path id="test.classpath">
+		<path refid="run.classpath" />
+		<fileset dir="${test.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${test.classes.dir}" />
+	</path>
+
+
+	<target name="writeclasspath" description="write classpath to .ant-classpath file">
+		<pathconvert pathsep="${line.separator}" property="echo.classpath" refid="classpath">
+		</pathconvert>
+		<echo message="${echo.classpath}" file=".ant-classpath.tmp" />
+		<move file=".ant-classpath.tmp" tofile=".ant-classpath" />
+	</target>
+
+	<target name="writesrcpath" description="write srcpath to .ant-srcpath file">
+		<pathconvert pathsep="${line.separator}" property="echo.srcpath" refid="sourcepath">
+		</pathconvert>
+		<echo message="${echo.srcpath}" file=".ant-srcpath.tmp" />
+		<!--     <pathconvert pathsep="${line.separator}" -->
+		<!--                  property="echo.cagridsrcpath" -->
+		<!--                  refid="cagridsourcepath"> -->
+		<!--     </pathconvert> -->
+		<!--     <echo message="${echo.cagridsrcpath}" append="true" file=".ant-srcpath.tmp"/>   -->
+		<move file=".ant-srcpath.tmp" tofile=".ant-srcpath" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build.classes} -->
+		<javac srcdir="${src}" destdir="${build.classes}" debug="on" classpathref="classpath">
+			<!-- compilerarg value="" / -->
+		</javac>
+	</target>
+
+	<!-- =============================================================== -->
+	<!-- Compiles the test source code                                        -->
+	<!-- =============================================================== -->
+	<target name="compile-tests" depends="init" description="compiles.">
+		<mkdir dir="${test.classes.dir}" />
+		<javac srcdir="${test.src.dir}" destdir="${test.classes.dir}" debug="on" deprecation="off" optimize="off">
+			<classpath refid="test.classpath" />
+		</javac>
+	</target>
+
+	<!-- ============================================================== -->
+	<!-- Creates the jar files                                          -->
+	<!-- ============================================================== -->
+	<target name="jar-tests" depends="compile-tests" description="Builds the Jar Files">
+		<mkdir dir="${test.lib.dir}" />
+		<jar jarfile="${test.jar}" basedir="${test.classes.dir}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="jar" depends="compile" description="generate the distribution jar">
+		<copy file="${basedir}/resources/modelmap/NCIAModelHierarchy.properties" overwrite="true" todir="${build.classes}/resources/modelmap" />
+		<copy file="${basedir}/resources/modelmap/NCIAModelMap.properties" overwrite="true" todir="${build.classes}/resources/modelmap" />
+		<!-- Put everything in ${build.classes} into the XXXX-${DSTAMP}.jar file -->
+<!--		<jar jarfile="${build.lib}/${project.jar.prefix}util${project.jar.suffix}" basedir="${build.classes}">
+-->		<jar jarfile="${build.lib}/iviCore.jar" basedir="${build.classes}">
+			<exclude name="gov/nih/nci/ivi/filesystem/**" />
+			<exclude name="gov/nih/nci/ivi/dsdrepository/**" />
+			<exclude name="gov/nih/nci/ivi/mako/**" />
+			<exclude name="gov/nih/nci/ivi/dicom/**" />
+			<exclude name="gov/nih/nci/ivi/authorization/**" />
+			<exclude name="gov/nih/nci/ivi/pathology/**" />
+            <exclude name="resources/modelmap/**" />
+
+			<!-- exclude dicom, mako, fs, and dsdrepository later -->
+		</jar>
+<!--		<jar jarfile="${build.lib}/${project.jar.prefix}FSCQL${project.jar.suffix}" basedir="${build.classes}">
+-->		<jar jarfile="${build.lib}/FSCQL.jar" basedir="${build.classes}">
+			<include name="gov/nih/nci/ivi/filesystem/**" />
+		</jar>
+<!--		<jar jarfile="${build.lib}/${project.jar.prefix}DSDRepositoryCQL${project.jar.suffix}" basedir="${build.classes}">
+-->		<jar jarfile="${build.lib}/DSDRepositoryCQL.jar" basedir="${build.classes}">
+			<include name="gov/nih/nci/ivi/dsdrepository/**" />
+		</jar>
+<!--		<jar jarfile="${build.lib}/${project.jar.prefix}MakoCQL${project.jar.suffix}" basedir="${build.classes}">
+-->		<jar jarfile="${build.lib}/MakoCQL.jar" basedir="${build.classes}">
+			<include name="gov/nih/nci/ivi/mako/**" />
+		</jar>
+<!--		<jar jarfile="${build.lib}/${project.jar.prefix}DICOMCQL${project.jar.suffix}" basedir="${build.classes}">
+-->		<jar jarfile="${build.lib}/DICOMCQL.jar" basedir="${build.classes}">
+			<include name="gov/nih/nci/ivi/dicom/**" />
+			<include name="resources/modelmap/**" />
+		</jar>
+<!--		<jar jarfile="${build.lib}/${project.jar.prefix}authorization${project.jar.suffix}" basedir="${build.classes}">
+-->		<jar jarfile="${build.lib}/iviAuthorization.jar" basedir="${build.classes}">
+			<include name="gov/nih/nci/ivi/authorization/**" />
+		</jar>
+
+         <jar jarfile="${build.lib}/iviPathology.jar" basedir="${build.classes}">
+             <include name="gov/nih/nci/ivi/pathology/**" />
+         </jar>
+
+	</target>
+
+	<target name="portal" depends="jar">
+		<echo message="Running portal with ${portal.config}" />
+		<java classname="org.projectmobius.portal.GridPortal" fork="yes" classpathref="run.classpath">
+			<jvmarg value="-Xmx1000M" />
+			<arg value="${portal.config}" />
+			<sysproperty key="java.library.path" path="${env.PATH}" />
+		</java>
+	</target>
+
+
+	<target name="all" depends="jar,jar-tests" description="compile everything" />
+	
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} directory tree -->
+		<delete dir="${build}" />
+	</target>
+
+</project>

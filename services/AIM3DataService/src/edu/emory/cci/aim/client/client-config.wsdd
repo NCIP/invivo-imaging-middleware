@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="adminPassword" value="admin"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <requestFlow>
+   <handler type="java:org.globus.wsrf.handlers.AddressingHandler"/>
+   <handler type="java:org.globus.wsrf.impl.security.authorization.ClientPropertiesHandler"/>
+   <handler type="java:org.globus.wsrf.impl.security.authentication.ClientPropertiesHandler"/>
+   <handler type="java:org.apache.axis.handlers.JAXRPCHandler">
+    <parameter name="className" value="org.globus.wsrf.impl.security.authentication.securemsg.X509EncryptHandler"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JAXRPCHandler">
+    <parameter name="className" value="org.globus.wsrf.impl.security.authentication.securemsg.X509SignHandler"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JAXRPCHandler">
+    <parameter name="className" value="org.globus.wsrf.impl.security.authentication.UsernameHandler"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JAXRPCHandler">
+    <parameter name="authService" value="auto"/>
+    <parameter name="className" value="org.globus.wsrf.impl.security.authentication.secureconv.SecContextHandler"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JAXRPCHandler">
+    <parameter name="className" value="org.globus.wsrf.impl.security.authentication.secureconv.GSSHandler"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JAXRPCHandler">
+    <parameter name="className" value="org.globus.wsrf.impl.security.authorization.TrustedTargetHandler"/>
+   </handler>
+   <handler type="java:org.globus.wsrf.handlers.MessageLoggingHandler"/>
+  </requestFlow>
+  <responseFlow>
+   <handler type="java:org.globus.wsrf.handlers.AddressingHandler"/>
+   <handler type="java:org.globus.wsrf.handlers.MessageLoggingHandler"/>
+   <handler type="java:org.apache.axis.handlers.JAXRPCHandler">
+    <parameter name="className" value="org.globus.wsrf.impl.security.authentication.wssec.WSSecurityClientHandler"/>
+   </handler>
+  </responseFlow>
+ </globalConfiguration>
+ <transport name="java" pivot="java:org.apache.axis.transport.java.JavaSender"/>
+ <transport name="https" pivot="java:org.globus.axis.transport.HTTPSSender">
+  <requestFlow>
+   <handler type="java:org.globus.axis.handlers.HTTP11Handler"/>
+  </requestFlow>
+ </transport>
+ <transport name="http" pivot="java:org.apache.axis.transport.http.HTTPSender">
+  <requestFlow>
+   <handler type="java:org.globus.axis.handlers.HTTP11Handler"/>
+  </requestFlow>
+ </transport>
+ <transport name="local" pivot="java:org.apache.axis.transport.local.LocalSender"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns1:ServiceNameType" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:org.apache.axis.message.addressing.ServiceNameType" xmlns:ns1="http://schemas.xmlsoap.org/ws/2004/03/addressing"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns2:BinaryExchangeType" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:org.globus.ws.trust.BinaryExchangeType" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/04/trust"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns3:BaseFaultType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:org.oasis.wsrf.faults.BaseFaultType" xmlns:ns3="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns4:AttributedURI" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:org.apache.axis.message.addressing.AttributedURI" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/03/addressing"/>
+ <typeMapping deserializer="org.globus.wsrf.encoding.TopicExpressionDeserializerFactory" encodingStyle="" qname="ns5:TopicExpressionType" serializer="org.globus.wsrf.encoding.TopicExpressionSerializerFactory" type="java:org.oasis.wsn.TopicExpressionType" xmlns:ns5="http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns6:EndpointReferenceType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:org.apache.axis.message.addressing.EndpointReferenceType" xmlns:ns6="http://schemas.xmlsoap.org/ws/2004/03/addressing"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns7:AttributedQName" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:org.apache.axis.message.addressing.AttributedQName" xmlns:ns7="http://schemas.xmlsoap.org/ws/2004/03/addressing"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns8:SecurityContextTokenType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:org.globus.ws.sc.SecurityContextTokenType" xmlns:ns8="http://schemas.xmlsoap.org/ws/2004/04/sc"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns9:ReferencePropertiesType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:org.apache.axis.message.addressing.ReferencePropertiesType" xmlns:ns9="http://schemas.xmlsoap.org/ws/2004/03/addressing"/>
+ <typeMapping deserializer="org.globus.wsrf.encoding.AnyListDeserializerFactory" encodingStyle="" qname="ns10:&gt;SetResourceProperties" serializer="org.globus.wsrf.encoding.AnyListSerializerFactory" type="java:org.oasis.wsrf.properties.SetResourceProperties_Element" xmlns:ns10="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd"/>
+ <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns11:QueryExpressionDialect" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:java.lang.String" xmlns:ns11="http://www.globus.org/foobar"/>
+ <typeMapping deserializer="org.globus.wsrf.encoding.QueryExpressionDeserializerFactory" encodingStyle="" qname="ns12:QueryExpressionType" serializer="org.globus.wsrf.encoding.QueryExpressionSerializerFactory" type="java:org.oasis.wsrf.properties.QueryExpressionType" xmlns:ns12="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd"/>
+<!-- START INTRODUCE TYPEMAPPINGS -->
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.AimStatus" qname="ns2:AimStatus" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.AnatomicEntity" qname="ns2:AnatomicEntity" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.AnatomicEntityCharacteristic" qname="ns2:AnatomicEntityCharacteristic" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Annotation" qname="ns2:Annotation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.AnnotationOfAnnotation" qname="ns2:AnnotationOfAnnotation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.AnnotationRole" qname="ns2:AnnotationRole" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Calculation" qname="ns2:Calculation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.CalculationData" qname="ns2:CalculationData" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.CalculationResult" qname="ns2:CalculationResult" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.CharacteristicQuantification" qname="ns2:CharacteristicQuantification" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Circle" qname="ns2:Circle" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Coordinate" qname="ns2:Coordinate" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.DICOMImageReference" qname="ns2:DICOMImageReference" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Dimension" qname="ns2:Dimension" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Ellipse" qname="ns2:Ellipse" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Equipment" qname="ns2:Equipment" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.GeometricShape" qname="ns2:GeometricShape" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Image" qname="ns2:Image" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ImageAnnotation" qname="ns2:ImageAnnotation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ImageReference" qname="ns2:ImageReference" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ImageSeries" qname="ns2:ImageSeries" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ImageStudy" qname="ns2:ImageStudy" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ImagingObservation" qname="ns2:ImagingObservation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ImagingObservationCharacteristic" qname="ns2:ImagingObservationCharacteristic" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Inference" qname="ns2:Inference" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Interval" qname="ns2:Interval" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.MultiPoint" qname="ns2:MultiPoint" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.NonQuantifiable" qname="ns2:NonQuantifiable" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Numerical" qname="ns2:Numerical" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Person" qname="ns2:Person" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Point" qname="ns2:Point" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Polyline" qname="ns2:Polyline" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.PresentationState" qname="ns2:PresentationState" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Quantile" qname="ns2:Quantile" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ReferencedAnnotation" qname="ns2:ReferencedAnnotation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ReferencedCalculation" qname="ns2:ReferencedCalculation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ReferencedGeometricShape" qname="ns2:ReferencedGeometricShape" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Scale" qname="ns2:Scale" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.Segmentation" qname="ns2:Segmentation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.SpatialCoordinate" qname="ns2:SpatialCoordinate" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.TextAnnotation" qname="ns2:TextAnnotation" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.ThreeDimensionSpatialCoordinate" qname="ns2:ThreeDimensionSpatialCoordinate" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.TwoDimensionSpatialCoordinate" qname="ns2:TwoDimensionSpatialCoordinate" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.User" qname="ns2:User" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+<ns3:typeMapping encodingStyle="" serializer="org.cvrg.common.jaxb.JAXBSerializerFactory" deserializer="org.cvrg.common.jaxb.JAXBDeserializerFactory" type="ns1:edu.northwestern.radiology.aim.WebImageReference" qname="ns2:WebImageReference" xmlns:ns1="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns2="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns3="http://xml.apache.org/axis/wsdd/"/>
+
+
+<!-- END INTRODUCE TYPEMAPPINGS --></deployment>

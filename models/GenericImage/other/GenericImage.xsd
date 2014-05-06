@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.genericimage" xmlns:genericimage="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.genericimage" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="ImageDataItem" type="genericimage:ImageDataItem"/>
+	<xs:complexType name="ImageDataItem">
+		<xs:complexContent>
+			<xs:extension base="genericimage:DataItem">
+				<xs:sequence/>
+				<xs:attribute name="maximumChannel" use="required" type="xs:int"/>
+				<xs:attribute name="maximumChildIndex" use="required" type="xs:int"/>
+				<xs:attribute name="maximumResolution" use="required" type="xs:double"/>
+				<xs:attribute name="maximumT" use="required" type="xs:double"/>
+				<xs:attribute name="maximumX" use="required" type="xs:double"/>
+				<xs:attribute name="maximumY" use="required" type="xs:double"/>
+				<xs:attribute name="maximumZ" use="required" type="xs:double"/>
+				<xs:attribute name="minimumChannel" use="required" type="xs:int"/>
+				<xs:attribute name="minimumChildIndex" use="required" type="xs:int"/>
+				<xs:attribute name="minimumResolution" use="required" type="xs:double"/>
+				<xs:attribute name="minimumT" use="required" type="xs:double"/>
+				<xs:attribute name="minimumX" use="required" type="xs:double"/>
+				<xs:attribute name="minimumY" use="required" type="xs:double"/>
+				<xs:attribute name="minimumZ" use="required" type="xs:double"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Volume" type="genericimage:Volume"/>
+	<xs:complexType name="Volume">
+		<xs:complexContent>
+			<xs:extension base="genericimage:ImageDataItem">
+				<xs:sequence>
+					<xs:element name="imageCollection">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="genericimage:Image" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Image" type="genericimage:Image"/>
+	<xs:complexType name="Image">
+		<xs:complexContent>
+			<xs:extension base="genericimage:ImageDataItem">
+				<xs:sequence>
+					<xs:element name="channelCollection">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="genericimage:Channel" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Channel" type="genericimage:Channel"/>
+	<xs:complexType name="Channel">
+		<xs:complexContent>
+			<xs:extension base="genericimage:ImageDataItem">
+				<xs:sequence>
+					<xs:element name="resolutionCollection">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="genericimage:Resolution" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="maximumPixelValue" use="required" type="xs:double"/>
+				<xs:attribute name="minimumPixelValue" use="required" type="xs:double"/>
+				<xs:attribute name="numberOfChannelsInItem" use="required" type="xs:int"/>
+				<xs:attribute name="pixelType" use="required" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Resolution" type="genericimage:Resolution"/>
+	<xs:complexType name="Resolution">
+		<xs:complexContent>
+			<xs:extension base="genericimage:ImageDataItem">
+				<xs:sequence>
+					<xs:element name="tileCollection">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="genericimage:Tile" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="numberOfResolutionsInItem" use="required" type="xs:int"/>
+				<xs:attribute name="numberOfTilesT" use="required" type="xs:int"/>
+				<xs:attribute name="numberOfTilesX" use="required" type="xs:int"/>
+				<xs:attribute name="numberOfTilesY" use="required" type="xs:int"/>
+				<xs:attribute name="numberOfTilesZ" use="required" type="xs:int"/>
+				<xs:attribute name="spacingT" use="required" type="xs:double"/>
+				<xs:attribute name="spacingX" use="required" type="xs:double"/>
+				<xs:attribute name="spacingY" use="required" type="xs:double"/>
+				<xs:attribute name="spacingZ" use="required" type="xs:double"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Tile" type="genericimage:Tile"/>
+	<xs:complexType name="Tile">
+		<xs:complexContent>
+			<xs:extension base="genericimage:ImageDataItem">
+				<xs:sequence/>
+				<xs:attribute name="datasetIdentifier" use="required" type="xs:string"/>
+				<xs:attribute name="fileFormat" use="required" type="xs:string"/>
+				<xs:attribute name="indexChannel" use="required" type="xs:int"/>
+				<xs:attribute name="indexResolution" use="required" type="xs:int"/>
+				<xs:attribute name="indexT" use="required" type="xs:int"/>
+				<xs:attribute name="indexX" use="required" type="xs:int"/>
+				<xs:attribute name="indexY" use="required" type="xs:int"/>
+				<xs:attribute name="indexZ" use="required" type="xs:int"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Chunk" type="genericimage:Chunk"/>
+	<xs:complexType name="Chunk">
+		<xs:complexContent>
+			<xs:extension base="genericimage:DataItem">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TimeSeries" type="genericimage:TimeSeries"/>
+	<xs:complexType name="TimeSeries">
+		<xs:complexContent>
+			<xs:extension base="genericimage:ImageDataItem">
+				<xs:sequence>
+					<xs:element name="volumeCollection">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="genericimage:Volume" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="DataItem" type="genericimage:DataItem"/>
+	<xs:complexType name="DataItem">
+		<xs:sequence>
+			<xs:element name="chunkCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="genericimage:Chunk" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="identifier" use="required" type="xs:string"/>
+		<xs:attribute name="index" use="required" type="xs:int"/>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="numberOfChunks" use="required" type="xs:int"/>
+	</xs:complexType>
+</xs:schema>

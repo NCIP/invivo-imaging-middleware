@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CQLQuery xmlns="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery ..\..\schema\Data\1_gov.nih.nci.cagrid.CQLQuery.xsd">
+  <Target name="cadoutput.CADResultType">		
+    <Group logicRelation="AND">
+      <Attribute name="algorithmType" predicate="EQUAL_TO" value="CAD1Service"/>
+      <Association roleName="StudyInstanceUID" name="cadoutput.StudyInstanceUIDType">
+	<Attribute name="_value" predicate="EQUAL_TO" value="1.3.6.1.4.1.9328.50.1.13461"/>
+      </Association>
+      <Association roleName="SeriesInstanceUID" name="cadoutput.StudyInstanceUIDType">
+	<Attribute name="_value" predicate="EQUAL_TO" value="1.3.6.1.4.1.9328.50.1.13466"/>
+      </Association>
+    </Group>
+  </Target>
+</CQLQuery>

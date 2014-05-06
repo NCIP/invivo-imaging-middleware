@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.fileinfo"
+	xmlns:fileinfo="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.fileinfo"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+
+	<xs:element name="FileInfo" type="fileinfo:FileInfo"></xs:element>
+	<xs:element name="ViewParams" type="fileinfo:ViewParameters"></xs:element>
+	<xs:element name="ExecutionParameters" type="fileinfo:ExecutionParameters"></xs:element>
+	<xs:element name="DeletionParameters" type="fileinfo:DeletionParameters"></xs:element>
+
+	<xs:complexType name="FileInfo">
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+	</xs:complexType>
+	<xs:complexType name="ViewParameters">
+		<xs:attribute name="imageFileName" type="xs:string"
+			use="required" />
+		<xs:attribute name="x" type="xs:int" />
+		<xs:attribute name="y" type="xs:int" />
+		<xs:attribute name="width" type="xs:int" />
+		<xs:attribute name="height" type="xs:int" />
+		<xs:attribute name="zoom" type="xs:double" />
+	</xs:complexType>
+        <xs:complexType name="DeletionParameters">
+        	<xs:attribute name="fileName" type="xs:string" use="required"/>
+        	<xs:attribute name="fileType" type="xs:string" use="required"/>
+    	</xs:complexType>
+    	<xs:complexType name="ExecutionParameters">
+        	<xs:attribute name="imageFileName" type="xs:string" use="required"/>
+        	<xs:attribute name="functionFileNames" type="xs:string" use="required"/>
+        	<xs:attribute name="numberOfHosts" type="xs:int"/>
+        	<xs:attribute name="tileSize" type="xs:int"/>
+        	<xs:attribute name="overlap" type="xs:int"/>
+    	</xs:complexType>
+</xs:schema>

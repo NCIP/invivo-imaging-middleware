@@ -1,0 +1,352 @@
+<ns1:mappings xmlns:ns1="http://edu.osu.bmi.xml/ClassMappings">
+ <ns1:mapping classLocalPart="SpatialCoordinate" className="edu.northwestern.radiology.aim.SpatialCoordinate" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.GeometricShape.spatialCoordinateCollection" localPart="SpatialCoordinate" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="SpatialCoordinate" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Polyline" className="edu.northwestern.radiology.aim.Polyline" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Polyline" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="TextAnnotation.imageAnnotation" className="edu.northwestern.radiology.aim.TextAnnotation.imageAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.TextAnnotation" localPart="imageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ComparisonOperators" className="edu.northwestern.radiology.aim.ComparisonOperators" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM"/>
+ <ns1:mapping classLocalPart="NonQuantifiable" className="edu.northwestern.radiology.aim.NonQuantifiable" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="NonQuantifiable" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Coordinate" className="edu.northwestern.radiology.aim.Coordinate" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Coordinate" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CalculationData.coordinateCollection" localPart="Coordinate" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImagingObservation.referencedGeometricShape" className="edu.northwestern.radiology.aim.ImagingObservation.referencedGeometricShape" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservation" localPart="referencedGeometricShape" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Point" className="edu.northwestern.radiology.aim.Point" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Point" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="DICOMImageReference.imageStudy" className="edu.northwestern.radiology.aim.DICOMImageReference.imageStudy" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.DICOMImageReference" localPart="imageStudy" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Person.imageAnnotation" className="edu.northwestern.radiology.aim.Person.imageAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Person" localPart="imageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="WebImageReference" className="edu.northwestern.radiology.aim.WebImageReference" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="WebImageReference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Interval" className="edu.northwestern.radiology.aim.Interval" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Interval" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="DICOMImageReference.presentationStateCollection" className="edu.northwestern.radiology.aim.DICOMImageReference.presentationStateCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.DICOMImageReference" localPart="presentationStateCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImagingObservation.segmentation" className="edu.northwestern.radiology.aim.ImagingObservation.segmentation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservation" localPart="segmentation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="CalculationResult" className="edu.northwestern.radiology.aim.CalculationResult" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Calculation.calculationResultCollection" localPart="CalculationResult" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="CalculationResult" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="User" className="edu.northwestern.radiology.aim.User" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation.user" localPart="User" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="User" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AimStatus.annotation" className="edu.northwestern.radiology.aim.AimStatus.annotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AimStatus" localPart="annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Annotation.equipment" className="edu.northwestern.radiology.aim.Annotation.equipment" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation" localPart="equipment" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageSeries.imageCollection" className="edu.northwestern.radiology.aim.ImageSeries.imageCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageSeries" localPart="imageCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="TextAnnotation" className="edu.northwestern.radiology.aim.TextAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation.textAnnotationCollection" localPart="TextAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="TextAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ReferencedCalculation" className="edu.northwestern.radiology.aim.ReferencedCalculation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="ReferencedCalculation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Calculation.referencedCalculationCollection" localPart="ReferencedCalculation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="string" className="string" classNamespace="http://www.w3.org/2001/XMLSchema"/>
+ <ns1:mapping classLocalPart="CharacteristicQuantification" className="edu.northwestern.radiology.aim.CharacteristicQuantification" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservationCharacteristic.characteristicQuantificationCollection" localPart="CharacteristicQuantification" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="CharacteristicQuantification" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnatomicEntityCharacteristic.characteristicQuantificationCollection" localPart="CharacteristicQuantification" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Annotation.anatomicEntityCollection" className="edu.northwestern.radiology.aim.Annotation.anatomicEntityCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation" localPart="anatomicEntityCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnatomicEntityCharacteristic" className="edu.northwestern.radiology.aim.AnatomicEntityCharacteristic" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnatomicEntity.anatomicEntityCharacteristicCollection" localPart="AnatomicEntityCharacteristic" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CharacteristicQuantification.anatomicEntityCharacteristic" localPart="AnatomicEntityCharacteristic" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="AnatomicEntityCharacteristic" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImagingObservationCharacteristic.characteristicQuantificationCollection" className="edu.northwestern.radiology.aim.ImagingObservationCharacteristic.characteristicQuantificationCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservationCharacteristic" localPart="characteristicQuantificationCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Calculation" className="edu.northwestern.radiology.aim.Calculation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Calculation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation.calculationCollection" localPart="Calculation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageStudy.dicomImageReference" className="edu.northwestern.radiology.aim.ImageStudy.dicomImageReference" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageStudy" localPart="dicomImageReference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Annotation" className="edu.northwestern.radiology.aim.Annotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.User.annotation" localPart="Annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservation.annotation" localPart="Annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnatomicEntity.annotation" localPart="Annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Inference.annotation" localPart="Annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AimStatus.annotation" localPart="Annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="Annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Calculation.annotation" localPart="Annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Equipment.annotation" localPart="Annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="CharacteristicQuantification.imagingObservationCharacteristic" className="edu.northwestern.radiology.aim.CharacteristicQuantification.imagingObservationCharacteristic" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CharacteristicQuantification" localPart="imagingObservationCharacteristic" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImagingObservation" className="edu.northwestern.radiology.aim.ImagingObservation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="ImagingObservation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservationCharacteristic.imagingObservation" localPart="ImagingObservation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation.imagingObservationCollection" localPart="ImagingObservation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Segmentation.imagingObservation" localPart="ImagingObservation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageSeries.imageStudy" className="edu.northwestern.radiology.aim.ImageSeries.imageStudy" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageSeries" localPart="imageStudy" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="CalculationResult.dimensionCollection" className="edu.northwestern.radiology.aim.CalculationResult.dimensionCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CalculationResult" localPart="dimensionCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="TwoDimensionSpatialCoordinate" className="edu.northwestern.radiology.aim.TwoDimensionSpatialCoordinate" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="TwoDimensionSpatialCoordinate" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="CalculationResultIdentifier" className="edu.northwestern.radiology.aim.CalculationResultIdentifier" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM"/>
+ <ns1:mapping classLocalPart="Calculation.calculationResultCollection" className="edu.northwestern.radiology.aim.Calculation.calculationResultCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Calculation" localPart="calculationResultCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImagingObservationCharacteristic" className="edu.northwestern.radiology.aim.ImagingObservationCharacteristic" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CharacteristicQuantification.imagingObservationCharacteristic" localPart="ImagingObservationCharacteristic" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservation.imagingObservationCharacteristicCollection" localPart="ImagingObservationCharacteristic" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="ImagingObservationCharacteristic" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Segmentation" className="edu.northwestern.radiology.aim.Segmentation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation.segmentationCollection" localPart="Segmentation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservation.segmentation" localPart="Segmentation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="Segmentation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Quantile" className="edu.northwestern.radiology.aim.Quantile" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Quantile" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="GeometricShape.spatialCoordinateCollection" className="edu.northwestern.radiology.aim.GeometricShape.spatialCoordinateCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.GeometricShape" localPart="spatialCoordinateCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Equipment" className="edu.northwestern.radiology.aim.Equipment" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation.equipment" localPart="Equipment" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="Equipment" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageAnnotation.textAnnotationCollection" className="edu.northwestern.radiology.aim.ImageAnnotation.textAnnotationCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation" localPart="textAnnotationCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ReferencedAnnotation" className="edu.northwestern.radiology.aim.ReferencedAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="ReferencedAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnnotationOfAnnotation.referencedAnnotationCollection" localPart="ReferencedAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="CharacteristicQuantification.anatomicEntityCharacteristic" className="edu.northwestern.radiology.aim.CharacteristicQuantification.anatomicEntityCharacteristic" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CharacteristicQuantification" localPart="anatomicEntityCharacteristic" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ReferencedAnnotation.annotationRole" className="edu.northwestern.radiology.aim.ReferencedAnnotation.annotationRole" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ReferencedAnnotation" localPart="annotationRole" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageAnnotation.person" className="edu.northwestern.radiology.aim.ImageAnnotation.person" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation" localPart="person" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImagingObservationCharacteristic.imagingObservation" className="edu.northwestern.radiology.aim.ImagingObservationCharacteristic.imagingObservation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservationCharacteristic" localPart="imagingObservation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Annotation.calculationCollection" className="edu.northwestern.radiology.aim.Annotation.calculationCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation" localPart="calculationCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImagingObservation.imagingObservationCharacteristicCollection" className="edu.northwestern.radiology.aim.ImagingObservation.imagingObservationCharacteristicCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservation" localPart="imagingObservationCharacteristicCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnatomicEntity.annotation" className="edu.northwestern.radiology.aim.AnatomicEntity.annotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnatomicEntity" localPart="annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Person" className="edu.northwestern.radiology.aim.Person" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation.person" localPart="Person" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="Person" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Ellipse" className="edu.northwestern.radiology.aim.Ellipse" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Ellipse" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Segmentation.imagingObservation" className="edu.northwestern.radiology.aim.Segmentation.imagingObservation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Segmentation" localPart="imagingObservation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImagingObservation.annotation" className="edu.northwestern.radiology.aim.ImagingObservation.annotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservation" localPart="annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageReference" className="edu.northwestern.radiology.aim.ImageReference" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation.imageReferenceCollection" localPart="ImageReference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="ImageReference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnnotationOfAnnotation" className="edu.northwestern.radiology.aim.AnnotationOfAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="AnnotationOfAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="GeometricShape" className="edu.northwestern.radiology.aim.GeometricShape" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation.geometricShapeCollection" localPart="GeometricShape" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="GeometricShape" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnnotationRole" className="edu.northwestern.radiology.aim.AnnotationRole" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="AnnotationRole" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ReferencedAnnotation.annotationRole" localPart="AnnotationRole" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Scale" className="edu.northwestern.radiology.aim.Scale" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Scale" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Annotation.imagingObservationCollection" className="edu.northwestern.radiology.aim.Annotation.imagingObservationCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation" localPart="imagingObservationCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Annotation.inferenceCollection" className="edu.northwestern.radiology.aim.Annotation.inferenceCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation" localPart="inferenceCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Numerical" className="edu.northwestern.radiology.aim.Numerical" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Numerical" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageAnnotation.segmentationCollection" className="edu.northwestern.radiology.aim.ImageAnnotation.segmentationCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation" localPart="segmentationCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Equipment.annotation" className="edu.northwestern.radiology.aim.Equipment.annotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Equipment" localPart="annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="CalculationData" className="edu.northwestern.radiology.aim.CalculationData" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CalculationResult.calculationDataCollection" localPart="CalculationData" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="CalculationData" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="PresentationState" className="edu.northwestern.radiology.aim.PresentationState" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="PresentationState" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.DICOMImageReference.presentationStateCollection" localPart="PresentationState" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Circle" className="edu.northwestern.radiology.aim.Circle" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Circle" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageReference.imageAnnotation" className="edu.northwestern.radiology.aim.ImageReference.imageAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageReference" localPart="imageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Calculation.referencedCalculationCollection" className="edu.northwestern.radiology.aim.Calculation.referencedCalculationCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Calculation" localPart="referencedCalculationCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Annotation.aimStatus" className="edu.northwestern.radiology.aim.Annotation.aimStatus" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation" localPart="aimStatus" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Image" className="edu.northwestern.radiology.aim.Image" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Image" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageSeries.imageCollection" localPart="Image" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageStudy" className="edu.northwestern.radiology.aim.ImageStudy" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="ImageStudy" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.DICOMImageReference.imageStudy" localPart="ImageStudy" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageSeries.imageStudy" localPart="ImageStudy" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Calculation.referencedGeometricShapeCollection" className="edu.northwestern.radiology.aim.Calculation.referencedGeometricShapeCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Calculation" localPart="referencedGeometricShapeCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="GeometricShape.imageAnnotation" className="edu.northwestern.radiology.aim.GeometricShape.imageAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.GeometricShape" localPart="imageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Dimension" className="edu.northwestern.radiology.aim.Dimension" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="Dimension" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CalculationResult.dimensionCollection" localPart="Dimension" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="PresentationState.dicomImageReference" className="edu.northwestern.radiology.aim.PresentationState.dicomImageReference" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.PresentationState" localPart="dicomImageReference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnatomicEntity" className="edu.northwestern.radiology.aim.AnatomicEntity" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnatomicEntityCharacteristic.anatomicEntity" localPart="AnatomicEntity" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation.anatomicEntityCollection" localPart="AnatomicEntity" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="AnatomicEntity" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnnotationOfAnnotation.referencedAnnotationCollection" className="edu.northwestern.radiology.aim.AnnotationOfAnnotation.referencedAnnotationCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnnotationOfAnnotation" localPart="referencedAnnotationCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnatomicEntityCharacteristic.characteristicQuantificationCollection" className="edu.northwestern.radiology.aim.AnatomicEntityCharacteristic.characteristicQuantificationCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnatomicEntityCharacteristic" localPart="characteristicQuantificationCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="TextAnnotation.multiPoint" className="edu.northwestern.radiology.aim.TextAnnotation.multiPoint" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.TextAnnotation" localPart="multiPoint" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnatomicEntity.anatomicEntityCharacteristicCollection" className="edu.northwestern.radiology.aim.AnatomicEntity.anatomicEntityCharacteristicCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnatomicEntity" localPart="anatomicEntityCharacteristicCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="User.annotation" className="edu.northwestern.radiology.aim.User.annotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.User" localPart="annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageAnnotation.geometricShapeCollection" className="edu.northwestern.radiology.aim.ImageAnnotation.geometricShapeCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation" localPart="geometricShapeCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Image.imageSeries" className="edu.northwestern.radiology.aim.Image.imageSeries" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Image" localPart="imageSeries" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AimStatus" className="edu.northwestern.radiology.aim.AimStatus" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation.aimStatus" localPart="AimStatus" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="AimStatus" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ThreeDimensionSpatialCoordinate" className="edu.northwestern.radiology.aim.ThreeDimensionSpatialCoordinate" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="ThreeDimensionSpatialCoordinate" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageAnnotation.imageReferenceCollection" className="edu.northwestern.radiology.aim.ImageAnnotation.imageReferenceCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageAnnotation" localPart="imageReferenceCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Calculation.annotation" className="edu.northwestern.radiology.aim.Calculation.annotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Calculation" localPart="annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Inference.annotation" className="edu.northwestern.radiology.aim.Inference.annotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Inference" localPart="annotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageSeries" className="edu.northwestern.radiology.aim.ImageSeries" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Image.imageSeries" localPart="ImageSeries" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageStudy.imageSeries" localPart="ImageSeries" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="ImageSeries" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Annotation.user" className="edu.northwestern.radiology.aim.Annotation.user" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation" localPart="user" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageAnnotation" className="edu.northwestern.radiology.aim.ImageAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageReference.imageAnnotation" localPart="ImageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Person.imageAnnotation" localPart="ImageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Segmentation.imageAnnotation" localPart="ImageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.GeometricShape.imageAnnotation" localPart="ImageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.TextAnnotation.imageAnnotation" localPart="ImageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="ImageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="CalculationResult.calculationDataCollection" className="edu.northwestern.radiology.aim.CalculationResult.calculationDataCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CalculationResult" localPart="calculationDataCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="MultiPoint" className="edu.northwestern.radiology.aim.MultiPoint" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.TextAnnotation.multiPoint" localPart="MultiPoint" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="MultiPoint" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ReferencedGeometricShape" className="edu.northwestern.radiology.aim.ReferencedGeometricShape" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname localPart="ReferencedGeometricShape" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImagingObservation.referencedGeometricShape" localPart="ReferencedGeometricShape" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Calculation.referencedGeometricShapeCollection" localPart="ReferencedGeometricShape" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="DICOMImageReference" className="edu.northwestern.radiology.aim.DICOMImageReference" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.PresentationState.dicomImageReference" localPart="DICOMImageReference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageStudy.dicomImageReference" localPart="DICOMImageReference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="DICOMImageReference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Inference" className="edu.northwestern.radiology.aim.Inference" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Annotation.inferenceCollection" localPart="Inference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+  <ns1:qname localPart="Inference" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="AnatomicEntityCharacteristic.anatomicEntity" className="edu.northwestern.radiology.aim.AnatomicEntityCharacteristic.anatomicEntity" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.AnatomicEntityCharacteristic" localPart="anatomicEntity" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="CalculationData.coordinateCollection" className="edu.northwestern.radiology.aim.CalculationData.coordinateCollection" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.CalculationData" localPart="coordinateCollection" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="ImageStudy.imageSeries" className="edu.northwestern.radiology.aim.ImageStudy.imageSeries" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.ImageStudy" localPart="imageSeries" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Segmentation.imageAnnotation" className="edu.northwestern.radiology.aim.Segmentation.imageAnnotation" classNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM">
+  <ns1:qname associationSourceClass="edu.northwestern.radiology.aim.Segmentation" localPart="imageAnnotation" namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" topLevel="false"/>
+ </ns1:mapping>
+</ns1:mappings>

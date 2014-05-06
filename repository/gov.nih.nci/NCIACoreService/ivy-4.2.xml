@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">    <info organisation="gov.nih.nci" module="NCIACoreService" revision="4.2" status="integration" publication=""/>
+    <configurations>
+	
+	    <conf name="target_grid" visibility="private"/>
+
+    <conf name="impl" visibility="private" extends="service"/>
+    <conf name="impl-test" visibility="private"/>
+
+    <!-- Public Configurations-->
+    <conf name="stubs" visibility="public"/>
+    <conf name="common" extends="stubs" visibility="public"/>
+    <conf name="client" extends="common" visibility="public"/>
+
+    <conf name="service" visibility="public" extends="client"/>
+    <conf name="test" visibility="public" extends="service,impl-test"/>	
+	
+	  <conf name="compile" extends="test" visibility="private" />
+
+    </configurations>
+    <publications>
+      <artifact name="NCIACoreService-stubs" type="jar" conf="stubs" />
+      <artifact name="NCIACoreService-common" type="jar" conf="common" />
+      <artifact name="NCIACoreService-client" type="jar" conf="client" />
+      <artifact name="NCIACoreService-service" type="jar" conf="service" />
+      <artifact name="NCIACoreService-tests" type="jar" conf="test" />
+    </publications>
+    <dependencies>
+
+	<!-- dependency for globus -->
+	<dependency org="caGrid" name="transfer" rev="${cagrid.version}" conf="client->client;service->service" />
+	<dependency org="caGrid" name="sdkQuery4" rev="${cagrid.version}" conf="client->processor;service->style" />
+	<dependency org="caGrid" name="metadatautils" rev="${cagrid.version}" conf="client->default" />
+    <dependency rev="${cagrid.version}" org="caGrid" name="metadata" conf="service->schemas;client->common.jars"/>
+    <dependency rev="${cagrid.version}" org="caGrid" name="service-security-provider" conf="client->client;service->service"/>
+    <dependency rev="training-${cagrid.version}" org="caGrid" name="target_grid" conf="target_grid->urls"/>
+
+
+	<!-- standard jars included from a introduce generated service skeleton -->
+		
+
+    </dependencies>
+</ivy-module>

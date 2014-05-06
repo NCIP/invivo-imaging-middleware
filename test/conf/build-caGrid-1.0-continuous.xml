@@ -1,0 +1,26 @@
+<!-- Delegating build script, used by cruisecontrol to build MY_PROJECT_1.
+     Note that the basedir is set to the checked out project -->
+<project name="caGrid-1.0-continuous"
+        default="test"
+        basedir="checkout/caGrid-1.0-continuous">
+
+    <target name="update" depends="">
+        <!-- Get the latest from CVS -->
+        <cvs quiet="true" command="up -d -P"/>
+    </target>
+
+    <target name="build" depends="update">
+        <!-- Call the target that does everything -->
+        <ant dir="caGrid" antfile="build.xml" target="configure-clean" inheritAll="false" inheritRefs="true"/>
+        <ant dir="caGrid" antfile="build.xml" target="all" inheritAll="false" inheritRefs="true"/>
+    </target>
+
+    <target name="test" depends="build">
+        <!-- Call the target that tests  -->
+        <ant dir="caGrid" antfile="build.xml" target="test" inheritAll="false" inheritRefs="true">
+            <property name="run.system.tests" value="false"/>
+            <property name="create.test.report" value="false"/>
+            <property name="dart.buildname" value="${ant.project.name}-${os.name}-${os.arch}-${os.version}--JDK-${java.version}"/>
+        </ant>
+    </target>
+</project>

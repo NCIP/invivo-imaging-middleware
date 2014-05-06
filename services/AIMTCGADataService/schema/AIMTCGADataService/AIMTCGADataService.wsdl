@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://aim.cci.emory.edu/AIMTCGADataService" xmlns:wsrp="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd" xmlns:wsrlw="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.wsdl" xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor" xmlns:gtwsdl1="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ServiceGroup-1.2-draft-01.wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/03/addressing" xmlns:wsntw="http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.wsdl" xmlns:wsrbfw="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.wsdl" xmlns:wsrpw="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" xmlns:wns2="http://gov.nih.nci.cagrid.data/DataService" xmlns:wns3="http://gov.nih.nci.cagrid.data.enumeration/EnumerationDataService" xmlns:wns0="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" xmlns:wns1="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity" xmlns:ns4="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" xmlns:ns12="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns3="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata" xmlns:ns10="http://transfer.cagrid.org/Transfer" xmlns:ns8="http://gov.nih.nci.cagrid.data/DataServiceExceptions" xmlns:ns7="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" xmlns:ns13="http://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer" xmlns:ns6="http://aim.cci.emory.edu/AIMTCGADataService/CQLResultTypes" xmlns:ns2="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security" xmlns:ns11="http://schemas.xmlsoap.org/ws/2004/09/enumeration" xmlns:ns9="http://transfer.cagrid.org/TransferService/Context/types" xmlns:ns0="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" xmlns:ns5="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet" xmlns:ns14="http://gov.nih.nci.cagrid.enumeration/CaGridEnumeration/types" xmlns:ns1="http://aim.cci.emory.edu/AIMTCGADataService/types" name="AIMTCGADataService" targetNamespace="http://aim.cci.emory.edu/AIMTCGADataService">
+  <import namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" location="../wsrf/properties/WS-ResourceProperties.wsdl" />
+  <import namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.wsdl" location="../wsrf/faults/WS-BaseFaults.wsdl" />
+  <import namespace="http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.wsdl" location="../wsrf/notification/WS-BaseN.wsdl" />
+  <import namespace="http://gov.nih.nci.cagrid.data/DataService" location="./DataService.wsdl" />
+  <import namespace="http://gov.nih.nci.cagrid.data.enumeration/EnumerationDataService" location="./EnumerationDataService.wsdl" />
+  <import namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" location="./../wsrf/properties/WS-ResourceProperties.wsdl" />
+  <import namespace="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity" location="./ServiceSecurity.wsdl" />
+  <!--============================================================
+
+                      T Y P E S
+                      
+  ============================================================-->
+  <types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsrbf="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd" targetNamespace="http://aim.cci.emory.edu/AIMTCGADataService" elementFormDefault="qualified" attributeFormDefault="unqualified">
+      <import namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd" schemaLocation="../wsrf/faults/WS-BaseFaults.xsd" />
+      <import namespace="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" schemaLocation="./1_gov.nih.nci.cagrid.CQLQuery.xsd" />
+      <import namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing" schemaLocation="./addressing.xsd" />
+      <import namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata" schemaLocation="./xsd/cagrid/types/caGridMetadata.xsd" />
+      <import namespace="http://transfer.cagrid.org/Transfer" schemaLocation="./caGrid_Transfer.xsd" />
+      <import namespace="http://gov.nih.nci.cagrid.data/DataServiceExceptions" schemaLocation="./DataServiceExceptions.xsd" />
+      <import namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" schemaLocation="./xsd/cagrid/types/data/data.xsd" />
+      <import namespace="http://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer" schemaLocation="./EnumerationResponseContainer.xsd" />
+      <import namespace="http://aim.cci.emory.edu/AIMTCGADataService/CQLResultTypes" schemaLocation="./AIMTCGADataService_CQLResultTypes.xsd" />
+      <import namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security" schemaLocation="./xsd/cagrid/types/security/security.xsd" />
+      <import namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" schemaLocation="./enumeration.xsd" />
+      <import namespace="http://transfer.cagrid.org/TransferService/Context/types" schemaLocation="./TransferServiceContextTypes.xsd" />
+      <import namespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" schemaLocation="./AIM_TCGA09302009_Model.xsd" />
+      <import namespace="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet" schemaLocation="./1_gov.nih.nci.cagrid.CQLResultSet.xsd" />
+      <import namespace="http://gov.nih.nci.cagrid.enumeration/CaGridEnumeration/types" schemaLocation="./CaGridEnumerationTypes.xsd" />
+      <import namespace="http://aim.cci.emory.edu/AIMTCGADataService/types" schemaLocation="./AIMTCGADataServiceTypes.xsd" />
+      <element name="SubmitRequest">
+        <complexType>
+          <sequence>
+            <element name="xmls" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SubmitResponse">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="QueryByTransferRequest">
+        <complexType>
+          <sequence>
+            <element name="cqlQuery">
+              <complexType>
+                <sequence>
+                  <element ref="ns4:CQLQuery" minOccurs="1" maxOccurs="1" />
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="QueryByTransferResponse">
+        <complexType>
+          <sequence>
+            <element ref="ns9:TransferServiceContextReference" minOccurs="1" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SubmitByTransferRequest">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="SubmitByTransferResponse">
+        <complexType>
+          <sequence>
+            <element ref="ns9:TransferServiceContextReference" minOccurs="1" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AIMTCGADataServiceResourceProperties">
+        <complexType>
+          <sequence>
+            <element ref="ns7:DomainModel" />
+            <element ref="ns3:ServiceMetadata" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <!--  place service messages here -->
+  <message name="SubmitRequest">
+    <part name="parameters" element="tns:SubmitRequest" />
+  </message>
+  <message name="SubmitResponse">
+    <part name="parameters" element="tns:SubmitResponse" />
+  </message>
+  <message name="QueryByTransferRequest">
+    <part name="parameters" element="tns:QueryByTransferRequest" />
+  </message>
+  <message name="QueryByTransferResponse">
+    <part name="parameters" element="tns:QueryByTransferResponse" />
+  </message>
+  <message name="SubmitByTransferRequest">
+    <part name="parameters" element="tns:SubmitByTransferRequest" />
+  </message>
+  <message name="SubmitByTransferResponse">
+    <part name="parameters" element="tns:SubmitByTransferResponse" />
+  </message>
+  <message name="QueryProcessingExceptionFaultMessage">
+    <part name="fault" element="ns8:QueryProcessingException" />
+  </message>
+  <message name="MalformedQueryExceptionFaultMessage">
+    <part name="fault" element="ns8:MalformedQueryException" />
+  </message>
+  <!--============================================================
+
+                       P O R T T Y P E
+                      
+  ============================================================-->
+  <portType name="AIMTCGADataServicePortType" wsrp:ResourceProperties="tns:AIMTCGADataServiceResourceProperties">
+    <operation name="submit">
+      <input message="tns:SubmitRequest" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/SubmitRequest" />
+      <output message="tns:SubmitResponse" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/SubmitResponse" />
+      <fault name="QueryProcessingException" message="tns:QueryProcessingExceptionFaultMessage" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/QueryProcessingExceptionFaultMessage" />
+      <fault name="MalformedQueryException" message="tns:MalformedQueryExceptionFaultMessage" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/MalformedQueryExceptionFaultMessage" />
+    </operation>
+    <operation name="queryByTransfer">
+      <input message="tns:QueryByTransferRequest" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/QueryByTransferRequest" />
+      <output message="tns:QueryByTransferResponse" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/QueryByTransferResponse" />
+      <fault name="QueryProcessingException" message="tns:QueryProcessingExceptionFaultMessage" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/QueryProcessingExceptionFaultMessage" />
+      <fault name="MalformedQueryException" message="tns:MalformedQueryExceptionFaultMessage" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/MalformedQueryExceptionFaultMessage" />
+    </operation>
+    <operation name="submitByTransfer">
+      <input message="tns:SubmitByTransferRequest" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/SubmitByTransferRequest" />
+      <output message="tns:SubmitByTransferResponse" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/SubmitByTransferResponse" />
+      <fault name="QueryProcessingException" message="tns:QueryProcessingExceptionFaultMessage" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/QueryProcessingExceptionFaultMessage" />
+      <fault name="MalformedQueryException" message="tns:MalformedQueryExceptionFaultMessage" wsa:Action="http://aim.cci.emory.edu/AIMTCGADataService/MalformedQueryExceptionFaultMessage" />
+    </operation>
+    <wsdl:operation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="GetMultipleResourceProperties">
+      <wsdl:input name="GetMultipleResourcePropertiesRequest" message="wsrpw:GetMultipleResourcePropertiesRequest" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/GetMultipleResourceProperties" />
+      <wsdl:output name="GetMultipleResourcePropertiesResponse" message="wsrpw:GetMultipleResourcePropertiesResponse" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/GetMultipleResourcePropertiesResponse" />
+      <wsdl:fault name="ResourceUnknownFault" message="wsrpw:ResourceUnknownFault" />
+      <wsdl:fault name="InvalidResourcePropertyQNameFault" message="wsrpw:InvalidResourcePropertyQNameFault" />
+    </wsdl:operation>
+    <wsdl:operation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="GetResourceProperty">
+      <wsdl:input name="GetResourcePropertyRequest" message="wsrpw:GetResourcePropertyRequest" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/GetResourceProperty" />
+      <wsdl:output name="GetResourcePropertyResponse" message="wsrpw:GetResourcePropertyResponse" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/GetResourcePropertyResponse" />
+      <wsdl:fault name="ResourceUnknownFault" message="wsrpw:ResourceUnknownFault" />
+      <wsdl:fault name="InvalidResourcePropertyQNameFault" message="wsrpw:InvalidResourcePropertyQNameFault" />
+    </wsdl:operation>
+    <wsdl:operation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="QueryResourceProperties">
+      <wsdl:input name="QueryResourcePropertiesRequest" message="wsrpw:QueryResourcePropertiesRequest" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/QueryResourceProperties" />
+      <wsdl:output name="QueryResourcePropertiesResponse" message="wsrpw:QueryResourcePropertiesResponse" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/QueryResourcePropertiesResponse" />
+      <wsdl:fault name="ResourceUnknownFault" message="wsrpw:ResourceUnknownFault" />
+      <wsdl:fault name="InvalidResourcePropertyQNameFault" message="wsrpw:InvalidResourcePropertyQNameFault" />
+      <wsdl:fault name="UnknownQueryExpressionDialectFault" message="wsrpw:UnknownQueryExpressionDialectFault" />
+      <wsdl:fault name="InvalidQueryExpressionFault" message="wsrpw:InvalidQueryExpressionFault" />
+      <wsdl:fault name="QueryEvaluationErrorFault" message="wsrpw:QueryEvaluationErrorFault" />
+    </wsdl:operation>
+    <operation name="getServiceSecurityMetadata">
+      <input message="wns1:GetServiceSecurityMetadataRequest" wsa:Action="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity/GetServiceSecurityMetadataRequest" />
+      <output message="wns1:GetServiceSecurityMetadataResponse" wsa:Action="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity/GetServiceSecurityMetadataResponse" />
+    </operation>
+    <operation name="query">
+      <input message="wns2:QueryRequest" wsa:Action="http://data.cagrid.nci.nih.gov/DataService/QueryRequest" />
+      <output message="wns2:QueryResponse" wsa:Action="http://data.cagrid.nci.nih.gov/DataService/QueryResponse" />
+      <fault name="QueryProcessingException" message="wns2:QueryProcessingExceptionFaultMessage" wsa:Action="http://gov.nih.nci.cagrid.data/DataService/QueryProcessingExceptionFaultMessage" />
+      <fault name="MalformedQueryException" message="wns2:MalformedQueryExceptionFaultMessage" wsa:Action="http://gov.nih.nci.cagrid.data/DataService/MalformedQueryExceptionFaultMessage" />
+    </operation>
+    <operation name="enumerationQuery">
+      <input message="wns3:EnumerationQueryRequest" wsa:Action="http://gov.nih.nci.cagrid.data.enumeration/EnumerationDataService/EnumerationQueryRequest" />
+      <output message="wns3:EnumerationQueryResponse" wsa:Action="http://gov.nih.nci.cagrid.data.enumeration/EnumerationDataService/EnumerationQueryResponse" />
+      <fault name="MalformedQueryException" message="wns3:MalformedQueryExceptionFaultMessage" wsa:Action="http://gov.nih.nci.cagrid.data.enumeration/EnumerationDataService/MalformedQueryExceptionFaultMessage" />
+      <fault name="QueryProcessingException" message="wns3:QueryProcessingExceptionFaultMessage" wsa:Action="http://gov.nih.nci.cagrid.data.enumeration/EnumerationDataService/QueryProcessingExceptionFaultMessage" />
+    </operation>
+  </portType>
+</definitions>
+

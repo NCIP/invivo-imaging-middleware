@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Tony C. Pan (OSU BMI) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Tony C. Pan (OSU BMI) -->
+<!-- for RSNA demo.  Author Tony Pan -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dicom="gme://IVI.caBIG/1/edu.osu.bmi.dicom" xmlns:mobius="gme://IVI.caBIG/1/edu.osu.bmi.dicom" targetNamespace="gme://IVI.caBIG/1/edu.osu.bmi.dicom" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="PatientType">
+		<xs:sequence>
+			<xs:element name="Study" type="dicom:StudyType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="PT_NAME" type="xs:string" use="optional"/>
+		<xs:attribute name="PT_ID" type="xs:string" use="optional"/>
+		<xs:attribute name="PT_BIRTH_DT" type="xs:date" use="optional"/>
+		<xs:attribute name="PT_SEX_TXT_CD" type="xs:string" use="optional"/>
+		<xs:attribute name="PT_ETHNGRP_CAT" type="xs:string" use="optional"/>
+		<xs:attribute name="CLIN_TRL_SPNR_NM_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="PROT_NUM" type="xs:string" use="optional"/>
+		<xs:attribute name="PROT_LONG_TLE_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="CLIN_TRL_SITE_ID" type="xs:string" use="optional"/>
+		<xs:attribute name="CLIN_TRL_SITE_TXT_NM" type="xs:string" use="optional"/>
+		<xs:attribute name="RSCH_CASE_ID" type="xs:string" use="optional"/>
+		<xs:attribute name="TRL_SUBJ_READ_ID" type="xs:string" use="optional"/>
+		<!-- patient -->
+		<!-- clinical trial subject -->
+		<!-- other -->
+		<!-- xs:attribute name="USER_COMMENT_PT_TXT" type="xs:string" use="optional"/ -->
+	</xs:complexType>
+	<xs:element name="Patient" type="dicom:PatientType"/>
+	<xs:complexType name="StudyType">
+		<xs:sequence>
+			<!-- study general -->
+			<xs:element name="STDY_INSTNC_UID" type="dicom:StudyInstanceUIDType"/>
+			<!-- xs:element name="StudyInstanceUID" type="dicom:StudyInstanceUIDType"/ -->
+			<xs:element name="Series" type="dicom:SeriesType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dicom:Patient" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="IMAG_STDY_DT" type="xs:date" use="optional"/>
+		<xs:attribute name="IMAG_STDY_TM" type="xs:time" use="optional"/>
+		<xs:attribute name="STUDY_DESC_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="ADM_DX_DESC_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="ADM_DX_CD_SEQ" type="xs:string" use="optional"/>
+		<xs:attribute name="CTMS_PT_AGE" type="xs:string" use="optional"/>
+		<xs:attribute name="PT_HT_M_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="BDY_WT_KG" type="xs:double" use="optional"/>
+		<xs:attribute name="PRSN_OCCUP_NM" type="xs:string" use="optional"/>
+		<xs:attribute name="PT_MED_HX_SHORT_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="CLIN_TRL_TMPT_ID" type="xs:string" use="optional"/>
+		<xs:attribute name="CLIN_TRL_TMPT_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="NumberOfStudyRelatedSeries" type="xs:int" use="optional"/>
+		<!-- study general -->
+		<!-- patient-study -->
+		<!-- clinical trial study -->
+		<!-- other -->
+		<!-- xs:attribute name="StudyID" type="xs:string" use="optional"/ -->
+		<!-- xs:attribute name="AdditionalPatientHistory" type="xs:string" use="optional"/ -->
+	</xs:complexType>
+	<xs:element name="Study" type="dicom:StudyType"/>
+	<xs:complexType name="SeriesType">
+		<xs:sequence>
+			<!-- series general -->
+			<xs:element name="SER_INST_UID" type="dicom:SeriesInstanceUIDType"/>
+			<!-- xs:element name="SeriesInstanceUID" type="dicom:SeriesInstanceUIDType"/ -->
+			<xs:element name="Image" type="dicom:ImageType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dicom:Study" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="IMAGE_MODAL_TP_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="SER_DESC_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="ANAT_SITE_ASSESS_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="IMAG_PROT_NM" type="xs:string" use="optional"/>
+		<xs:attribute name="PT_POS_TXT_CD" type="xs:string" use="optional"/>
+		<xs:attribute name="PRSN_LAT_NM" type="xs:string" use="optional"/>
+		<xs:attribute name="COORD_CTR_NM_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="FRAME_REF_UID" type="xs:string" use="optional"/>
+		<xs:attribute name="MANUF_NM_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="EQUIP_INST_NM_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="MANUF_MODL_NM_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="SFTWR_VER_NUM" type="xs:string" use="optional"/>
+		<xs:attribute name="NumberOfSeriesRelatedInstance" type="xs:int" use="optional"/>
+		<!-- series general -->
+		<!-- clinical trial series -->
+		<!-- frame of reference -->
+		<!-- equipment general -->
+		<!-- other -->
+		<!-- xs:attribute name="SeriesNumber" type="xs:int" use="optional"/ -->
+		<!-- xs:attribute name="EQPT_LOC_DEPT_NM" type="xs:string" use="optional"/ -->
+	</xs:complexType>
+	<xs:element name="Series" type="dicom:SeriesType"/>
+	<xs:complexType name="ImageType">
+		<xs:sequence>
+			<!-- sop COMMON -->
+			<xs:element name="SOP_CLASS_UID" type="dicom:SOPClassUIDType"/>
+			<xs:element name="SOP_INSTC_UID" type="dicom:SOPInstanceUIDType"/>
+			<!-- xs:element name="SOPInstanceUID" type="dicom:SOPInstanceUIDType"/ -->
+			<xs:element name="Physics" type="dicom:CTImagePhysicsType"/>
+			<xs:element name="Content" type="dicom:ContentType" minOccurs="0"/>
+			<xs:element ref="dicom:Series" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="IMAGE_TP_NM_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="IMAG_ACQSTN_NUM" type="xs:int" use="optional"/>
+		<xs:attribute name="INSTNC_NUM_ID" type="xs:int" use="optional"/>
+		<xs:attribute name="USER_COMMT_IMAGE_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="LOSSY_IMAG_COMPR_CD" type="xs:string" use="optional"/>
+		<xs:attribute name="SLICE_THKN_MM_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="PT_IMAG_POS_MM_NUM" type="xs:string" use="optional"/>
+		<xs:attribute name="PT_IMAG_ORIENT_NUM" type="xs:string" use="optional"/>
+		<xs:attribute name="SLICE_LOC_MM_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="PIXEL_SPAC_MM_NUM_X" type="xs:double" use="optional"/>
+		<xs:attribute name="PIXEL_SPAC_MM_NUM_Y" type="xs:double" use="optional"/>
+		<xs:attribute name="MED_IMAG_ROW_NUM" type="xs:int" use="optional"/>
+		<xs:attribute name="IMAG_COLUMN_NUM" type="xs:int" use="optional"/>
+		<xs:attribute name="CONT_AGT_BOLUS_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="CONT_AGT_RTE_NM_TXT" type="xs:string" use="optional"/>
+		<xs:attribute name="ANAT_REG_SEQ_TXT" type="xs:string" use="optional"/>
+		<!-- image general -->
+		<!-- image plane -->
+		<!-- Image pixel -->
+		<!-- contrast bolus -->
+		<!-- anatomy macro -->
+		<!-- other -->
+		<!-- xs:attribute name="DerivationDescription" type="xs:string" use="optional"/ -->
+	</xs:complexType>
+	<xs:element name="Image" type="dicom:ImageType"/>
+	<xs:complexType name="CTImagePhysicsType">
+		<xs:attribute name="KVP_VAL_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="DATA_COLL_DIAM_MM" type="xs:double" use="optional"/>
+		<xs:attribute name="RCNSTCT_DIAM_MM_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="GANTRY_TILT_DEG_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="EXPO_TM_MILLSEC_NUM" type="xs:int" use="optional"/>
+		<xs:attribute name="XR_CURR_MILLAMP_NUM" type="xs:int" use="optional"/>
+		<xs:attribute name="EXPO_CURR_MILLAMPSEC" type="xs:int" use="optional"/>
+		<xs:attribute name="EXPO_MICROAMPSEC_NUM" type="xs:int" use="optional"/>
+		<xs:attribute name="RVLTN_TM_SEC_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="SNGL_COLLM_MM_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="TTL_COLLM_MM_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="TABLE_SPEED_MM_SEC" type="xs:double" use="optional"/>
+		<xs:attribute name="TABLE_FD_ROTN_MM_NUM" type="xs:double" use="optional"/>
+		<xs:attribute name="CT_PITCH_FACT_NUM" type="xs:double" use="optional"/>
+		<!-- image CT -->
+	</xs:complexType>
+	<xs:element name="CTImagePhysics" type="dicom:CTImagePhysicsType"/>
+	<xs:complexType name="SOPInstanceUIDType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="SOPInstancecUID" type="dicom:SOPInstanceUIDType"/>
+	<xs:complexType name="SOPClassUIDType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="SOPClassUID" type="dicom:SOPClassUIDType"/>
+	<xs:complexType name="SeriesInstanceUIDType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="SeriesInstanceUID" type="dicom:SeriesInstanceUIDType"/>
+	<xs:complexType name="StudyInstanceUIDType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="StudyInstanceUID" type="dicom:StudyInstanceUIDType"/>
+	<xs:complexType name="OrderedImageIndexType">
+		<xs:simpleContent>
+			<xs:extension base="xs:int"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="OrderedImageIndex" type="dicom:OrderedImageIndexType"/>
+	<xs:complexType name="ContentType">
+		<xs:sequence>
+			<xs:element name="TransferMechanism" type="xs:string"/>
+			<xs:choice>
+				<xs:element name="File" type="xs:base64Binary"/>
+				<xs:element name="URL" type="xs:string"/>
+			</xs:choice>
+			<xs:element ref="dicom:Image" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Content" type="dicom:ContentType"/>
+</xs:schema>

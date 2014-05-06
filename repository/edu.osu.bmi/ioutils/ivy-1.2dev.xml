@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">    <info organisation="edu.osu.bmi" module="ioutils" revision="1.2dev" status="integration" publication="20080821083510"/>
+    <configurations>
+      <conf name="default"/>
+	  	<conf name="compile" extends="default" visibility="private"/>
+<conf name="impl" extends="compile" visibility="private"/>
+	  <conf name="test" extends="impl" visibility="private"/>
+
+    </configurations>
+    <publications>
+      <artifact name="ioutils" type="jar" conf="default"/>
+      <artifact name="ioutils-tests" type="jar" conf="test"/>
+    </publications>
+    <dependencies>
+
+	<!-- dependency for globus -->
+
+
+	<!-- standard jars included from a introduce generated service skeleton -->
+		
+
+    </dependencies>
+</ivy-module>

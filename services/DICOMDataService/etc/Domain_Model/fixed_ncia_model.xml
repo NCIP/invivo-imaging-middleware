@@ -1,0 +1,387 @@
+<ns1:DomainModel projectDescription="caCORE" projectLongName="caCORE" projectShortName="caCORE" projectVersion="3" xsi:type="ns1:DomainModel" xmlns:ns1="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ns1:exposedUMLAssociationCollection>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="trial" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_620AA1A8_529F_45a1_8032_BBF0AD4C4A28" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="siteCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_0B03EDC6_D43D_45fb_AC90_7591CB77DF10" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="studyCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_7855F361_5FBC_40f7_AABB_8DAA00D999E7" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="patient" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_29712CDA_464E_414d_9282_319B1949912C" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="trialSite" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_0B03EDC6_D43D_45fb_AC90_7591CB77DF10" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="patientCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_29712CDA_464E_414d_9282_319B1949912C" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="patientCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_29712CDA_464E_414d_9282_319B1949912C" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="dataProvenance" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_BE81145E_AE42_46cc_9181_6176EBA7BB3E" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="patient" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_29712CDA_464E_414d_9282_319B1949912C" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="generalImageCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_184444B4_B9FD_4b90_BB23_36514F84786D" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="false" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="patient" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_29712CDA_464E_414d_9282_319B1949912C" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_89CB9C34_3A05_4079_B266_9B30E209F195" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="generalSeriesCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_B00E2D7D_7876_4a9a_8D22_57547436E1B4" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="study" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_7855F361_5FBC_40f7_AABB_8DAA00D999E7" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="false" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="study" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_7855F361_5FBC_40f7_AABB_8DAA00D999E7" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_89CB9C34_3A05_4079_B266_9B30E209F195" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="study" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_7855F361_5FBC_40f7_AABB_8DAA00D999E7" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="generalImageCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_184444B4_B9FD_4b90_BB23_36514F84786D" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="generalImageCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_184444B4_B9FD_4b90_BB23_36514F84786D" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="generalSeries" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_B00E2D7D_7876_4a9a_8D22_57547436E1B4" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="generalSeries" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_B00E2D7D_7876_4a9a_8D22_57547436E1B4" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="annotationCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_FAC0D88E_B712_4831_A939_F4AFD2DD789E" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="false" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="generalSeries" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_B00E2D7D_7876_4a9a_8D22_57547436E1B4" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_89CB9C34_3A05_4079_B266_9B30E209F195" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="generalSeriesCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_B00E2D7D_7876_4a9a_8D22_57547436E1B4" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="generalEquipment" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_590B8CE4_0963_491f_B3E4_6E7E9A202A7E" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="dataProvenance" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_BE81145E_AE42_46cc_9181_6176EBA7BB3E" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="generalImageCollection" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_184444B4_B9FD_4b90_BB23_36514F84786D" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="true" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="generalImage" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_184444B4_B9FD_4b90_BB23_36514F84786D" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="ctimage" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_9B70157B_BFC6_4454_9DE1_30E66F57ED9A" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="false" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="generalImage" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_184444B4_B9FD_4b90_BB23_36514F84786D" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_89CB9C34_3A05_4079_B266_9B30E209F195" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+  <ns1:UMLAssociation bidirectional="false" xsi:type="ns1:UMLAssociation">
+   <ns1:targetUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="annotationFile" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_FAC0D88E_B712_4831_A939_F4AFD2DD789E" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:targetUMLAssociationEdge>
+   <ns1:sourceUMLAssociationEdge>
+    <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" xsi:type="ns1:UMLAssociationEdge">
+     <ns1:UMLClassReference refid="EAID_89CB9C34_3A05_4079_B266_9B30E209F195" xsi:type="ns1:UMLClassReference"/>
+    </ns1:UMLAssociationEdge>
+   </ns1:sourceUMLAssociationEdge>
+  </ns1:UMLAssociation>
+ </ns1:exposedUMLAssociationCollection>
+ <ns1:exposedUMLClassCollection>
+  <ns2:UMLClass className="ClinicalTrial" id="EAID_620AA1A8_529F_45a1_8032_BBF0AD4C4A28" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns2:UMLClass" xmlns:ns2="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns2:umlAttributeCollection>
+    <ns2:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="-1485208854" version="1.0" xsi:type="ns2:UMLAttribute"/>
+    <ns2:UMLAttribute dataTypeName="java.lang.String" name="sponsorName" publicID="-1485208853" version="1.0" xsi:type="ns2:UMLAttribute"/>
+    <ns2:UMLAttribute dataTypeName="java.lang.String" name="protocolId" publicID="-1485208852" version="1.0" xsi:type="ns2:UMLAttribute"/>
+    <ns2:UMLAttribute dataTypeName="java.lang.String" name="protocolName" publicID="-1485208851" version="1.0" xsi:type="ns2:UMLAttribute"/>
+    <ns2:UMLAttribute dataTypeName="java.lang.String" name="coordinatingCenter" publicID="-1485208850" version="1.0" xsi:type="ns2:UMLAttribute"/>
+   </ns2:umlAttributeCollection>
+  </ns2:UMLClass>
+  <ns3:UMLClass className="Patient" id="EAID_29712CDA_464E_414d_9282_319B1949912C" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns3:UMLClass" xmlns:ns3="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns3:umlAttributeCollection>
+    <ns3:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="1518702890" version="1.0" xsi:type="ns3:UMLAttribute"/>
+    <ns3:UMLAttribute dataTypeName="java.lang.String" name="patientId" publicID="1518702891" version="1.0" xsi:type="ns3:UMLAttribute"/>
+    <ns3:UMLAttribute dataTypeName="java.lang.String" name="patientName" publicID="1518702892" version="1.0" xsi:type="ns3:UMLAttribute"/>
+    <ns3:UMLAttribute dataTypeName="java.util.Date" name="patientBirthDate" publicID="1518702893" version="1.0" xsi:type="ns3:UMLAttribute"/>
+    <ns3:UMLAttribute dataTypeName="java.lang.String" name="patientSex" publicID="1518702894" version="1.0" xsi:type="ns3:UMLAttribute"/>
+    <ns3:UMLAttribute dataTypeName="java.lang.String" name="ethnicGroup" publicID="1518702895" version="1.0" xsi:type="ns3:UMLAttribute"/>
+    <ns3:UMLAttribute dataTypeName="java.lang.String" name="trialSubjectId" publicID="1518702896" version="1.0" xsi:type="ns3:UMLAttribute"/>
+    <ns3:UMLAttribute dataTypeName="java.lang.String" name="trialSubjectReadingId" publicID="1518702897" version="1.0" xsi:type="ns3:UMLAttribute"/>
+    <ns3:UMLAttribute dataTypeName="java.lang.String" name="visibility" publicID="1518702898" version="1.0" xsi:type="ns3:UMLAttribute"/>
+   </ns3:umlAttributeCollection>
+  </ns3:UMLClass>
+  <ns4:UMLClass className="Study" id="EAID_7855F361_5FBC_40f7_AABB_8DAA00D999E7" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns4:UMLClass" xmlns:ns4="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns4:umlAttributeCollection>
+    <ns4:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="191033998" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="studyInstanceUID" publicID="191033999" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.util.Date" name="studyDate" publicID="191034000" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="studyTime" publicID="191034001" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="studyDesc" publicID="191034002" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="admittingDiagnosesDesc" publicID="191034003" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="admittingDiagnosesCodeSeq" publicID="191034004" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="studyId" publicID="191034005" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="timePointId" publicID="191034006" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="patientAge" publicID="191034007" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="timePointDesc" publicID="1627086721" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="ageGroup" publicID="1627086722" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.Double" name="patientSize" publicID="1627086723" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="occupation" publicID="1627086724" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.Double" name="patientWeight" publicID="1627086725" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="additionalPatientHistory" publicID="1627086726" version="1.0" xsi:type="ns4:UMLAttribute"/>
+    <ns4:UMLAttribute dataTypeName="java.lang.String" name="visibility" publicID="1627086727" version="1.0" xsi:type="ns4:UMLAttribute"/>
+   </ns4:umlAttributeCollection>
+  </ns4:UMLClass>
+  <ns5:UMLClass className="GeneralSeries" id="EAID_B00E2D7D_7876_4a9a_8D22_57547436E1B4" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns5:UMLClass" xmlns:ns5="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns5:umlAttributeCollection>
+    <ns5:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="1357132545" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="modality" publicID="1357132546" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="seriesInstanceUID" publicID="1357132547" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="laterality" publicID="1357132548" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.util.Date" name="seriesDate" publicID="1357132549" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="protocolName" publicID="1357132550" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="seriesDesc" publicID="1357132551" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="bodyPartExamined" publicID="1357132552" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="admittingDiagnosesDesc" publicID="1357132553" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.Integer" name="patientWeight" publicID="1357132554" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.Integer" name="seriesNumber" publicID="-878563986" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="frameOfReferenceUID" publicID="-878563985" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="syncFrameOfRefUID" publicID="-878563984" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="visibility" publicID="-878563983" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="boolean" name="annotationsFlag" publicID="-878563982" version="1.0" xsi:type="ns5:UMLAttribute"/>
+    <ns5:UMLAttribute dataTypeName="java.lang.String" name="securityGroup" publicID="-878563981" version="1.0" xsi:type="ns5:UMLAttribute"/>
+   </ns5:umlAttributeCollection>
+  </ns5:UMLClass>
+  <ns6:UMLClass className="GeneralImage" id="EAID_184444B4_B9FD_4b90_BB23_36514F84786D" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns6:UMLClass" xmlns:ns6="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns6:umlAttributeCollection>
+    <ns6:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="1061022971" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Integer" name="instanceNumber" publicID="1061022972" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.util.Date" name="contentDate" publicID="1061022973" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="contentTime" publicID="1061022974" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="imageType" publicID="1061022975" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.util.Date" name="acquisitionDate" publicID="1061022976" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="acquisitionTime" publicID="1061022977" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="acquisitionDatetime" publicID="1061022978" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Integer" name="acquisitionNumber" publicID="1061022979" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="imageComments" publicID="1061022980" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="lossyImageCompression" publicID="-1468026188" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Double" name="pixelSpacing" publicID="-1468026187" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="imageOrientationPatient" publicID="-1468026186" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="imagePositionPatient" publicID="-1468026185" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Double" name="sliceThickness" publicID="-1468026184" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Double" name="sliceLocation" publicID="-1468026183" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Integer" name="rows" publicID="-1468026182" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Integer" name="columns" publicID="-1468026181" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="contrastBolusAgent" publicID="-1468026180" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="contrastBolusRoute" publicID="-1468026179" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="SOPClassUID" publicID="-1468026157" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="SOPInstanceUID" publicID="-1468026156" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="patientPosition" publicID="-1468026155" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Double" name="sourceToDetectorDistance" publicID="-1468026154" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Double" name="sourceSubjectDistance" publicID="-1468026153" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Double" name="focalSpotSize" publicID="-1468026152" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="storageMediaFileSetUID" publicID="-1468026151" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="uri" publicID="-1468026150" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="filename" publicID="-1468026149" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.util.Date" name="submissionDate" publicID="-1468026148" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Long" name="dicomSize" publicID="-1468026126" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="imageLaterality" publicID="-1468026125" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="patientId" publicID="-1468026124" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="seriesInstanceUID" publicID="-1468026123" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="studyInstanceUID" publicID="-1468026122" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="annotation" publicID="-1468026121" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="project" publicID="-1468026120" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.String" name="visibility" publicID="-1468026119" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Integer" name="seriesPKId" publicID="-1468026118" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.util.Date" name="curationTimestamp" publicID="-1468026117" version="1.0" xsi:type="ns6:UMLAttribute"/>
+    <ns6:UMLAttribute dataTypeName="java.lang.Integer" name="patientPkId" publicID="-1468026095" version="1.0" xsi:type="ns6:UMLAttribute"/>
+   </ns6:umlAttributeCollection>
+  </ns6:UMLClass>
+  <ns7:UMLClass className="GeneralEquipment" id="EAID_590B8CE4_0963_491f_B3E4_6E7E9A202A7E" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns7:UMLClass" xmlns:ns7="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns7:umlAttributeCollection>
+    <ns7:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="1482275355" version="1.0" xsi:type="ns7:UMLAttribute"/>
+    <ns7:UMLAttribute dataTypeName="java.lang.String" name="manufacturer" publicID="1482275356" version="1.0" xsi:type="ns7:UMLAttribute"/>
+    <ns7:UMLAttribute dataTypeName="java.lang.String" name="institutionName" publicID="1482275357" version="1.0" xsi:type="ns7:UMLAttribute"/>
+    <ns7:UMLAttribute dataTypeName="java.lang.String" name="manufacturerModelName" publicID="1482275358" version="1.0" xsi:type="ns7:UMLAttribute"/>
+    <ns7:UMLAttribute dataTypeName="java.lang.String" name="softwareVersions" publicID="1482275359" version="1.0" xsi:type="ns7:UMLAttribute"/>
+   </ns7:umlAttributeCollection>
+  </ns7:UMLClass>
+  <ns8:UMLClass className="CTImage" id="EAID_9B70157B_BFC6_4454_9DE1_30E66F57ED9A" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns8:UMLClass" xmlns:ns8="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns8:umlAttributeCollection>
+    <ns8:UMLAttribute dataTypeName="java.lang.Double" name="KVP" publicID="-1036542304" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.String" name="scanOptions" publicID="-1036542303" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Double" name="dataCollectionDiameter" publicID="-1036542302" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Double" name="reconstructionDiameter" publicID="-1036542301" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Double" name="gantryDetectorTilt" publicID="-1036542300" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="XRayTubeCurrent" publicID="-1036542299" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="exposure" publicID="-1036542298" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="exposureInMicroAs" publicID="-1036542297" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.String" name="convolutionKernel" publicID="-1036542296" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="revolutionTime" publicID="-1036542295" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="singleCollimationWidth" publicID="-2068040273" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="totalCollimationWidth" publicID="-2068040272" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="tableSpeed" publicID="-2068040271" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="tableFeedPerRotation" publicID="-2068040270" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="CTPitchFactor" publicID="-2068040269" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.String" name="anatomicRegionSeq" publicID="-2068040268" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="-2068040267" version="1.0" xsi:type="ns8:UMLAttribute"/>
+    <ns8:UMLAttribute dataTypeName="java.lang.Integer" name="exposureTime" publicID="-2068040266" version="1.0" xsi:type="ns8:UMLAttribute"/>
+   </ns8:umlAttributeCollection>
+  </ns8:UMLClass>
+  <ns9:UMLClass className="TrialDataProvenance" id="EAID_BE81145E_AE42_46cc_9181_6176EBA7BB3E" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns9:UMLClass" xmlns:ns9="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns9:umlAttributeCollection>
+    <ns9:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="486462964" version="1.0" xsi:type="ns9:UMLAttribute"/>
+    <ns9:UMLAttribute dataTypeName="java.lang.String" name="project" publicID="486462965" version="1.0" xsi:type="ns9:UMLAttribute"/>
+    <ns9:UMLAttribute dataTypeName="java.lang.String" name="dpSiteId" publicID="486462966" version="1.0" xsi:type="ns9:UMLAttribute"/>
+    <ns9:UMLAttribute dataTypeName="java.lang.String" name="dpSiteName" publicID="486462967" version="1.0" xsi:type="ns9:UMLAttribute"/>
+   </ns9:umlAttributeCollection>
+  </ns9:UMLClass>
+  <ns10:UMLClass className="TrialSite" id="EAID_0B03EDC6_D43D_45fb_AC90_7591CB77DF10" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns10:UMLClass" xmlns:ns10="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns10:umlAttributeCollection>
+    <ns10:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="-1907602345" version="1.0" xsi:type="ns10:UMLAttribute"/>
+    <ns10:UMLAttribute dataTypeName="java.lang.String" name="trialSiteId" publicID="-1907602344" version="1.0" xsi:type="ns10:UMLAttribute"/>
+    <ns10:UMLAttribute dataTypeName="java.lang.String" name="trialSiteName" publicID="-1907602343" version="1.0" xsi:type="ns10:UMLAttribute"/>
+   </ns10:umlAttributeCollection>
+  </ns10:UMLClass>
+  <ns11:UMLClass className="Annotation" id="EAID_FAC0D88E_B712_4831_A939_F4AFD2DD789E" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns11:UMLClass" xmlns:ns11="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns11:umlAttributeCollection>
+    <ns11:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="1834129020" version="1.0" xsi:type="ns11:UMLAttribute"/>
+    <ns11:UMLAttribute dataTypeName="java.lang.String" name="filePath" publicID="1834129021" version="1.0" xsi:type="ns11:UMLAttribute"/>
+    <ns11:UMLAttribute dataTypeName="java.lang.Integer" name="fileSize" publicID="1834129022" version="1.0" xsi:type="ns11:UMLAttribute"/>
+    <ns11:UMLAttribute dataTypeName="java.lang.String" name="annotationType" publicID="1834129023" version="1.0" xsi:type="ns11:UMLAttribute"/>
+    <ns11:UMLAttribute dataTypeName="java.lang.String" name="seriesInstanceUID" publicID="1834129024" version="1.0" xsi:type="ns11:UMLAttribute"/>
+    <ns11:UMLAttribute dataTypeName="java.lang.Integer" name="generalSeriesPkId" publicID="1834129025" version="1.0" xsi:type="ns11:UMLAttribute"/>
+    <ns11:UMLAttribute dataTypeName="java.util.Date" name="submissionDate" publicID="1834129026" version="1.0" xsi:type="ns11:UMLAttribute"/>
+   </ns11:umlAttributeCollection>
+  </ns11:UMLClass>
+  <ns12:UMLClass className="CurationData" id="EAID_89CB9C34_3A05_4079_B266_9B30E209F195" packageName="gov.nih.nci.ncia.domain" projectName="caCORE" projectVersion="3" xsi:type="ns12:UMLClass" xmlns:ns12="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+   <ns12:umlAttributeCollection>
+    <ns12:UMLAttribute dataTypeName="java.lang.Integer" name="id" publicID="-1714981696" version="1.0" xsi:type="ns12:UMLAttribute"/>
+    <ns12:UMLAttribute dataTypeName="java.lang.String" name="trialName" publicID="-1714981695" version="1.0" xsi:type="ns12:UMLAttribute"/>
+    <ns12:UMLAttribute dataTypeName="java.lang.String" name="cdeValue" publicID="-1714981694" version="1.0" xsi:type="ns12:UMLAttribute"/>
+    <ns12:UMLAttribute dataTypeName="java.lang.String" name="cdeName" publicID="-1714981693" version="1.0" xsi:type="ns12:UMLAttribute"/>
+    <ns12:UMLAttribute dataTypeName="java.lang.String" name="cdeId" publicID="-1714981692" version="1.0" xsi:type="ns12:UMLAttribute"/>
+    <ns12:UMLAttribute dataTypeName="java.util.Date" name="curationTimestamp" publicID="-1714981691" version="1.0" xsi:type="ns12:UMLAttribute"/>
+    <ns12:UMLAttribute dataTypeName="java.lang.String" name="cdeVersion" publicID="-1714981690" version="1.0" xsi:type="ns12:UMLAttribute"/>
+   </ns12:umlAttributeCollection>
+  </ns12:UMLClass>
+ </ns1:exposedUMLClassCollection>
+ <ns1:umlGeneralizationCollection/>
+</ns1:DomainModel>

@@ -1,0 +1,39 @@
+<project name="caGrid-1.0-system" default="all" basedir="checkout/caGrid-1.0-system">
+
+    <target name="prepare">
+        <mkdir dir="cagrid-1-0" />
+    </target>
+    <target name="update-cagrid" depends="prepare">
+        <cvs failonerror="true" quiet="true" command="-d:ext:oster@cbiocvs2.nci.nih.gov:/share/content/gforge/cagrid-1-0 up -Pd cagrid-1-0/caGrid" />
+    </target>
+    <target name="update-tests" depends="prepare">
+        <cvs failonerror="true" quiet="true" command="-d:ext:oster@cbiocvs2.nci.nih.gov:/share/content/gforge/cagrid-1-0 up -Pd cagrid-1-0/tests" />
+    </target>
+    <target name="update" depends="update-cagrid,update-tests" />
+
+
+    <target name="build" depends="update">
+        <ant antfile="build.xml" dir="cagrid-1-0/tests" target="configure-clean" />
+        <ant antfile="build.xml" dir="cagrid-1-0/tests" target="all" />
+    </target>
+
+
+    <target name="test" depends="build">
+        <ant antfile="build.xml" dir="cagrid-1-0/tests" target="test">
+            <property name="dont.instrument" value="true" />
+            <property name="dart.buildname" value="${ant.project.name}-${os.name}-${os.arch}-${os.version}--JDK-${java.version}" />
+        </ant>
+    </target>
+
+
+    <target name="just-test">
+        <ant antfile="build.xml" dir="cagrid-1-0/tests" target="test">
+            <property name="dont.instrument" value="true" />
+        </ant>
+    </target>
+
+
+    <target name="all" depends="test" />
+
+
+</project>

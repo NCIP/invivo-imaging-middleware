@@ -1,0 +1,16 @@
+<ivy-module version="1.1">
+
+    <info organisation="org.jdesktop" module="swing-layout" revision="1.0.3" status="release"/>
+
+    <configurations>
+      <conf name="default"/>
+    </configurations>
+
+    <publications>
+      <artifact name="swing-layout-1.0.3" type="jar" conf="default"/>
+    </publications>
+
+    <dependencies>
+    </dependencies>
+
+</ivy-module>

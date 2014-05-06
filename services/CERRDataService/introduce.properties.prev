@@ -1,0 +1,12 @@
+#Introduce Properties
+#Fri Nov 28 16:18:33 EST 2008
+introduce.skeleton.services.list=CERRDataService,CaGridEnumeration
+introduce.skeleton.extensions=cagrid_metadata,data,caGrid_Transfer,cagrid_wsEnum
+introduce.skeleton.timestamp=1227906954038
+introduce.skeleton.service.name=CERRDataService
+introduce.skeleton.resource.options=main,singleton,identifiable,resourcePropertyManagement
+introduce.skeleton.destination.dir=/Users/ashish/Desktop/CERRDataService
+introduce.skeleton.namespace.domain=http\://cerrdataservice.ivi.nci.nih.gov/CERRDataService
+xmldataservice.binding.Tool=Apache_Axis_1.x
+introduce.ns.excludes=\ -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service -x http\://schemas.xmlsoap.org/ws/2004/08/addressing -x http\://transfer.cagrid.org/Transfer -x http\://transfer.cagrid.org/TransferService/Context/types -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata -x http\://gov.nih.nci.cagrid.data/DataServiceExceptions -x http\://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer -x http\://schemas.xmlsoap.org/ws/2004/09/enumeration -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security -x gme\://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common
+introduce.soap.binding.excludes=\ 

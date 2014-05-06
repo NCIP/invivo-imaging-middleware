@@ -1,0 +1,17 @@
+<!-- ======================================================================= -->
+<!-- caGrid Run Utilities build file                                             -->
+<!-- ======================================================================= -->
+<project name="ivim_run_utilities" basedir="." default="usage">
+    <target name="usage">
+        <echo message="Not to be called directly.  This file contains utilities to be used in other
+            build files." />
+    </target>
+    <!-- =================================================================== -->
+    <!-- Generates all the system files based off templates for a particular platform     -->
+    <!-- =================================================================== -->
+
+    <target name="VirtualPACS" description="Run the VirtualPACS">
+        <ant dir="${basedir}/clients/virtualPACS" antfile="build.xml" target="ui" inheritall="false" />
+    </target>
+
+</project>

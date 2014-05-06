@@ -1,0 +1,79 @@
+There will be one ResourceProperty exposed for ALL services: caGridMetadata (or something similarly named)
+
+The "Service" element is the main entrypoint, which other metadata hangs off of.
+Core services (which aren't necessarily Gold compatible, as they don't expose operations 
+over caDSR-registered data types) will just not have any Operations defined.  The Operations
+will just represent the offical caBIG operations on the service.  All caBIG services will have
+some operations that aren't modeled in this metadata (such as ResourceProperty related operations), for core
+services, all operations may fall under that category.  This is a generalization of previous  (0.5) analytical
+metadata.  Now all services will have ServiceMetadata (0.5 equivalent to commom and analytical metadata).
+Specific common service types, such as data or vocabulary serivices, will have additional metadata types
+and those will be exposed as separate Resource Properties.
+
+
+TODO:
+====================
+-(DONE) Should we support referencing objects instead of replicating? (such as for UMLClass in input, output, and associations)
+  - don't really want to replicate identical object definitions (in XML, as its verbose), but want APIs to be as is (e.g. inputParameter.getUMLClass() -> UMLClass).
+  - used to use caDSR public id, and do attribute refID
+    - we don't really need the public ID for our use cases and its more work to include it
+    - breaks the API (you get an ID, not the object) 
+
+
+XSD/Bean Generation
+====================
+UML to XSD:
+http://www.xml.com/lpt/a/2001/08/22/uml.html
+http://www.xml.com/lpt/a/2001/09/19/uml.html
+http://www.xml.com/lpt/a/2001/10/10/uml.html
+In EA:
+http://www.sparxsystems.com.au/resources/xml_schema_generation.html
+
+
+To Use Enterprise Architect (preferred)
+-----------------------------
+1) go to logical model, navigate down the package to the lowest level (gov.nih.nci....) in Enterprise Architect
+2) For each package:
+  2.1) Set tagged values:
+	memberNames = unqualified
+	elementFormDefault = qualified
+	anonymousType = false    -- THIS IS SUPPOSED TO BE THE DEFAULT (but appears to be a bug in some versions of EA [at least 6.1])
+	anonymousRole = false    -- this is needed for a schema element to point to an element that in term has multiple entries.  otherwise we'd have it as a sequence directly
+	targetNamespace = <according to caGrid rules.  such as gme://ncia.caBIG/1.0/package name>
+	targetNamespacePrefix = <something short and unique in the project>
+  2.2) Right-click, Code Engineering ... Generate XML Schema
+  2.3) Save as appropriate *.xsd
+3) Fix all XSDs by cleaning up xsd:imports
+4) Fix any language specific things such as java.lang.String (the uml should really not have any language specific stuff)
+5) Use XSDs as types in Globus build (generate beans from XSD)
+
+
+To Use hyperModel
+-----------------------------
+1) Model metadata in Enterprise Architect
+2) Export Logical Model Package to XMI 1.0
+3) Open as XMI in hyperModel(http://update.xmlmodeling.com/updates/index.html)
+4) For each package:
+  4.1) Right-click, Open With-> XML Schema
+  4.2) Save as *.xsd
+5) Fix all XSDs by adding proper targetnamespaces, and xsd:imports; convert java primatives to xsd primatives
+6) Use XSDs as types in Globus build (generate beans from XSD)
+
+
+
+BUGS:
+-----------------------------
+The perfectly legal snippet below from the common.xsd generated XSD needs to be replaced with 
+the (functionaly equivalent) snippet below it, as there is a bug in Axis with the Beans it generates this type.
+
+----- REPLACE -----
+<xs:sequence>
+    <xs:element ref="uml:SemanticMetadata" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+----- END REPLACE -----
+
+----- WITH -----
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+	<xs:element ref="uml:SemanticMetadata" minOccurs="1" maxOccurs="unbounded"/>
+</xs:choice>
+----- END WITH -----

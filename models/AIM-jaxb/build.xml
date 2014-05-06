@@ -1,0 +1,168 @@
+<project name="aim-model" default="all">
+
+	<property environment="env" />
+
+	<!-- external directory properties -->
+	<!-- TODO: Find a better way of handling the test/lib jars. We do not want to copy these jars for each project but also do not want to add a dependancy to the parent folder. -->
+	<property name="cvrg_dir" value="../../" />
+	
+	<!-- project directory properties -->
+	<property name="ext.dir" value="ext"/>
+	<property name="ext.lib.dir" value="${ext.dir}/lib"/>
+	<property name="lib.dir" value="lib" />
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="xml.dir" value="xml" />
+	<property name="schema.dir" value="schema" />
+	<property name="bindings.dir" value="${schema.dir}/bindings" />
+	<property name="generated.dir" value="generated" />
+	<property name="properties.dir" value="properties" />
+	<property name="test.dir" value="test"/>
+	<property name="test.src.dir" value="${test.dir}/src"/>
+	<property name="test.lib.dir" value="${cvrg_dir}/test/lib" />
+	<property name="jars.dir" value="${build.dir}/lib"/>
+
+	<!-- code generation properties -->
+	<property name="schema" value="${schema.dir}/schema/AIM_v3_rv11_Model.xsd" />
+	<property name="jaxb.package" value="edu.northwestern.radiology.aim" />
+	<property name="xjc.binding" value="${bindings.dir}/jaxb_bindings.xjb" />
+	<property name="jar.file" value="aim3_jaxb_beans.jar" />
+
+	<!-- GT4 build files and directories-->
+	<property name="ext.globus.dir" value="${env.GLOBUS_LOCATION}" />
+
+
+	<path id="project.classpath">
+	    <fileset dir="${ext.lib.dir}">
+		    <include name="**/*.jar"/>
+        </fileset>
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${ext.globus.dir}">
+			<include name="lib/*.jar" />
+		</fileset>
+	</path>
+
+	<path id="test.run.classpath">
+	    <pathelement path="${build.dir}"/>
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${test.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${ext.globus.dir}">
+			<include name="lib/*.jar" />
+		</fileset>
+	</path>
+	
+	<path id="test.build.classpath">
+		<pathelement path="${classes.dir}" />
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${test.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${ext.globus.dir}">
+			<include name="lib/*.jar" />
+		</fileset>
+	</path>
+
+	<path id="generate.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="jaxb-xjc.jar" />
+		</fileset>
+	</path>
+
+	<target name="init">
+		<mkdir dir="${generated.dir}" />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${jars.dir}"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${generated.dir}" />
+		<delete dir="${build.dir}" />
+		<delete dir="${jars.dir}"/>
+	</target>
+
+	<target name="generate" depends="init">
+		<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+			<classpath refid="generate.classpath" />
+		</taskdef>
+		<xjc binding="${xjc.binding}" extension="true" schema="${schema}" destdir="${generated.dir}" package="${jaxb.package}">
+        	<produces dir="${generated.dir}">
+		     	<include name="**/*.java"/>
+            </produces>
+        </xjc>
+	</target>
+
+	<!-- Compile Java source -->
+	<target name="compile" depends="generate">
+		<javac srcdir="${generated.dir}" destdir="${build.dir}">
+			<classpath refid="project.classpath" />
+		</javac>
+		<javac srcdir="${src.dir}" destdir="${build.dir}">
+			<classpath refid="project.classpath" />
+		</javac>
+		<javac srcdir="${test.src.dir}" destdir="${build.dir}">
+			<classpath refid="test.build.classpath" />
+		</javac>
+		<!-- copy binding file to the ${build.dir} -->
+		<copy todir="${build.dir}">
+		    <fileset dir="${generated.dir}">
+		        <include name="**/jaxb.properties"/>
+		    </fileset>
+        </copy>
+	</target>
+		<target name="test-compile" depends="generate, compile">
+		<javac srcdir="${test.src.dir}" destdir="${build.dir}">
+			<classpath refid="test.build.classpath" />
+		</javac>
+		<!-- copy binding file to the ${build.dir} -->
+		<copy todir="${build.dir}">
+		    <fileset dir="${generated.dir}">
+		        <include name="**/jaxb.properties"/>
+		    </fileset>
+        </copy>
+	</target>
+
+	<target name="jar" description="Make a jar of the project classes, schemas, and example XML files" depends="init">
+		<jar destfile="${jars.dir}/${jar.file}">
+			<fileset dir="${schema.dir}">
+				<include name="**/*.xsd" />
+			</fileset>
+			<fileset dir="${xml.dir}">
+				<include name="**/*.xml" />
+			</fileset>
+			<fileset dir="${build.dir}">
+				<include name="**/*.class" />
+			</fileset>
+			<fileset dir="${generated.dir}">
+				<include name="**/jaxb.properties" />
+			</fileset>
+		</jar>
+	</target>
+
+    <target name="test" description="Runs the unit tests." depends="test-compile">
+        <echo message="Test results dir: ${junit.results.dir}" />
+        <mkdir dir="${junit.results.dir}" />
+        <junit dir="${basedir}" printsummary="yes" errorproperty="test.failed" failureproperty="test.failed" showoutput="true">
+            <classpath refid="test.run.classpath" />
+            <formatter type="xml" />
+            <batchtest fork="yes" todir="${junit.results.dir}">
+                <fileset dir="${test.src.dir}">
+                    <include name="**/Test*.java" />
+                    <include name="**/*TestCase.java" />
+                </fileset>
+            </batchtest>
+        </junit>
+        <fail message="Tests failed! Check test reports." if="test.failed" />
+    </target>
+		
+	<target name="all" depends="compile, jar">
+	</target>
+
+</project>

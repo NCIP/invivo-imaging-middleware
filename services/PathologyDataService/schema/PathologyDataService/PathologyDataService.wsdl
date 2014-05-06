@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService" xmlns:wsrp="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd" xmlns:wsrlw="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.wsdl" xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor" xmlns:gtwsdl1="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ServiceGroup-1.2-draft-01.wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/03/addressing" xmlns:wsntw="http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.wsdl" xmlns:wsrbfw="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.wsdl" xmlns:wsrpw="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" xmlns:wns2="http://gov.nih.nci.cagrid.data/DataService" xmlns:wns0="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" xmlns:wns1="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity" xmlns:ns0="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.fileinfo" xmlns:ns4="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" xmlns:ns10="http://transfer.cagrid.org/Transfer" xmlns:ns9="http://transfer.cagrid.org/TransferService/Context/types" xmlns:ns3="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata" xmlns:ns8="http://gov.nih.nci.cagrid.data/DataServiceExceptions" xmlns:ns5="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet" xmlns:ns6="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/CQLResultTypes" xmlns:ns7="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" xmlns:ns2="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security" xmlns:ns1="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/types" name="PathologyDataService" targetNamespace="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService">
+  <import namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" location="../wsrf/properties/WS-ResourceProperties.wsdl" />
+  <import namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.wsdl" location="../wsrf/faults/WS-BaseFaults.wsdl" />
+  <import namespace="http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.wsdl" location="../wsrf/notification/WS-BaseN.wsdl" />
+  <import namespace="http://gov.nih.nci.cagrid.data/DataService" location="./DataService.wsdl" />
+  <import namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" location="./../wsrf/properties/WS-ResourceProperties.wsdl" />
+  <import namespace="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity" location="./ServiceSecurity.wsdl" />
+  <!--============================================================
+
+                      T Y P E S
+                      
+  ============================================================-->
+  <types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsrbf="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd" targetNamespace="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService" elementFormDefault="qualified" attributeFormDefault="unqualified">
+      <import namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd" schemaLocation="../wsrf/faults/WS-BaseFaults.xsd" />
+      <import namespace="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.fileinfo" schemaLocation="./FileInfo.xsd" />
+      <import namespace="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" schemaLocation="./1_gov.nih.nci.cagrid.CQLQuery.xsd" />
+      <import namespace="http://transfer.cagrid.org/Transfer" schemaLocation="./caGrid_Transfer.xsd" />
+      <import namespace="http://transfer.cagrid.org/TransferService/Context/types" schemaLocation="./TransferServiceContextTypes.xsd" />
+      <import namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata" schemaLocation="./xsd/cagrid/types/caGridMetadata.xsd" />
+      <import namespace="http://gov.nih.nci.cagrid.data/DataServiceExceptions" schemaLocation="./DataServiceExceptions.xsd" />
+      <import namespace="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet" schemaLocation="./1_gov.nih.nci.cagrid.CQLResultSet.xsd" />
+      <import namespace="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/CQLResultTypes" schemaLocation="./PathologyDataService_CQLResultTypes.xsd" />
+      <import namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" schemaLocation="./xsd/cagrid/types/data/data.xsd" />
+      <import namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security" schemaLocation="./xsd/cagrid/types/security/security.xsd" />
+      <import namespace="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/types" schemaLocation="./PathologyDataServiceTypes.xsd" />
+      <element name="ViewRequest">
+        <complexType>
+          <sequence>
+            <element name="viewParams">
+              <complexType>
+                <sequence>
+                  <element ref="ns0:ViewParams" minOccurs="1" maxOccurs="1" />
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ViewResponse">
+        <complexType>
+          <sequence>
+            <element name="response" type="xs:int" minOccurs="1" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RetrieveRequest">
+        <complexType>
+          <sequence>
+            <element name="cQLQuery">
+              <complexType>
+                <sequence>
+                  <element ref="ns4:CQLQuery" minOccurs="1" maxOccurs="1" />
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RetrieveResponse">
+        <complexType>
+          <sequence>
+            <element ref="ns9:TransferServiceContextReference" minOccurs="1" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SubmitRequest">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="SubmitResponse">
+        <complexType>
+          <sequence>
+            <element ref="ns9:TransferServiceContextReference" minOccurs="1" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteRequest">
+        <complexType>
+          <sequence>
+            <element name="fileInfo">
+              <complexType>
+                <sequence>
+                  <element ref="ns0:FileInfo" minOccurs="1" maxOccurs="1" />
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteResponse">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ExecuteRequest">
+        <complexType>
+          <sequence>
+            <element name="executionParameters">
+              <complexType>
+                <sequence>
+                  <element ref="ns0:ExecutionParameters" minOccurs="1" maxOccurs="1" />
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ExecuteResponse">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="RetrieveThumbnailRequest">
+        <complexType>
+          <sequence>
+            <element name="cQLQuery">
+              <complexType>
+                <sequence>
+                  <element ref="ns4:CQLQuery" minOccurs="1" maxOccurs="1" />
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RetrieveThumbnailResponse">
+        <complexType>
+          <sequence>
+            <element ref="ns9:TransferServiceContextReference" minOccurs="1" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetWidthRequest">
+        <complexType>
+          <sequence>
+            <element name="cQLQuery">
+              <complexType>
+                <sequence>
+                  <element ref="ns4:CQLQuery" minOccurs="1" maxOccurs="1" />
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetWidthResponse">
+        <complexType>
+          <sequence>
+            <element name="response" type="xs:int" minOccurs="1" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetHeightRequest">
+        <complexType>
+          <sequence>
+            <element name="cQLQuery">
+              <complexType>
+                <sequence>
+                  <element ref="ns4:CQLQuery" minOccurs="1" maxOccurs="1" />
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetHeightResponse">
+        <complexType>
+          <sequence>
+            <element name="response" type="xs:int" minOccurs="1" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PathologyDataServiceResourceProperties">
+        <complexType>
+          <sequence>
+            <element ref="ns3:ServiceMetadata" />
+            <element ref="ns7:DomainModel" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <!--  place service messages here -->
+  <message name="ViewRequest">
+    <part name="parameters" element="tns:ViewRequest" />
+  </message>
+  <message name="ViewResponse">
+    <part name="parameters" element="tns:ViewResponse" />
+  </message>
+  <message name="RetrieveRequest">
+    <part name="parameters" element="tns:RetrieveRequest" />
+  </message>
+  <message name="RetrieveResponse">
+    <part name="parameters" element="tns:RetrieveResponse" />
+  </message>
+  <message name="SubmitRequest">
+    <part name="parameters" element="tns:SubmitRequest" />
+  </message>
+  <message name="SubmitResponse">
+    <part name="parameters" element="tns:SubmitResponse" />
+  </message>
+  <message name="DeleteRequest">
+    <part name="parameters" element="tns:DeleteRequest" />
+  </message>
+  <message name="DeleteResponse">
+    <part name="parameters" element="tns:DeleteResponse" />
+  </message>
+  <message name="ExecuteRequest">
+    <part name="parameters" element="tns:ExecuteRequest" />
+  </message>
+  <message name="ExecuteResponse">
+    <part name="parameters" element="tns:ExecuteResponse" />
+  </message>
+  <message name="RetrieveThumbnailRequest">
+    <part name="parameters" element="tns:RetrieveThumbnailRequest" />
+  </message>
+  <message name="RetrieveThumbnailResponse">
+    <part name="parameters" element="tns:RetrieveThumbnailResponse" />
+  </message>
+  <message name="GetWidthRequest">
+    <part name="parameters" element="tns:GetWidthRequest" />
+  </message>
+  <message name="GetWidthResponse">
+    <part name="parameters" element="tns:GetWidthResponse" />
+  </message>
+  <message name="GetHeightRequest">
+    <part name="parameters" element="tns:GetHeightRequest" />
+  </message>
+  <message name="GetHeightResponse">
+    <part name="parameters" element="tns:GetHeightResponse" />
+  </message>
+  <!--============================================================
+
+                       P O R T T Y P E
+                      
+  ============================================================-->
+  <portType name="PathologyDataServicePortType" wsrp:ResourceProperties="tns:PathologyDataServiceResourceProperties">
+    <operation name="view">
+      <input message="tns:ViewRequest" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/ViewRequest" />
+      <output message="tns:ViewResponse" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/ViewResponse" />
+    </operation>
+    <operation name="retrieve">
+      <input message="tns:RetrieveRequest" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/RetrieveRequest" />
+      <output message="tns:RetrieveResponse" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/RetrieveResponse" />
+    </operation>
+    <operation name="submit">
+      <input message="tns:SubmitRequest" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/SubmitRequest" />
+      <output message="tns:SubmitResponse" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/SubmitResponse" />
+    </operation>
+    <operation name="delete">
+      <input message="tns:DeleteRequest" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/DeleteRequest" />
+      <output message="tns:DeleteResponse" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/DeleteResponse" />
+    </operation>
+    <operation name="execute">
+      <input message="tns:ExecuteRequest" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/ExecuteRequest" />
+      <output message="tns:ExecuteResponse" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/ExecuteResponse" />
+    </operation>
+    <operation name="retrieveThumbnail">
+      <input message="tns:RetrieveThumbnailRequest" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/RetrieveThumbnailRequest" />
+      <output message="tns:RetrieveThumbnailResponse" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/RetrieveThumbnailResponse" />
+    </operation>
+    <operation name="getWidth">
+      <input message="tns:GetWidthRequest" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/GetWidthRequest" />
+      <output message="tns:GetWidthResponse" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/GetWidthResponse" />
+    </operation>
+    <operation name="getHeight">
+      <input message="tns:GetHeightRequest" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/GetHeightRequest" />
+      <output message="tns:GetHeightResponse" wsa:Action="http://pathologydataservice.ivi.nci.nih.gov/PathologyDataService/GetHeightResponse" />
+    </operation>
+    <wsdl:operation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="GetMultipleResourceProperties">
+      <wsdl:input name="GetMultipleResourcePropertiesRequest" message="wsrpw:GetMultipleResourcePropertiesRequest" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/GetMultipleResourceProperties" />
+      <wsdl:output name="GetMultipleResourcePropertiesResponse" message="wsrpw:GetMultipleResourcePropertiesResponse" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/GetMultipleResourcePropertiesResponse" />
+      <wsdl:fault name="ResourceUnknownFault" message="wsrpw:ResourceUnknownFault" />
+      <wsdl:fault name="InvalidResourcePropertyQNameFault" message="wsrpw:InvalidResourcePropertyQNameFault" />
+    </wsdl:operation>
+    <wsdl:operation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="GetResourceProperty">
+      <wsdl:input name="GetResourcePropertyRequest" message="wsrpw:GetResourcePropertyRequest" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/GetResourceProperty" />
+      <wsdl:output name="GetResourcePropertyResponse" message="wsrpw:GetResourcePropertyResponse" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/GetResourcePropertyResponse" />
+      <wsdl:fault name="ResourceUnknownFault" message="wsrpw:ResourceUnknownFault" />
+      <wsdl:fault name="InvalidResourcePropertyQNameFault" message="wsrpw:InvalidResourcePropertyQNameFault" />
+    </wsdl:operation>
+    <wsdl:operation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="QueryResourceProperties">
+      <wsdl:input name="QueryResourcePropertiesRequest" message="wsrpw:QueryResourcePropertiesRequest" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/QueryResourceProperties" />
+      <wsdl:output name="QueryResourcePropertiesResponse" message="wsrpw:QueryResourcePropertiesResponse" wsa:Action="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties/QueryResourcePropertiesResponse" />
+      <wsdl:fault name="ResourceUnknownFault" message="wsrpw:ResourceUnknownFault" />
+      <wsdl:fault name="InvalidResourcePropertyQNameFault" message="wsrpw:InvalidResourcePropertyQNameFault" />
+      <wsdl:fault name="UnknownQueryExpressionDialectFault" message="wsrpw:UnknownQueryExpressionDialectFault" />
+      <wsdl:fault name="InvalidQueryExpressionFault" message="wsrpw:InvalidQueryExpressionFault" />
+      <wsdl:fault name="QueryEvaluationErrorFault" message="wsrpw:QueryEvaluationErrorFault" />
+    </wsdl:operation>
+    <operation name="getServiceSecurityMetadata">
+      <input message="wns1:GetServiceSecurityMetadataRequest" wsa:Action="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity/GetServiceSecurityMetadataRequest" />
+      <output message="wns1:GetServiceSecurityMetadataResponse" wsa:Action="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity/GetServiceSecurityMetadataResponse" />
+    </operation>
+    <operation name="query">
+      <input message="wns2:QueryRequest" wsa:Action="http://data.cagrid.nci.nih.gov/DataService/QueryRequest" />
+      <output message="wns2:QueryResponse" wsa:Action="http://data.cagrid.nci.nih.gov/DataService/QueryResponse" />
+      <fault name="QueryProcessingException" message="wns2:QueryProcessingExceptionFaultMessage" wsa:Action="http://gov.nih.nci.cagrid.data/DataService/QueryProcessingExceptionFaultMessage" />
+      <fault name="MalformedQueryException" message="wns2:MalformedQueryExceptionFaultMessage" wsa:Action="http://gov.nih.nci.cagrid.data/DataService/MalformedQueryExceptionFaultMessage" />
+    </operation>
+  </portType>
+</definitions>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Scott Oster (BMI) -->
+<!-- for RSNA demo.  Author Tony Pan -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dicom="gme://IVI.caBIG/1/edu.osu.bmi.dicom" xmlns:cad="gme://IVI.caBIG/1/edu.osu.bmi.cadoutput" xmlns:mobius="IVI.caBIG/1/edu.osu.bmi.cadoutput" targetNamespace="gme://IVI.caBIG/1/edu.osu.bmi.cadoutput" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="CentroidType">
+		<xs:attribute name="x" type="xs:double" use="required"/>
+		<xs:attribute name="y" type="xs:double" use="required"/>
+		<xs:attribute name="z" type="xs:double" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NodulesType">
+		<xs:sequence>
+			<xs:element name="Nodule" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Centroid" type="cad:CentroidType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MetadataType">
+		<xs:sequence>
+			<xs:element name="MetadataEntry" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="name" type="xs:string"/>
+					<xs:attribute name="value" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CADResultType">
+		<xs:sequence>
+			<xs:element name="Metadata" type="cad:MetadataType" minOccurs="0"/>
+			<xs:element name="Nodules" type="cad:NodulesType" minOccurs="0"/>
+			<xs:element name="SeriesInstanceUID" type="dicom:SeriesInstanceUIDType"/>
+			<xs:element name="StudyInstanceUID" type="dicom:StudyInstanceUIDType"/>
+			<xs:element name="JobID" type="cad:JobIDType"/>
+			<xs:element name="DataSourceURL" type="cad:DataSourceURLType"/>
+		</xs:sequence>
+		<xs:attribute name="algorithmType" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="CADResult" type="cad:CADResultType"/>
+	<xs:complexType name="JobIDType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="JobID" type="cad:JobIDType"/>
+	<xs:complexType name="DataSourceURLType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="DataSourceURL" type="cad:DataSourceURLType"/>
+</xs:schema>

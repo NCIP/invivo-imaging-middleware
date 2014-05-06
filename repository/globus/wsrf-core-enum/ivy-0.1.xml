@@ -1,0 +1,18 @@
+<ivy-module version="1.1">
+	<info
+		organisation="globus"
+		module="wsrf-core-enum"
+		revision="0.1"
+		status="release" />
+	<configurations>
+		<!-- TODO: change these -->
+		<conf name="default"/>
+	</configurations>
+	<publications>
+			<artifact name="wsrf_core_enum" type="jar" conf="default" />
+			<artifact name="wsrf_core_stubs_enum" type="jar" conf="default" />
+	</publications>
+	<dependencies>
+		<!-- TODO: change these -->
+	</dependencies>
+</ivy-module>

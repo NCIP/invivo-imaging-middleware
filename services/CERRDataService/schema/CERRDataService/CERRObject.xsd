@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema
+	xmlns:cerrobject="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr"
+	elementFormDefault="qualified">
+	<xs:element name="CERRObject" type="cerrobject:CERRObject" />
+	<xs:complexType name="CERRObject">
+		<xs:sequence>
+			<xs:element name="metadataCollection">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="cerrobject:Metadata"
+							minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="archive" type="xs:string" use="required" />
+		<xs:attribute name="tapeStandardNumber" type="xs:string"
+			use="optional" />
+		<xs:attribute name="intercomparisonStandard" type="xs:string"
+			use="optional" />
+		<xs:attribute name="institution" type="xs:string"
+			use="optional" />
+		<xs:attribute name="dateCreated" type="xs:dateTime"
+			use="optional" />
+		<xs:attribute name="writer" type="xs:string" use="optional" />
+		<xs:attribute name="sponsorID" type="xs:string" use="required" />
+		<xs:attribute name="protocolID" type="xs:string" use="required" />
+		<xs:attribute name="subjectID" type="xs:string" use="required" />
+		<xs:attribute name="submissionID" type="xs:string"
+			use="required" />
+		<xs:attribute name="timeSaved" type="xs:dateTime"
+			use="required" />
+		<xs:attribute name="localFileLocation" type="xs:string"
+			use="required" />
+	</xs:complexType>
+	<xs:element name="Metadata" type="cerrobject:Metadata" />
+	<xs:complexType name="Metadata">
+		<xs:sequence />
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="value" type="xs:string" use="required" />
+	</xs:complexType>
+</xs:schema>

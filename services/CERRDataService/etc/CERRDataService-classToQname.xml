@@ -1,0 +1,12 @@
+<ns1:mappings xmlns:ns1="http://edu.osu.bmi.xml/ClassMappings">
+ <ns1:mapping classLocalPart="CERRObject" className="edu.osu.bmi.ivi.cerr.CERRObject" classNamespace="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr">
+  <ns1:qname localPart="CERRObject" namespace="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="Metadata" className="edu.osu.bmi.ivi.cerr.Metadata" classNamespace="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr">
+  <ns1:qname associationSourceClass="edu.osu.bmi.ivi.cerr.metadataCollectionType96" localPart="Metadata" namespace="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr" topLevel="false"/>
+  <ns1:qname localPart="Metadata" namespace="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr" topLevel="true"/>
+ </ns1:mapping>
+ <ns1:mapping classLocalPart="metadataCollectionType96" className="edu.osu.bmi.ivi.cerr.metadataCollectionType96" classNamespace="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr">
+  <ns1:qname associationSourceClass="edu.osu.bmi.ivi.cerr.CERRObject" localPart="metadataCollection" namespace="gme://Imaging.caBIG/1.0/edu.osu.bmi.ivi.cerr" topLevel="false"/>
+ </ns1:mapping>
+</ns1:mappings>

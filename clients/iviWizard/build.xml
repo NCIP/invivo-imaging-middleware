@@ -1,0 +1,64 @@
+<?xml version='1.0'?>
+<project name="ivi-wizard" default="run" basedir=".">
+
+	<property name="src" value="src" />
+	<property name="build" value="build" />
+	<property name="build.jars" value="${build}/lib" />
+	<property name="build.classes" value="${build}/classes" />
+	<property name="lib" value="lib" />
+	<property name="ext" value="ext" />
+
+	<property file="${basedir}/project.properties" />
+
+	<property name="project.name" value="${ant.project.name}" />
+	<property name="project.jar.prefix" value="${project.name}-" />
+	<property name="project.jar.suffix" value="-${project.version}.jar" />
+	<property name="jarname" value="${project.jar.prefix}ui.jar" />
+
+	<property name="runclass" value="gov.nih.nci.ivi.wizard.IVIServiceDeploymentWizard" />
+
+	<target name="init">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.jars}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${build.classes}">
+			<classpath>
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar jarfile="${build.jars}/${jarname}" basedir="${build.classes}/" />
+	</target>
+
+	<target name="run" depends="jar">
+		<java classname="${runclass}" fork="true">
+			<classpath>
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+				<fileset dir="${build.jars}">
+					<include name="**/*.jar" />
+				</fileset>
+				<fileset dir="${ant.library.dir}">
+				    <include name="*.jar"/>
+				</fileset>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build}" />
+	</target>
+
+	<target name="all" depends="clean,jar">
+	</target>
+
+</project>
+

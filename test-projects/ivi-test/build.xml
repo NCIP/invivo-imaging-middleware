@@ -1,0 +1,71 @@
+<project name="iviTesting" default="all" basedir=".">
+	<description>
+    simple example build file
+  </description>
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+	<property name="build.lib" location="${build}/lib" />
+	<property name="build.classes" location="${build}/classes" />
+	<property name="resources" location="resources" />
+	<property name="lib" location="lib" />
+	<property environment="env" />
+	<property name="lib" location="lib" />
+	<property name="extlib" location="ext/lib" />
+
+	<!-- refactored previously property name="portal.config" value="resources/vPACSPortal.xml" / -->
+
+	<target name="init">
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.lib}" />
+		<mkdir dir="${build.classes}" />
+	</target>
+
+	<path id="sourcepath">
+		<pathelement location="${src}" />
+	</path>
+
+	<path id="classpath">
+		<!-- order matters.  need data jars first -->
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${extlib}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/addressing-1.0.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/axis.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/jaxrpc.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/wsrf_core_samples_counter_stubs.jar" />
+		<pathelement location="${env.GLOBUS_LOCATION}/lib/saaj.jar" />
+	</path>
+
+
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build.classes} -->
+		<javac srcdir="${src}" destdir="${build.classes}" debug="on" classpathref="classpath"/>
+	</target>
+
+
+	<!-- ============================================================== -->
+	<!-- Creates the jar files                                          -->
+	<!-- ============================================================== -->
+
+	<target name="jar" depends="compile" description="generate the distribution jar">
+		<!-- Put everything in ${build.classes} into the XXXX-${DSTAMP}.jar file -->
+		<jar jarfile="${build.lib}/ivi-test-story.jar" basedir="${build.classes}"/>
+	</target>
+
+
+
+	<target name="all" depends="jar" description="compile everything" />
+
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} directory tree -->
+		<delete dir="${build}" />
+	</target>
+
+</project>

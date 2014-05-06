@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.viewparameters"
+	xmlns:viewparameters="gme://Middleware.Imaging.caBIG/1.0/gov.nih.nci.ivi.viewparameters"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<xs:element name="ViewParameters" type="viewparameters:ViewParameters"></xs:element>
+	<xs:complexType name="ViewParameters">
+		<xs:attribute name="imageFileName" type="xs:string"
+			use="required" />
+		<xs:attribute name="x" type="xs:int" />
+		<xs:attribute name="y" type="xs:int" />
+		<xs:attribute name="width" type="xs:int" />
+		<xs:attribute name="height" type="xs:int" />
+		<xs:attribute name="zoom" type="xs:double" />
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,11 @@
+<ns1:Annotation comment="Some comment" id="1234567890123456890" name="ImageAnnotation1"
+ xsi:type="ns1:ImageAnnotation" xmlns:ns1="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ns1:user>
+  <ns1:User authorName="Jarek" id="123" xsi:type="ns1:User"/>
+ </ns1:user>
+ <ns1:anatomicEntityCollection>
+  <ns1:AnatomicEntity codeMeaning="Some meaning 1" id="1234567890123456890"
+   xsi:type="ns1:AnatomicEntity"/>
+ </ns1:anatomicEntityCollection>
+</ns1:Annotation>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ivi-model-aim" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <import location="Approved_AIM_v1_rv9.xsd" />
+</definitions>
+

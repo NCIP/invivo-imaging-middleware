@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://www.cagrid.org/1/grape"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.cagrid.org/1/grape file:/C:/projects/cagrid-1-0/caGrid/projects/grape/schema/grape.xsd">
+    <name>VirtualPACS</name>
+    <icon>/caGrid-icon-22x22.gif</icon>
+    <ApplicationLogo>/caGrid.gif</ApplicationLogo>
+    <AboutHTML><![CDATA[<html><h3>Grid Authentication and Authorization with Reliably Distributed Services (GAARDS)</h3>GAARDS provides services (Dorian, GTS, Grid Grouper) and tools for the administration and enforcement<BR>of security policy in enterprise Grids.  GAARDS was developed on top of the Globus Toolkit and extends<BR>the Grid Security Infrastructure (GSI) to provide enterprise services and administrative tools for:<BR>1) grid user management, 2) identity federation, 3) trust management, 4) group/VO management 5) Access<BR>Control Policy management and enforcement, and 5) Integration between existing security domains<BR>and the grid security domain. GAARDS services can be used individually or grouped together to meet the<BR> authentication and authorization needs for Grids.  GAARDS was developed as part of the caGrid project<BR>to meet the needs of the caBIG community.  For more information on GAARDS or caGrid please visit us at:<BR> <A HREF="http://www.cagrid.org">http://www.cagrid.org</a></html>]]></AboutHTML>
+    <dimensions>
+        <width>1024</width>
+        <height>768</height>
+    </dimensions>
+    <menus>
+        <menu>
+            <title>My Account</title>
+            <description>tools</description>
+            <showIcons>true</showIcons>
+            <components>
+                <component>
+                     <title>Login</title>
+                    <description>Obtain Grid Credentials!!!</description>
+                    <classname>org.cagrid.gaards.ui.dorian.ifs.CreateProxyWindow</classname>
+                    <icon>/login.png</icon>
+                    <showOnToolBar>true</showOnToolBar>
+                    <dimensions>
+                        <width>700</width>
+                        <height>400</height>
+                    </dimensions>
+                </component>
+                <component>
+                    <title>Credential Manager</title>
+                    <description>Allows the management of grid proxy credentials.</description>
+                    <classname>org.cagrid.gaards.ui.common.CredentialManagerComponent</classname>
+                    <icon>/certificate.png</icon>
+                    <showOnToolBar>true</showOnToolBar>
+                    <dimensions>
+                        <width>800</width>
+                        <height>500</height>
+                    </dimensions>
+                </component>
+                 <component>
+                    <title>My Groups</title>
+                    <description>View the groups in which you are a member of.</description>
+                    <classname>org.cagrid.gaards.ui.gridgrouper.mygroups.MyGroupsWindow</classname>
+                    <icon>/grouper_logo_no_background_22x22.png</icon>
+                    <showOnToolBar>true</showOnToolBar>
+                    <dimensions>
+                        <width>800</width>
+                        <height>300</height>
+                    </dimensions>
+                </component>
+                <component>
+                     <title>Download CA Certificate(s)</title>
+                    <description>Download the Dorian CA certificate.</description>
+                    <classname>org.cagrid.gaards.ui.dorian.ifs.ViewCACertificateWindow</classname>
+                    <icon>/download.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                    <dimensions>
+                        <width>625</width>
+                        <height>200</height>
+                    </dimensions>
+                </component>
+            </components>
+        </menu>
+
+        <menu>
+           <title>Account Management</title>
+            <description>tools</description>
+            <showIcons>false</showIcons>
+            <submenus>
+            <menu>
+            <title>Grid Account Management</title>
+            <description>tools</description>
+            <showIcons>true</showIcons>
+            <components>
+                <component>
+                    <title>Grid User Management</title>
+                    <description>Manage Grid User Accounts</description>
+                    <classname>org.cagrid.gaards.ui.dorian.ifs.UserManagerWindow</classname>
+                    <icon>/users.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                       <dimensions>
+                        <width>800</width>
+                        <height>650</height>
+                    </dimensions>
+                </component>
+                <component>
+                    <title>Trusted Identity Provider(s)</title>
+                    <description>Trusted Identity Provider(s)</description>
+                    <classname>org.cagrid.gaards.ui.dorian.ifs.TrustedIdPsWindow</classname>
+                    <icon>/trusted-idp.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                </component>
+                  <component>
+                    <title>Account Administrators</title>
+                    <description>Account Administrators</description>
+                    <classname>org.cagrid.gaards.ui.dorian.ifs.AdministratorsWindow</classname>
+                    <icon>/preferences-desktop-theme.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                     <dimensions>
+                        <width>600</width>
+                        <height>400</height>
+                    </dimensions>
+                </component>
+            </components>
+            </menu>
+             <menu>
+            <title>Delegation Management</title>
+            <description>tools</description>
+            <showIcons>true</showIcons>
+            <components>
+                 <component>
+                    <title>Find Delegated Credentials</title>
+                    <description>Allows one to view delegated credentials.</description>
+                    <classname>org.cagrid.gaards.ui.cds.FindDelegatedCredentialsWindow</classname>
+                    <icon>/delegate-credentials.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                    <dimensions>
+                        <width>800</width>
+                        <height>600</height>
+                    </dimensions>
+                </component>
+                <component>
+                    <title>Delegation Administrators</title>
+                    <description>Administrators</description>
+                    <classname>org.cagrid.gaards.ui.cds.AdministratorsWindow</classname>
+                    <icon>/preferences-desktop-theme.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                    <dimensions>
+                        <width>600</width>
+                        <height>400</height>
+                    </dimensions>
+                </component>
+            </components>
+            </menu>
+              <menu>
+            <title>Local Accounts</title>
+            <description>Tools for registering and managing local Dorian accounts.</description>
+            <showIcons>true</showIcons>
+            <components>
+                <component>
+                    <title>Registration</title>
+                    <description>Register with a Dorian for a local account.</description>
+                    <classname>org.cagrid.gaards.ui.dorian.idp.ApplicationWindow</classname>
+                    <icon>/application.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                    <dimensions>
+                        <width>700</width>
+                        <height>650</height>
+                    </dimensions>
+                </component>
+                   <component>
+                    <title>Change Password</title>
+                    <description>Allows a Dorian IdP user to change their password.</description>
+                    <classname>org.cagrid.gaards.ui.dorian.idp.ChangePasswordWindow</classname>
+                    <icon>/password.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                    <dimensions>
+                        <width>650</width>
+                        <height>300</height>
+                    </dimensions>
+                </component>
+                <component>
+                    <title>Local Account Management</title>
+                    <description>Local Account Management</description>
+                    <classname>org.cagrid.gaards.ui.dorian.idp.UserManagerWindow</classname>
+                    <icon>/users.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                    <dimensions>
+                        <width>800</width>
+                        <height>650</height>
+                    </dimensions>
+                </component>
+
+            </components>
+        </menu>
+            </submenus>
+        </menu>
+
+      
+        <menu>
+            <title>Trust Fabric</title>
+            <description>tools</description>
+            <showIcons>true</showIcons>
+            <components>
+                <component>
+                    <title>Certificate Authorities</title>
+                    <description>Administrate the ceritficate authorites that are trusted in the
+                        trust fabric.</description>
+                    <classname>org.cagrid.gaards.ui.gts.TrustedAuthoritiesWindow</classname>
+                    <icon>/certificate-authority.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                </component>
+                <component>
+                    <title>Levels of Assurance</title>
+                    <description>Administrate the levels of assurance for the trust fabric.</description>
+                    <classname>org.cagrid.gaards.ui.gts.TrustLevelManagerWindow</classname>
+                    <icon>/trust_level.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                </component>
+                <component>
+                    <title>Trust Federation</title>
+                    <description>Administrate the GTS federation.</description>
+                    <classname>org.cagrid.gaards.ui.gts.AuthorityManagerWindow</classname>
+                    <icon>/trust-fabric.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                </component>
+                <component>
+                    <title>Permissions</title>
+                    <description>Grant and Revoke rights to users for administrating the trust
+                        fabric.</description>
+                    <classname>org.cagrid.gaards.ui.gts.PermissionManagerWindow</classname>
+                    <icon>/preferences-desktop-theme.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                </component>
+            </components>
+        </menu>
+  
+  
+        <menu>
+            <title>Group Management</title>
+            <description>Browsing and Administration of groups.</description>
+            <showIcons>true</showIcons>
+            <components>
+                <component>
+                    <title>Group Browser</title>
+                    <description>Browsing and Administration of groups.</description>
+                    <classname>org.cagrid.gaards.ui.gridgrouper.browser.GroupManagementBrowser</classname>
+                    <icon>/grouper_logo_no_background_22x22.png</icon>
+                    <showOnToolBar>false</showOnToolBar>
+                    <dimensions>
+                        <width>1000</width>
+                        <height>675</height>
+                    </dimensions>
+                </component>
+            </components>
+        </menu>
+
+        <menu>
+            <title>VirtualPACS</title>
+            <description>VirtualPACS.</description>
+            <showIcons>true</showIcons>
+            <components>
+			<component>
+				<title>Virtual PACS</title>
+	  			<description>Simplified Interface for browsing images.</description>
+				<classname>gov.nih.nci.ivi.dicom.virtualpacs.gui.VirtualPACSWindow</classname>
+	  			<icon>/preferences-desktop-peripherals.png</icon>
+	                  <showOnToolBar>true</showOnToolBar>
+				<dimensions>
+		    			<width>1000</width>
+		    			<height>600</height>
+	  			</dimensions>
+                </component>
+            </components>
+        </menu>
+    </menus>
+
+    <configuration>
+        <ConfigurationDescriptors>
+            <ConfigurationDescriptor>
+                <DisplayName>Grid User Management</DisplayName>
+                <SystemName>dorian</SystemName>
+                <ModelClassname>org.cagrid.grape.configuration.GeneralConfiguration</ModelClassname>
+                <qname>
+                    <namespace>http://www.cagrid.org/1/grape-general-configuration</namespace>
+                    <name>GeneralConfiguration</name>
+                </qname>
+                <ConfigurationPanel>org.cagrid.grape.GeneralConfigurationEditor</ConfigurationPanel>
+                <DefaultFile>lib/target_grid/dorian-ui-configuration.xml</DefaultFile>
+            </ConfigurationDescriptor>
+            <ConfigurationDescriptor>
+                <DisplayName>Grid Trust Fabric</DisplayName>
+                <SystemName>gts</SystemName>
+                <ModelClassname>org.cagrid.grape.configuration.GeneralConfiguration</ModelClassname>
+                <qname>
+                    <namespace>http://www.cagrid.org/1/grape-general-configuration</namespace>
+                    <name>GeneralConfiguration</name>
+                </qname>
+                <ConfigurationPanel>org.cagrid.grape.GeneralConfigurationEditor</ConfigurationPanel>
+                <DefaultFile>lib/target_grid/gts-ui-configuration.xml</DefaultFile>
+            </ConfigurationDescriptor>
+            <ConfigurationDescriptor>
+                <DisplayName>Group Management</DisplayName>
+                <SystemName>gridgrouper</SystemName>
+                <ModelClassname>org.cagrid.grape.configuration.GeneralConfiguration</ModelClassname>
+                <qname>
+                    <namespace>http://www.cagrid.org/1/grape-general-configuration</namespace>
+                    <name>GeneralConfiguration</name>
+                </qname>
+                <ConfigurationPanel>org.cagrid.grape.GeneralConfigurationEditor</ConfigurationPanel>
+                <DefaultFile>lib/target_grid/gridgrouper-ui-configuration.xml</DefaultFile>
+            </ConfigurationDescriptor>
+            <ConfigurationDescriptor>
+                <DisplayName>VirtualPACS Config</DisplayName>
+                <SystemName>VirtualPACS</SystemName>
+                <ModelClassname>org.cagrid.grape.configuration.GeneralConfiguration</ModelClassname>
+                <qname>
+                    <namespace>http://www.cagrid.org/1/grape-general-configuration</namespace>
+                    <name>GeneralConfiguration</name>
+                </qname>
+                <ConfigurationPanel>org.cagrid.grape.GeneralConfigurationEditor</ConfigurationPanel>
+                <DefaultFile>resources/virtualpacs-ui-configuration.xml</DefaultFile>
+            </ConfigurationDescriptor>
+       </ConfigurationDescriptors>
+    </configuration>
+</application>

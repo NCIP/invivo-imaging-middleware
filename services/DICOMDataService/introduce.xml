@@ -1,0 +1,322 @@
+<ns1:ServiceDescription introduceVersion="1.2" xmlns:ns1="gme://gov.nih.nci.cagrid/1/Introduce">
+ <ns2:Namespaces xsi:type="ns2:NamespacesType" xmlns:ns2="gme://gov.nih.nci.cagrid.introduce/1/Namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ns2:Namespace location="./gov.nih.nci.ncia.domain.xsd" namespace="gme://ncia.caBIG/1.0/gov.nih.nci.ncia.domain" packageName="gov.nih.nci.ncia.domain" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="Annotation" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ClinicalTrialProtocol" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ClinicalTrialSite" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ClinicalTrialSponsor" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ClinicalTrialSubject" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="CurationData" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Equipment" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Image" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Patient" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Series" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Study" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="TrialDataProvenance" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace location="./DICOMDataService_Submission.xsd" namespace="http://dicomdataservice.ivi.nci.nih.gov/DICOMDataService/Submission" packageName="submission" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="SubmissionInformation" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace location="" namespace="http://www.w3.org/2001/XMLSchema" packageName="" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="anySimpleType" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="anyType" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="anyURI" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="base64Binary" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="boolean" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="byte" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="date" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="dateTime" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="decimal" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="double" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="duration" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ENTITIES" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ENTITY" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="float" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="gDay" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="gMonth" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="gMonthDay" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="gYear" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="gYearMonth" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="hexBinary" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ID" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="IDREF" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="IDREFS" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="int" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="integer" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="language" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="long" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Name" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="NCName" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="negativeInteger" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="NMTOKEN" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="NMTOKENS" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="nonNegativeInteger" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="nonPositiveInteger" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="normalizedString" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="NOTATION" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="positiveInteger" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="QName" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="short" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="string" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="time" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="token" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="unsignedByte" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="unsignedInt" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="unsignedLong" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="unsignedShort" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace location="./DICOMDataServiceTypes.xsd" namespace="http://dicomdataservice.ivi.nci.nih.gov/DICOMDataService/types" packageName="gov.nih.nci.ivi.dicomdataservice.stubs.types" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="DICOMDataServiceReference" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./xsd/cagrid/types/security/security.xsd" namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security" packageName="gov.nih.nci.cagrid.metadata.security" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="CommunicationMechanism" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="CommunicationStyle" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="GSISecureConversation" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="GSISecureMessage" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="GSITransport" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="None" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Operation" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ServiceSecurityMetadata" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./xsd/cagrid/types/caGridMetadata.xsd" namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata" packageName="gov.nih.nci.cagrid.metadata" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="ServiceMetadata" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace location="./1_gov.nih.nci.cagrid.CQLQuery.xsd" namespace="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery" packageName="gov.nih.nci.cagrid.cqlquery" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="CQLQuery" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace location="./1_gov.nih.nci.cagrid.CQLResultSet.xsd" namespace="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet" packageName="gov.nih.nci.cagrid.cqlresultset" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="CQLQueryResultCollection" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace location="./DICOMDataService_CQLResultTypes.xsd" namespace="http://dicomdataservice.ivi.nci.nih.gov/DICOMDataService/CQLResultTypes" packageName="gov.nih.nci.ivi.dicomdataservice.cqlresulttypes" xsi:type="ns2:NamespaceType"/>
+  <ns2:Namespace location="./xsd/cagrid/types/data/data.xsd" namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" packageName="gov.nih.nci.cagrid.metadata.dataservice" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="DomainModel" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="UMLAssociation" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="UMLAssociationEdge" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="UMLClass" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="UMLClassReference" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="UMLGeneralization" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./DataServiceExceptions.xsd" namespace="http://gov.nih.nci.cagrid.data/DataServiceExceptions" packageName="gov.nih.nci.cagrid.data.faults" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="MalformedQueryException" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="QueryProcessingException" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./xsd/cagrid/types/caGridMetadata.xsd" namespace="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata" packageName="gov.nih.nci.cagrid.metadata" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="ServiceMetadata" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./TransferServiceContextTypes.xsd" namespace="http://transfer.cagrid.org/TransferService/Context/types" packageName="org.cagrid.transfer.context.stubs.types" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="TransferServiceContextReference" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./caGrid_Transfer.xsd" namespace="http://transfer.cagrid.org/Transfer" packageName="org.cagrid.transfer.descriptor" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="DataDescriptor" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="DataStorageDescriptor" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="DataTransferDescriptor" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Status" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./enumeration.xsd" namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" packageName="org.xmlsoap.schemas.ws._2004._09.enumeration" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="Enumerate" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="EnumerateResponse" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="EnumerationEnd" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="GetStatus" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="GetStatusResponse" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Pull" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="PullResponse" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Release" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="Renew" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="RenewResponse" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="SupportedDialect" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./addressing.xsd" namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing" packageName="org.globus.addressing" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="Action" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="EndpointReference" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="FaultTo" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="From" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="MessageID" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="RelatesTo" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ReplyAfter" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="ReplyTo" xsi:type="ns2:SchemaElementType"/>
+   <ns2:SchemaElement type="To" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace generateStubs="false" location="./EnumerationResponseContainer.xsd" namespace="http://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer" packageName="gov.nih.nci.cagrid.enumeration.stubs.response" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="EnumerationResponseContainer" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+  <ns2:Namespace location="./CaGridEnumerationTypes.xsd" namespace="http://gov.nih.nci.cagrid.enumeration/CaGridEnumeration/types" packageName="gov.nih.nci.cagrid.enumeration.stubs.types" xsi:type="ns2:NamespaceType">
+   <ns2:SchemaElement type="CaGridEnumerationReference" xsi:type="ns2:SchemaElementType"/>
+  </ns2:Namespace>
+ </ns2:Namespaces>
+ <ns3:Services xsi:type="ns3:ServicesType" xmlns:ns3="gme://gov.nih.nci.cagrid.introduce/1/Services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ns3:Service name="DICOMDataService" namespace="http://dicomdataservice.ivi.nci.nih.gov/DICOMDataService" packageName="gov.nih.nci.ivi.dicomdataservice" xsi:type="ns3:ServiceType">
+   <ns4:Methods xsi:type="ns4:MethodsType" xmlns:ns4="gme://gov.nih.nci.cagrid.introduce/1/Methods">
+    <ns4:Method isImported="true" isProvided="true" name="GetMultipleResourceProperties" xsi:type="ns4:MethodType">
+     <ns4:Output qName="void" isArray="false"/>
+     <ns4:ImportInformation fromIntroduce="false" inputMessage="ns5:GetMultipleResourcePropertiesRequest" namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" outputMessage="ns5:GetMultipleResourcePropertiesResponse" packageName="org.oasis.wsrf.properties" portTypeName="GetMultipleResourceProperties" wsdlFile="../wsrf/properties/WS-ResourceProperties.wsdl" xmlns:ns5="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl"/>
+     <ns4:ProviderInformation providerClass="GetMRPProvider"/>
+    </ns4:Method>
+    <ns4:Method isImported="true" isProvided="true" name="GetResourceProperty" xsi:type="ns4:MethodType">
+     <ns4:Output qName="void" isArray="false"/>
+     <ns4:ImportInformation fromIntroduce="false" inputMessage="ns6:GetResourcePropertyRequest" namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" outputMessage="ns6:GetResourcePropertyResponse" packageName="org.oasis.wsrf.properties" portTypeName="GetResourceProperty" wsdlFile="../wsrf/properties/WS-ResourceProperties.wsdl" xmlns:ns6="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl"/>
+     <ns4:ProviderInformation providerClass="GetRPProvider"/>
+    </ns4:Method>
+    <ns4:Method isImported="true" isProvided="true" name="QueryResourceProperties" xsi:type="ns4:MethodType">
+     <ns4:Output qName="void" isArray="false"/>
+     <ns4:ImportInformation fromIntroduce="false" inputMessage="ns7:QueryResourcePropertiesRequest" namespace="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl" outputMessage="ns7:QueryResourcePropertiesResponse" packageName="org.oasis.wsrf.properties" portTypeName="QueryResourceProperties" wsdlFile="../wsrf/properties/WS-ResourceProperties.wsdl" xmlns:ns7="http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.wsdl"/>
+     <ns4:ProviderInformation providerClass="QueryRPProvider"/>
+    </ns4:Method>
+    <ns4:Method isImported="true" isProvided="true" name="getServiceSecurityMetadata" xsi:type="ns4:MethodType">
+     <ns4:Output qName="ns8:ServiceSecurityMetadata" isArray="false" isClientHandle="false" xmlns:ns8="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security"/>
+     <ns9:MethodSecurity xsi:type="ns9:MethodSecurity" xmlns:ns9="gme://gov.nih.nci.cagrid.introduce/1/Security">
+      <ns9:SecuritySetting xsi:type="ns9:SecuritySetting">None</ns9:SecuritySetting>
+      <ns9:MethodAuthorization xsi:type="ns9:MethodAuthorization">
+       <ns9:NoAuthorization xsi:type="ns9:NoAuthorization"/>
+      </ns9:MethodAuthorization>
+     </ns9:MethodSecurity>
+     <ns4:ImportInformation namespace="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity" packageName="gov.nih.nci.cagrid.introduce.security.stubs" portTypeName="ServiceSecurityPortType" wsdlFile="ServiceSecurity.wsdl"/>
+     <ns4:ProviderInformation providerClass="gov.nih.nci.cagrid.introduce.security.service.globus.ServiceSecurityProviderImpl"/>
+    </ns4:Method>
+    <ns4:Method description="The standard caGrid Data Service query method." isImported="true" isProvided="true" name="query" xsi:type="ns4:MethodType">
+     <ns4:Inputs>
+      <ns4:Input qName="ns10:CQLQuery" description="The CQL query to be executed against the data source." isArray="false" name="cqlQuery" xmlns:ns10="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery"/>
+     </ns4:Inputs>
+     <ns4:Output qName="ns11:CQLQueryResultCollection" description="The result of executing the CQL query against the data source." isArray="false" xmlns:ns11="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet"/>
+     <ns4:Exceptions>
+      <ns4:Exception description="Thrown when an error occurs in processing a CQL query" name="QueryProcessingException" qname="ns12:QueryProcessingException" xmlns:ns12="http://gov.nih.nci.cagrid.data/DataServiceExceptions"/>
+      <ns4:Exception description="Thrown when a query is found to be improperly formed" name="MalformedQueryException" qname="ns13:MalformedQueryException" xmlns:ns13="http://gov.nih.nci.cagrid.data/DataServiceExceptions"/>
+     </ns4:Exceptions>
+     <ns4:ImportInformation inputMessage="ns14:QueryRequest" namespace="http://gov.nih.nci.cagrid.data/DataService" outputMessage="ns14:QueryResponse" packageName="gov.nih.nci.cagrid.data" portTypeName="DataServicePortType" wsdlFile="DataService.wsdl" xmlns:ns14="http://gov.nih.nci.cagrid.data/DataService"/>
+     <ns4:ProviderInformation providerClass="gov.nih.nci.cagrid.data.service.globus.DataServiceProviderImpl"/>
+    </ns4:Method>
+    <ns4:Method description="retrieve DICOM data using caGrid Transfer Service" isImported="false" isProvided="false" name="retrieveDICOMData" xsi:type="ns4:MethodType">
+     <ns4:Inputs>
+      <ns4:Input qName="ns15:CQLQuery" description="" isArray="false" name="cQLQuery" xmlns:ns15="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery"/>
+     </ns4:Inputs>
+     <ns4:Output qName="ns16:TransferServiceContextReference" description="" isArray="false" xmlns:ns16="http://transfer.cagrid.org/TransferService/Context/types"/>
+     <ns4:Exceptions/>
+    </ns4:Method>
+    <ns4:Method description="upload DICOM data using caGrid Transfer Service" isImported="false" isProvided="false" name="submitDICOMData" xsi:type="ns4:MethodType">
+     <ns4:Inputs>
+      <ns4:Input qName="ns17:SubmissionInformation" description="" isArray="false" name="submissionInformation" xmlns:ns17="http://dicomdataservice.ivi.nci.nih.gov/DICOMDataService/Submission"/>
+     </ns4:Inputs>
+     <ns4:Output qName="ns18:TransferServiceContextReference" description="" isArray="false" xmlns:ns18="http://transfer.cagrid.org/TransferService/Context/types"/>
+     <ns4:Exceptions/>
+    </ns4:Method>
+    <ns4:Method description="" isImported="false" isProvided="false" name="retrieveDICOMDataProgressively" xsi:type="ns4:MethodType">
+     <ns4:Inputs>
+      <ns4:Input qName="ns19:CQLQuery" description="" isArray="false" name="cQLQuery" xmlns:ns19="http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery"/>
+     </ns4:Inputs>
+     <ns4:Output qName="ns20:EnumerationResponseContainer" description="" isArray="false" xmlns:ns20="http://gov.nih.nci.cagrid.enumeration/EnumerationResponseContainer"/>
+     <ns4:Exceptions/>
+    </ns4:Method>
+   </ns4:Methods>
+   <ns21:ResourcePropertiesList xsi:type="ns21:ResourcePropertiesListType" xmlns:ns21="gme://gov.nih.nci.cagrid.introduce/1/Resources">
+    <ns21:ResourceProperty qName="ns22:ServiceMetadata" fileLocation="serviceMetadata.xml" populateFromFile="true" register="true" xsi:type="ns21:ResourcePropertyType" xmlns:ns22="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata"/>
+    <ns21:ResourceProperty qName="ns23:DomainModel" fileLocation="domainModel.xml" populateFromFile="true" register="true" xsi:type="ns21:ResourcePropertyType" xmlns:ns23="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice"/>
+   </ns21:ResourcePropertiesList>
+   <ns3:ResourceFrameworkOptions xsi:type="ns3:ResourceFrameworkOptions">
+    <ns3:Main xsi:type="ns3:Main"/>
+    <ns3:Singleton xsi:type="ns3:Singleton"/>
+    <ns3:Identifiable xsi:type="ns3:Identifiable"/>
+    <ns3:ResourcePropertyManagement xsi:type="ns3:ResourcePropertyManagement"/>
+   </ns3:ResourceFrameworkOptions>
+  </ns3:Service>
+  <ns3:Service name="CaGridEnumeration" namespace="http://gov.nih.nci.cagrid.enumeration/CaGridEnumeration" packageName="gov.nih.nci.cagrid.enumeration" xsi:type="ns3:ServiceType">
+   <ns24:Methods xsi:type="ns24:MethodsType" xmlns:ns24="gme://gov.nih.nci.cagrid.introduce/1/Methods">
+    <ns24:Method isImported="true" isProvided="true" name="PullOp" xsi:type="ns24:MethodType">
+     <ns24:Inputs>
+      <ns24:Input qName="ns25:Pull" isArray="false" name="pull" xmlns:ns25="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     </ns24:Inputs>
+     <ns24:Output qName="ns26:PullResponse" isArray="false" xmlns:ns26="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     <ns24:ImportInformation fromIntroduce="false" inputMessage="ns27:PullMessage" namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" outputMessage="ns27:PullResponseMessage" packageName="org.globus.ws.enumeration" portTypeName="DataSource" wsdlFile="enumeration.wsdl" xmlns:ns27="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     <ns24:ProviderInformation providerClass="org.globus.ws.enumeration.EnumProvider"/>
+    </ns24:Method>
+    <ns24:Method isImported="true" isProvided="true" name="RenewOp" xsi:type="ns24:MethodType">
+     <ns24:Inputs>
+      <ns24:Input qName="ns28:Renew" isArray="false" name="renew" xmlns:ns28="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     </ns24:Inputs>
+     <ns24:Output qName="ns29:RenewResponse" isArray="false" xmlns:ns29="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     <ns24:ImportInformation fromIntroduce="false" inputMessage="ns30:RenewMessage" namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" outputMessage="ns30:RenewResponseMessage" packageName="org.globus.ws.enumeration" portTypeName="DataSource" wsdlFile="enumeration.wsdl" xmlns:ns30="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     <ns24:ProviderInformation providerClass="org.globus.ws.enumeration.EnumProvider"/>
+    </ns24:Method>
+    <ns24:Method isImported="true" isProvided="true" name="GetStatusOp" xsi:type="ns24:MethodType">
+     <ns24:Inputs>
+      <ns24:Input qName="ns31:GetStatus" isArray="false" name="status" xmlns:ns31="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     </ns24:Inputs>
+     <ns24:Output qName="ns32:GetStatusResponse" isArray="false" xmlns:ns32="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     <ns24:ImportInformation fromIntroduce="false" inputMessage="ns33:GetStatusMessage" namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" outputMessage="ns33:GetStatusResponseMessage" packageName="org.globus.ws.enumeration" portTypeName="DataSource" wsdlFile="enumeration.wsdl" xmlns:ns33="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     <ns24:ProviderInformation providerClass="org.globus.ws.enumeration.EnumProvider"/>
+    </ns24:Method>
+    <ns24:Method isImported="true" isProvided="true" name="ReleaseOp" xsi:type="ns24:MethodType">
+     <ns24:Inputs>
+      <ns24:Input qName="ns34:Release" isArray="false" name="release" xmlns:ns34="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     </ns24:Inputs>
+     <ns24:Output qName="void" isArray="false"/>
+     <ns24:ImportInformation fromIntroduce="false" inputMessage="ns35:ReleaseMessage" namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" outputMessage="ns35:ReleaseResponseMessage" packageName="org.globus.ws.enumeration" portTypeName="DataSource" wsdlFile="enumeration.wsdl" xmlns:ns35="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>
+     <ns24:ProviderInformation providerClass="org.globus.ws.enumeration.EnumProvider"/>
+    </ns24:Method>
+    <ns24:Method isImported="true" isProvided="true" name="getServiceSecurityMetadata" xsi:type="ns24:MethodType">
+     <ns24:Output qName="ns36:ServiceSecurityMetadata" isArray="false" isClientHandle="false" xmlns:ns36="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security"/>
+     <ns37:MethodSecurity xsi:type="ns37:MethodSecurity" xmlns:ns37="gme://gov.nih.nci.cagrid.introduce/1/Security">
+      <ns37:SecuritySetting xsi:type="ns37:SecuritySetting">None</ns37:SecuritySetting>
+      <ns37:MethodAuthorization xsi:type="ns37:MethodAuthorization">
+       <ns37:NoAuthorization xsi:type="ns37:NoAuthorization"/>
+      </ns37:MethodAuthorization>
+     </ns37:MethodSecurity>
+     <ns24:ImportInformation namespace="http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity" packageName="gov.nih.nci.cagrid.introduce.security.stubs" portTypeName="ServiceSecurityPortType" wsdlFile="ServiceSecurity.wsdl"/>
+     <ns24:ProviderInformation providerClass="gov.nih.nci.cagrid.introduce.security.service.globus.ServiceSecurityProviderImpl"/>
+    </ns24:Method>
+   </ns24:Methods>
+   <ns3:ResourceFrameworkOptions xsi:type="ns3:ResourceFrameworkOptions">
+    <ns3:Custom xsi:type="ns3:Custom"/>
+   </ns3:ResourceFrameworkOptions>
+  </ns3:Service>
+ </ns3:Services>
+ <ns38:Extensions xsi:type="ns38:ExtensionsType" xmlns:ns38="gme://gov.nih.nci.cagrid.introduce/1/Extension" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ns38:Extension name="cagrid_metadata" version="1.2" xsi:type="ns38:ExtensionType"/>
+  <ns38:Extension name="data" version="1.2" xsi:type="ns38:ExtensionType">
+   <ns38:ExtensionData>
+    <ns39:Data xsi:type="ns39:Data" xmlns:ns39="http://CQL.caBIG/1/gov.nih.nci.cagrid.data.extension">
+         <ns39:AdditionalLibraries xsi:type="ns39:AdditionalLibraries">
+          <ns39:JarName xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">iviCore-1.2dev.jar</ns39:JarName>
+
+          <ns39:JarName xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">iviAuthorization-1.2dev.jar</ns39:JarName>
+
+          <ns39:JarName xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">ivi-model-ncia-stubs-1.2dev.jar</ns39:JarName>
+
+          <ns39:JarName xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">DICOMCQL-1.2dev.jar</ns39:JarName>
+
+          <ns39:JarName xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">pixelmed.jar</ns39:JarName>
+
+     </ns39:AdditionalLibraries>
+
+         <ns39:CadsrInformation noDomainModel="false" serviceUrl="http://cagrid-service.nci.nih.gov:8080/wsrf/services/cagrid/CaDSRService" useSuppliedModel="false" xsi:type="ns39:CadsrInformation"/>
+
+         <ns39:ServiceFeatures useBdt="false" useGridIdeitifiers="false" useWsEnumeration="false" xsi:type="ns39:ServiceFeatures"/>
+
+    </ns39:Data>
+   </ns38:ExtensionData>
+  </ns38:Extension>
+  <ns38:Extension name="caGrid_Transfer" version="1.2" xsi:type="ns38:ExtensionType"/>
+  <ns38:Extension name="cagrid_wsEnum" version="1.2" xsi:type="ns38:ExtensionType"/>
+ </ns38:Extensions>
+ <ns39:ServiceProperties xmlns:ns39="gme://gov.nih.nci.cagrid.introduce/1/Property">
+  <ns39:Property description="" isFromETC="false" key="queryProcessorClass" value="gov.nih.nci.ivi.dicom.DICOMCQLQueryProcessor"/>
+  <ns39:Property description="The location of the server-config.wsdd file" isFromETC="true" key="serverConfigLocation" value="server-config.wsdd"/>
+  <ns39:Property description="The name of the class to use for CQL query structure validation" isFromETC="false" key="dataService_cqlValidatorClass" value="gov.nih.nci.cagrid.data.cql.validation.ObjectWalkingCQLValidator"/>
+  <ns39:Property description="The name of the class to use for CQL validation against a domain model" isFromETC="false" key="dataService_domainModelValidatorClass" value="gov.nih.nci.cagrid.data.cql.validation.DomainModelValidator"/>
+  <ns39:Property description="A flag to indicate that CQL should be validated for structural correctness" isFromETC="false" key="dataService_validateCqlFlag" value="false"/>
+  <ns39:Property description="A flag to indicate that CQL should be validated for correctness against the domain model" isFromETC="false" key="dataService_validateDomainModelFlag" value="false"/>
+  <ns39:Property description="The name of the file containing the class name to QName mapping" isFromETC="true" key="dataService_classMappingsFilename" value="classToQname.xml"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_modelMapProperties" value="resources/modelmap/NCIAModelMap.properties"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_organization" value="OSU"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_clientAE" value="DICOMDATASERVICE"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_embeddedPacsPort" value="4010"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_embeddedPacsAE" value="EMBEDDEDPACS"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_tempdir" value="/tmp"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_gridGrouperUrl" value="https://localhost:8443/wsrf/services/cagrid/GridGrouper"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_useCMOVE" value="false"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_dataLevelAuth" value="false"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_serverAE" value="RIDERPACS1"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_gridFTPAuth" value="false"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_serverport" value="4008"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_serverip" value="127.0.0.1"/>
+  <ns39:Property description="" isFromETC="false" key="cqlQueryProcessorConfig_sopClassForQRServerAE" value="Study"/>
+ </ns39:ServiceProperties>
+</ns1:ServiceDescription>

@@ -1,0 +1,17 @@
+
+
+
+Issues:
+==========
+CC does not provide prior revision for modifications
+ -WORK AROUND: subtract 1 from the minor revision of the current version (e.g. 1.56 would be 1.55)
+ 	-won't work for branches or original files
+ 	-wrong information if mulitple modifications were made prior to the update
+ 	-wrong information for subversion
+ 	-better than a broken link :)
+
+Not sure what I'm missing for build errors, but they aren't working right. 	
+
+
+TODO:
+parse messages out as warnings?

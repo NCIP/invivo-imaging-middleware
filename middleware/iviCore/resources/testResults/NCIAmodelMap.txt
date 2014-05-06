@@ -1,0 +1,396 @@
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralEquipment.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.ClinicalTrial.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialSite.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.generalSeriesPkId. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.filePath. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.submissionDate. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.annotationType. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Annotation.fileSize. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Study.visibility. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Study.id. ignored.
+WARNING: private tag: (0x0013,0x0010). ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialDataProvenance.project. ignored.
+WARNING: private tag: (0x0013,0x0012). ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteName. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialDataProvenance.id. ignored.
+WARNING: private tag: (0x0013,0x0013). ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteId. ignored.
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.revolutionTime RevolutionTime (0x0018,0x9305)
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.singleCollimationWidth SingleCollimationWidth (0x0018,0x9306)
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.tableSpeed TableSpeed (0x0018,0x9309)
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.tableFeedPerRotation TableFeedPerRotation (0x0018,0x9310)
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.CTPitchFactor SpiralPitchFactor (0x0018,0x9311)
+WARNING: no tag associated: gov.nih.nci.ncia.domain.CTImage.id. ignored.
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.CTImage.totalCollimationWidth TotalCollimationWidth (0x0018,0x9307)
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Patient.visibility. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.Patient.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralSeries.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralSeries.annotationsFlag. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralSeries.visibility. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralSeries.securityGroup. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.curationTimestamp. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.filename. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.uri. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.project. ignored.
+WARNING: no information entity associated: gov.nih.nci.ncia.domain.GeneralImage.storageMediaFileSetUID StorageMediaFileSetUID (0x0088,0x0140)
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.annotation. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.submissionDate. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.visibility. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.seriesPKId. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.patientPkId. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.id. ignored.
+WARNING: no tag associated: gov.nih.nci.ncia.domain.GeneralImage.dicomSize. ignored.
+ model attr name gov.nih.nci.ncia.domain.GeneralImage.SOPInstanceUID
+ model attr name gov.nih.nci.ncia.domain.GeneralSeries.seriesInstanceUID
+ model attr name gov.nih.nci.ncia.domain.Study.studyInstanceUID
+ model attr name gov.nih.nci.ncia.domain.Patient.patientId
+ model map retrieval mapping {Study=STUDY, Frame=IMAGE, Series=SERIES, Instance=IMAGE, Patient=PATIENT, ProcedureStep=STUDY, Concatenation=SERIES}
+ model map retrieval tag mapping {IMAGE=(0x0008,0x0018), SERIES=(0x0020,0x000e), STUDY=(0x0020,0x000d), PATIENT=(0x0010,0x0020)}
+ model map retrieval mapping patient PATIENT
+ model map retrieval mapping study STUDY
+ model map retrieval mapping series SERIES
+ model map retrieval mapping instance IMAGE
+ model map retrieval mapping procedure step STUDY
+ model map retrieval mapping concatenation SERIES
+ model map retrieval mapping frame IMAGE
+ model map retrieval tag mapping patient (0x0010,0x0020)
+ model map retrieval tag mapping study (0x0020,0x000d)
+ model map retrieval tag mapping series (0x0020,0x000e)
+ model map retrieval tag mapping image (0x0008,0x0018)
+ model map retrieval mapping iterator 
+,Study,Frame,Series,Instance,Patient,ProcedureStep,Concatenation
+ model map retrieval class mapping patient class gov.nih.nci.ncia.domain.Patient
+ model map retrieval class mapping study class gov.nih.nci.ncia.domain.Study
+ model map retrieval class mapping series class gov.nih.nci.ncia.domain.GeneralSeries
+ model map retrieval class mapping image class gov.nih.nci.ncia.domain.GeneralImage
+ model dictionary = {gov.nih.nci.ncia.domain.GeneralEquipment=class gov.nih.nci.ncia.domain.GeneralEquipment
+ gov.nih.nci.ncia.domain.ClinicalTrial=class gov.nih.nci.ncia.domain.ClinicalTrial
+ gov.nih.nci.ncia.domain.TrialSite=class gov.nih.nci.ncia.domain.TrialSite
+ gov.nih.nci.ncia.domain.Annotation=class gov.nih.nci.ncia.domain.Annotation
+ gov.nih.nci.ncia.domain.Study=class gov.nih.nci.ncia.domain.Study
+ gov.nih.nci.ncia.domain.TrialDataProvenance=class gov.nih.nci.ncia.domain.TrialDataProvenance
+ gov.nih.nci.ncia.domain.CTImage=class gov.nih.nci.ncia.domain.CTImage
+ gov.nih.nci.ncia.domain.Patient=class gov.nih.nci.ncia.domain.Patient
+ gov.nih.nci.ncia.domain.GeneralSeries=class gov.nih.nci.ncia.domain.GeneralSeries
+ gov.nih.nci.ncia.domain.GeneralImage=class gov.nih.nci.ncia.domain.GeneralImage}
+
+{class gov.nih.nci.ncia.domain.CTImage=class gov.nih.nci.ncia.domain.GeneralImage
+ class gov.nih.nci.ncia.domain.GeneralEquipment=class gov.nih.nci.ncia.domain.GeneralSeries
+ class gov.nih.nci.ncia.domain.TrialSite=class gov.nih.nci.ncia.domain.Patient
+ class gov.nih.nci.ncia.domain.Patient=class gov.nih.nci.ncia.domain.TrialDataProvenance
+ class gov.nih.nci.ncia.domain.GeneralSeries=class gov.nih.nci.ncia.domain.Study
+ class gov.nih.nci.ncia.domain.Annotation=class gov.nih.nci.ncia.domain.GeneralSeries
+ class gov.nih.nci.ncia.domain.Study=class gov.nih.nci.ncia.domain.Patient
+ class gov.nih.nci.ncia.domain.TrialDataProvenance=null
+ class gov.nih.nci.ncia.domain.GeneralImage=class gov.nih.nci.ncia.domain.GeneralSeries
+ class gov.nih.nci.ncia.domain.ClinicalTrial=class gov.nih.nci.ncia.domain.TrialSite}
+
+{class gov.nih.nci.ncia.domain.CTImage=[private gov.nih.nci.ncia.domain.GeneralImage gov.nih.nci.ncia.domain.CTImage.generalImage]
+ class gov.nih.nci.ncia.domain.GeneralEquipment=[private gov.nih.nci.ncia.domain.GeneralSeries[] gov.nih.nci.ncia.domain.GeneralEquipment.generalSeriesCollection]
+ class gov.nih.nci.ncia.domain.TrialSite=[private gov.nih.nci.ncia.domain.Patient[] gov.nih.nci.ncia.domain.TrialSite.patientCollection
+ private gov.nih.nci.ncia.domain.ClinicalTrial gov.nih.nci.ncia.domain.TrialSite.trial]
+ class gov.nih.nci.ncia.domain.Patient=[private gov.nih.nci.ncia.domain.Study[] gov.nih.nci.ncia.domain.Patient.studyCollection
+ private gov.nih.nci.ncia.domain.TrialDataProvenance gov.nih.nci.ncia.domain.Patient.dataProvenance
+ private gov.nih.nci.ncia.domain.GeneralImage[] gov.nih.nci.ncia.domain.Patient.generalImageCollection
+ private gov.nih.nci.ncia.domain.TrialSite gov.nih.nci.ncia.domain.Patient.trialSite]
+ class gov.nih.nci.ncia.domain.GeneralSeries=[private gov.nih.nci.ncia.domain.GeneralImage[] gov.nih.nci.ncia.domain.GeneralSeries.generalImageCollection
+ private gov.nih.nci.ncia.domain.Study gov.nih.nci.ncia.domain.GeneralSeries.study
+ private gov.nih.nci.ncia.domain.GeneralEquipment gov.nih.nci.ncia.domain.GeneralSeries.generalEquipment
+ private gov.nih.nci.ncia.domain.Annotation[] gov.nih.nci.ncia.domain.GeneralSeries.annotationCollection]
+ class gov.nih.nci.ncia.domain.Annotation=[private gov.nih.nci.ncia.domain.GeneralSeries gov.nih.nci.ncia.domain.Annotation.generalSeries]
+ class gov.nih.nci.ncia.domain.Study=[private gov.nih.nci.ncia.domain.Patient gov.nih.nci.ncia.domain.Study.patient
+ private gov.nih.nci.ncia.domain.GeneralImage[] gov.nih.nci.ncia.domain.Study.generalImageCollection
+ private gov.nih.nci.ncia.domain.GeneralSeries[] gov.nih.nci.ncia.domain.Study.generalSeriesCollection]
+ class gov.nih.nci.ncia.domain.GeneralImage=[private gov.nih.nci.ncia.domain.Study gov.nih.nci.ncia.domain.GeneralImage.study
+ private gov.nih.nci.ncia.domain.Patient gov.nih.nci.ncia.domain.GeneralImage.patient
+ private gov.nih.nci.ncia.domain.CTImage gov.nih.nci.ncia.domain.GeneralImage.ctimage
+ private gov.nih.nci.ncia.domain.GeneralSeries gov.nih.nci.ncia.domain.GeneralImage.generalSeries
+ private gov.nih.nci.ncia.domain.TrialDataProvenance gov.nih.nci.ncia.domain.GeneralImage.dataProvenance]
+ class gov.nih.nci.ncia.domain.TrialDataProvenance=[private gov.nih.nci.ncia.domain.GeneralImage[] gov.nih.nci.ncia.domain.TrialDataProvenance.generalImageCollection
+ private gov.nih.nci.ncia.domain.Patient[] gov.nih.nci.ncia.domain.TrialDataProvenance.patientCollection]
+ class gov.nih.nci.ncia.domain.ClinicalTrial=[private gov.nih.nci.ncia.domain.TrialSite[] gov.nih.nci.ncia.domain.ClinicalTrial.siteCollection]}
+
+{gov.nih.nci.ncia.domain.Patient.patientName=private java.lang.String gov.nih.nci.ncia.domain.Patient.patientName
+ gov.nih.nci.ncia.domain.GeneralImage.SOPInstanceUID=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.SOPInstanceUID
+ gov.nih.nci.ncia.domain.CTImage.gantryDetectorTilt=private double gov.nih.nci.ncia.domain.CTImage.gantryDetectorTilt
+ gov.nih.nci.ncia.domain.GeneralEquipment.institutionName=private java.lang.String gov.nih.nci.ncia.domain.GeneralEquipment.institutionName
+ gov.nih.nci.ncia.domain.Study.patientWeight=private double gov.nih.nci.ncia.domain.Study.patientWeight
+ gov.nih.nci.ncia.domain.GeneralImage.uri=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.uri
+ gov.nih.nci.ncia.domain.TrialSite.id=private java.math.BigInteger gov.nih.nci.ncia.domain.TrialSite.id
+ gov.nih.nci.ncia.domain.Annotation.generalSeriesPkId=private java.math.BigInteger gov.nih.nci.ncia.domain.Annotation.generalSeriesPkId
+ gov.nih.nci.ncia.domain.GeneralSeries.bodyPartExamined=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.bodyPartExamined
+ gov.nih.nci.ncia.domain.Patient.patientSex=private java.lang.String gov.nih.nci.ncia.domain.Patient.patientSex
+ gov.nih.nci.ncia.domain.Annotation.annotationType=private java.lang.String gov.nih.nci.ncia.domain.Annotation.annotationType
+ gov.nih.nci.ncia.domain.Patient.ethnicGroup=private java.lang.String gov.nih.nci.ncia.domain.Patient.ethnicGroup
+ gov.nih.nci.ncia.domain.GeneralImage.focalSpotSize=private double gov.nih.nci.ncia.domain.GeneralImage.focalSpotSize
+ gov.nih.nci.ncia.domain.GeneralEquipment.manufacturerModelName=private java.lang.String gov.nih.nci.ncia.domain.GeneralEquipment.manufacturerModelName
+ gov.nih.nci.ncia.domain.Study.patientAge=private java.lang.String gov.nih.nci.ncia.domain.Study.patientAge
+ gov.nih.nci.ncia.domain.Patient.patientId=private java.lang.String gov.nih.nci.ncia.domain.Patient.patientId
+ gov.nih.nci.ncia.domain.Study.admittingDiagnosesCodeSeq=private java.lang.String gov.nih.nci.ncia.domain.Study.admittingDiagnosesCodeSeq
+ gov.nih.nci.ncia.domain.GeneralImage.storageMediaFileSetUID=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.storageMediaFileSetUID
+ gov.nih.nci.ncia.domain.GeneralEquipment.id=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralEquipment.id
+ gov.nih.nci.ncia.domain.Study.timePointId=private java.lang.String gov.nih.nci.ncia.domain.Study.timePointId
+ gov.nih.nci.ncia.domain.GeneralImage.submissionDate=private java.util.Calendar gov.nih.nci.ncia.domain.GeneralImage.submissionDate
+ gov.nih.nci.ncia.domain.GeneralImage.visibility=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.visibility
+ gov.nih.nci.ncia.domain.Study.occupation=private java.lang.String gov.nih.nci.ncia.domain.Study.occupation
+ gov.nih.nci.ncia.domain.GeneralImage.seriesPKId=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralImage.seriesPKId
+ gov.nih.nci.ncia.domain.GeneralEquipment.manufacturer=private java.lang.String gov.nih.nci.ncia.domain.GeneralEquipment.manufacturer
+ gov.nih.nci.ncia.domain.CTImage.XRayTubeCurrent=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.XRayTubeCurrent
+ gov.nih.nci.ncia.domain.GeneralImage.instanceNumber=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralImage.instanceNumber
+ gov.nih.nci.ncia.domain.Study.studyId=private java.lang.String gov.nih.nci.ncia.domain.Study.studyId
+ gov.nih.nci.ncia.domain.GeneralImage.patientPosition=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.patientPosition
+ gov.nih.nci.ncia.domain.GeneralImage.sourceToDetectorDistance=private double gov.nih.nci.ncia.domain.GeneralImage.sourceToDetectorDistance
+ gov.nih.nci.ncia.domain.GeneralSeries.admittingDiagnosesDesc=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.admittingDiagnosesDesc
+ gov.nih.nci.ncia.domain.GeneralImage.curationTimestamp=private java.util.Calendar gov.nih.nci.ncia.domain.GeneralImage.curationTimestamp
+ gov.nih.nci.ncia.domain.TrialDataProvenance.id=private java.math.BigInteger gov.nih.nci.ncia.domain.TrialDataProvenance.id
+ gov.nih.nci.ncia.domain.Patient.trialSubjectReadingId=private java.lang.String gov.nih.nci.ncia.domain.Patient.trialSubjectReadingId
+ gov.nih.nci.ncia.domain.GeneralSeries.seriesDesc=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.seriesDesc
+ gov.nih.nci.ncia.domain.GeneralImage.project=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.project
+ gov.nih.nci.ncia.domain.GeneralSeries.frameOfReferenceUID=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.frameOfReferenceUID
+ gov.nih.nci.ncia.domain.GeneralSeries.syncFrameOfRefUID=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.syncFrameOfRefUID
+ gov.nih.nci.ncia.domain.Annotation.filePath=private java.lang.String gov.nih.nci.ncia.domain.Annotation.filePath
+ gov.nih.nci.ncia.domain.Annotation.submissionDate=private java.util.Calendar gov.nih.nci.ncia.domain.Annotation.submissionDate
+ gov.nih.nci.ncia.domain.Annotation.fileSize=private java.math.BigInteger gov.nih.nci.ncia.domain.Annotation.fileSize
+ gov.nih.nci.ncia.domain.GeneralSeries.seriesNumber=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralSeries.seriesNumber
+ gov.nih.nci.ncia.domain.TrialSite.trialSiteName=private java.lang.String gov.nih.nci.ncia.domain.TrialSite.trialSiteName
+ gov.nih.nci.ncia.domain.CTImage.dataCollectionDiameter=private double gov.nih.nci.ncia.domain.CTImage.dataCollectionDiameter
+ gov.nih.nci.ncia.domain.Patient.trialSubjectId=private java.lang.String gov.nih.nci.ncia.domain.Patient.trialSubjectId
+ gov.nih.nci.ncia.domain.GeneralImage.contrastBolusAgent=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.contrastBolusAgent
+ gov.nih.nci.ncia.domain.GeneralSeries.id=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralSeries.id
+ gov.nih.nci.ncia.domain.Annotation.id=private java.math.BigInteger gov.nih.nci.ncia.domain.Annotation.id
+ gov.nih.nci.ncia.domain.GeneralEquipment.softwareVersions=private java.lang.String gov.nih.nci.ncia.domain.GeneralEquipment.softwareVersions
+ gov.nih.nci.ncia.domain.GeneralSeries.protocolName=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.protocolName
+ gov.nih.nci.ncia.domain.GeneralImage.imageComments=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.imageComments
+ gov.nih.nci.ncia.domain.Patient.id=private java.math.BigInteger gov.nih.nci.ncia.domain.Patient.id
+ gov.nih.nci.ncia.domain.CTImage.anatomicRegionSeq=private java.lang.String gov.nih.nci.ncia.domain.CTImage.anatomicRegionSeq
+ gov.nih.nci.ncia.domain.TrialDataProvenance.project=private java.lang.String gov.nih.nci.ncia.domain.TrialDataProvenance.project
+ gov.nih.nci.ncia.domain.GeneralImage.imageOrientationPatient=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.imageOrientationPatient
+ gov.nih.nci.ncia.domain.Study.studyTime=private java.lang.String gov.nih.nci.ncia.domain.Study.studyTime
+ gov.nih.nci.ncia.domain.GeneralImage.id=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralImage.id
+ gov.nih.nci.ncia.domain.GeneralImage.contentDate=private java.util.Calendar gov.nih.nci.ncia.domain.GeneralImage.contentDate
+ gov.nih.nci.ncia.domain.GeneralImage.imageLaterality=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.imageLaterality
+ gov.nih.nci.ncia.domain.CTImage.exposureInMicroAs=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.exposureInMicroAs
+ gov.nih.nci.ncia.domain.CTImage.totalCollimationWidth=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.totalCollimationWidth
+ gov.nih.nci.ncia.domain.GeneralImage.imagePositionPatient=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.imagePositionPatient
+ gov.nih.nci.ncia.domain.TrialSite.trialSiteId=private java.lang.String gov.nih.nci.ncia.domain.TrialSite.trialSiteId
+ gov.nih.nci.ncia.domain.GeneralImage.dicomSize=private long gov.nih.nci.ncia.domain.GeneralImage.dicomSize
+ gov.nih.nci.ncia.domain.ClinicalTrial.coordinatingCenter=private java.lang.String gov.nih.nci.ncia.domain.ClinicalTrial.coordinatingCenter
+ gov.nih.nci.ncia.domain.ClinicalTrial.sponsorName=private java.lang.String gov.nih.nci.ncia.domain.ClinicalTrial.sponsorName
+ gov.nih.nci.ncia.domain.GeneralImage.lossyImageCompression=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.lossyImageCompression
+ gov.nih.nci.ncia.domain.Study.studyDate=private java.util.Calendar gov.nih.nci.ncia.domain.Study.studyDate
+ gov.nih.nci.ncia.domain.Study.ageGroup=private java.lang.String gov.nih.nci.ncia.domain.Study.ageGroup
+ gov.nih.nci.ncia.domain.GeneralImage.patientId=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.patientId
+ gov.nih.nci.ncia.domain.CTImage.scanOptions=private java.lang.String gov.nih.nci.ncia.domain.CTImage.scanOptions
+ gov.nih.nci.ncia.domain.Annotation.seriesInstanceUID=private java.lang.String gov.nih.nci.ncia.domain.Annotation.seriesInstanceUID
+ gov.nih.nci.ncia.domain.CTImage.id=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.id
+ gov.nih.nci.ncia.domain.GeneralImage.imageType=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.imageType
+ gov.nih.nci.ncia.domain.GeneralImage.acquisitionNumber=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralImage.acquisitionNumber
+ gov.nih.nci.ncia.domain.Study.timePointDesc=private java.lang.String gov.nih.nci.ncia.domain.Study.timePointDesc
+ gov.nih.nci.ncia.domain.GeneralSeries.modality=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.modality
+ gov.nih.nci.ncia.domain.Study.visibility=private java.lang.String gov.nih.nci.ncia.domain.Study.visibility
+ gov.nih.nci.ncia.domain.GeneralImage.annotation=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.annotation
+ gov.nih.nci.ncia.domain.Study.studyDesc=private java.lang.String gov.nih.nci.ncia.domain.Study.studyDesc
+ gov.nih.nci.ncia.domain.GeneralImage.rows=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralImage.rows
+ gov.nih.nci.ncia.domain.GeneralSeries.patientWeight=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralSeries.patientWeight
+ gov.nih.nci.ncia.domain.GeneralSeries.annotationsFlag=private boolean gov.nih.nci.ncia.domain.GeneralSeries.annotationsFlag
+ gov.nih.nci.ncia.domain.Study.studyInstanceUID=private java.lang.String gov.nih.nci.ncia.domain.Study.studyInstanceUID
+ gov.nih.nci.ncia.domain.GeneralImage.sliceThickness=private double gov.nih.nci.ncia.domain.GeneralImage.sliceThickness
+ gov.nih.nci.ncia.domain.CTImage.CTPitchFactor=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.CTPitchFactor
+ gov.nih.nci.ncia.domain.GeneralImage.sliceLocation=private double gov.nih.nci.ncia.domain.GeneralImage.sliceLocation
+ gov.nih.nci.ncia.domain.GeneralSeries.laterality=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.laterality
+ gov.nih.nci.ncia.domain.GeneralImage.contentTime=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.contentTime
+ gov.nih.nci.ncia.domain.GeneralImage.filename=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.filename
+ gov.nih.nci.ncia.domain.Study.patientSize=private double gov.nih.nci.ncia.domain.Study.patientSize
+ gov.nih.nci.ncia.domain.GeneralImage.pixelSpacing=private double gov.nih.nci.ncia.domain.GeneralImage.pixelSpacing
+ gov.nih.nci.ncia.domain.ClinicalTrial.id=private java.math.BigInteger gov.nih.nci.ncia.domain.ClinicalTrial.id
+ gov.nih.nci.ncia.domain.Patient.patientBirthDate=private java.util.Calendar gov.nih.nci.ncia.domain.Patient.patientBirthDate
+ gov.nih.nci.ncia.domain.Study.additionalPatientHistory=private java.lang.String gov.nih.nci.ncia.domain.Study.additionalPatientHistory
+ gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteName=private java.lang.String gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteName
+ gov.nih.nci.ncia.domain.CTImage.tableFeedPerRotation=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.tableFeedPerRotation
+ gov.nih.nci.ncia.domain.GeneralSeries.seriesInstanceUID=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.seriesInstanceUID
+ gov.nih.nci.ncia.domain.GeneralImage.acquisitionDate=private java.util.Calendar gov.nih.nci.ncia.domain.GeneralImage.acquisitionDate
+ gov.nih.nci.ncia.domain.Study.id=private java.math.BigInteger gov.nih.nci.ncia.domain.Study.id
+ gov.nih.nci.ncia.domain.GeneralSeries.visibility=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.visibility
+ gov.nih.nci.ncia.domain.CTImage.reconstructionDiameter=private double gov.nih.nci.ncia.domain.CTImage.reconstructionDiameter
+ gov.nih.nci.ncia.domain.GeneralImage.seriesInstanceUID=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.seriesInstanceUID
+ gov.nih.nci.ncia.domain.GeneralImage.contrastBolusRoute=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.contrastBolusRoute
+ gov.nih.nci.ncia.domain.ClinicalTrial.protocolId=private java.lang.String gov.nih.nci.ncia.domain.ClinicalTrial.protocolId
+ gov.nih.nci.ncia.domain.GeneralSeries.seriesDate=private java.util.Calendar gov.nih.nci.ncia.domain.GeneralSeries.seriesDate
+ gov.nih.nci.ncia.domain.GeneralImage.SOPClassUID=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.SOPClassUID
+ gov.nih.nci.ncia.domain.CTImage.convolutionKernel=private java.lang.String gov.nih.nci.ncia.domain.CTImage.convolutionKernel
+ gov.nih.nci.ncia.domain.CTImage.revolutionTime=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.revolutionTime
+ gov.nih.nci.ncia.domain.CTImage.KVP=private double gov.nih.nci.ncia.domain.CTImage.KVP
+ gov.nih.nci.ncia.domain.GeneralImage.acquisitionDatetime=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.acquisitionDatetime
+ gov.nih.nci.ncia.domain.CTImage.singleCollimationWidth=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.singleCollimationWidth
+ gov.nih.nci.ncia.domain.CTImage.exposure=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.exposure
+ gov.nih.nci.ncia.domain.GeneralImage.columns=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralImage.columns
+ gov.nih.nci.ncia.domain.ClinicalTrial.protocolName=private java.lang.String gov.nih.nci.ncia.domain.ClinicalTrial.protocolName
+ gov.nih.nci.ncia.domain.CTImage.tableSpeed=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.tableSpeed
+ gov.nih.nci.ncia.domain.GeneralImage.patientPkId=private java.math.BigInteger gov.nih.nci.ncia.domain.GeneralImage.patientPkId
+ gov.nih.nci.ncia.domain.GeneralImage.acquisitionTime=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.acquisitionTime
+ gov.nih.nci.ncia.domain.CTImage.exposureTime=private java.math.BigInteger gov.nih.nci.ncia.domain.CTImage.exposureTime
+ gov.nih.nci.ncia.domain.GeneralImage.sourceSubjectDistance=private double gov.nih.nci.ncia.domain.GeneralImage.sourceSubjectDistance
+ gov.nih.nci.ncia.domain.Patient.visibility=private java.lang.String gov.nih.nci.ncia.domain.Patient.visibility
+ gov.nih.nci.ncia.domain.GeneralSeries.securityGroup=private java.lang.String gov.nih.nci.ncia.domain.GeneralSeries.securityGroup
+ gov.nih.nci.ncia.domain.Study.admittingDiagnosesDesc=private java.lang.String gov.nih.nci.ncia.domain.Study.admittingDiagnosesDesc
+ gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteId=private java.lang.String gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteId
+ gov.nih.nci.ncia.domain.GeneralImage.studyInstanceUID=private java.lang.String gov.nih.nci.ncia.domain.GeneralImage.studyInstanceUID}
+
+{gov.nih.nci.ncia.domain.GeneralEquipment=[gov.nih.nci.ncia.domain.GeneralEquipment.manufacturer
+ gov.nih.nci.ncia.domain.GeneralEquipment.id
+ gov.nih.nci.ncia.domain.GeneralEquipment.softwareVersions
+ gov.nih.nci.ncia.domain.GeneralEquipment.institutionName
+ gov.nih.nci.ncia.domain.GeneralEquipment.manufacturerModelName]
+ gov.nih.nci.ncia.domain.ClinicalTrial=[gov.nih.nci.ncia.domain.ClinicalTrial.protocolName
+ gov.nih.nci.ncia.domain.ClinicalTrial.id
+ gov.nih.nci.ncia.domain.ClinicalTrial.coordinatingCenter
+ gov.nih.nci.ncia.domain.ClinicalTrial.sponsorName
+ gov.nih.nci.ncia.domain.ClinicalTrial.protocolId]
+ gov.nih.nci.ncia.domain.TrialSite=[gov.nih.nci.ncia.domain.TrialSite.id
+ gov.nih.nci.ncia.domain.TrialSite.trialSiteName
+ gov.nih.nci.ncia.domain.TrialSite.trialSiteId]
+ gov.nih.nci.ncia.domain.Annotation=[gov.nih.nci.ncia.domain.Annotation.generalSeriesPkId
+ gov.nih.nci.ncia.domain.Annotation.id
+ gov.nih.nci.ncia.domain.Annotation.seriesInstanceUID
+ gov.nih.nci.ncia.domain.Annotation.filePath
+ gov.nih.nci.ncia.domain.Annotation.submissionDate
+ gov.nih.nci.ncia.domain.Annotation.annotationType
+ gov.nih.nci.ncia.domain.Annotation.fileSize]
+ gov.nih.nci.ncia.domain.Study=[gov.nih.nci.ncia.domain.Study.admittingDiagnosesCodeSeq
+ gov.nih.nci.ncia.domain.Study.timePointDesc
+ gov.nih.nci.ncia.domain.Study.timePointId
+ gov.nih.nci.ncia.domain.Study.visibility
+ gov.nih.nci.ncia.domain.Study.patientSize
+ gov.nih.nci.ncia.domain.Study.studyDate
+ gov.nih.nci.ncia.domain.Study.patientWeight
+ gov.nih.nci.ncia.domain.Study.ageGroup
+ gov.nih.nci.ncia.domain.Study.occupation
+ gov.nih.nci.ncia.domain.Study.studyDesc
+ gov.nih.nci.ncia.domain.Study.additionalPatientHistory
+ gov.nih.nci.ncia.domain.Study.studyInstanceUID
+ gov.nih.nci.ncia.domain.Study.studyTime
+ gov.nih.nci.ncia.domain.Study.id
+ gov.nih.nci.ncia.domain.Study.studyId
+ gov.nih.nci.ncia.domain.Study.admittingDiagnosesDesc
+ gov.nih.nci.ncia.domain.Study.patientAge]
+ gov.nih.nci.ncia.domain.TrialDataProvenance=[gov.nih.nci.ncia.domain.TrialDataProvenance.project
+ gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteName
+ gov.nih.nci.ncia.domain.TrialDataProvenance.id
+ gov.nih.nci.ncia.domain.TrialDataProvenance.dpSiteId]
+ gov.nih.nci.ncia.domain.GeneralImage=[gov.nih.nci.ncia.domain.GeneralImage.SOPInstanceUID
+ gov.nih.nci.ncia.domain.GeneralImage.curationTimestamp
+ gov.nih.nci.ncia.domain.GeneralImage.contentTime
+ gov.nih.nci.ncia.domain.GeneralImage.filename
+ gov.nih.nci.ncia.domain.GeneralImage.pixelSpacing
+ gov.nih.nci.ncia.domain.GeneralImage.lossyImageCompression
+ gov.nih.nci.ncia.domain.GeneralImage.uri
+ gov.nih.nci.ncia.domain.GeneralImage.project
+ gov.nih.nci.ncia.domain.GeneralImage.patientId
+ gov.nih.nci.ncia.domain.GeneralImage.acquisitionDate
+ gov.nih.nci.ncia.domain.GeneralImage.seriesInstanceUID
+ gov.nih.nci.ncia.domain.GeneralImage.contrastBolusRoute
+ gov.nih.nci.ncia.domain.GeneralImage.focalSpotSize
+ gov.nih.nci.ncia.domain.GeneralImage.SOPClassUID
+ gov.nih.nci.ncia.domain.GeneralImage.imageType
+ gov.nih.nci.ncia.domain.GeneralImage.acquisitionNumber
+ gov.nih.nci.ncia.domain.GeneralImage.contrastBolusAgent
+ gov.nih.nci.ncia.domain.GeneralImage.storageMediaFileSetUID
+ gov.nih.nci.ncia.domain.GeneralImage.annotation
+ gov.nih.nci.ncia.domain.GeneralImage.submissionDate
+ gov.nih.nci.ncia.domain.GeneralImage.acquisitionDatetime
+ gov.nih.nci.ncia.domain.GeneralImage.imageComments
+ gov.nih.nci.ncia.domain.GeneralImage.visibility
+ gov.nih.nci.ncia.domain.GeneralImage.rows
+ gov.nih.nci.ncia.domain.GeneralImage.seriesPKId
+ gov.nih.nci.ncia.domain.GeneralImage.columns
+ gov.nih.nci.ncia.domain.GeneralImage.patientPkId
+ gov.nih.nci.ncia.domain.GeneralImage.imageOrientationPatient
+ gov.nih.nci.ncia.domain.GeneralImage.instanceNumber
+ gov.nih.nci.ncia.domain.GeneralImage.sliceThickness
+ gov.nih.nci.ncia.domain.GeneralImage.acquisitionTime
+ gov.nih.nci.ncia.domain.GeneralImage.contentDate
+ gov.nih.nci.ncia.domain.GeneralImage.id
+ gov.nih.nci.ncia.domain.GeneralImage.patientPosition
+ gov.nih.nci.ncia.domain.GeneralImage.imageLaterality
+ gov.nih.nci.ncia.domain.GeneralImage.sourceSubjectDistance
+ gov.nih.nci.ncia.domain.GeneralImage.sliceLocation
+ gov.nih.nci.ncia.domain.GeneralImage.imagePositionPatient
+ gov.nih.nci.ncia.domain.GeneralImage.sourceToDetectorDistance
+ gov.nih.nci.ncia.domain.GeneralImage.studyInstanceUID
+ gov.nih.nci.ncia.domain.GeneralImage.dicomSize]
+ gov.nih.nci.ncia.domain.CTImage=[gov.nih.nci.ncia.domain.CTImage.convolutionKernel
+ gov.nih.nci.ncia.domain.CTImage.revolutionTime
+ gov.nih.nci.ncia.domain.CTImage.KVP
+ gov.nih.nci.ncia.domain.CTImage.gantryDetectorTilt
+ gov.nih.nci.ncia.domain.CTImage.singleCollimationWidth
+ gov.nih.nci.ncia.domain.CTImage.anatomicRegionSeq
+ gov.nih.nci.ncia.domain.CTImage.exposure
+ gov.nih.nci.ncia.domain.CTImage.tableSpeed
+ gov.nih.nci.ncia.domain.CTImage.tableFeedPerRotation
+ gov.nih.nci.ncia.domain.CTImage.XRayTubeCurrent
+ gov.nih.nci.ncia.domain.CTImage.exposureTime
+ gov.nih.nci.ncia.domain.CTImage.scanOptions
+ gov.nih.nci.ncia.domain.CTImage.CTPitchFactor
+ gov.nih.nci.ncia.domain.CTImage.reconstructionDiameter
+ gov.nih.nci.ncia.domain.CTImage.id
+ gov.nih.nci.ncia.domain.CTImage.exposureInMicroAs
+ gov.nih.nci.ncia.domain.CTImage.totalCollimationWidth
+ gov.nih.nci.ncia.domain.CTImage.dataCollectionDiameter]
+ gov.nih.nci.ncia.domain.Patient=[gov.nih.nci.ncia.domain.Patient.patientId
+ gov.nih.nci.ncia.domain.Patient.patientBirthDate
+ gov.nih.nci.ncia.domain.Patient.patientName
+ gov.nih.nci.ncia.domain.Patient.visibility
+ gov.nih.nci.ncia.domain.Patient.trialSubjectReadingId
+ gov.nih.nci.ncia.domain.Patient.patientSex
+ gov.nih.nci.ncia.domain.Patient.ethnicGroup
+ gov.nih.nci.ncia.domain.Patient.id
+ gov.nih.nci.ncia.domain.Patient.trialSubjectId]
+ gov.nih.nci.ncia.domain.GeneralSeries=[gov.nih.nci.ncia.domain.GeneralSeries.admittingDiagnosesDesc
+ gov.nih.nci.ncia.domain.GeneralSeries.id
+ gov.nih.nci.ncia.domain.GeneralSeries.modality
+ gov.nih.nci.ncia.domain.GeneralSeries.protocolName
+ gov.nih.nci.ncia.domain.GeneralSeries.seriesDesc
+ gov.nih.nci.ncia.domain.GeneralSeries.patientWeight
+ gov.nih.nci.ncia.domain.GeneralSeries.annotationsFlag
+ gov.nih.nci.ncia.domain.GeneralSeries.frameOfReferenceUID
+ gov.nih.nci.ncia.domain.GeneralSeries.syncFrameOfRefUID
+ gov.nih.nci.ncia.domain.GeneralSeries.seriesInstanceUID
+ gov.nih.nci.ncia.domain.GeneralSeries.visibility
+ gov.nih.nci.ncia.domain.GeneralSeries.bodyPartExamined
+ gov.nih.nci.ncia.domain.GeneralSeries.securityGroup
+ gov.nih.nci.ncia.domain.GeneralSeries.seriesDate
+ gov.nih.nci.ncia.domain.GeneralSeries.laterality
+ gov.nih.nci.ncia.domain.GeneralSeries.seriesNumber]}
+
+
+ study uid tag = (0x0020,0x000d)
+ from attribute tag study uid: {gov.nih.nci.ncia.domain.Study.studyInstanceUID=-1, gov.nih.nci.ncia.domain.GeneralImage.studyInstanceUID=-1}
+ attributes containing "Patient" [gov.nih.nci.ncia.domain.GeneralImage.imageOrientationPatient
+ gov.nih.nci.ncia.domain.GeneralImage.imagePositionPatient
+ gov.nih.nci.ncia.domain.Patient.ethnicGroup
+ gov.nih.nci.ncia.domain.Patient.id
+ gov.nih.nci.ncia.domain.Patient.patientBirthDate
+ gov.nih.nci.ncia.domain.Patient.patientId
+ gov.nih.nci.ncia.domain.Patient.patientName
+ gov.nih.nci.ncia.domain.Patient.patientSex
+ gov.nih.nci.ncia.domain.Patient.trialSubjectId
+ gov.nih.nci.ncia.domain.Patient.trialSubjectReadingId
+ gov.nih.nci.ncia.domain.Patient.visibility
+ gov.nih.nci.ncia.domain.Study.additionalPatientHistory]
+ name = gov.nih.nci.ncia.domain.GeneralImage.imageOrientationPatient dicom value (0x0020,0x0037) attribute tag name ImageOrientationPatient
+ name = gov.nih.nci.ncia.domain.GeneralImage.imagePositionPatient dicom value (0x0020,0x0032) attribute tag name ImagePositionPatient
+ name = gov.nih.nci.ncia.domain.Patient.ethnicGroup dicom value (0x0010,0x2160) attribute tag name EthnicGroup
+ name = gov.nih.nci.ncia.domain.Patient.id not mapped to dicom 
+ name = gov.nih.nci.ncia.domain.Patient.patientBirthDate dicom value (0x0010,0x0030) attribute tag name PatientBirthDate
+ name = gov.nih.nci.ncia.domain.Patient.patientId dicom value (0x0010,0x0020) attribute tag name PatientID
+ name = gov.nih.nci.ncia.domain.Patient.patientName dicom value (0x0010,0x0010) attribute tag name PatientName
+ name = gov.nih.nci.ncia.domain.Patient.patientSex dicom value (0x0010,0x0040) attribute tag name PatientSex
+ name = gov.nih.nci.ncia.domain.Patient.trialSubjectId dicom value (0x0012,0x0040) attribute tag name ClinicalTrialSubjectID
+ name = gov.nih.nci.ncia.domain.Patient.trialSubjectReadingId dicom value (0x0012,0x0042) attribute tag name ClinicalTrialSubjectReadingID
+ name = gov.nih.nci.ncia.domain.Patient.visibility not mapped to dicom 
+ name = gov.nih.nci.ncia.domain.Study.additionalPatientHistory dicom value (0x0010,0x21b0) attribute tag name AdditionalPatientHistory
+ pixel spacing tag = (0x0028,0x0030)
+ from attribute tag pixel spacing: {gov.nih.nci.ncia.domain.GeneralImage.pixelSpacing=-1}
+ patient age tag = (0x0010,0x1010)
+ from attribute tag patient age: {gov.nih.nci.ncia.domain.Study.ageGroup=-1, gov.nih.nci.ncia.domain.Study.patientAge=-1}

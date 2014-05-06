@@ -1,0 +1,134 @@
+<!-- ======================================================================= -->
+<!-- caGrid Utilities build file                                             -->
+<!-- ======================================================================= -->
+<project name="xservice_tests_harness" basedir=".">
+
+    <!-- ======================================================================= -->
+    <!--   TESTING OPTIONS:                                                      -->
+    <!-- ======================================================================= -->
+    <!--    run.tests                                                       -->
+    <!--        - A true value for this property causes unit tests to be run     -->
+    <!--          during test target.                                            -->
+    <!--    run.system.tests                                                     -->
+    <!--        - A true value for this property causes system tests to be run   -->
+    <!--          during test target.                                            -->
+    <!--    create.test.report                                                   -->
+    <!--        - A true value for this property causes an html test report to   -->
+    <!--          be created.                                                    -->
+    <!--    test.failfast                                                        -->
+    <!--        - The presence of this property causes the build to fail as      -->
+    <!--          soon as test fails.                                            -->
+    <!-- ======================================================================= -->
+    <import file="test-dart.xml" />
+
+    <property name="test.logs.dir" value="${test.dir}/logs" />
+    <property name="junit.results.dir" value="${test.logs.dir}/junit" />
+
+	
+    <target name="set-test-defaults">
+        <property name="run.tests" value="true" />
+        <property name="create.test.report" value="true" />
+    </target>
+
+    <!-- ============================================================================ -->
+    <!-- Calls unit and system test for each project and aggregates the log resutls   -->
+    <!-- ============================================================================ -->
+    <target name="test" depends="prepare,set-test-defaults,createDartTestFiles" description="Completely tests all the projects (system and unit tests), generating a report.">
+        <!-- Clean out old logs first -->
+        <delete failonerror="false">
+            <fileset dir="${junit.results.dir}">
+                <include name="*" />
+            </fileset>
+        </delete>
+
+        <!-- Call Unit Tests -->
+        <if>
+            <equals arg1="${run.tests}" arg2="true" />
+            <then>
+                <trycatch property="test.failed.message">
+                    <try>
+                        <runtarget target="project-test" />
+                    </try>
+                    <catch>
+                        <property name="test.failed" value="true" />
+                    </catch>
+                </trycatch>
+            </then>
+            <else>
+                <echo message="Skipping unit tests." />
+            </else>
+        </if>
+
+
+        <!-- Try to create a report -->
+        <if>
+            <equals arg1="${create.test.report}" arg2="true" />
+            <then>
+                <trycatch property="test.report.failed.message">
+                    <try>
+                        <mkdir dir="${junit.results.dir}/report" />
+                        <junitreport todir="${junit.results.dir}">
+                            <fileset dir="${junit.results.dir}">
+                                <include name="TEST-*.xml" />
+                            </fileset>
+                            <report format="frames" todir="${junit.results.dir}/report" />
+                        </junitreport>
+                        <echo message="Created test report in ${junit.results.dir}/report" />
+                    </try>
+                    <catch>
+                        <echo message="Test Report creation failed (${test.report.failed.message})!" />
+                    </catch>
+                </trycatch>
+            </then>
+            <else>
+                <echo message="Skipping test report creation." />
+            </else>
+        </if>
+
+        <fail message="Tests failed! ${test.failed.message} Consult the logs for details." if="test.failed" />
+    </target>
+
+    <!-- not to be called directly -->
+	<!-- TCP: using the ivy build project list to determine which of the directories should be tested -->
+    <target name="project-test" depends="build-projects-list">
+		<for parallel="false" param="project.buildfile" trim="true">
+			<path refid="ivy.projects.list" />
+			<sequential>
+				<dirname file="@{project.buildfile}" property="@{project.buildfile}.dir" />
+				<available property="@{project.buildfile}.test.exists" file="test/src" type="dir">
+					<filepath location="${@{project.buildfile}.dir}" />
+				</available>
+				<if>
+					<equals arg1="${@{project.buildfile}.test.exists}" arg2="true"/>
+					<then>
+						<stopwatch name="@{project.buildfile}.name"/>
+						<echo message="build file = @{project.buildfile}" />
+						<pathconvert property="@{project.buildfile}.buildxml">
+							<mapper type="glob" from="*dependencies-build.xml" to="*build.xml"/>
+							<path location="@{project.buildfile}" />
+						</pathconvert>
+						<echo message="testing with ${@{project.buildfile}.buildxml}" />
+						<trycatch property="@{project.buildfile}.test.failed.message">
+							<try>
+								<ant inheritAll="false" inheritrefs="false" dir="${@{project.buildfile}.dir}" antfile="${@{project.buildfile}.buildxml}" target="test">
+									<property name="target.grid" value="${target.grid}" />
+									<property name="junit.results.dir" value="${junit.results.dir}" />
+									<property name="hostname" value="${hostname}"/> 
+								</ant>
+							</try>
+							<catch>
+								<fail message="@{project.buildfile} Tests failed (${@{project.buildfile}.test.failed.message})" if="test.failfast" />
+								<echo message="@{project.buildfile} Tests failed (${@{project.buildfile}.test.failed.message}), proceeding with other tests, but build will fail at completion." />
+								<property name="test.failed" value="true" />
+							</catch>
+						</trycatch>
+						<stopwatch name="@{project.buildfile}.name" action="total"/> 
+					</then>
+				</if>
+ 			</sequential>
+		</for>
+
+        <fail message="Unit Tests failed! Consult the logs for details." if="test.failed" />
+     </target>
+
+</project>

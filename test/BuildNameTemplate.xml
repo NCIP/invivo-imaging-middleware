@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BuildInfo>
+  <BuildName>@Dart.BuildName@</BuildName>
+  <Site>@Dart.Site@</Site>
+  <Track>@Dart.Track@</Track>
+</BuildInfo>
